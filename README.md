@@ -1,2 +1,2 @@
-# Simple-Minecraft-Server-Maker
-A program that makes automatically makes and makes a minecraft server
+# Simple-Minecraft-Manager
+A program that makes automatically makes a minecraft server
