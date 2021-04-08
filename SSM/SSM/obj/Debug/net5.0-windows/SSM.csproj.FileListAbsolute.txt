@@ -1,0 +1,5 @@
+A:\Repositories\SimpleServerManager\Simple-Server-Manager\SSM\SSM\obj\Debug\net5.0-windows\SSM.csprojAssemblyReference.cache
+A:\Repositories\SimpleServerManager\Simple-Server-Manager\SSM\SSM\obj\Debug\net5.0-windows\MainWindow.g.cs
+A:\Repositories\SimpleServerManager\Simple-Server-Manager\SSM\SSM\obj\Debug\net5.0-windows\App.g.cs
+A:\Repositories\SimpleServerManager\Simple-Server-Manager\SSM\SSM\obj\Debug\net5.0-windows\SSM_MarkupCompile.cache
+A:\Repositories\SimpleServerManager\Simple-Server-Manager\SSM\SSM\obj\Debug\net5.0-windows\SSM_MarkupCompile.lref
