@@ -59,7 +59,7 @@ namespace SSM {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SSM;V1.0.0.0;component/welcomepage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SSM;component/welcomepage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\WelcomePage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

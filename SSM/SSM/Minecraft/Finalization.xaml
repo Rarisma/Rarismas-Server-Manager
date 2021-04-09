@@ -1,13 +1,44 @@
 ﻿<UserControl x:Class="SSM.Minecraft.Finalization"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:SSM.Minecraft"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="600" d:DesignWidth="600"
              xmlns:ui="http://schemas.modernwpf.com/2019">
 
+    <ui:SimpleStackPanel>
+        <Label Content="Just some final steps..." Foreground="#fff" FontSize="30" HorizontalAlignment="Center" Padding="10"/>
+        <Border Height="50"/>
+        <Label Content="Select how much RAM you want to allocate" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"/>
+        <Border Height="20"/>
+        
+        <Grid HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Label Content="1024" Foreground="#fff" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23"/>
+            <Slider ValueChanged="SliderChanged" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Name="RamSlider" Maximum="1024" Foreground="#fff"/>
+            <Label Name="MaxRam" FontSize="20" Content="MaxRAM" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#fff"/>
+            <Label Name="AllocatedRAMDisplay" FontSize="20" VerticalAlignment="Center" Content="Allocated ammount of RAM:" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Foreground="#fff"/>
+        </Grid>
 
+        <Border Height="50"/>
+        <Label Content="Now select a version:" HorizontalAlignment="Center" Foreground="#fff" FontSize="25"/>
+        <Border Height="20"/>
+        <ComboBox Name="VersionSelector" Width="200" HorizontalAlignment="Center"/>
+
+        <Border Height="50"/>
+        <Label Foreground="#fff" FontSize="20" HorizontalAlignment="Center" Content="And finally give it a name:"/>
+        <TextBox Width="200" Name="ServerName"/>
+    </ui:SimpleStackPanel>
 
 </UserControl>

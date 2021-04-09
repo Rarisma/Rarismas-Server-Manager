@@ -45,8 +45,9 @@ namespace SSM
 
         private void ContinueButton(object sender, RoutedEventArgs e)
         {
-            if (Minecraft.MinecraftCreatorData.ServerSetupChange == 0 && Minecraft.MinecraftCreatorData.Edition == "Java") { PageWindow.Content = new Minecraft.Java.ServerTypeSelect(); }
-            else if (Minecraft.MinecraftCreatorData.ServerSetupChange == 1 && (Minecraft.MinecraftCreatorData.ServerType == "Paper" || Minecraft.MinecraftCreatorData.ServerType == "Stock")) { PageWindow.Content = new Minecraft.Java.ServerTypeSelect(); }
+            if (Minecraft.MinecraftCreatorData.ServerSetupChange == 0 && Minecraft.MinecraftCreatorData.Edition == "Java") { PageWindow.Content = new Minecraft.Java.ServerTypeSelect(); Minecraft.MinecraftCreatorData.ServerSetupChange = 1; }
+            else if (Minecraft.MinecraftCreatorData.ServerSetupChange == 1 && Minecraft.MinecraftCreatorData.ServerType != "NULL") { PageWindow.Content = new Minecraft.Finalization(); }
+        
         }
     }
 }

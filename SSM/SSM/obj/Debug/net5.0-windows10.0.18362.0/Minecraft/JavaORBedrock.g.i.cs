@@ -59,7 +59,7 @@ namespace SSM.Minecraft {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SSM;V1.0.0.0;component/minecraft/javaorbedrock.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SSM;component/minecraft/javaorbedrock.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Minecraft\JavaORBedrock.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
