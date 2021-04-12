@@ -1,0 +1,3 @@
+This server was created by SSM
+The user aknowlegdes by using SSM and creating a server that they agree to the Mojang EULA
+eula=true

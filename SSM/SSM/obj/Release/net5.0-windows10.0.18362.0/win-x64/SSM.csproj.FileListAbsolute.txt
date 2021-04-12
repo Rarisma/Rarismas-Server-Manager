@@ -145,7 +145,6 @@ A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\bin\Release\
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\MainWindow.g.cs
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\Finalization.g.cs
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\JavaORBedrock.g.cs
-A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\Java\ServerTypeSelect.g.cs
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\WelcomePage.g.cs
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\App.g.cs
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\SSM_MarkupCompile.cache
@@ -154,7 +153,6 @@ A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\MainWindow.baml
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\Finalization.baml
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\JavaORBedrock.baml
-A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\Java\ServerTypeSelect.baml
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\WelcomePage.baml
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\SSM.g.resources
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\SSM.GeneratedMSBuildEditorConfig.editorconfig
@@ -166,3 +164,8 @@ A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\ref\SSM.dll
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\SSM.pdb
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\SSM.genruntimeconfig.cache
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\bin\Release\net5.0-windows10.0.18362.0\win-x64\LibRarisma.dll
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\JavaServerTypeSelector.g.cs
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\JavaServerTypeSelector.baml
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\ServerSelector.g.cs
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\ServerSelector.baml

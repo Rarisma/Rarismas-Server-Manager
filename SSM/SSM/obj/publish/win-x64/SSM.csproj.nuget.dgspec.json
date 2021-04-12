@@ -46,6 +46,10 @@
         "net5.0-windows10.0.18362": {
           "targetAlias": "net5.0-windows10.0.18362.0",
           "dependencies": {
+            "LibRarisma": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "ModernWpfUI": {
               "target": "Package",
               "version": "[0.9.4, )"

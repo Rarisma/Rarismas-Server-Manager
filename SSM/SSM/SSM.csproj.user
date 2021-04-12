@@ -15,7 +15,13 @@
     <Compile Update="Minecraft\JavaORBedrock.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Minecraft\Java\ServerTypeSelect.xaml.cs">
+    <Compile Update="Minecraft\JavaServerTypeSelector.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Minecraft\ServerManager.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ServerSelector.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="WelcomePage.xaml.cs">
@@ -32,7 +38,13 @@
     <Page Update="Minecraft\JavaORBedrock.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Minecraft\Java\ServerTypeSelect.xaml">
+    <Page Update="Minecraft\JavaServerTypeSelector.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Minecraft\ServerManager.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ServerSelector.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WelcomePage.xaml">
