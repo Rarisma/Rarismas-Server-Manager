@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
+//Massive fucking shoutout to the forge devs for bulling me
+//Was going to add forge as a server type but you can't get
+//straight serverfiles like you can with paper and stock minecraft
+//They use shite like adfly to host their files
+//IF PEOPLE ARE SMART ENOUGH TO INSTALL AND RUN FORGE THEY ARE SMART ENOUGH TO USE AN ADBLOCKER 
+
 
 namespace SSM.Minecraft
 {

@@ -9,7 +9,7 @@
              xmlns:ui="http://schemas.modernwpf.com/2019">
 
     <ui:SimpleStackPanel>
-        <Label Content="Just some final steps..." Foreground="#fff" FontSize="30" HorizontalAlignment="Center" Padding="10"/>
+        <Label Name="Test" Content="Just some final steps..." Foreground="#fff" FontSize="30" HorizontalAlignment="Center" Padding="10"/>
         <Border Height="50"/>
         <Label Content="Select how much RAM you want to allocate" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"/>
         <Border Height="20"/>
@@ -33,12 +33,17 @@
 
         <Border Height="50"/>
         <Label Content="Now select a version:" HorizontalAlignment="Center" Foreground="#fff" FontSize="25"/>
-        <Border Height="20"/>
-        <ComboBox Name="VersionSelector" Width="200" HorizontalAlignment="Center"/>
+        <Border Height="10"/>
+        <ComboBox Name="VersionSelector" SelectionChanged="VersionBoxUpdate" Width="200" HorizontalAlignment="Center"/>
 
         <Border Height="50"/>
         <Label Foreground="#fff" FontSize="20" HorizontalAlignment="Center" Content="And finally give it a name:"/>
-        <TextBox Width="200" Name="ServerName"/>
+        <Border Height="10"/>
+        <TextBox Width="200" Name="ServerName" TextChanged="NameUpdated"/>
+
+        <Border Height="20"/>
+        <Label Content="By clicking continue you accept the Mojang EULA." Foreground="#fff" FontSize="15" HorizontalAlignment="Center"/>
+
     </ui:SimpleStackPanel>
 
 </UserControl>

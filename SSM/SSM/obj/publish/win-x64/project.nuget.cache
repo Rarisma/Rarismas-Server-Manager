@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NbG2e7qSsf8GugNn5Ja38xO+yAhCLOWwXaHqu+WE3Dio8cFJadP0Q/6uG+M0Kx4KMkAZEIc+vDSMGV4uoN3o0w==",
+  "dgSpecHash": "LFGy4zIH47zjPbnh1I22IK44YxIjV3dQ3hvKz412fHm1im2L5ynZITD2a46c9ZnuYb4OvMmhHiLYV5lTogvG+w==",
   "success": true,
   "projectFilePath": "A:\\Repositories\\Simple Server Manager\\Simple-Server-Manager\\SSM\\SSM\\SSM.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Rarisma\\.nuget\\packages\\librarisma\\1.2.0\\librarisma.1.2.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\modernwpfui\\0.9.4\\modernwpfui.0.9.4.nupkg.sha512",

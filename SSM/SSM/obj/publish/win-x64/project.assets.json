@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0-windows10.0.18362": {
+      "LibRarisma/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/LibRarisma.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/LibRarisma.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
         "compile": {
@@ -511,6 +520,15 @@
       }
     },
     "net5.0-windows10.0.18362/win-x64": {
+      "LibRarisma/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/LibRarisma.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/LibRarisma.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
         "compile": {
@@ -993,6 +1011,18 @@
     }
   },
   "libraries": {
+    "LibRarisma/1.2.0": {
+      "sha512": "zuJIBz9WTSKl+ZoqmflHVT3uNIDOegTHLGMa4zGkYvKRX2n5LJ7vurS1gUqEDHutndn92a/+NPLElSPXrQhg1w==",
+      "type": "package",
+      "path": "librarisma/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/LibRarisma.dll",
+        "librarisma.1.2.0.nupkg.sha512",
+        "librarisma.nuspec"
+      ]
+    },
     "Microsoft.NETCore.Platforms/5.0.0": {
       "sha512": "VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
       "type": "package",
@@ -1774,6 +1804,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows10.0.18362": [
+      "LibRarisma >= 1.2.0",
       "ModernWpfUI >= 0.9.4",
       "System.Management >= 5.0.0"
     ]
@@ -1825,6 +1856,10 @@
       "net5.0-windows10.0.18362": {
         "targetAlias": "net5.0-windows10.0.18362.0",
         "dependencies": {
+          "LibRarisma": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
           "ModernWpfUI": {
             "target": "Package",
             "version": "[0.9.4, )"
