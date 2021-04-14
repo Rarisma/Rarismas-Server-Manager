@@ -63,7 +63,7 @@ namespace SSM
                 System.IO.File.WriteAllText(ServerDir + "SSM.ini", "# SSM Configuration File Version 1\n\n# Server type\nMinecraft\n\n# Server Edition\n" + Minecraft.MinecraftCreatorData.Edition + "\n\n# Game Version\n" + Minecraft.MinecraftCreatorData.Version
                 + "\n\n# Ram Allocated\n" + Minecraft.MinecraftCreatorData.AllocatedRAM + "\n\n# User Label\n" + Minecraft.MinecraftCreatorData.ServerName);
             }
-            else if (Minecraft.MinecraftCreatorData.ServerSetupChange == -1 && Minecraft.MinecraftCreatorData.MangerServer != "") { PageWindow.Content = new Minecraft.ServerManager(); }
+            else if (Minecraft.MinecraftCreatorData.ServerSetupChange == -1) { PageWindow.Content = new Minecraft.ServerManager();  Continue.IsEnabled = false; Continue.Opacity = 0; }
         }
 
         //This sends the user to the server selector window when the Manage a server button is clicked

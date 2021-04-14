@@ -8,42 +8,27 @@
              d:DesignHeight="650" d:DesignWidth="600"
              xmlns:ui="http://schemas.modernwpf.com/2019">
 
+    <ui:SimpleStackPanel >
 
-    <Grid Background="#fff">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="500"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"/>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="150"/>
-            </Grid.ColumnDefinitions>
+        <Border Height="20"/>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="Server label"       Name="ServerName"    FontSize="30"/>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="Minecraft VERSION"  Name="ServerVersion" FontSize="15"/>
 
-            
-            <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Server label" Name="ServerName" FontSize="30"/>
-            <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Content="Minecraft VERSION" Padding="5" HorizontalAlignment="Center" FontSize="15"/>
-            <Label Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Content="Server TYPE" HorizontalAlignment="Center" FontSize="15"/>
-        </Grid>
+        <Border Height="50"/>
+        <Label Content="What would you like to do:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" FontSize="25" VerticalAlignment="Center"/>
+        <Border Height="50"/>
 
-        <ui:SimpleStackPanel Grid.Row="1">
-            <Border Height="20"/>
-            <Label Content="What would you like to do:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" FontSize="25" VerticalAlignment="Center"/>
-            <Border Height="50"/>
+        <Button Content="Load server" HorizontalAlignment="Center" Width="150" Click="Launcher"/>
+        <Border Height="50"/>
 
-            <Button Content="Load server" HorizontalAlignment="Center" Width="150" Click="Launcher"/>
-            <Border Height="50"/>
-            
-            <Button Content="Configure server" HorizontalAlignment="Center" Width="150"/>
-            <Border Height="50"/>
-            
-            <Button Content="Change server version" HorizontalAlignment="Center"/>
-            <Border Height="50"/>
+        <Button Content="Configure server" HorizontalAlignment="Center" Width="150"/>
+        <Border Height="50"/>
 
-            <Button Content="Delete Server" HorizontalAlignment="Center" Width="150"/>
+        <Button Content="Change server version" HorizontalAlignment="Center"/>
+        <Border Height="50"/>
 
-        </ui:SimpleStackPanel>
+        <Button Content="Delete Server" HorizontalAlignment="Center" Width="150"/>
 
-    </Grid>
+    </ui:SimpleStackPanel>
+
 </UserControl>
