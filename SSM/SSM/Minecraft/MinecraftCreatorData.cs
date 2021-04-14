@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SSM.Minecraft
 {
-    public class MinecraftCreatorData
+    class MinecraftCreatorData
     {
         public static string Edition;               //Should be Java or Bedrock
         public static string ServerType = "NULL";   //Should be Paper, Bedrock, Java, Forge, Fabric
@@ -17,7 +17,6 @@ namespace SSM.Minecraft
         public static string ServerFilesURL;        //Link to server files
 
         public static List<string> URLs = new();    //Used to store the links from the Server File Listings in Finalization.xaml.cs 
-        public static string MangerServer;          //Used by the manager 
         public static string ManagerFilepath;       //Used by the ServerManger to know where the server path is
     }
 }
