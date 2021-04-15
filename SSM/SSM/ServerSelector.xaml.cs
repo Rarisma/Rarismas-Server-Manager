@@ -24,6 +24,7 @@ namespace SSM
         public ServerSelector()
         {
             InitializeComponent();
+            ListView.Items.Add("Create a new server");
             for (int i = 0; i <= data.Servers.Length - 1; i++) 
             { 
                 if (File.Exists(data.Servers[i] + "//SSM.ini")) { ListView.Items.Add(System.IO.Path.GetFileName(data.Servers[i])); }

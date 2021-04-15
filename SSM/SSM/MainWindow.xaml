@@ -9,15 +9,11 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="550"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
-
-        <Frame NavigationUIVisibility="Hidden" x:FieldModifier="public" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Name="PageWindow"/>
-
-
+    <ui:SimpleStackPanel>
+        <Grid MinHeight="550">
+            <Frame NavigationUIVisibility="Hidden"  x:FieldModifier="public" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Name="PageWindow"/>
+        </Grid>
+        
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -31,5 +27,6 @@
             <Button Name="New" Content="Create a new server" Grid.Column="0" HorizontalAlignment="Center" Click="NewButton"/>
             <Button Name="Manage" Content="Load/Manage a server" Grid.Column="4" Click="ManageServer" HorizontalAlignment="Center"/>
         </Grid>
-    </Grid>
+    </ui:SimpleStackPanel>
+    
 </Window>

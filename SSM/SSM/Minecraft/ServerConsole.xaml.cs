@@ -15,6 +15,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+//It took me 12 hours to make this
+//Massive thanks to Stack underflow and the CHADs at the C# Discord for helping me understand how to make this magic work
+//Living with determination.
+
+
 namespace SSM.Minecraft
 {
     /// <summary>
@@ -24,12 +29,16 @@ namespace SSM.Minecraft
     {
         public ServerConsole()
         {
+            Application.Current.MainWindow.Width = 800;
+            Application.Current.MainWindow.Height = 800;
             InitializeComponent();
             Init();
         }
     
-        public async void Init()
+        public void Init()
         {
+            ServerStatus.Content = MinecraftCreatorData.ServerName + " is currently running";
+
             var cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
             cmd.StartInfo.RedirectStandardInput = true;
@@ -40,11 +49,14 @@ namespace SSM.Minecraft
 
             cmd.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
             {
-                // Prepend line numbers to each line of the output.
-                if (!String.IsNullOrEmpty(e.Data))
-                {
-                    Application.Current.Dispatcher.Invoke(new Action(() => { ServerOutput.Text +=  "\n" + e.Data; }));
-                }
+                if (!String.IsNullOrEmpty(e.Data)) { Application.Current.Dispatcher.Invoke(new Action(() => { ServerOutput.AppendText("\n" + e.Data); })); }
+                Application.Current.Dispatcher.Invoke(new Action(() => { ServerOutput.ScrollToEnd(); }));
+            });
+
+            cmd.ErrorDataReceived += new DataReceivedEventHandler((sender, e) => 
+            {
+                if (!String.IsNullOrEmpty(e.Data)) { Application.Current.Dispatcher.Invoke(new Action(() => { ServerOutput.AppendText("\nERROR: " + e.Data); })); }
+                Application.Current.Dispatcher.Invoke(new Action(() => { ServerOutput.ScrollToEnd(); }));
             });
 
             cmd.Start();
@@ -52,11 +64,14 @@ namespace SSM.Minecraft
 
             cmd.StandardInput.WriteLine("cd Servers");
             cmd.StandardInput.Flush();
-            cmd.StandardInput.WriteLine("cd EasterEgg");
+            cmd.StandardInput.WriteLine("cd " + MinecraftCreatorData.ServerName);
             cmd.StandardInput.Flush();
 
-            cmd.StandardInput.WriteLine("java Xms8000M Server.jar -nogui");
+            cmd.StandardInput.WriteLine("java -Xms" + MinecraftCreatorData.AllocatedRAM + "M -jar Server.jar nogui");
             cmd.StandardInput.Flush();
+
+
+
         }
 
 
