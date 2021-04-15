@@ -24,10 +24,10 @@
         <Button Content="Configure server" HorizontalAlignment="Center" Width="150"/>
         <Border Height="50"/>
 
-        <Button Content="Change server version" HorizontalAlignment="Center"/>
+        <Button Content="Change server version" HorizontalAlignment="Center" IsEnabled="False"/>
         <Border Height="50"/>
 
-        <Button Content="Delete Server" HorizontalAlignment="Center" Width="150"/>
+        <Button Content="Delete Server" HorizontalAlignment="Center" Width="150" Click="DeleteServer"/>
 
     </ui:SimpleStackPanel>
 

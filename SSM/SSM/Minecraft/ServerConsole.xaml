@@ -1,0 +1,15 @@
+﻿<Page x:Class="SSM.Minecraft.ServerConsole"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SSM.Minecraft"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="600"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      Title="ServerConsole">
+
+    <Grid>
+        <TextBox Name="ServerOutput" Text="If you are seeing this somthing went wrong." Width="500" Height="500" Foreground="AliceBlue" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+    </Grid>
+</Page>

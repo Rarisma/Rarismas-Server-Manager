@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[1.2.0, )"
             },
+            "ModernWpf.MessageBox": {
+              "target": "Package",
+              "version": "[0.5.1, )"
+            },
             "ModernWpfUI": {
               "target": "Package",
               "version": "[0.9.4, )"
@@ -71,8 +75,20 @@
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[5.0.4, 5.0.4]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[5.0.4, 5.0.4]"
+            },
+            {
               "name": "Microsoft.Windows.SDK.NET.Ref",
               "version": "[10.0.18362.14, 10.0.18362.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[5.0.4, 5.0.4]"
             }
           ],
           "frameworkReferences": {

@@ -49,6 +49,8 @@ namespace SSM
             else if (Minecraft.MinecraftCreatorData.ServerSetupChange == 1 && Minecraft.MinecraftCreatorData.ServerType != "NULL") { PageWindow.Content = new Minecraft.Finalization(); Minecraft.MinecraftCreatorData.ServerSetupChange = 2; }
             else if (Minecraft.MinecraftCreatorData.Version != "" && Minecraft.MinecraftCreatorData.AllocatedRAM != 0 && Minecraft.MinecraftCreatorData.ServerName != "" && Minecraft.MinecraftCreatorData.ServerSetupChange == 2) 
             {
+                if (Minecraft.MinecraftCreatorData.ServerName == "EasterEgg") { this.Title = "SMM -  antimatter for the master plan"; }
+
                 string ServerDir = AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + Minecraft.MinecraftCreatorData.ServerName + "\\";
                 try { System.IO.Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + Minecraft.MinecraftCreatorData.ServerName); }
                 catch //This will run if the server name contains illegal characters (eg / . + ! null con ect)
@@ -59,11 +61,35 @@ namespace SSM
                 }
 
                 LibRarisma.IO.DownloadFile(Minecraft.MinecraftCreatorData.ServerFilesURL, ServerDir, "Server.jar"); //Downloads server file
-                System.IO.File.WriteAllText(ServerDir + "eula.txt", "This server was created by SSM\nThe user aknowlegdes by using SSM and creating a server that they agree to the Mojang EULA\neula=true"); //Makes the EULA accepted
-                System.IO.File.WriteAllText(ServerDir + "SSM.ini", "# SSM Configuration File Version 1\n\n# Server type\nMinecraft\n\n# Server Edition\n" + Minecraft.MinecraftCreatorData.Edition + "\n\n# Game Version\n" + Minecraft.MinecraftCreatorData.Version
+                //System.IO.File.WriteAllText(ServerDir + "eula.txt", "This server was created by SSM\nThe user aknowlegdes by using SSM and creating a server that they agree to the Mojang EULA\neula=true"); //Makes the EULA accepted
+                System.IO.File.WriteAllText(ServerDir + "SSM.ini", "# SSM Configuration File Version 1\n\n# Game Name\nMinecraft\n\n# Server type\n" + Minecraft.MinecraftCreatorData.ServerType + "\n\n# Server Edition\n" + Minecraft.MinecraftCreatorData.Edition + "\n\n# Game Version\n" + Minecraft.MinecraftCreatorData.Version
                 + "\n\n# Ram Allocated\n" + Minecraft.MinecraftCreatorData.AllocatedRAM + "\n\n# User Label\n" + Minecraft.MinecraftCreatorData.ServerName);
+
+                WelcomePage();
+
             }
-            else if (Minecraft.MinecraftCreatorData.ServerSetupChange == -1) { PageWindow.Content = new Minecraft.ServerManager();  Continue.IsEnabled = false; Continue.Opacity = 0; }
+            else if (Minecraft.MinecraftCreatorData.ServerSetupChange == -1) 
+            {
+                PageWindow.Content = new Minecraft.ServerManager();
+                Continue.IsEnabled = false;
+                Continue.Opacity = 0;
+                Minecraft.MinecraftCreatorData.ServerSetupChange = -2;
+
+            }
+        }
+
+        public void Console()
+        {
+            PageWindow.Content = new Minecraft.ServerConsole(); 
+        }
+
+        public void WelcomePage() 
+        {
+            PageWindow.Content = new WelcomePage();
+            Manage.IsEnabled = true;
+            New.IsEnabled = true;
+            New.Opacity = 100;
+            Manage.Opacity = 100;
         }
 
         //This sends the user to the server selector window when the Manage a server button is clicked
