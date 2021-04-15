@@ -1,17 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "LFGy4zIH47zjPbnh1I22IK44YxIjV3dQ3hvKz412fHm1im2L5ynZITD2a46c9ZnuYb4OvMmhHiLYV5lTogvG+w==",
+  "dgSpecHash": "W9+Dw1lXUO0X7RMBbrm0hgMxEjW+7zSVRyngQ2g0ge7yAZtVqhWp2og+dZa2oA2w6e3neIcFBbmcMBx4n34UDQ==",
   "success": true,
   "projectFilePath": "A:\\Repositories\\Simple Server Manager\\Simple-Server-Manager\\SSM\\SSM\\SSM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rarisma\\.nuget\\packages\\librarisma\\1.2.0\\librarisma.1.2.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\modernwpf.messagebox\\0.5.1\\modernwpf.messagebox.0.5.1.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\modernwpfui\\0.9.4\\modernwpfui.0.9.4.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\system.management\\5.0.0\\system.management.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.4\\microsoft.netcore.app.runtime.win-x64.5.0.4.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.4\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.4.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.4\\microsoft.aspnetcore.app.runtime.win-x64.5.0.4.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.18362.14\\microsoft.windows.sdk.net.ref.10.0.18362.14.nupkg.sha512"
   ],
   "logs": []

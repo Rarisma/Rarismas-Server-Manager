@@ -39,6 +39,21 @@
           }
         }
       },
+      "ModernWpf.MessageBox/0.5.1": {
+        "type": "package",
+        "dependencies": {
+          "ModernWpfUI": "0.9.4"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/ModernWpf.MessageBox.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/ModernWpf.MessageBox.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "ModernWpfUI/0.9.4": {
         "type": "package",
         "compile": {
@@ -550,6 +565,21 @@
         "runtime": {
           "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         }
+      },
+      "ModernWpf.MessageBox/0.5.1": {
+        "type": "package",
+        "dependencies": {
+          "ModernWpfUI": "0.9.4"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/ModernWpf.MessageBox.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/ModernWpf.MessageBox.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       },
       "ModernWpfUI/0.9.4": {
         "type": "package",
@@ -1083,6 +1113,21 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "ModernWpf.MessageBox/0.5.1": {
+      "sha512": "i5BQ1qf/rvkgHwiXLFk7xmgkgt2V4zT4QkfkqS7lFgaJPOoQqGQHZm6RmtMTaLdGX48UHcrrW9yPXThy/SsTvg==",
+      "type": "package",
+      "path": "modernwpf.messagebox/0.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/ModernWpf.MessageBox.dll",
+        "lib/net462/ModernWpf.MessageBox.dll",
+        "lib/net5.0-windows10.0.18362/ModernWpf.MessageBox.dll",
+        "lib/netcoreapp3.0/ModernWpf.MessageBox.dll",
+        "modernwpf.messagebox.0.5.1.nupkg.sha512",
+        "modernwpf.messagebox.nuspec"
       ]
     },
     "ModernWpfUI/0.9.4": {
@@ -1805,6 +1850,7 @@
   "projectFileDependencyGroups": {
     "net5.0-windows10.0.18362": [
       "LibRarisma >= 1.2.0",
+      "ModernWpf.MessageBox >= 0.5.1",
       "ModernWpfUI >= 0.9.4",
       "System.Management >= 5.0.0"
     ]
@@ -1860,6 +1906,10 @@
             "target": "Package",
             "version": "[1.2.0, )"
           },
+          "ModernWpf.MessageBox": {
+            "target": "Package",
+            "version": "[0.5.1, )"
+          },
           "ModernWpfUI": {
             "target": "Package",
             "version": "[0.9.4, )"
@@ -1881,8 +1931,20 @@
         "warn": true,
         "downloadDependencies": [
           {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "version": "[5.0.4, 5.0.4]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "version": "[5.0.4, 5.0.4]"
+          },
+          {
             "name": "Microsoft.Windows.SDK.NET.Ref",
             "version": "[10.0.18362.14, 10.0.18362.14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+            "version": "[5.0.4, 5.0.4]"
           }
         ],
         "frameworkReferences": {

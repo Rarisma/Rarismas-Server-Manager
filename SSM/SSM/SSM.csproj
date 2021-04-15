@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="LibRarisma" Version="1.2.0" />
+    <PackageReference Include="ModernWpf.MessageBox" Version="0.5.1" />
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
     <PackageReference Include="System.Management" Version="5.0.0" />
   </ItemGroup>

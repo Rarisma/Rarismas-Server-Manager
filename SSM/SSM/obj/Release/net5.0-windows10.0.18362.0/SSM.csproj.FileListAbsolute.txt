@@ -171,3 +171,6 @@ A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\Minecraft\JavaServerTypeSelector.baml
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\ServerSelector.g.cs
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\ServerSelector.baml
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\bin\Release\net5.0-windows10.0.18362.0\ModernWpf.MessageBox.dll
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\Minecraft\ServerManager.g.cs
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\Minecraft\ServerManager.baml

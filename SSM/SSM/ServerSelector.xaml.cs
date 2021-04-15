@@ -32,7 +32,7 @@ namespace SSM
 
         private void ServerSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Minecraft.MinecraftCreatorData.ManagerFilepath = Convert.ToString(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ListView.SelectedValue + "//");
+            Minecraft.MinecraftCreatorData.ManagerFilepath = Convert.ToString(AppDomain.CurrentDomain.BaseDirectory + "Servers\\" + ListView.SelectedValue + "\\");
         }
     }
 
