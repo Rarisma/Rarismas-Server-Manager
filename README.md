@@ -3,6 +3,13 @@
 ### What is SSM
 Simple Server Manager (or SSM for short) is an app that aims to make a hosting and configuring a server as easy and painless as possible, the app has been designed with a simple and sleek UI to make the program easy to understand.
 
+SSM is made for people who:
+ - Don't want to pay hosting fees
+ - Don't know how to setup a server
+ - Don't want to spend hours tweaking their servers or fixing issues
+ - Just want to get into the game as fast as possible
+
+
 To get started just go to the releases page and download the latest version
 
 
