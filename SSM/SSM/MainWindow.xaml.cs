@@ -61,7 +61,8 @@ namespace SSM
                 }
 
                 LibRarisma.IO.DownloadFile(Minecraft.MinecraftCreatorData.ServerFilesURL, ServerDir, "Server.jar"); //Downloads server file
-                //System.IO.File.WriteAllText(ServerDir + "eula.txt", "This server was created by SSM\nThe user aknowlegdes by using SSM and creating a server that they agree to the Mojang EULA\neula=true"); //Makes the EULA accepted
+                System.IO.File.WriteAllText(ServerDir + "eula.txt", "#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).\n# made by SSM\neula = true"); //Makes the EULA accepted
+
                 System.IO.File.WriteAllText(ServerDir + "SSM.ini", "# SSM Configuration File Version 1\n\n# Game Name\nMinecraft\n\n# Server type\n" + Minecraft.MinecraftCreatorData.ServerType + "\n\n# Server Edition\n" + Minecraft.MinecraftCreatorData.Edition + "\n\n# Game Version\n" + Minecraft.MinecraftCreatorData.Version
                 + "\n\n# Ram Allocated\n" + Minecraft.MinecraftCreatorData.AllocatedRAM + "\n\n# User Label\n" + Minecraft.MinecraftCreatorData.ServerName);
 
@@ -70,10 +71,15 @@ namespace SSM
             }
             else if (Minecraft.MinecraftCreatorData.ServerSetupChange == -1) 
             {
-                PageWindow.Content = new Minecraft.ServerManager();
-                Continue.IsEnabled = false;
-                Continue.Opacity = 0;
-                Minecraft.MinecraftCreatorData.ServerSetupChange = -2;
+                if (Minecraft.MinecraftCreatorData.ManagerFilepath.Contains("Create a new server")) { PageWindow.Content = new Minecraft.JavaORBedrock(); }
+                else 
+                {
+                    PageWindow.Content = new Minecraft.ServerManager();
+                    Continue.IsEnabled = false;
+                    Continue.Opacity = 0;
+                    Minecraft.MinecraftCreatorData.ServerSetupChange = -2;
+                }
+                
 
             }
         }

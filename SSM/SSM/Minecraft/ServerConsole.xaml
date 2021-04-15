@@ -5,11 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SSM.Minecraft"
       mc:Ignorable="d" 
-      d:DesignHeight="650" d:DesignWidth="600"
+      d:DesignHeight="800" d:DesignWidth="800"
       xmlns:ui="http://schemas.modernwpf.com/2019"
       Title="ServerConsole">
 
-    <Grid>
-        <TextBox Name="ServerOutput" Text="If you are seeing this somthing went wrong." Width="500" Height="500" Foreground="AliceBlue" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-    </Grid>
+    <ui:SimpleStackPanel>
+        <Label Content="ServerName, ServerStatus" HorizontalAlignment="Center" Name="ServerStatus" Padding="20" FontSize="30"/>
+        <TextBox Name="ServerOutput" Height="700" Width="750" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="...."/>
+    </ui:SimpleStackPanel>
 </Page>
