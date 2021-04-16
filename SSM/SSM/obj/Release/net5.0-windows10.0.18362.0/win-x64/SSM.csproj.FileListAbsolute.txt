@@ -172,3 +172,7 @@ A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\bin\Release\net5.0-windows10.0.18362.0\win-x64\ModernWpf.MessageBox.dll
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\ServerManager.g.cs
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\ServerManager.baml
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\bedrockFinalisation.g.cs
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\ServerConsole.g.cs
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\bedrockFinalisation.baml
+A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Minecraft\ServerConsole.baml

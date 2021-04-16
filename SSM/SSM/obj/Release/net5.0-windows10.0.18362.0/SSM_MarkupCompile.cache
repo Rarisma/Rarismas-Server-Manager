@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET5_0;NETCOREAPP
 A:\Repositories\Simple Server Manager\Simple-Server-Manager\SSM\SSM\App.xaml
-7-1042599848
+9-885476647
 
-10-954514581
+121419958529
 200-650388242
-MainWindow.xaml;Minecraft\Finalization.xaml;Minecraft\JavaORBedrock.xaml;Minecraft\JavaServerTypeSelector.xaml;Minecraft\ServerManager.xaml;ServerSelector.xaml;WelcomePage.xaml;
+MainWindow.xaml;Minecraft\bedrockFinalisation.xaml;Minecraft\Finalization.xaml;Minecraft\JavaORBedrock.xaml;Minecraft\JavaServerTypeSelector.xaml;Minecraft\ServerConsole.xaml;Minecraft\ServerManager.xaml;ServerSelector.xaml;WelcomePage.xaml;
 
 False
 

@@ -25,6 +25,14 @@ namespace SSM.Minecraft
     /// <summary>
     /// Interaction logic for ServerConsole.xaml
     /// </summary>
+    /// 
+
+    class Server
+    {
+        static public Process cmd = new();
+
+    }
+
     public partial class ServerConsole : Page
     {
         public ServerConsole()
@@ -39,42 +47,45 @@ namespace SSM.Minecraft
         {
             ServerStatus.Content = MinecraftCreatorData.ServerName + " is currently running";
 
-            var cmd = new Process();
-            cmd.StartInfo.FileName = "cmd.exe";
-            cmd.StartInfo.RedirectStandardInput = true;
-            cmd.StartInfo.RedirectStandardOutput = true;
-            cmd.StartInfo.CreateNoWindow = true;
-            cmd.StartInfo.UseShellExecute = false;
-            cmd.StartInfo.Arguments = Convert.ToString("/k " + (char)34 + MinecraftCreatorData.ManagerFilepath + (char)34);
+            Server.cmd.StartInfo.FileName = "cmd.exe";
+            Server.cmd.StartInfo.RedirectStandardInput = true;
+            Server.cmd.StartInfo.RedirectStandardOutput = true;
+            Server.cmd.StartInfo.CreateNoWindow = true;
+            Server.cmd.StartInfo.UseShellExecute = false;
+            Server.cmd.StartInfo.Arguments = Convert.ToString("/k " + (char)34 + MinecraftCreatorData.ManagerFilepath + (char)34);
 
-            cmd.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
+            Server.cmd.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
             {
                 if (!String.IsNullOrEmpty(e.Data)) { Application.Current.Dispatcher.Invoke(new Action(() => { ServerOutput.AppendText("\n" + e.Data); })); }
                 Application.Current.Dispatcher.Invoke(new Action(() => { ServerOutput.ScrollToEnd(); }));
             });
 
-            cmd.ErrorDataReceived += new DataReceivedEventHandler((sender, e) => 
+            Server.cmd.ErrorDataReceived += new DataReceivedEventHandler((sender, e) => 
             {
                 if (!String.IsNullOrEmpty(e.Data)) { Application.Current.Dispatcher.Invoke(new Action(() => { ServerOutput.AppendText("\nERROR: " + e.Data); })); }
                 Application.Current.Dispatcher.Invoke(new Action(() => { ServerOutput.ScrollToEnd(); }));
             });
 
-            cmd.Start();
-            cmd.BeginOutputReadLine();
+            Server.cmd.Start();
+            MinecraftCreatorData.IsServerRunning = true;
+            Server.cmd.BeginOutputReadLine();
 
-            cmd.StandardInput.WriteLine("cd Servers");
-            cmd.StandardInput.Flush();
-            cmd.StandardInput.WriteLine("cd " + MinecraftCreatorData.ServerName);
-            cmd.StandardInput.Flush();
+            Server.cmd.StandardInput.WriteLine("cd Servers");
+            Server.cmd.StandardInput.Flush();
+            Server.cmd.StandardInput.WriteLine("cd " + MinecraftCreatorData.ServerName);
+            Server.cmd.StandardInput.Flush();
 
-            cmd.StandardInput.WriteLine("java -Xms" + MinecraftCreatorData.AllocatedRAM + "M -jar Server.jar nogui");
-            cmd.StandardInput.Flush();
-
-
-
+            if (MinecraftCreatorData.ServerType == "Bedrock") { Server.cmd.StandardInput.WriteLine("bedrock_server.exe"); }
+            else { Server.cmd.StandardInput.WriteLine("java -Xms" + MinecraftCreatorData.AllocatedRAM + "M -jar Server.jar nogui"); }
+            Server.cmd.StandardInput.Flush();
         }
 
-
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            Server.cmd.StandardInput.WriteLine("stop");
+            Server.cmd.StandardInput.Flush();
+            ServerStatus.Content = MinecraftCreatorData.ServerName + " isn't running.";
+            MinecraftCreatorData.IsServerRunning = false;
+        }
     }
-
 }

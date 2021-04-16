@@ -9,6 +9,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Minecraft\bedrockFinalisation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Minecraft\Finalization.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +36,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Minecraft\bedrockFinalisation.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Minecraft\Finalization.xaml">

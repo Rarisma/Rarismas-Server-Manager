@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,5 +19,7 @@ namespace SSM.Minecraft
 
         public static List<string> URLs = new();    //Used to store the links from the Server File Listings in Finalization.xaml.cs 
         public static string ManagerFilepath;       //Used by the ServerManger to know where the server path is
+        public static bool IsServerRunning = false; //If this is set to true then closing the server is disabled.
+
     }
 }

@@ -25,9 +25,9 @@ namespace SSM
         {
             InitializeComponent();
             ListView.Items.Add("Create a new server");
-            for (int i = 0; i <= data.Servers.Length - 1; i++) 
+            for (int i = 0; i <= Data.Servers.Length - 1; i++) 
             { 
-                if (File.Exists(data.Servers[i] + "//SSM.ini")) { ListView.Items.Add(System.IO.Path.GetFileName(data.Servers[i])); }
+                if (File.Exists(Data.Servers[i] + "//SSM.ini")) { ListView.Items.Add(System.IO.Path.GetFileName(Data.Servers[i])); }
             }
         }
 
@@ -37,5 +37,5 @@ namespace SSM
         }
     }
 
-    public static class data { public static string[] Servers = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "//Servers//"); }
+    public static class Data { public static string[] Servers = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "//Servers//"); }
 }
