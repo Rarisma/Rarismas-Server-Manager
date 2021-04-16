@@ -11,7 +11,7 @@
 
     <ui:SimpleStackPanel>
         <Label Content="ServerName, ServerStatus" HorizontalAlignment="Center" Name="ServerStatus" Padding="20" FontSize="30"/>
-        <TextBox Name="ServerOutput" Height="700" Width="750" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Content="...."/>
+        <TextBox Name="ServerOutput" Height="600" Width="750" TextWrapping="Wrap" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Close server" HorizontalAlignment="Center" Click="Close"/>
     </ui:SimpleStackPanel>
 </Page>
