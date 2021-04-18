@@ -28,3 +28,12 @@ Yes, currently we are working on minecraft, however once that is complete we wan
 - Starbound
 - Ark
 - Rust
+
+
+### Aknowledgements
+ #### Minecraft
+   - Mojang
+   - Paper Team
+   - Spiggot
+   - Bukkit
+   - That one forge dev who said this was a terrible idea for an hour straight
