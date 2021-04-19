@@ -23,6 +23,9 @@ namespace SSM
         public MainWindow()
         {
             InitializeComponent();
+            UserDisplay.Content = new Pages.SSM_GUI.Welcome();
         }
+
+        //Sends player to n
     }
 }

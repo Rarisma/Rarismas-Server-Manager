@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\App.xaml
-11407045341
+5557323882
 
-6-758856735
-199-834501884
-MainWindow.xaml;
+12-936604762
+200-2040792400
+MainWindow.xaml;Pages\Minecraft_Java\RamAllocation.xaml;Pages\Minecraft_Java\VersionSelect.xaml;Pages\SSM_GUI\NewServer.xaml;Pages\SSM_GUI\Welcome.xaml;
 
 True
 

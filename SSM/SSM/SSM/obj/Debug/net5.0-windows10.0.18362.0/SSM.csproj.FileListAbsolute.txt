@@ -161,3 +161,12 @@ A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.1
 A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\ref\SSM.dll
 A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\SSM.pdb
 A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\SSM.genruntimeconfig.cache
+A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\Welcome.g.cs
+A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\Welcome.baml
+A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\NewServer.g.cs
+A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\NewServer.baml
+A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\bin\Debug\net5.0-windows10.0.18362.0\ModernWpf.MessageBox.dll
+A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\Minecraft_Java\RamAllocation.g.cs
+A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\Minecraft_Java\RamAllocation.baml
+A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\Minecraft_Java\VersionSelect.g.cs
+A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\Minecraft_Java\VersionSelect.baml
