@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
+  <PropertyGroup>
+    <_LastSelectedProfileId>A:\Repositories\Simple-Server-Manager\SSM\SSM\SSM\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
@@ -10,10 +12,19 @@
     <Compile Update="Pages\Minecraft_Java\RamAllocation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Minecraft_Java\ServerPropitiesEditor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Minecraft_Java\VersionSelect.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\SSM_GUI\CLIServer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\SSM_GUI\NewServer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\SSM_GUI\ServerManager.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\SSM_GUI\Welcome.xaml.cs">
@@ -27,10 +38,19 @@
     <Page Update="Pages\Minecraft_Java\RamAllocation.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Minecraft_Java\ServerPropitiesEditor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Minecraft_Java\VersionSelect.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\SSM_GUI\CLIServer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\SSM_GUI\NewServer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SSM_GUI\ServerManager.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SSM_GUI\Welcome.xaml">
