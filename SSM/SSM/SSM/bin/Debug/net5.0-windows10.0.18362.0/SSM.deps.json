@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v5.0": {
       "SSM/1.0.0": {
         "dependencies": {
-          "LibRarisma": "1.3.0",
+          "LibRarisma": "1.4.0",
+          "ModernWpf.MessageBox": "0.5.1",
           "ModernWpfUI": "0.9.4",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.18362.14"
         },
@@ -28,14 +29,14 @@
           }
         }
       },
-      "LibRarisma/1.3.0": {
+      "LibRarisma/1.4.0": {
         "dependencies": {
           "System.Management": "5.0.0"
         },
         "runtime": {
           "lib/net5.0/LibRarisma.dll": {
-            "assemblyVersion": "1.3.0.0",
-            "fileVersion": "1.3.0.0"
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
           }
         }
       },
@@ -44,6 +45,17 @@
         "dependencies": {
           "System.Security.AccessControl": "5.0.0",
           "System.Security.Principal.Windows": "5.0.0"
+        }
+      },
+      "ModernWpf.MessageBox/0.5.1": {
+        "dependencies": {
+          "ModernWpfUI": "0.9.4"
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/ModernWpf.MessageBox.dll": {
+            "assemblyVersion": "0.5.1.0",
+            "fileVersion": "0.5.1.0"
+          }
         }
       },
       "ModernWpfUI/0.9.4": {
@@ -498,12 +510,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "LibRarisma/1.3.0": {
+    "LibRarisma/1.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vo0C+aN9BlpwNTDxlLqWFb8IS7NjGgL2Qke1UBVDHCi+7w0v2hKdrh01faK1kqenPgxJJx1YzKPSizSxgVLp5Q==",
-      "path": "librarisma/1.3.0",
-      "hashPath": "librarisma.1.3.0.nupkg.sha512"
+      "sha512": "sha512-pd7e9lcZ2poP0KGm6e3diPC4waxi4/5BiB2JkWQDl1a8S3XeaJtAEV2PRxphx6BLhy7hJ/ZB05MQNDHuQBJYnQ==",
+      "path": "librarisma/1.4.0",
+      "hashPath": "librarisma.1.4.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/5.0.0": {
       "type": "package",
@@ -518,6 +530,13 @@
       "sha512": "sha512-dDoKi0PnDz31yAyETfRntsLArTlVAVzUzCIvvEDsDsucrl33Dl8pIJG06ePTJTI3tGpeyHS9Cq7Foc/s4EeKcg==",
       "path": "microsoft.win32.registry/5.0.0",
       "hashPath": "microsoft.win32.registry.5.0.0.nupkg.sha512"
+    },
+    "ModernWpf.MessageBox/0.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i5BQ1qf/rvkgHwiXLFk7xmgkgt2V4zT4QkfkqS7lFgaJPOoQqGQHZm6RmtMTaLdGX48UHcrrW9yPXThy/SsTvg==",
+      "path": "modernwpf.messagebox/0.5.1",
+      "hashPath": "modernwpf.messagebox.0.5.1.nupkg.sha512"
     },
     "ModernWpfUI/0.9.4": {
       "type": "package",

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0-windows10.0.18362": {
-      "LibRarisma/1.3.0": {
+      "LibRarisma/1.4.0": {
         "type": "package",
         "dependencies": {
           "System.Management": "5.0.0"
@@ -41,6 +41,21 @@
             "rid": "win"
           }
         }
+      },
+      "ModernWpf.MessageBox/0.5.1": {
+        "type": "package",
+        "dependencies": {
+          "ModernWpfUI": "0.9.4"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/ModernWpf.MessageBox.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/ModernWpf.MessageBox.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       },
       "ModernWpfUI/0.9.4": {
         "type": "package",
@@ -524,15 +539,15 @@
     }
   },
   "libraries": {
-    "LibRarisma/1.3.0": {
-      "sha512": "vo0C+aN9BlpwNTDxlLqWFb8IS7NjGgL2Qke1UBVDHCi+7w0v2hKdrh01faK1kqenPgxJJx1YzKPSizSxgVLp5Q==",
+    "LibRarisma/1.4.0": {
+      "sha512": "pd7e9lcZ2poP0KGm6e3diPC4waxi4/5BiB2JkWQDl1a8S3XeaJtAEV2PRxphx6BLhy7hJ/ZB05MQNDHuQBJYnQ==",
       "type": "package",
-      "path": "librarisma/1.3.0",
+      "path": "librarisma/1.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net5.0/LibRarisma.dll",
-        "librarisma.1.3.0.nupkg.sha512",
+        "librarisma.1.4.0.nupkg.sha512",
         "librarisma.nuspec"
       ]
     },
@@ -596,6 +611,21 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "ModernWpf.MessageBox/0.5.1": {
+      "sha512": "i5BQ1qf/rvkgHwiXLFk7xmgkgt2V4zT4QkfkqS7lFgaJPOoQqGQHZm6RmtMTaLdGX48UHcrrW9yPXThy/SsTvg==",
+      "type": "package",
+      "path": "modernwpf.messagebox/0.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/ModernWpf.MessageBox.dll",
+        "lib/net462/ModernWpf.MessageBox.dll",
+        "lib/net5.0-windows10.0.18362/ModernWpf.MessageBox.dll",
+        "lib/netcoreapp3.0/ModernWpf.MessageBox.dll",
+        "modernwpf.messagebox.0.5.1.nupkg.sha512",
+        "modernwpf.messagebox.nuspec"
       ]
     },
     "ModernWpfUI/0.9.4": {
@@ -1317,7 +1347,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows10.0.18362": [
-      "LibRarisma >= 1.3.0",
+      "LibRarisma >= 1.4.0",
+      "ModernWpf.MessageBox >= 0.5.1",
       "ModernWpfUI >= 0.9.4"
     ]
   },
@@ -1370,7 +1401,11 @@
         "dependencies": {
           "LibRarisma": {
             "target": "Package",
-            "version": "[1.3.0, )"
+            "version": "[1.4.0, )"
+          },
+          "ModernWpf.MessageBox": {
+            "target": "Package",
+            "version": "[0.5.1, )"
           },
           "ModernWpfUI": {
             "target": "Package",

@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SSM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="SSM - Next" Height="800" Width="800"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True">
 
-    </Grid>
+    <Frame Name="UserDisplay" Height="790" Width="790" HorizontalAlignment="Center" VerticalAlignment="Center" NavigationUIVisibility="Hidden"/>
 </Window>

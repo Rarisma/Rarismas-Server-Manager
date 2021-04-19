@@ -7,7 +7,33 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Pages\Minecraft_Java\RamAllocation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Minecraft_Java\VersionSelect.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\SSM_GUI\NewServer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\SSM_GUI\Welcome.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Minecraft_Java\RamAllocation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Minecraft_Java\VersionSelect.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SSM_GUI\NewServer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SSM_GUI\Welcome.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
