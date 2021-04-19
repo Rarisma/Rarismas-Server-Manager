@@ -1,18 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 
 //Thoe code on this page controls the items that show up in the LIstView
@@ -42,6 +31,25 @@ namespace SSM.Pages.SSM_GUI
         private void ServerSelectionChanged(object sender, SelectionChangedEventArgs e)
         {   //If clicked sends them to server manager ( unless its the newserver option )
             if (Convert.ToString(ListView.SelectedValue) == "Create a new server") { ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
+            else
+            {
+                List<string> SSM_INI = new();
+                SSM_INI.AddRange(System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ListView.SelectedValue + "//SSM.ini"));
+                ServerInfo.ServerGame    = SSM_INI[SSM_INI.IndexOf("### Game Name") + 1];
+                ServerInfo.ServerLabel   = SSM_INI[SSM_INI.IndexOf("### Server label") + 1];
+                ServerInfo.RAM           = Convert.ToInt64(SSM_INI[SSM_INI.IndexOf("### Ram allocated") + 1]);
+                ServerInfo.ServerVariant = SSM_INI[SSM_INI.IndexOf("### Server variant") + 1];
+                ServerInfo.ServerVersion = SSM_INI[SSM_INI.IndexOf("### Server version") + 1];
+
+                switch (ServerInfo.ServerGame)
+                {
+                    case "Minecraft Java":
+                        ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager();
+                        break;
+                }
+
+
+            }
         }
     }
 }
