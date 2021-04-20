@@ -27,6 +27,9 @@
 
         <Button Foreground="#fff" Content="Delete Server" HorizontalAlignment="Center" Width="150" Click="DeleteServer"/>
 
+        <Button Foreground="#fff" Content="Go back" HorizontalAlignment="Center" Width="150" Click="GoBack"/>
+
+      
     </ui:SimpleStackPanel>
 
 </UserControl>
