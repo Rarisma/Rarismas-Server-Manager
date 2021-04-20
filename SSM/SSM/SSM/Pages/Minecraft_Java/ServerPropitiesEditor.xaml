@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="SSM.Pages.Minecraft_Java.ServerPropitiesEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SSM.Pages.Minecraft_Java"
+             mc:Ignorable="d" 
+             d:DesignHeight="790" d:DesignWidth="790"
+             xmlns:ui="http://schemas.modernwpf.com/2019">
+
+    <ui:SimpleStackPanel>
+        <TextBlock Text="Server Configuration" FontSize="30" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="PVP" FontSize="30" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <ui:ToggleSwitch Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20"/>
+
+
+
+        </Grid>
+    </ui:SimpleStackPanel>
+
+</UserControl>
