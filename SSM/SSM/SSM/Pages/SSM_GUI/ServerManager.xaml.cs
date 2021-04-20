@@ -21,6 +21,12 @@ namespace SSM.Pages.SSM_GUI
             ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
         }
 
+
+        private void ConfigServer(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Pages.Minecraft_Java.ServerPropitiesEditor();
+        }
+        
         private void DeleteServer(object sender, RoutedEventArgs e)
         {
             if (ModernWpf.MessageBox.Show("Are you sure you want to delete this server?", "Confirm deletion", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
@@ -30,11 +36,11 @@ namespace SSM.Pages.SSM_GUI
                 ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.Welcome();
             }
         }
-
-        private void ConfigServer(object sender, RoutedEventArgs e)
+        
+        private void GoBack(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Pages.Minecraft_Java.ServerPropitiesEditor();
-
+            ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Pages.SSM_GUI.Welcome();
         }
+        
     }
 }
