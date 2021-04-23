@@ -30,7 +30,7 @@ Yes, currently we are working on minecraft, however once that is complete we wan
 - Rust
 
 
-### Aknowledgements
+### Acknowledgements
  #### Minecraft
    - Mojang
    - Paper Team
