@@ -22,8 +22,8 @@ namespace SSM.Pages.Minecraft_Java
             InitializeComponent();
             Variants.Items.Add("Paper (Recomended)");
             Variants.Items.Add("Vanilla");
-            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Paper", AppDomain.CurrentDomain.BaseDirectory + "//Cache//","Paper");
-            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Stock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//","Stock");
+            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Minecraft/Paper", AppDomain.CurrentDomain.BaseDirectory + "//Cache//","Paper");
+            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Minecraft/Stock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//","Stock");
         }
 
         private void VariantsUpdated(object sender, SelectionChangedEventArgs e)
