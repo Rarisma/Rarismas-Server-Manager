@@ -18,13 +18,14 @@ To get started just go to the releases page and download the latest version
 ### What servers does SSM support
 Currently SSM supports the following:
  - Minecraft
+ - Terraria
 
 ### The app says I'm missing .NET 
 [Download .NET 5 here](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.5-windows-x64-installer)
 
 ### Do you plan to support other games?
 Yes, currently we are working on minecraft, however once that is complete we want to try and work on the following:
-- Terraria
+- Gmod
 - Starbound
 - Ark
 - Rust
@@ -37,3 +38,8 @@ Yes, currently we are working on minecraft, however once that is complete we wan
    - Spiggot
    - Bukkit
    - That one forge dev who said this was a terrible idea for an hour straight
+### Terraria
+   - Relogic
+   - 505 Games
+   - TModloader Team
+   - TShock Team
