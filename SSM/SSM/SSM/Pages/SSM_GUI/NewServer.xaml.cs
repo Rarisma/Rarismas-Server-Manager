@@ -91,7 +91,7 @@ namespace SSM.Pages.SSM_GUI
                         ServerInfo.RAM = 0;
 
                         //Gets latest links to server
-                        LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/bedrock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Bedrock");
+                        LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Minecraft/bedrock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Bedrock");
                         string[] ServerFile = System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Bedrock");
                         ServerInfo.ServerVersion = ServerFile[0];
                         LibRarisma.IO.DownloadFile(ServerFile[1], AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel, "//Server.zip", true);
