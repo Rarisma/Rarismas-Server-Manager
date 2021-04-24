@@ -64,12 +64,14 @@ namespace SSM.Pages.Terraria
         private void Continue(object sender, RoutedEventArgs e)
         {
             LibRarisma.IO.DownloadFile(ServerInfo.ServerURL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//", "Terraria.zip",true);
+            ServerInfo.ServerVariant = "Vanilla";
             SSMGeneric.Make_INI_File();
             ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.Welcome();
             string[] Servers = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//");
             File.Copy(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//" + Path.GetFileName(Servers[0]) + "//Windows//TerrariaServer.exe", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//TerrariaServer.exe");
             File.Copy(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//" + Path.GetFileName(Servers[0]) + "//Windows//ReLogic.Native.dll", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//ReLogic.Native.dll");
             Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//" + System.IO.Path.GetFileName(Servers[0]), true);
+            File.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//Terraria.zip");
             ModernWpf.MessageBox.Show("Finished downloading server files");
         }
 

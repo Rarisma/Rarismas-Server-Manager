@@ -44,11 +44,6 @@ namespace SSM.Pages.SSM_GUI
                     ServerDescription.Text = "This will allow player to connect to your world even when you aren't playing terraria yourself";
                     break;
 
-                case "Terraria - TShock":
-                    ServerInfo.ServerGame = "Terraria";
-                    ServerInfo.ServerVariant = "TShock";
-                    ServerDescription.Text = "A Terraria TShock server gives the server owner more control over their server and includes tools such as an anti cheat, custom commands and has support for plugins.";
-                    break;
 
                 default:
                     ServerDescription.Text = "Cannot find a description for " + AvailableServers.SelectedValue; 

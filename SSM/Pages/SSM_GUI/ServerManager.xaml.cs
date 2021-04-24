@@ -19,7 +19,21 @@ namespace SSM.Pages.SSM_GUI
 
         public void Launcher(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
+            switch (ServerInfo.ServerGame)
+            {
+                case "Minecraft Bedrock":
+                    ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
+                    break;
+
+                case "Minecraft Java":
+                    ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
+                    break;
+
+                case "Terraria":
+                    //((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
+                    ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Terraria.TerrariaServer();
+                    break;
+            }
         }
 
 
