@@ -14,7 +14,7 @@
         <TextBlock Text="Welcome to SSM!" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" />
 
         <Grid Height="610">
-            <ui:ListView SelectionChanged="ServerSelectionChanged" Name="ListView" SelectionMode="Single" Foreground="#fff" Background="#000" FontSize="25" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+            <ui:ListView  Foreground="#fff" SelectionChanged="ServerSelectionChanged" Name="ListView" SelectionMode="Single" Background="#000" FontSize="25" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
         </Grid>
 
         <TextBlock Text="Made by Rarisma" HorizontalAlignment="Center" Padding="10" FontSize="15" Foreground="#fff"/>

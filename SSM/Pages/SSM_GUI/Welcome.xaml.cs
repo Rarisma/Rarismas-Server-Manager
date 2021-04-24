@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ModernWpf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 
 //Thoe code on this page controls the items that show up in the LIstView
@@ -15,6 +17,8 @@ namespace SSM.Pages.SSM_GUI
         public Welcome()
         {
             InitializeComponent();
+            ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark; //Forces darkmode, lightmode should be added at somepoint
+            ThemeManager.Current.AccentColor = Colors.White;
             ListView.Items.Add("Create a new server"); //Add the new server button
 
             if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "//Servers//"))
@@ -49,6 +53,10 @@ namespace SSM.Pages.SSM_GUI
                         break;
 
                     case "Minecraft Bedrock":
+                        ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager();
+                        break;
+
+                    case "Terraria":
                         ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager();
                         break;
                 }

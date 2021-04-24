@@ -10,152 +10,109 @@ namespace SSM.Pages.SSM_GUI
     /// </summary>
     public partial class CLIServer : UserControl
     {
+        bool Initalised = false;
+
         public CLIServer()
         {
             InitializeComponent();
             ServerName.Text = ServerInfo.ServerLabel;
             Status.Text = "Current status: Not Running.";
             RAMUsage.Text = "RAM Usage / " + ServerInfo.RAM;
-
-            Server.cmd.StartInfo.FileName = "cmd.exe";
-            Server.cmd.StartInfo.RedirectStandardInput = true;
-            Server.cmd.StartInfo.RedirectStandardOutput = true;
-            Server.cmd.StartInfo.CreateNoWindow = true;
-            Server.cmd.StartInfo.UseShellExecute = false;
-            Server.cmd.StartInfo.Arguments = Convert.ToString("/k " + AppDomain.CurrentDomain.BaseDirectory);
+            ServerInfo.cmd.StartInfo.FileName = "cmd.exe";
+            ServerInfo.cmd.StartInfo.RedirectStandardInput = true;
+            ServerInfo.cmd.StartInfo.RedirectStandardOutput = true;
+            ServerInfo.cmd.StartInfo.CreateNoWindow = true;
+            ServerInfo.cmd.StartInfo.UseShellExecute = false;
+            ServerInfo.cmd.StartInfo.Arguments = Convert.ToString("/k " + AppDomain.CurrentDomain.BaseDirectory);
             LaunchServer();
         }
 
-        private void LaunchServer()
+        private void LaunchServer() //Handles actually launching the server
         {
-            if(Server.Initalised == false)
+            if (Initalised == false)
             {
-                Server.cmd.Start();
+                ServerInfo.cmd.Start();
                 ServerInfo.IsServerRunning = true;
-                Server.cmd.BeginOutputReadLine();
+                ServerInfo.cmd.BeginOutputReadLine();
 
-                Server.cmd.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
+                ServerInfo.cmd.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
                 {
                     if (!String.IsNullOrEmpty(e.Data)) { Application.Current.Dispatcher.Invoke(new Action(() => { ServerConsole.AppendText("\n" + e.Data); })); }
                     Application.Current.Dispatcher.Invoke(new Action(() => { ServerConsole.ScrollToEnd(); }));
                 });
 
-                Server.cmd.ErrorDataReceived += new DataReceivedEventHandler((sender, e) =>
+                ServerInfo.cmd.ErrorDataReceived += new DataReceivedEventHandler((sender, e) =>
                 {
                     if (!String.IsNullOrEmpty(e.Data)) { Application.Current.Dispatcher.Invoke(new Action(() => { ServerConsole.AppendText("\nERROR: " + e.Data); })); }
                     Application.Current.Dispatcher.Invoke(new Action(() => { ServerConsole.ScrollToEnd(); }));
                 });
 
-                Server.MountFolder();
-                Server.Initalised = true;
-            }
+                ServerInfo.cmd.StandardInput.WriteLine("cd Servers");
+                ServerInfo.cmd.StandardInput.Flush();
+                ServerInfo.cmd.StandardInput.WriteLine("cd " + ServerInfo.ServerLabel);
+                ServerInfo.cmd.StandardInput.Flush();
+                Initalised = true;
 
-            Status.Text = "Current status: Running!";
+                switch (ServerInfo.ServerGame)
+                {
+                    case "Minecraft Bedrock":
+                        SaveButton.IsEnabled = false; //Disables save since it cannot be manually invoked
+                        SaveButton.Opacity = 0;
+                        QuickCommandsFrame.Content = new SSM.Pages.Minecraft_Java.QuickCommands();
+                        break;
+
+                    case "Minecraft Java":
+                        QuickCommandsFrame.Content = new SSM.Pages.Minecraft_Java.QuickCommands();
+                        break;
+                }
+            }
 
             switch (ServerInfo.ServerGame)
             {
                 case "Minecraft Java":
-                    Server.cmd.StandardInput.WriteLine("java -Xms" + ServerInfo.RAM + "M -jar Server.jar nogui");
-                    Server.cmd.StandardInput.Flush();
+                    ServerInfo.cmd.StandardInput.WriteLine("java -Xms" + ServerInfo.RAM + "M -jar Server.jar nogui");
+                    ServerInfo.cmd.StandardInput.Flush();
                     break;
                 case "Minecraft Bedrock":
-                    Server.cmd.StandardInput.WriteLine("bedrock_server.exe");
-                    Server.cmd.StandardInput.Flush();
-                    SeedButton.IsEnabled = false; //Disables seed button as /seed isn't supported on bedrock
-                    SeedButton.Opacity = 0;
-                    SaveButton.IsEnabled = false; //Disables seed button as /seed isn't supported on bedrock
-                    SaveButton.Opacity = 0;
+                    ServerInfo.cmd.StandardInput.WriteLine("bedrock_server.exe");
+                    ServerInfo.cmd.StandardInput.Flush();
                     break;
+                case "Terraria":
+                    ServerInfo.cmd.StandardInput.WriteLine("TerrariaServer.exe -autocreate 3 -world C:\\Users\\Rarisma\\Documents\\My Games\\Terraria\\Worlds\\Test.wrld");
+                    ServerInfo.cmd.StandardInput.Flush();
+                    ServerInfo.cmd.StandardInput.WriteLine("n");
+                    break;
+
             }
+            Status.Text = "Current status: Running!";
+        }
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            ServerInfo.cmd.StandardInput.WriteLine("save-all");
+            ServerInfo.cmd.StandardInput.Flush();
+        }
+
+        private void SendInput(object sender, RoutedEventArgs e)
+        {
+            ServerInfo.cmd.StandardInput.WriteLine(Input.Text);
+            ServerInfo.cmd.StandardInput.Flush();
+            Input.Text = "";
         }
 
         private void OpenServer(object sender, RoutedEventArgs e)
         {
             if (ServerInfo.IsServerRunning == false) { LaunchServer(); }
-            else { ModernWpf.MessageBox.Show("Server is already running."); }
+            else { ModernWpf.MessageBox.Show("ServerInfo is already running."); }
         }
 
         private void StopServer(object sender, RoutedEventArgs e)
         {
-            Server.cmd.StandardInput.WriteLine("stop");
-            Server.cmd.StandardInput.Flush();
+            ServerInfo.cmd.StandardInput.WriteLine("stop");
+            ServerInfo.cmd.StandardInput.Flush();
             ServerInfo.IsServerRunning = false;
             Status.Text = "Current status: Not Running.";
         }
 
-        private void Save(object sender, RoutedEventArgs e)
-        {
-            Server.cmd.StandardInput.WriteLine("save-all");
-            Server.cmd.StandardInput.Flush();
-        }
-
-        private void WeatherClear(object sender, RoutedEventArgs e)
-        {
-            Server.cmd.StandardInput.WriteLine("weather clear");
-            Server.cmd.StandardInput.Flush();
-        }
-
-        private void TimeSetDay(object sender, RoutedEventArgs e)
-        {
-            Server.cmd.StandardInput.WriteLine("time set day");
-            Server.cmd.StandardInput.Flush();
-        }
-        
-        private void TimeSetNight(object sender, RoutedEventArgs e)
-        {
-            Server.cmd.StandardInput.WriteLine("time set night");
-            Server.cmd.StandardInput.Flush();
-        }
-
-        private void Peaceful(object sender, RoutedEventArgs e)
-        {
-            Server.cmd.StandardInput.WriteLine("difficulty peaceful");
-            Server.cmd.StandardInput.Flush();
-        }
-
-        private void Easy(object sender, RoutedEventArgs e)
-        {
-            Server.cmd.StandardInput.WriteLine("difficulty easy");
-            Server.cmd.StandardInput.Flush();
-        }
-
-        private void Normal (object sender, RoutedEventArgs e)
-        {
-            Server.cmd.StandardInput.WriteLine("difficulty Normal");
-            Server.cmd.StandardInput.Flush();
-        }
-
-        private void Hard(object sender, RoutedEventArgs e)
-        {
-            Server.cmd.StandardInput.WriteLine("difficulty Hard");
-            Server.cmd.StandardInput.Flush();
-        }
-
-        private void Seed(object sender, RoutedEventArgs e)
-        {
-            Server.cmd.StandardInput.WriteLine("seed");
-            Server.cmd.StandardInput.Flush();
-        }
-
-        private void SendInput(object sender, RoutedEventArgs e)
-        {
-            Server.cmd.StandardInput.WriteLine(Input.Text);
-            Server.cmd.StandardInput.Flush();
-        }
     }
-
-    class Server 
-    {
-        static public Process cmd = new();
-        static public bool Initalised = false;
-        public static void MountFolder()
-        {
-            Server.cmd.StandardInput.WriteLine("cd Servers");
-            Server.cmd.StandardInput.Flush();
-            Server.cmd.StandardInput.WriteLine("cd " + ServerInfo.ServerLabel);
-            Server.cmd.StandardInput.Flush();
-        }
-    }
-
-
 }
