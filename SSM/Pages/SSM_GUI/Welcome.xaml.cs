@@ -17,6 +17,7 @@ namespace SSM.Pages.SSM_GUI
         public Welcome()
         {
             InitializeComponent();
+            LibRarisma.IO.DownloadFile("https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.1.13/forge-1.16.5-36.1.13-installer.jar", "A:\\", "Forge.jar");
             ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark; //Forces darkmode, lightmode should be added at somepoint
             ThemeManager.Current.AccentColor = Colors.White;
             ListView.Items.Add("Create a new server"); //Add the new server button
@@ -45,6 +46,7 @@ namespace SSM.Pages.SSM_GUI
                 ServerInfo.RAM           = Convert.ToInt64(SSM_INI[SSM_INI.IndexOf("### Ram allocated") + 1]);
                 ServerInfo.ServerVariant = SSM_INI[SSM_INI.IndexOf("### Server variant") + 1];
                 ServerInfo.ServerVersion = SSM_INI[SSM_INI.IndexOf("### Server version") + 1];
+                ServerInfo.ServerWorldSize = SSM_INI[SSM_INI.IndexOf("### Server size") + 1];
 
                 switch (ServerInfo.ServerGame)
                 {

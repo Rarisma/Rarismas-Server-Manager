@@ -21,9 +21,13 @@
         <TextBlock Name="Description" Width="500" Text="Select a server type to see a description here" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
 
         <Border Height="100"/>
-        <TextBlock Text="What version do you want your server to run?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+        <TextBlock Text="How big do you want your world to be?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
         <Border Height="20"/>
-        <ComboBox Name="Version" SelectionChanged="VersionUpdated" Width="200" HorizontalAlignment="Center" />
+        <ComboBox Name="WorldSize" SelectionChanged="WorldSizeUpdated" Width="200" HorizontalAlignment="Center">
+            <ComboBoxItem Content="Large"/>
+            <ComboBoxItem Content="Medium" />
+            <ComboBoxItem Content="Small"/>
+        </ComboBox>
         <Border Height="200"/>
 
         <Grid Height="50">

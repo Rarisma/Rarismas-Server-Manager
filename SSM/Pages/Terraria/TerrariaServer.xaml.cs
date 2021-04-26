@@ -42,7 +42,8 @@ namespace SSM.Pages.Terraria
                 ServerInfo.cmd.StartInfo.RedirectStandardError = true;
                 ServerInfo.cmd.StartInfo.CreateNoWindow = true;
                 ServerInfo.cmd.StartInfo.UseShellExecute = false;
-                ServerInfo.cmd.StartInfo.Arguments = "-autocreate 3 -world world.wld";
+                ServerInfo.cmd.StartInfo.Arguments = "-autocreate " + ServerInfo.ServerWorldSize + " -world  " + AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//world.wld";
+                ServerInfo.cmd.StartInfo.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//";
                 ServerInfo.cmd.Start();
                 ServerInfo.IsServerRunning = true;
                 ServerInfo.InputStream = ServerInfo.cmd.StandardInput;
@@ -79,16 +80,20 @@ namespace SSM.Pages.Terraria
         private void SendInput(object sender, RoutedEventArgs e)
         {
             string command = Input.Text;
-            System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.ServerLabel + "\\SSM\\SSM.txt", command);
+            SendCommand(Input.Text);
             Input.Text = "";
         }
 
+        public static void SendCommand(string command)
+        {
+            System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.ServerLabel + "\\SSM\\SSM.txt", command);
+        }
+
+
         private void OpenServer(object sender, RoutedEventArgs e)
         {
-            ServerInfo.InputStream.WriteLine("n");
-            ServerInfo.InputStream.Flush();
-            //if (ServerInfo.IsServerRunning == false) { LaunchServer(); }
-            //else { ModernWpf.MessageBox.Show("Server is already running."); }
+            if (ServerInfo.IsServerRunning == false) { LaunchServer(); }
+            else { ModernWpf.MessageBox.Show("Server is already running."); }
         }
 
         private void StopServer(object sender, RoutedEventArgs e)

@@ -12,7 +12,7 @@ namespace SSM
         public static void Make_INI_File()
         {
             System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//SSM.ini",
-                "SSM Config File V2\n\n" +
+                "SSM Config File V3\n\n" +
                 "### Game Name\n" +
                  ServerInfo.ServerGame + "\n\n" +
                 "### Server label\n" +
@@ -22,7 +22,9 @@ namespace SSM
                 "### Server variant\n" +
                 ServerInfo.ServerVariant + "\n\n" +
                 "### Server version\n" +
-                ServerInfo.ServerVersion + "\n\n");
+                ServerInfo.ServerVersion + "\n\n" +
+                "### Server size\n" +
+                ServerInfo.ServerWorldSize);
         }
     }
 }

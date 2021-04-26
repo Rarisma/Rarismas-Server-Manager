@@ -22,16 +22,15 @@ namespace SSM.Pages.SSM_GUI
             switch (ServerInfo.ServerGame)
             {
                 case "Minecraft Bedrock":
-                    ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
+                    ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
                     break;
 
                 case "Minecraft Java":
-                    ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
+                    ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
                     break;
 
                 case "Terraria":
-                    //((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
-                    ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Terraria.TerrariaServer();
+                    ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Terraria.TerrariaServer();
                     break;
             }
         }
@@ -52,16 +51,13 @@ namespace SSM.Pages.SSM_GUI
         {
             if (ModernWpf.MessageBox.Show("Are you sure you want to delete this server?", "Confirm deletion", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                System.IO.Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//", true);
+                Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//", true);
                 ModernWpf.MessageBox.Show("Server deleted");
-                ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.Welcome();
+                ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Welcome();
             }
         }
         
-        private void GoBack(object sender, RoutedEventArgs e)
-        {
-            ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Pages.SSM_GUI.Welcome();
-        }
+        private void GoBack(object sender, RoutedEventArgs e) { ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Pages.SSM_GUI.Welcome(); }
         
     }
 }
