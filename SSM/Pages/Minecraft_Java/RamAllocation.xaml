@@ -1,52 +1,48 @@
 ﻿<UserControl x:Class="SSM.Pages.Minecraft_Java.RamAllocation"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:SSM.Pages.Minecraft_Java"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="790" d:DesignWidth="790"
              xmlns:ui="http://schemas.modernwpf.com/2019">
 
     <ui:SimpleStackPanel Background="#000">
-        <Border Height="20"/>
+        <Border Height="20" />
         <TextBlock Text="How much RAM do you want allocate?" FontSize="30" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-        <Border Height="100"/>
-
+        <Border Height="100" />
 
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="500"/>
-                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="500" />
+                <ColumnDefinition Width="150" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="40" />
             </Grid.RowDefinitions>
-            <Label Content="1024MB" Foreground="#fff" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23"/>
-            <Slider ValueChanged="SliderChanged" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Name="RamSlider" Maximum="1024" Foreground="#fff"/>
-            <Label Name="MaxRam" FontSize="20" Content="MaxRAM" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#fff"/>
-            <Label Name="AllocatedRAMDisplay" FontSize="20" VerticalAlignment="Center" Content="Allocated ammount of RAM:" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Foreground="#fff"/>
+            <Label Content="1024MB" Foreground="#fff" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23" />
+            <Slider ValueChanged="SliderChanged" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Name="RamSlider" Maximum="1024" Foreground="#fff" />
+            <Label Name="MaxRam" FontSize="20" Content="MaxRAM" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#fff" />
+            <Label Name="AllocatedRAMDisplay" FontSize="20" VerticalAlignment="Center" Content="Allocated ammount of RAM:" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Foreground="#fff" />
         </Grid>
 
-        <Border Height="100"/>
+        <Border Height="100" />
         <TextBlock Text="How much RAM should I allocate?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-        <Border Height="20"/>
+        <Border Height="20" />
         <TextBlock Padding="20" Text="Minecraft servers need around 1024MB to run, however you should add an extra 300-400MB of RAM for each person you want to play with. So for 5 people you would want about 3024MB of RAM, However if your server seems laggy you may want to allocate more. You shouldn't allocate the full ammount of RAM shown on the sider, if you want to play on this machine." FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-        <Border Height="100"/>
-        
+        <Border Height="100" />
+
         <Grid Height="50">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="390"/>
-                <ColumnDefinition Width="390"/>
+                <ColumnDefinition Width="390" />
+                <ColumnDefinition Width="390" />
             </Grid.ColumnDefinitions>
-            <Button Foreground="#fff"  Content="Continue" Grid.Column="1" HorizontalAlignment="Center" Click="Continue"/>
-            <Button Foreground="#fff"  Content="Go back"  Grid.Column="0" HorizontalAlignment="Center" Click="GoBack"/>
+            <Button Foreground="#fff"  Content="Continue" Grid.Column="1" HorizontalAlignment="Center" Click="Continue" />
+            <Button Foreground="#fff"  Content="Go back"  Grid.Column="0" HorizontalAlignment="Center" Click="GoBack" />
         </Grid>
-
-        
     </ui:SimpleStackPanel>
-
 </UserControl>

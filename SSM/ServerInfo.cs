@@ -16,6 +16,7 @@ namespace SSM
         public static string ServerURL     = "None Set";    //URL used to download server files
         public static string ServerVersion = "None Set";    //Used to keep track of what version the server is running
         public static string ServerVariant = "None Set";    //Used if there are multiple variants (Eg Paper, Bukkit ans spiggot)
+        public static string ServerWorldSize = "None Set";  //Used if World size is configurable
         public static bool IsServerRunning = false;         //If set to true SSM prevents closing
         public static Int64 RAM = 0;                        //Used for servers that need RAM to be allocated, servers that don't will just have it set as 0
         public static Process cmd = new();                  //Used for Command Prompts

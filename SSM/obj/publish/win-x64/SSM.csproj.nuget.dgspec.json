@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "A:\\Repositories\\Simple-Server-Manager\\SSM\\SSM\\SSM.csproj": {}
+    "A:\\Repositories\\Simple-Server-Manager\\SSM\\SSM.csproj": {}
   },
   "projects": {
-    "A:\\Repositories\\Simple-Server-Manager\\SSM\\SSM\\SSM.csproj": {
+    "A:\\Repositories\\Simple-Server-Manager\\SSM\\SSM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Repositories\\Simple-Server-Manager\\SSM\\SSM\\SSM.csproj",
+        "projectUniqueName": "A:\\Repositories\\Simple-Server-Manager\\SSM\\SSM.csproj",
         "projectName": "SSM",
-        "projectPath": "A:\\Repositories\\Simple-Server-Manager\\SSM\\SSM\\SSM.csproj",
+        "projectPath": "A:\\Repositories\\Simple-Server-Manager\\SSM\\SSM.csproj",
         "packagesPath": "C:\\Users\\Rarisma\\.nuget\\packages\\",
-        "outputPath": "A:\\Repositories\\Simple-Server-Manager\\SSM\\SSM\\obj\\publish\\win-x64\\",
+        "outputPath": "A:\\Repositories\\Simple-Server-Manager\\SSM\\obj\\publish\\win-x64\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
