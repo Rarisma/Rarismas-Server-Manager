@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModernWpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace SSM
         public MainWindow()
         {
             InitializeComponent();
+            ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark; //Forces darkmode, lightmode should be added at somepoint
+            ThemeManager.Current.AccentColor = Colors.White;
             UserDisplay.Content = new Pages.SSM_GUI.Welcome();
         }
 

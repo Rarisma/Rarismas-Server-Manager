@@ -111,7 +111,7 @@ namespace SSM.Pages.Minecraft_Java
                 ServerInfo.cmd.StandardInput.Flush();
                 ServerInfo.cmd.StandardInput.WriteLine("cd " + ServerInfo.ServerLabel);
                 ServerInfo.cmd.StandardInput.Flush();
-                ServerInfo.cmd.StandardInput.WriteLine("java -jar Server.jar --installServer");
+                ServerInfo.cmd.StandardInput.WriteLine("java -jar Server.jar --installServer exit");
                 ServerInfo.cmd.StandardInput.Flush();
             }
 

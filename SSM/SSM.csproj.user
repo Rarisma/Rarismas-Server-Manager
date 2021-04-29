@@ -9,16 +9,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Pages\Minecraft_Java\QuickCommands.xaml.cs">
+    <Compile Update="Pages\Minecraft\QuickCommands.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Minecraft_Java\RamAllocation.xaml.cs">
+    <Compile Update="Pages\Minecraft\RamAllocation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Minecraft_Java\ServerPropitiesEditor.xaml.cs">
+    <Compile Update="Pages\Minecraft\ServerPropitiesEditor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Minecraft_Java\VersionSelect.xaml.cs">
+    <Compile Update="Pages\Minecraft\VersionSelect.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\SSM_GUI\CLIServer.xaml.cs">
@@ -41,16 +41,16 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Minecraft_Java\QuickCommands.xaml">
+    <Page Update="Pages\Minecraft\QuickCommands.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Minecraft_Java\RamAllocation.xaml">
+    <Page Update="Pages\Minecraft\RamAllocation.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Minecraft_Java\ServerPropitiesEditor.xaml">
+    <Page Update="Pages\Minecraft\ServerPropitiesEditor.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Minecraft_Java\VersionSelect.xaml">
+    <Page Update="Pages\Minecraft\VersionSelect.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SSM_GUI\CLIServer.xaml">

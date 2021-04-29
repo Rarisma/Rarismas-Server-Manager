@@ -8,7 +8,7 @@
              d:DesignHeight="790" d:DesignWidth="790"
              xmlns:ui="http://schemas.modernwpf.com/2019">
 
-    <ui:SimpleStackPanel>
+    <ui:SimpleStackPanel Background="#000">
         <Border Height="20" />
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="ServerName"  Name="ServerName" FontSize="25" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
         <Grid Background="#000" Height="50" HorizontalAlignment="Center">

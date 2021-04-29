@@ -31,10 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Minecraft_Bedrock\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Page Update="Pages\Terraria\VersionSelect.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

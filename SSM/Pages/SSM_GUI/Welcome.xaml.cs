@@ -17,10 +17,6 @@ namespace SSM.Pages.SSM_GUI
         public Welcome()
         {
             InitializeComponent();
-            LibRarisma.IO.DownloadFile("https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.1.13/forge-1.16.5-36.1.13-installer.jar", "A:\\", "Forge.jar");
-            ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark; //Forces darkmode, lightmode should be added at somepoint
-            ThemeManager.Current.AccentColor = Colors.White;
-            ListView.Items.Add("Create a new server"); //Add the new server button
 
             if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "//Servers//"))
             {
@@ -31,22 +27,15 @@ namespace SSM.Pages.SSM_GUI
             }
 
             if (ListView.Items.Contains("Easter Egg")) { ((MainWindow)System.Windows.Application.Current.MainWindow).Title += " When using pokemon cards, please don't use a holographic!"; }
-            else { ((MainWindow)System.Windows.Application.Current.MainWindow).Title = "SSM 1.1"; }
+            else { ((MainWindow)System.Windows.Application.Current.MainWindow).Title = "SSM Next"; }
         }
 
         private void ServerSelectionChanged(object sender, SelectionChangedEventArgs e)
         {   //If clicked sends them to server manager ( unless its the newserver option )
-            if (Convert.ToString(ListView.SelectedValue) == "Create a new server") { ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
+            if (Convert.ToString(ListView.SelectedValue).Contains("Create a new server")) { ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
             else
             {
-                List<string> SSM_INI = new();
-                SSM_INI.AddRange(System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ListView.SelectedValue + "//SSM.ini"));
-                ServerInfo.ServerGame    = SSM_INI[SSM_INI.IndexOf("### Game Name") + 1];
-                ServerInfo.ServerLabel   = SSM_INI[SSM_INI.IndexOf("### Server label") + 1];
-                ServerInfo.RAM           = Convert.ToInt64(SSM_INI[SSM_INI.IndexOf("### Ram allocated") + 1]);
-                ServerInfo.ServerVariant = SSM_INI[SSM_INI.IndexOf("### Server variant") + 1];
-                ServerInfo.ServerVersion = SSM_INI[SSM_INI.IndexOf("### Server version") + 1];
-                ServerInfo.ServerWorldSize = SSM_INI[SSM_INI.IndexOf("### Server size") + 1];
+                SSMGeneric.Read_INI_File(Convert.ToString(ListView.SelectedValue));
 
                 switch (ServerInfo.ServerGame)
                 {
