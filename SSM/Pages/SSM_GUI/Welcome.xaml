@@ -13,10 +13,13 @@
         <TextBlock Text="Welcome to SSM!" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" />
 
         <Grid Height="610">
-            <ui:ListView  Foreground="#fff" SelectionChanged="ServerSelectionChanged" Name="ListView" SelectionMode="Single" Background="#000" FontSize="25" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" />
+            <ui:ListView  Foreground="#fff" SelectionChanged="ServerSelectionChanged" Name="ListView" SelectionMode="Single" Background="#000" FontSize="25" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center">
+                <ui:ListViewItem Content="Create a new server" Foreground="#fff"/>
+                <ui:ListViewItem Content="Create new server (Automatic)" Foreground="#fff"/>
+                <ui:ListViewItem Content="Import a server" IsEnabled="False" Foreground="#fff"/>
+            </ui:ListView>
         </Grid>
 
-        <TextBlock Text="Made by Rarisma" HorizontalAlignment="Center" Padding="10" FontSize="15" Foreground="#fff" />
-        <TextBlock Text="This program is licenced under the GNU General Public License v3.0" HorizontalAlignment="Center" Padding="10" FontSize="15" Foreground="#fff" />
+        <TextBlock Text="                                       Made by Rarisma&#x0a;This program is licenced under the GNU General Public License v3.0" HorizontalAlignment="Center" Padding="10" FontSize="15" Foreground="#fff" />
     </ui:SimpleStackPanel>
 </Page>

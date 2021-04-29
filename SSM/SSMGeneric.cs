@@ -26,5 +26,19 @@ namespace SSM
                 "### Server size\n" +
                 ServerInfo.ServerWorldSize);
         }
+
+        public static void Read_INI_File(string ServerName)
+        {
+            List<string> SSM_INI = new();
+            SSM_INI.AddRange(System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerName + "//SSM.ini"));
+            
+            ServerInfo.ServerGame = SSM_INI[SSM_INI.IndexOf("### Game Name") + 1];
+            ServerInfo.ServerLabel = SSM_INI[SSM_INI.IndexOf("### Server label") + 1];
+            ServerInfo.RAM = Convert.ToInt64(SSM_INI[SSM_INI.IndexOf("### Ram allocated") + 1]);
+            ServerInfo.ServerVariant = SSM_INI[SSM_INI.IndexOf("### Server variant") + 1];
+            ServerInfo.ServerVersion = SSM_INI[SSM_INI.IndexOf("### Server version") + 1];
+            ServerInfo.ServerWorldSize = SSM_INI[SSM_INI.IndexOf("### Server size") + 1];
+        }
+
     }
 }
