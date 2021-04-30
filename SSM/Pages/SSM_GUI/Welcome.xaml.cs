@@ -26,34 +26,30 @@ namespace SSM.Pages.SSM_GUI
                 { if (File.Exists(Servers[i] + "//SSM.ini")) { ListView.Items.Add(System.IO.Path.GetFileName(Servers[i])); } }
             }
 
-            if (ListView.Items.Contains("Easter Egg")) { ((MainWindow)System.Windows.Application.Current.MainWindow).Title += " When using pokemon cards, please don't use a holographic!"; }
+            if (ListView.Items.Contains("Easter Egg")) { ((MainWindow)System.Windows.Application.Current.MainWindow).Title += "Genki Zenkai DAY DAY DAY!"; }//Special thanks to seth for this one 
             else { ((MainWindow)System.Windows.Application.Current.MainWindow).Title = "SSM Next"; }
         }
 
         private void ServerSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {   //If clicked sends them to server manager ( unless its the newserver option )
-            if (Convert.ToString(ListView.SelectedValue).Contains("Create a new server")) { ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
-            else
+        {   //If clicked sends them to server manager ( unless its the news erver option )
+            if (ListView.SelectedValue.ToString() == "Create a new server")) {((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
+            else if (ListView.SelectedValue.ToString() == "Create a new server (Auto mode)")) {((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
+            else {LoadPage();} //Calls the function to start to load the game
+        }
+        
+        private static void LoadPage()
+        {
+            SSMGeneric.Read_INI_File(Convert.ToString(ListView.SelectedValue));
+            switch (ServerInfo.ServerGame) //This sends the user to the correct page
             {
-                SSMGeneric.Read_INI_File(Convert.ToString(ListView.SelectedValue));
+                case "Minecraft Java": ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager(); break;
 
-                switch (ServerInfo.ServerGame)
-                {
-                    case "Minecraft Java":
-                        ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager();
-                        break;
+                case "Minecraft Bedrock": ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager(); break;
 
-                    case "Minecraft Bedrock":
-                        ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager();
-                        break;
-
-                    case "Terraria":
-                        ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager();
-                        break;
-                }
-
-
+                case "Terraria": ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager(); break;
             }
         }
+             
+    
     }
 }
