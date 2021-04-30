@@ -17,7 +17,7 @@ namespace SSM.Pages.SSM_GUI
             InitializeComponent();
             ServerName.Text = ServerInfo.ServerLabel;
             Status.Text = "Current status: Not Running.";
-            RAMUsage.Text = "RAM Usage / " + ServerInfo.RAM;
+            RAMUsage.Text = ServerInfo.cmd.PrivateMemorySize64 + " / " + ServerInfo.RAM;
             ServerInfo.cmd.StartInfo.FileName = "cmd.exe";
             ServerInfo.cmd.StartInfo.RedirectStandardInput = true;
             ServerInfo.cmd.StartInfo.RedirectStandardOutput = true;
