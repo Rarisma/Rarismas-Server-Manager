@@ -35,5 +35,14 @@ namespace SSM
             ModernWpf.MessageBox.Show("Failed to find server.propities file, try loading the server, closing it and then come back.");
 
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try { 
+                if (ServerInfo.cmd.HasExited != true) 
+                { ServerInfo.cmd.Close(); } 
+            } //Kills the server prorcess, should be updated to call somthing like the function when Exit() is pressed
+            catch { System.Threading.Thread.Sleep(10); } //Executed if server hasn't been initalised eg closed on welcome page
+        }
     }
 }

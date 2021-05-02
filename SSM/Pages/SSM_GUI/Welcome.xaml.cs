@@ -31,15 +31,19 @@ namespace SSM.Pages.SSM_GUI
         }
 
         private void ServerSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {   //If clicked sends them to server manager ( unless its the news erver option )
-            if (ListView.SelectedValue.ToString() == "Create a new server")) {((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
-            else if (ListView.SelectedValue.ToString() == "Create a new server (Auto mode)")) {((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
+        {   //If clicked sends them to server manager ( unless its the new server option )
+            string SelectedValue = ListView.SelectedValue.ToString();
+            SelectedValue = SelectedValue.Replace("ModernWpf.Controls.ListViewItem: ","");
+            if (SelectedValue == "Create a new server") {((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
+            else if (SelectedValue == "Create new server (Automatic)") {((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
             else {LoadPage();} //Calls the function to start to load the game
         }
         
-        private static void LoadPage()
+        private void LoadPage()
         {
-            SSMGeneric.Read_INI_File(Convert.ToString(ListView.SelectedValue));
+            string SelectedValue = ListView.SelectedValue.ToString();
+            SelectedValue = SelectedValue.Replace("ModernWpf.Controls.ListViewItem: ", "");
+            SSMGeneric.Read_INI_File(SelectedValue);
             switch (ServerInfo.ServerGame) //This sends the user to the correct page
             {
                 case "Minecraft Java": ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager(); break;

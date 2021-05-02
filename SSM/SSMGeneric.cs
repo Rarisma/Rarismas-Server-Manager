@@ -27,7 +27,7 @@ namespace SSM
                 ServerInfo.ServerWorldSize);
         }
 
-        public static void Read_INI_File(string ServerName)
+        public static void Read_INI_File(Object ServerName)
         {
             List<string> SSM_INI = new();
             SSM_INI.AddRange(System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerName + "//SSM.ini"));

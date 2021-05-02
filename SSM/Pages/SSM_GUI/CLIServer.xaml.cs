@@ -1,5 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -17,7 +20,6 @@ namespace SSM.Pages.SSM_GUI
             InitializeComponent();
             ServerName.Text = ServerInfo.ServerLabel;
             Status.Text = "Current status: Not Running.";
-            RAMUsage.Text = ServerInfo.cmd.PrivateMemorySize64 + " / " + ServerInfo.RAM;
             ServerInfo.cmd.StartInfo.FileName = "cmd.exe";
             ServerInfo.cmd.StartInfo.RedirectStandardInput = true;
             ServerInfo.cmd.StartInfo.RedirectStandardOutput = true;
@@ -35,6 +37,7 @@ namespace SSM.Pages.SSM_GUI
                 ServerInfo.IsServerRunning = true;
                 ServerInfo.cmd.BeginOutputReadLine();
 
+
                 ServerInfo.cmd.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
                 {
                     if (!String.IsNullOrEmpty(e.Data)) { Application.Current.Dispatcher.Invoke(new Action(() => { ServerConsole.AppendText("\n" + e.Data); })); }
@@ -43,7 +46,7 @@ namespace SSM.Pages.SSM_GUI
 
                 ServerInfo.cmd.ErrorDataReceived += new DataReceivedEventHandler((sender, e) =>
                 {
-                    if (!String.IsNullOrEmpty(e.Data)) { Application.Current.Dispatcher.Invoke(new Action(() => { ServerConsole.AppendText("\nERROR: " + e.Data); })); }
+                    if (!String.IsNullOrEmpty(e.Data)) { Application.Current.Dispatcher.Invoke(new Action(() => { ServerConsole.AppendText("\nERROR: " + e.Data); }));}
                     Application.Current.Dispatcher.Invoke(new Action(() => { ServerConsole.ScrollToEnd(); }));
                 });
 
@@ -65,6 +68,29 @@ namespace SSM.Pages.SSM_GUI
                         QuickCommandsFrame.Content = new SSM.Pages.Minecraft_Java.QuickCommands();
                         break;
                 }
+
+               /* Commented out to prevent CLIServer not loading, CLIServer is gonna need a rewrite to implement safer shutdowns
+                * and RAM/CPU Meters are gonnna be moved to a frame elsewhere
+                * Also gonna move the server shutdown, open ect, to frames 
+                * TerrariaServer.cs/xaml is gonna be merged
+                * All coming either later or tomorrow depneding if my SteamLink works
+                * Yes I own a steam link, I think I got one for about £11 just before they got EOL'd
+                * They are now like £100 when you can do it with an RPi or an android, though I've never had much luck getting an RPi to be stable
+                * Tbf tho I never really needed one until now
+                * Anyway I gotta go, push this to github and portforward the correct stuff
+                * 
+                * - Rarisma, Screaming into the void since 2019
+                PerformanceCounter RAM = new();
+                RAM.CategoryName = "Process";
+                RAM.CounterName = "Working Set - Private";
+                RAM.InstanceName = ServerInfo.cmd.ProcessName;
+
+                while (ServerInfo.IsServerRunning != false)
+                {
+                    RAMUsage.Text = Convert.ToString(Convert.ToInt32(RAM.NextValue() / 1024));
+                }
+                RAM.Close();
+                RAM.Dispose();*/
             }
 
             switch (ServerInfo.ServerGame)
@@ -84,7 +110,27 @@ namespace SSM.Pages.SSM_GUI
 
             }
             Status.Text = "Current status: Running!";
+            
         }
+
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            PerformanceCounter RAM = new();
+            RAM.CategoryName = "Process";
+            RAM.CounterName = "Working Set - Private";
+            RAM.InstanceName = ServerInfo.cmd.ProcessName;
+
+            while (ServerInfo.IsServerRunning != false)
+            {
+                (sender as BackgroundWorker).ReportProgress(Convert.ToInt32(RAM.NextValue()));
+            }
+
+
+            RAM.Close();
+            RAM.Dispose();
+        }
+
+
 
         private void Save(object sender, RoutedEventArgs e)
         {
@@ -112,6 +158,5 @@ namespace SSM.Pages.SSM_GUI
             ServerInfo.IsServerRunning = false;
             Status.Text = "Current status: Not Running.";
         }
-
     }
 }
