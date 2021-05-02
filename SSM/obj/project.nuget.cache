@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QKBtT54tk2NYxUC55m+KFUkV3iLokjtL8lLn/y29akMbgmnrm2uRVQhB0g3mNS2IB8M6VHZkY+7gfE5EZGcHeA==",
+  "dgSpecHash": "7OLDfO9m4TAWo/n3V1ljFxRJltarPZlDZb/K3TIayo0MAHDULSEj6X5yTAi3GJKyKa5XWhBSY/Xa23OD1OJrUg==",
   "success": true,
   "projectFilePath": "A:\\Repositories\\Simple-Server-Manager\\SSM\\SSM.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,7 @@
     "C:\\Users\\Rarisma\\.nuget\\packages\\system.management\\5.0.0\\system.management.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.18362.14\\microsoft.windows.sdk.net.ref.10.0.18362.14.nupkg.sha512"
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.18362.15\\microsoft.windows.sdk.net.ref.10.0.18362.15.nupkg.sha512"
   ],
   "logs": []
 }

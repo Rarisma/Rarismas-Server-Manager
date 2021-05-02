@@ -30,6 +30,9 @@
     <Compile Update="Pages\SSM_GUI\ServerManager.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\SSM_GUI\Servers\CLI\ServerUI.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\SSM_GUI\Welcome.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -60,6 +63,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SSM_GUI\ServerManager.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SSM_GUI\Servers\CLI\ServerUI.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SSM_GUI\Welcome.xaml">

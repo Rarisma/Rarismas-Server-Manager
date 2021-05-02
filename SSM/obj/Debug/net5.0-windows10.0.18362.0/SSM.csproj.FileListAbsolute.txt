@@ -540,3 +540,5 @@ A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\P
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\Minecraft\RamAllocation.baml
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\Minecraft\ServerPropitiesEditor.baml
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\Minecraft\VersionSelect.baml
+A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\Servers\CLI\ServerUI.g.cs
+A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\Servers\CLI\ServerUI.baml

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 A:\Repositories\Simple-Server-Manager\SSM\App.xaml
-11-917550645
+121155400664
 
-18-1489188034
-200-2040792400
-MainWindow.xaml;Pages\Minecraft\QuickCommands.xaml;Pages\Minecraft\RamAllocation.xaml;Pages\Minecraft\ServerPropitiesEditor.xaml;Pages\Minecraft\VersionSelect.xaml;Pages\SSM_GUI\CLIServer.xaml;Pages\SSM_GUI\NewServer.xaml;Pages\SSM_GUI\ServerManager.xaml;Pages\SSM_GUI\Welcome.xaml;Pages\Terraria\TerrariaServer.xaml;Pages\Terraria\VersionSelect.xaml;
+19928410444
+200-190600290
+MainWindow.xaml;Pages\Minecraft\QuickCommands.xaml;Pages\Minecraft\RamAllocation.xaml;Pages\Minecraft\ServerPropitiesEditor.xaml;Pages\Minecraft\VersionSelect.xaml;Pages\SSM_GUI\CLIServer.xaml;Pages\SSM_GUI\NewServer.xaml;Pages\SSM_GUI\ServerManager.xaml;Pages\SSM_GUI\Servers\CLI\ServerUI.xaml;Pages\SSM_GUI\Welcome.xaml;Pages\Terraria\TerrariaServer.xaml;Pages\Terraria\VersionSelect.xaml;
 
-True
+False
 
