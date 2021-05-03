@@ -38,25 +38,15 @@ namespace SSM.Pages.Terraria
             ServerInfo.IsServerRunning = false;
         }
 
-        /*private void Send_Click(object sender, RoutedEventArgs e)
-        {
-            string command = Input.Text;
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.ServerLabel + "\\SSM\\SSM.txt", command);
-            //Input.Text = "";
-        }
-
-                private void SendInput(object sender, RoutedEventArgs e)
-        {
-            string command = Input.Text;
-            SendCommand(Input.Text);
-            Input.Text = "";
-        }
-
         private void OpenServer(object sender, RoutedEventArgs e)
         {
-            if (ServerInfo.IsServerRunning == false) { LaunchServer(); }
-            else { ModernWpf.MessageBox.Show("Server is already running."); }
-        }*/
+            if (ServerInfo.IsServerRunning == true) { ModernWpf.MessageBox.Show("Server is already running."); }
+            else 
+            {
+                ServerInfo.cmd.Close();
+                ServerInfo.cmd.Start();
+                SSM_GUI.ServerUtils.LaunchServer();}
+        }
 
     }
 }

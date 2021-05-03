@@ -1,30 +1,34 @@
 ﻿using System;
-using System.ComponentModel;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Threading;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-//So if anyone ever reads these, heres an update on the steamlink stuff I talked about
-//So I went, and put a 24hrs of silence vid to prevent sleeping
-//I got there and decided to sleep my pc
-//So I called a person up and got them to turn it back on
-//it happened again later that night but they were out so I guess I couldn't do anything
-//Gonna figure out what SSH is exactly and use a RPi to send the packets if I can
-namespace SSM.Pages.SSM_GUI.Servers.CLI
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace SSM.Pages.SSM_GUI
 {
     /// <summary>
-    /// Interaction logic for OldCLI.xaml
+    /// Interaction logic for CLIServer.xaml
     /// </summary>
-    public partial class OldCLI : Page
+    public partial class CLIServer : Page
     {
-        public OldCLI()
+        public CLIServer()
         {
             InitializeComponent();
             Initalise(); //Setups command prompt
             ServerInfo.IsServerRunning = true;
-            LaunchServer();
+            ServerUtils.LaunchServer();
+            SetQuickCommands();
         }
 
         private void Initalise() //This runs all the server configuration eg mounting folders and redirection
@@ -68,7 +72,7 @@ namespace SSM.Pages.SSM_GUI.Servers.CLI
                     ServerInfo.cmd.StartInfo.FileName = "cmd.exe";
                     ServerInfo.cmd.StartInfo.Arguments = Convert.ToString("/k " + AppDomain.CurrentDomain.BaseDirectory);
                     ServerInfo.cmd.Start();
-                    ServerInfo.cmd.BeginOutputReadLine();
+                    try { ServerInfo.cmd.BeginOutputReadLine(); } catch { }
 
                     //This mounts the server
                     ServerInfo.cmd.StandardInput.WriteLine("cd Servers");
@@ -79,27 +83,13 @@ namespace SSM.Pages.SSM_GUI.Servers.CLI
             }
         }
 
-        private void LaunchServer() //Handles actually launching the server and setting quick commands
+        private void SetQuickCommands() //Sets Quick command frame
         {
             switch (ServerInfo.ServerGame)
             {
-                case "Minecraft Bedrock":
-                    QuickCommandsFrame.Content = new Minecraft_Java.QuickCommands();
-                    ServerInfo.cmd.StandardInput.WriteLine("bedrock_server.exe");
-                    ServerInfo.cmd.StandardInput.Flush();
-                    break;
-
-                case "Minecraft Java":
-                    QuickCommandsFrame.Content = new Minecraft_Java.QuickCommands();
-                    ServerInfo.cmd.StandardInput.WriteLine("java -Xms" + ServerInfo.RAM + "M -jar Server.jar nogui");
-                    ServerInfo.cmd.StandardInput.Flush();
-                    break;
-
-                case "Terraria":
-                    QuickCommandsFrame.Content = new Terraria.QuickCommands();
-                    ServerInfo.cmd.StandardInput.WriteLine("TerrariaServer.exe -autocreate 3 -world C:\\Users\\Rarisma\\Documents\\My Games\\Terraria\\Worlds\\Test.wrld");
-                    ServerInfo.cmd.StandardInput.Flush();
-                    break;
+                case "Minecraft Bedrock": QuickCommandsFrame.Content = new Minecraft_Java.QuickCommands(); break;
+                case "Minecraft Java": QuickCommandsFrame.Content = new Minecraft_Java.QuickCommands(); break;
+                case "Terraria": QuickCommandsFrame.Content = new Terraria.QuickCommands(); break;
             }
         }
 
@@ -120,5 +110,6 @@ namespace SSM.Pages.SSM_GUI.Servers.CLI
             }
 
         }
+
     }
 }

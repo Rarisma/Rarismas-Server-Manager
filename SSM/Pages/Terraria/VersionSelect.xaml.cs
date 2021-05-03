@@ -23,27 +23,12 @@ namespace SSM.Pages.Terraria
         {
             InitializeComponent();
             Servers.URLs.Clear();
-            Variants.Items.Add("Normal");
-            Description.Text = "This verison has plugin support and has improvements over the stock Terraria server";
             LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Terraria/Tshock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//","TerraiaTShock");
             
             string[] URLs = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//TerraiaTShock");
-            ServerInfo.ServerVersion = "Latest " + URLs[0];
+            ServerInfo.ServerVersion = URLs[0];
             ServerInfo.ServerVariant = "Normal";
             ServerInfo.ServerURL = URLs[1];
-        }
-
-        private void VariantsUpdated(object sender, SelectionChangedEventArgs e)
-        {
-            List<String> VersionSorter = new();
-            switch (Variants.SelectedValue)
-            {
-                case "Normal":
-                    Servers.URLs.Clear();
-                    VersionSorter.Clear();
-                    Description.Text = "This verison has no mod support but supports plugins and has improvements over the stock Terraria server";
-                    break;
-            }
         }
 
         private void WorldSizeUpdated(object sender, SelectionChangedEventArgs e) 
