@@ -28,6 +28,8 @@ namespace SSM.Pages.Minecraft_Java
             {
                 SeedButton.IsEnabled = false; //Disables seed button as /seed isn't supported on bedrock
                 SeedButton.Opacity = 0;
+                SaveButton.IsEnabled = false;
+                SaveButton.Opacity = 0;
             }
         }
 
@@ -76,6 +78,25 @@ namespace SSM.Pages.Minecraft_Java
         private void Seed(object sender, RoutedEventArgs e)
         {
             ServerInfo.cmd.StandardInput.WriteLine("seed");
+            ServerInfo.cmd.StandardInput.Flush();
+        }
+
+        private void OpenServer(object sender, RoutedEventArgs e)
+        {
+            /*if (ServerInfo.IsServerRunning == false) { LaunchServer(); }
+            else { ModernWpf.MessageBox.Show("ServerInfo is already running."); }*/
+        }
+
+        private void StopServer(object sender, RoutedEventArgs e)
+        {
+            ServerInfo.cmd.StandardInput.WriteLine("stop");
+            ServerInfo.cmd.StandardInput.Flush();
+            ServerInfo.IsServerRunning = false;
+        }
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            ServerInfo.cmd.StandardInput.WriteLine("save-all");
             ServerInfo.cmd.StandardInput.Flush();
         }
     }

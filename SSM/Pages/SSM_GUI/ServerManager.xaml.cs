@@ -21,16 +21,8 @@ namespace SSM.Pages.SSM_GUI
         {
             switch (ServerInfo.ServerGame)
             {
-                case "Minecraft Bedrock":
-                    ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
-                    break;
-
-                case "Minecraft Java":
-                    ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new CLIServer();
-                    break;
-
-                case "Terraria":
-                    ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Terraria.TerrariaServer();
+                default:
+                    ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Servers.CLI.OldCLI();
                     break;
             }
         }

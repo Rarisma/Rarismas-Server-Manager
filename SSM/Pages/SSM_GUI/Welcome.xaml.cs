@@ -46,7 +46,7 @@ namespace SSM.Pages.SSM_GUI
             SSMGeneric.Read_INI_File(SelectedValue);
             switch (ServerInfo.ServerGame) //This sends the user to the correct page
             {
-                case "Minecraft Java": ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager(); break;
+                case "Minecraft Java": ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager() ; break;
 
                 case "Minecraft Bedrock": ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new ServerManager(); break;
 
