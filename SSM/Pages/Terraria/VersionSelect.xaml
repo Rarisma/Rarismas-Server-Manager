@@ -18,7 +18,7 @@
         <ComboBox SelectionChanged="VariantsUpdated" Name="Variants" Width="200" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
         <Border Height="50"/>
 
-        <TextBlock Name="Description" Width="500" Text="Select a server type to see a description here" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+        <TextBlock Name="Description" Width="500" Height="50" Text="Select a server type to see a description here" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
 
         <Border Height="100"/>
         <TextBlock Text="How big do you want your world to be?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
