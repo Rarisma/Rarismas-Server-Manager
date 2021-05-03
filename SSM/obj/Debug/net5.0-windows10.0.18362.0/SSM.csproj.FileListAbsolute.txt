@@ -505,7 +505,6 @@ A:\Repositories\Simple-Server-Manager\SSM\bin\Debug\net5.0-windows10.0.18362.0\M
 A:\Repositories\Simple-Server-Manager\SSM\bin\Debug\net5.0-windows10.0.18362.0\WinRT.Runtime.dll
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\SSM.csprojAssemblyReference.cache
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\MainWindow.g.cs
-A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\CLIServer.g.cs
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\NewServer.g.cs
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\ServerManager.g.cs
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\Welcome.g.cs
@@ -515,7 +514,6 @@ A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\S
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\SSM_MarkupCompile.lref
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\App.baml
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\MainWindow.baml
-A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\CLIServer.baml
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\NewServer.baml
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\ServerManager.baml
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\Welcome.baml
@@ -542,3 +540,7 @@ A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\P
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\Minecraft\VersionSelect.baml
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\Servers\CLI\ServerUI.g.cs
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\Servers\CLI\ServerUI.baml
+A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\Servers\CLI\OldCLI.g.cs
+A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\Servers\CLI\OldCLI.baml
+A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\Terraria\QuickCommands.g.cs
+A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\Terraria\QuickCommands.baml

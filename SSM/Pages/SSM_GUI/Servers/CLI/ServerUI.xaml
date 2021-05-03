@@ -5,8 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SSM.Pages.SSM_GUI.Servers.CLI"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="790" d:DesignWidth="790"
+             xmlns:ui="http://schemas.modernwpf.com/2019">
+
+    <ui:SimpleStackPanel Background="#000">
+        <Border Height="20"/>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="ServerTitle"  Name="ServerName" FontSize="25" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+        <Frame NavigationUIVisibility="Hidden" Height="70" Name="ServerMonitorFrame"/>
+        <TextBox Name="ServerOutput" Text="aaaa" Background="#121212" Foreground="#fff" Height="400" Width="700"/>
+        
+        <Border Height="20"/>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Quick Commands" FontSize="25" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff"/>
+        
+        <Border Height="20"/>
+        <Frame NavigationUIVisibility="Hidden" Height="150" Name="QuickCommands" Width="700"/>
+    </ui:SimpleStackPanel>
 </UserControl>

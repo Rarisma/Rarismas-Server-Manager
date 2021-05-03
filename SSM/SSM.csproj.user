@@ -21,13 +21,13 @@
     <Compile Update="Pages\Minecraft\VersionSelect.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\SSM_GUI\CLIServer.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\SSM_GUI\NewServer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\SSM_GUI\ServerManager.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\SSM_GUI\Servers\CLI\OldCLI.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\SSM_GUI\Servers\CLI\ServerUI.xaml.cs">
@@ -36,7 +36,7 @@
     <Compile Update="Pages\SSM_GUI\Welcome.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Terraria\TerrariaServer.xaml.cs">
+    <Compile Update="Pages\Terraria\QuickCommands.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -56,13 +56,13 @@
     <Page Update="Pages\Minecraft\VersionSelect.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\SSM_GUI\CLIServer.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Pages\SSM_GUI\NewServer.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SSM_GUI\ServerManager.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SSM_GUI\Servers\CLI\OldCLI.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SSM_GUI\Servers\CLI\ServerUI.xaml">
@@ -71,7 +71,7 @@
     <Page Update="Pages\SSM_GUI\Welcome.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Terraria\TerrariaServer.xaml">
+    <Page Update="Pages\Terraria\QuickCommands.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Terraria\VersionSelect.xaml">
