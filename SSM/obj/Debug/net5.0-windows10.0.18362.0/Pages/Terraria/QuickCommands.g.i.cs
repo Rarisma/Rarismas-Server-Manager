@@ -61,7 +61,7 @@ namespace SSM.Pages.Terraria {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SSM;V1.0.0.0;component/pages/terraria/quickcommands.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SSM;component/pages/terraria/quickcommands.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\Terraria\QuickCommands.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
