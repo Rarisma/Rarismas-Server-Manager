@@ -21,12 +21,9 @@ namespace SSM.Pages.SSM_GUI
         {
             switch (ServerInfo.ServerGame)
             {
-                default:
-                    ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Servers.CLI.OldCLI();
-                    break;
+                default: ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new CLIServer(); break;
             }
         }
-
 
         private void ConfigServer(object sender, RoutedEventArgs e)
         {

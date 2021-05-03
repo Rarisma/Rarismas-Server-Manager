@@ -83,21 +83,24 @@ namespace SSM.Pages.Minecraft_Java
 
         private void OpenServer(object sender, RoutedEventArgs e)
         {
-            /*if (ServerInfo.IsServerRunning == false) { LaunchServer(); }
-            else { ModernWpf.MessageBox.Show("ServerInfo is already running."); }*/
+            if (ServerInfo.IsServerRunning == false) { SSM_GUI.ServerUtils.LaunchServer(); }
+            else { ModernWpf.MessageBox.Show("ServerInfo is already running."); }
         }
 
-        private void StopServer(object sender, RoutedEventArgs e)
-        {
-            ServerInfo.cmd.StandardInput.WriteLine("stop");
-            ServerInfo.cmd.StandardInput.Flush();
-            ServerInfo.IsServerRunning = false;
-        }
 
         private void Save(object sender, RoutedEventArgs e)
         {
             ServerInfo.cmd.StandardInput.WriteLine("save-all");
             ServerInfo.cmd.StandardInput.Flush();
+        }
+
+        private async void StopServer(object sender, RoutedEventArgs e)
+        {
+            ServerInfo.cmd.StandardInput.WriteLine("stop");
+            ServerInfo.cmd.StandardInput.Flush();
+            ServerInfo.IsServerRunning = false;
+            await Task.Delay(10000); //Gives about enough time for the world to save
+            if (ModernWpf.MessageBox.Show("Do you want to close SSM?", "Server closed successfully", MessageBoxButton.YesNo) == MessageBoxResult.Yes) { await Task.Delay(10000); Application.Current.Shutdown(); }
         }
     }
 }

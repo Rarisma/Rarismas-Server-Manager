@@ -20,7 +20,6 @@ namespace SSM
         public static bool IsServerRunning = false;         //If set to true SSM prevents closing
         public static Int64 RAM = 0;                        //Used for servers that need RAM to be allocated, servers that don't will just have it set as 0
         public static Process cmd = new();                  //Used for Command Prompts
-        public static StreamWriter InputStream;
-
+        public static bool KillServer = false;              //Used to signal when output should be unsubbed from
     }
 }
