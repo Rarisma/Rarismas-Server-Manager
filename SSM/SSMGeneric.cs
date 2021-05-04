@@ -39,6 +39,18 @@ namespace SSM
             ServerInfo.ServerVersion = SSM_INI[SSM_INI.IndexOf("### Server version") + 1];
             ServerInfo.ServerWorldSize = SSM_INI[SSM_INI.IndexOf("### Server size") + 1];
         }
+        
+        public static void OpenFolder(string path)
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo() {
+            FileName = path,
+            UseShellExecute = true,
+            Verb = "open"
+            });
+        }
+            
+        }
+        
 
     }
 }
