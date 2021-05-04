@@ -35,7 +35,7 @@ namespace SSM.Pages.Terraria
         {
             if (Convert.ToString(WorldSize.SelectedValue).Contains("Large")) { ServerInfo.ServerWorldSize = "3"; }
             else if (Convert.ToString(WorldSize.SelectedValue).Contains("Medium")) { ServerInfo.ServerWorldSize = "2"; }
-            else if (Convert.ToString(WorldSize.SelectedValue) == "Small") { ServerInfo.ServerWorldSize = "1"; }
+            else if (Convert.ToString(WorldSize.SelectedValue).Contains("Small")) { ServerInfo.ServerWorldSize = "1"; }
         }
 
         private void GoBack(object sender, RoutedEventArgs e)

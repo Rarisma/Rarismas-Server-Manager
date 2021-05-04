@@ -540,3 +540,5 @@ A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\r
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\SSM.pdb
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\SSM.genruntimeconfig.cache
 A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\SSM.csprojAssemblyReference.cache
+A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\ConnectionHelp.g.cs
+A:\Repositories\Simple-Server-Manager\SSM\obj\Debug\net5.0-windows10.0.18362.0\Pages\SSM_GUI\ConnectionHelp.baml

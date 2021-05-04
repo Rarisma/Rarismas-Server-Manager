@@ -41,13 +41,10 @@ namespace SSM.Pages.SSM_GUI
 
                 case "Terraria":
                     ServerInfo.ServerGame = "Terraria";
-                    ServerDescription.Text = "This will allow player to connect to your world even when you aren't playing terraria yourself";
+                    ServerDescription.Text = "This will allow players to connect to your world even when you aren't playing terraria yourself";
                     break;
 
-
-                default:
-                    ServerDescription.Text = "Cannot find a description for " + AvailableServers.SelectedValue; 
-                    break;
+                default: ServerDescription.Text = "Failed to find a description for " + AvailableServers.SelectedValue + "\nThis should not happen if you are using a release version of SSM.";  break;
             }   
         }
 

@@ -92,6 +92,7 @@ namespace SSM.Pages.Minecraft_Java
         {
             ServerInfo.ServerVersion = "Not set";
             ServerInfo.ServerURL = "Not set";
+            ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new RamAllocation();
         }
         
         private void Continue(object sender, RoutedEventArgs e)
@@ -116,7 +117,7 @@ namespace SSM.Pages.Minecraft_Java
             }
 
             ModernWpf.MessageBox.Show("Finished downloading server files");
-            ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.Welcome();
+            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.Welcome();
         }
 
     }

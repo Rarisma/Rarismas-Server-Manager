@@ -64,5 +64,11 @@ namespace SSM.Pages.SSM_GUI
         private void GoBack(object sender, RoutedEventArgs e) { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Welcome(); }
 
         private void OpenPluginFolder(object sender, RoutedEventArgs e) { SSMGeneric.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "Servers\\" + ServerInfo.ServerLabel + "\\plugins\\"); }
+
+        private void ConnectionHelp(object sender, RoutedEventArgs e)
+        {
+            Window ConnectionHelper = new ConnectionHelp();
+            ConnectionHelper.Show();
+        }
     }
 }

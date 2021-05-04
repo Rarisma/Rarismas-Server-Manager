@@ -29,7 +29,6 @@ namespace SSM.Pages.Minecraft_Java
             ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.NewServer();
         }
 
-
         private void Continue(object sender, RoutedEventArgs e) { ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Minecraft_Java.VersionSelect(); }
 
     }
