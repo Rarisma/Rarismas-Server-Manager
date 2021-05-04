@@ -12,7 +12,7 @@ Hamachi is an alternative to port forwarding which some people consider as being
   - Create an account
   - Join a network
 
-### How do people join my game 
+### How do people join my server
 Once they have joined the server, right click on your user name and click copy IPV4, this is the IP Adress that people will need to connect to your network. Don't worry this isnt your real IP and nobody who isn't your network can access your server or your computer.
 
 ## FAQ
