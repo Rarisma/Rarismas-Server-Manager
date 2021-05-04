@@ -32,7 +32,7 @@ namespace PluginTemplate
         private async void Changed(object sender, FileSystemEventArgs e)
         {
             string text = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\SSM\\SSM.txt");
-            Commands.HandleCommand((TSPlayer)(object)TSPlayer.Server, "/" + text);
+            Commands.HandleCommand((TSPlayer)(object)TSPlayer.Server, text);
             Console.WriteLine("SSMHelper Issued command " + text);
             await Task.Delay(1000); //Delay to prevent this from being called lots of times by SSM
         }
