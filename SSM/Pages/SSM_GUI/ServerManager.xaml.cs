@@ -46,6 +46,11 @@ namespace SSM.Pages.SSM_GUI
             }
         }
         
+        private void OpenPluginsFolder(object sender, RoutedEventArgs e) { SSMGeneric.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "//" + ServerInfo.ServerLabel + "//plugins//" ) }
+        
+        private void OpenPluginsFolder(object sender, RoutedEventArgs e) { SSMGeneric.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "//" + ServerInfo.ServerLabel + "//mods//" ) }
+
+        
         private void GoBack(object sender, RoutedEventArgs e) { ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Pages.SSM_GUI.Welcome(); }
         
     }
