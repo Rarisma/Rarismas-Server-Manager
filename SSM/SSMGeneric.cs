@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,13 +41,7 @@ namespace SSM
             ServerInfo.ServerWorldSize = SSM_INI[SSM_INI.IndexOf("### Server size") + 1];
         }
         
-        public static void OpenFolder(string path)
-        {
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo() {
-            FileName = path,
-            UseShellExecute = true,
-            Verb = "open" });
-        }
+        public static void OpenFolder(string path) { Process.Start("explorer.exe", "/select" + path);  }
 
     }
 }

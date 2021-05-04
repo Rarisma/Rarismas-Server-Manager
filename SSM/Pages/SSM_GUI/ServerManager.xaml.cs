@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.IO;
+using System.Diagnostics;
 //A temporary forever.
 namespace SSM.Pages.SSM_GUI
 {
@@ -15,6 +16,18 @@ namespace SSM.Pages.SSM_GUI
             InitializeComponent();
             ServerVersion.Text = ServerInfo.ServerGame + " " + ServerInfo.ServerVersion + " (" + ServerInfo.ServerVariant + ")";
             ServerName.Text = ServerInfo.ServerLabel;
+
+            switch (ServerInfo.ServerVariant) //adjusts visible buttons to users so /mods/ and /plugins/ can't be accessed on server variants that dont support them
+            {
+                case "Paper":    ModButton.Opacity = 0; ModButton.IsEnabled = false; break;
+                case "Forge":    PluginButton.Opacity = 0; PluginButton.IsEnabled = false; break;
+                case "Normal":   ModButton.Opacity = 0; ModButton.IsEnabled = false; break;
+                default:
+                    PluginButton.Opacity = 0; PluginButton.IsEnabled = false;
+                    ModButton.Opacity = 0; ModButton.IsEnabled = false;
+                    break;
+            }
+
         }
 
         public void Launcher(object sender, RoutedEventArgs e)
@@ -30,7 +43,7 @@ namespace SSM.Pages.SSM_GUI
             switch (ServerInfo.ServerGame)
             {
                 case "Minecraft Java":
-                    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.ServerLabel + "\\server.properties")) { ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Pages.Minecraft_Java.ServerPropitiesEditor(); }
+                    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.ServerLabel + "\\server.properties")) { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Pages.Minecraft_Java.ServerPropitiesEditor(); }
                     else { ModernWpf.MessageBox.Show("Failed to find server propities file, try launching the server and comming back here"); }
                     break;
             }
@@ -46,12 +59,10 @@ namespace SSM.Pages.SSM_GUI
             }
         }
         
-        private void OpenPluginsFolder(object sender, RoutedEventArgs e) { SSMGeneric.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "//" + ServerInfo.ServerLabel + "//plugins//" ) }
+        private void Mods(object sender, RoutedEventArgs e) { SSMGeneric.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.ServerLabel + "\\mods\\"); }
         
-        private void OpenPluginsFolder(object sender, RoutedEventArgs e) { SSMGeneric.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "//" + ServerInfo.ServerLabel + "//mods//" ) }
+        private void GoBack(object sender, RoutedEventArgs e) { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Welcome(); }
 
-        
-        private void GoBack(object sender, RoutedEventArgs e) { ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Pages.SSM_GUI.Welcome(); }
-        
+        private void OpenPluginFolder(object sender, RoutedEventArgs e) { SSMGeneric.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "Servers\\" + ServerInfo.ServerLabel + "\\plugins\\"); }
     }
 }

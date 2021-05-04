@@ -32,21 +32,20 @@ namespace SSM.Pages.Terraria
 
         public static void SendCommand(string command) { File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.ServerLabel + "\\SSM\\SSM.txt", command); }
 
-        private void StopServer(object sender, RoutedEventArgs e)
+        private async void StopServer(object sender, RoutedEventArgs e)
         {
             SendCommand("stop");
             ServerInfo.IsServerRunning = false;
+            ServerInfo.IsServerRunning = false;
+            await Task.Delay(10000); //Gives about enough time for the world to save
+            if (ModernWpf.MessageBox.Show("Do you want to close SSM?", "Server closed successfully", MessageBoxButton.YesNo) == MessageBoxResult.Yes) { await Task.Delay(10000); Application.Current.Shutdown(); }
         }
 
-        private void OpenServer(object sender, RoutedEventArgs e)
-        {
-            if (ServerInfo.IsServerRunning == true) { ModernWpf.MessageBox.Show("Server is already running."); }
-            else 
-            {
-                ServerInfo.cmd.Close();
-                ServerInfo.cmd.Start();
-                SSM_GUI.ServerUtils.LaunchServer();}
-        }
+        private void Dawn(object sender, RoutedEventArgs e) { SendCommand("dawn"); }
+        private void Dusk(object sender, RoutedEventArgs e) { SendCommand("dusk"); }
+        private void Restart(object sender, RoutedEventArgs e) { SendCommand("restart");  }
 
+        private void Bloodmoon(object sender, RoutedEventArgs e) { SendCommand("bloodmoon"); }
+        private void Eclipse(object sender, RoutedEventArgs e) { SendCommand("bloodmoon"); }
     }
 }
