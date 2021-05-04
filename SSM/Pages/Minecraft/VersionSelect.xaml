@@ -24,8 +24,9 @@
         <TextBlock Text="What version do you want your server to run?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
         <Border Height="20" />
         <ComboBox Name="Version" SelectionChanged="VersionUpdated" Width="200" HorizontalAlignment="Center" />
-        <Border Height="200" />
-
+        <Border Height="140" />
+        <TextBlock Text="By clicking continue you agree to the Minecraft/Mojang EULA." FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+        <Border Height="40"/>
         <Grid Height="50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="390" />

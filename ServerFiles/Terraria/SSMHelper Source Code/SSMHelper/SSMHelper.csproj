@@ -7,8 +7,8 @@
     <ProjectGuid>{DCA3A85E-22A6-48E2-998D-343C2BE8402F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PluginTemplate</RootNamespace>
-    <AssemblyName>PluginTemplate</AssemblyName>
+    <RootNamespace>SSMHelper</RootNamespace>
+    <AssemblyName>SSMHelper</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
