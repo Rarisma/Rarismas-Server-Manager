@@ -1,0 +1,11 @@
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\bin\Debug\PluginTemplate.dll
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\bin\Debug\PluginTemplate.pdb
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\bin\Debug\OTAPI.dll
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\bin\Debug\TerrariaServer.exe
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\bin\Debug\TShockAPI.dll
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\obj\Debug\SSMHelper.csprojAssemblyReference.cache
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\obj\Debug\SSMHelper.csproj.CoreCompileInputs.cache
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\obj\Debug\SSMHelper.csproj.CopyComplete
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\obj\Debug\PluginTemplate.dll
+C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\obj\Debug\PluginTemplate.pdb
