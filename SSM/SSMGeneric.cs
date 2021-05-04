@@ -45,12 +45,8 @@ namespace SSM
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo() {
             FileName = path,
             UseShellExecute = true,
-            Verb = "open"
-            });
+            Verb = "open" });
         }
-            
-        }
-        
 
     }
 }
