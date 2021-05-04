@@ -18,10 +18,10 @@ Once they have joined the server, right click on your user name and click copy I
 ## FAQ
 
 ### Should I use hamachi
-
+  
   If you don't feel confident editing router settings then yes, although hamachi isn't ideal it will get the job done in most cases
   
-### WHat does relayed/blocked tunnel mean
+### What does relayed/blocked tunnel mean
 
   This means that Hamachi cannot connect you to that person, I would link a guide however I cannot find a solution that has worked for me, if you do please send it me so I can link it here. If this happens and you can't find a fix then you should look into port forwarding, luckily we have a guide for that
   
