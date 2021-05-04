@@ -24,6 +24,9 @@
     <Compile Update="Pages\SSM_GUI\CLIServer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\SSM_GUI\ConnectionHelp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\SSM_GUI\NewServer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +57,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SSM_GUI\CLIServer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SSM_GUI\ConnectionHelp.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SSM_GUI\NewServer.xaml">

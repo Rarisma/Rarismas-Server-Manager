@@ -12,7 +12,7 @@
         <Border Height="20" />
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="ServerName"  Name="ServerName" FontSize="25" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
         <Border Height="50"/>
-
+        
         <TextBox Name="ServerConsole" Text="Server Console Initalised." Margin="10" Background="#121212" Foreground="#fff" Height="380" Width="700"/>
         <Border Height="20" />
 

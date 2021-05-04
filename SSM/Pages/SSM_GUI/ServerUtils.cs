@@ -23,8 +23,8 @@ namespace SSM.Pages.SSM_GUI
                     break;
 
                 case "Terraria":
-                    ServerInfo.cmd.StandardInput.WriteLine("TerrariaServer.exe -autocreate 3 -world C:\\Users\\Rarisma\\Documents\\My Games\\Terraria\\Worlds\\Test.wrld");
-                    ServerInfo.cmd.StandardInput.Flush();
+                    //ServerInfo.cmd.StandardInput.WriteLine("TerrariaServer.exe -autocreate 3 -world C:\\Users\\Rarisma\\Documents\\My Games\\Terraria\\Worlds\\Test.wrld");
+                    //ServerInfo.cmd.StandardInput.Flush();
                     break;
             }
         }

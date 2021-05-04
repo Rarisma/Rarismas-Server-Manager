@@ -21,7 +21,10 @@
 
         <Button Foreground="#fff" IsEnabled="True" Content="Configure server" HorizontalAlignment="Center" Width="150" Click="ConfigServer" />
         <Border Height="50" />
-        
+
+        <Button Foreground="#fff" Content="Help people connect to this server" HorizontalAlignment="Center" Grid.Column="0" Click="ConnectionHelp"/>
+        <Border Height="50" />
+
         <Button Foreground="#fff" Content="Delete Server" HorizontalAlignment="Center" Width="150" Click="DeleteServer" />
         <Border Height="50" />
         
