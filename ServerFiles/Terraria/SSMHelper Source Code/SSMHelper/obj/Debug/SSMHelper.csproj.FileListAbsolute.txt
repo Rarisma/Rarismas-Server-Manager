@@ -9,3 +9,14 @@ C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\obj\Debug\SSM
 C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\obj\Debug\SSMHelper.csproj.CopyComplete
 C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\obj\Debug\PluginTemplate.dll
 C:\Users\Rarisma\Desktop\PluginTemplate-master\SSMHelper\SSMHelper\obj\Debug\PluginTemplate.pdb
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Debug\OTAPI.dll
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Debug\TerrariaServer.exe
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Debug\TShockAPI.dll
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Debug\Newtonsoft.Json.dll
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Debug\SSMHelper.csprojAssemblyReference.cache
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Debug\SSMHelper.csproj.CoreCompileInputs.cache
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Debug\SSMHelper.csproj.CopyComplete
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Debug\SSMHelper.dll
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Debug\SSMHelper.pdb
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Debug\SSMHelper.dll
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Debug\SSMHelper.pdb
