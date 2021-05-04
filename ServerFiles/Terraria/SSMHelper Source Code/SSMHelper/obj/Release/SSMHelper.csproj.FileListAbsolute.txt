@@ -8,3 +8,4 @@ A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code
 A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Release\SSMHelper.csproj.CopyComplete
 A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Release\SSMHelper.dll
 A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Release\SSMHelper.pdb
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Release\SSMHelper.csprojAssemblyReference.cache
