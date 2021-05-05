@@ -1,12 +1,12 @@
 # Port forwarding
 
-Port forwarding is an alternative to using hamachi and is only needed to be done by the host. This may be more complicated than using hamachi as it requires editing your router page. If you cannot access your router page or don't know your routers password then you cannot use this method
+Port forwarding is an alternative to using hamachi and is only needed to be done by the person hosting the server. You may find this to be more complicated than using hamachi as it requires editing your router's settings. If you cannot access your router's settings page or don't know your routers settings password then you cannot use this method. In this case then you should use a method such as [hamachi](https://rarisma.github.io/Simple-Server-Manager/help/connections/general/hamachi)
 
 
 # How to setup port forwarding
-- To begin with you will need to have access to your router page you can usually do this by opening your browser and going to going to 192.168.0.1
+- To begin with you will need to have access to your router page you can usually do this by opening your browser and going to going to 192.168.0.1 (depending on where you live this may be different)
 - You may be asked for a password, this can be found on your router however it may have been changed if you live with other people
-- You will now want to find the local IP [https://support.microsoft.com/en-us/windows/find-your-ip-address-f21a9bbc-c582-55cd-35e0-73431160a1b9](by following this guide here)
+- You will now want to find the local IP [by following this guide here](https://support.microsoft.com/en-us/windows/find-your-ip-address-f21a9bbc-c582-55cd-35e0-73431160a1b9)
 - Now you can start port forwarding, look for this option in your router page, you may have to enable an expert/advanced mode in your router if it has one or it may be under security or firewall options
 - Now create a new portforwarding rule, enter your local ip and the ports SSM tells you to follow
 - Once done, double check and then click apply/save
