@@ -42,6 +42,15 @@ namespace SSM
         }
         
         public static void OpenFolder(string path) { Process.Start("explorer.exe", "/select" + path);  }
+        public static void OpenLink(string link) 
+        {
+            var LinkOpener = new ProcessStartInfo(link)
+            {
+                UseShellExecute = true,
+                Verb = "open"
+            };
+            Process.Start(LinkOpener); 
+        }
 
     }
 }

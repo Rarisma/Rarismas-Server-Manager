@@ -22,9 +22,9 @@
                 <ColumnDefinition Width="165"/>
                 <ColumnDefinition Width="165"/>
             </Grid.ColumnDefinitions>
-            <Button Content="Hamachi" Grid.Column="0" HorizontalAlignment="Center" Foreground="#fff" />
-            <Button Content="Learn more" Grid.Column="1" HorizontalAlignment="Center" Foreground="#fff"/>
-            <Button Content="Port Forwarding" Grid.Column="2" HorizontalAlignment="Center" Foreground="#fff"/>
+            <Button Content="Hamachi" Grid.Column="0" HorizontalAlignment="Center" Foreground="#fff" Click="Hamachi" />
+            <Button Content="Learn more" Grid.Column="1" HorizontalAlignment="Center" Foreground="#fff" Click="LearnMore"/>
+            <Button Content="Port Forwarding" Grid.Column="2" HorizontalAlignment="Center" Foreground="#fff" Click="PortForwarding"/>
         </Grid>
     </ui:SimpleStackPanel>
 </Window>
