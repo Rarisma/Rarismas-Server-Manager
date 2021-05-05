@@ -4,12 +4,12 @@ Port forwarding is an alternative to using hamachi and is only needed to be done
 
 
 # How to setup port forwarding
-    - To begin with you will need to have access to your router page you can usually do this by opening your browser and going to going to 192.168.0.1
-        - You may be asked for a password, this can be found on your router however it may have been changed if you live with other people
-    - You will now want to find the local IP [https://support.microsoft.com/en-us/windows/find-your-ip-address-f21a9bbc-c582-55cd-35e0-73431160a1b9](by following this guide here)
-    - Now you can start port forwarding, look for this option in your router page, you may have to enable an expert/advanced mode in your router if it has one or it may be under security or firewall options
-    - Now create a new portforwarding rule, enter your local ip and the ports SSM tells you to follow
-    - Once done, double check and then click apply/save
+- To begin with you will need to have access to your router page you can usually do this by opening your browser and going to going to 192.168.0.1
+- You may be asked for a password, this can be found on your router however it may have been changed if you live with other people
+- You will now want to find the local IP [https://support.microsoft.com/en-us/windows/find-your-ip-address-f21a9bbc-c582-55cd-35e0-73431160a1b9](by following this guide here)
+- Now you can start port forwarding, look for this option in your router page, you may have to enable an expert/advanced mode in your router if it has one or it may be under security or firewall options
+- Now create a new portforwarding rule, enter your local ip and the ports SSM tells you to follow
+- Once done, double check and then click apply/save
 
 
 
