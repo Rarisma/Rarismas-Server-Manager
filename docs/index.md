@@ -1,7 +1,3 @@
-# Simple Server Manager
-### Simple, Clean, Lightweight.
-#### Making server hosting easy for everyone.
-
 ## What is Simple Server Manager?
 Simple Server Manger is an app aimed at automating server hosting, allowing you to get into the game with your friends faster.
 We aim to support as many server as we can and currently support the following:
