@@ -15,4 +15,4 @@ We aim to support as many server as we can and currently support the following:
 [Please create an issue on our github repo.](https://github.com/Rarisma/Simple-Server-Manager/issues)
 
 ## Who made SSM?
-Currently SSM is maintained by [Rarisma](https://github.com/Rarisma) however it couldn't be possible without [these people](https://github.com/Rarisma/Simple-Server-Manager/new/main/docs/help/Aknowledgements)
+Currently SSM is maintained by [Rarisma](https://github.com/Rarisma) however it couldn't be possible without [these people](https://rarisma.github.io/Simple-Server-Manager/help/Aknowledgements)
