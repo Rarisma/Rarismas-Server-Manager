@@ -74,30 +74,7 @@ namespace SSM.Pages.Minecraft_Java
             ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new RamAllocation();
         }
         
-        private void Continue(object sender, RoutedEventArgs e)
-        {
-            LibRarisma.IO.DownloadFile(ServerInfo.ServerURL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//", "Server.jar");
-            SSMGeneric.Make_INI_File();
-            System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//" + "eula.txt", "#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).\n# made by SSM\neula = true"); //Makes the EULA accepted
-             
-            if (ServerInfo.ServerVariant == "Forge")
-            {
-                ServerInfo.cmd.StartInfo.FileName = "cmd.exe";
-                ServerInfo.cmd.StartInfo.RedirectStandardInput = true;
-                ServerInfo.cmd.StartInfo.CreateNoWindow = false;
-                ServerInfo.cmd.StartInfo.UseShellExecute = false;
-                ServerInfo.cmd.Start();
-                ServerInfo.cmd.StandardInput.WriteLine("cd Servers");
-                ServerInfo.cmd.StandardInput.Flush();
-                ServerInfo.cmd.StandardInput.WriteLine("cd " + ServerInfo.ServerLabel);
-                ServerInfo.cmd.StandardInput.Flush();
-                ServerInfo.cmd.StandardInput.WriteLine("java -jar Server.jar --installServer exit");
-                ServerInfo.cmd.StandardInput.Flush();
-            }
-
-            ModernWpf.MessageBox.Show("Finished downloading server files");
-            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.Welcome();
-        }
+        private void Continue(object sender, RoutedEventArgs e) { SSMGeneric.BuildServer() }
 
     }
 }
