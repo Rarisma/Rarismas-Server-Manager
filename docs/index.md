@@ -12,7 +12,7 @@ We aim to support as many server as we can and currently support the following:
   SSM Will guide you throughout the process, from choosing the game, to getting people to connect!
  
 ## I have an issue with SSM
-(Create an issue on our github repo.)
+[Please create an issue on our github repo.](https://github.com/Rarisma/Simple-Server-Manager/issues)
 
 ## Who made SSM?
-Currently SSM is maintained by [Rarisma](https://github.com/Rarisma) however it uses and relys on a lot of software made by other people
+Currently SSM is maintained by [Rarisma](https://github.com/Rarisma) however it couldn't be possible without [these people](https://github.com/Rarisma/Simple-Server-Manager/new/main/docs/help/Aknowledgements)
