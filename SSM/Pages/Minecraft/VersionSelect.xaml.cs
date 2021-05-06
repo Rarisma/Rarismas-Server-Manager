@@ -31,54 +31,33 @@ namespace SSM.Pages.Minecraft_Java
         private void VariantsUpdated(object sender, SelectionChangedEventArgs e)
         {
             List<String> VersionSorter = new();
+            Servers.URLs.Clear();
+            VersionSorter.Clear();
             switch (Variants.SelectedValue)
             {
                 case "Paper (Recomended)":
-                    Servers.URLs.Clear();
-                    VersionSorter.Clear();
                     Description.Text = "Paper is an improved version of the vanilla hosting software, it's much more efficent and supports plugins!";
                     ServerInfo.ServerVariant = "Paper";
                     VersionSorter.AddRange(System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Paper"));
-                    VersionSorter.RemoveAll(str => string.IsNullOrEmpty(str)); //Update to use LibRarisma.Utils.Clean();
-
-                    for (int i = 0; i <= (VersionSorter.Count - 1); i++)
-                    {
-                        if (Convert.ToString(VersionSorter[i][0]) == "1") { Version.Items.Add(VersionSorter[i]); } //This adds version names
-                        else if (VersionSorter[i].Contains("https")) { Servers.URLs.Add(VersionSorter[i]); }
-                    }
                     break;
 
                 case "Vanilla":
-                    Servers.URLs.Clear();
-                    VersionSorter.Clear();
                     Description.Text = "This is the vanilla hosting software made by Mojang. Unless you need it for a spesific reason you should use paper.";
                     ServerInfo.ServerVariant = "Paper";
-                    VersionSorter.Clear();
                     VersionSorter.AddRange(System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Stock"));
-                    VersionSorter.RemoveAll(str => string.IsNullOrEmpty(str)); //Update to use LibRarisma.Utils.Clean();
-
-                    for (int i = 0; i <= (VersionSorter.Count - 1); i++)
-                    {
-                        if (Convert.ToString(VersionSorter[i][0]) == "1") { Version.Items.Add(VersionSorter[i]); } //This adds version names
-                        else if (VersionSorter[i].Contains("https")) { Servers.URLs.Add(VersionSorter[i]); }
-                    }
                     break;
 
                 case "Forge (Modded)":
-                    Servers.URLs.Clear();
-                    VersionSorter.Clear();
                     Description.Text = "Modded minecraft allows you to install mods which will add new things to minecraft\nPlease note that this doesn't come with any mods.";
                     ServerInfo.ServerVariant = "Forge";
-                    VersionSorter.Clear();
                     VersionSorter.AddRange(System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Forge"));
-                    VersionSorter.RemoveAll(str => string.IsNullOrEmpty(str)); //Update to use LibRarisma.Utils.Clean();
-
-                    for (int i = 0; i <= (VersionSorter.Count - 1); i++)
-                    {
-                        if (Convert.ToString(VersionSorter[i][0]) == "1") { Version.Items.Add(VersionSorter[i]); } //This adds version names
-                        else if (VersionSorter[i].Contains("https")) { Servers.URLs.Add(VersionSorter[i]); }
-                    }
                     break;
+            }
+            VersionSorter.RemoveAll(str => string.IsNullOrEmpty(str)); //Update to use LibRarisma.Utils.Clean();
+            for (int i = 0; i <= (VersionSorter.Count - 1); i++)
+            {
+                if (Convert.ToString(VersionSorter[i][0]) == "1") { Version.Items.Add(VersionSorter[i]); } //This adds version names
+                else if (VersionSorter[i].Contains("https")) { Servers.URLs.Add(VersionSorter[i]); }
             }
         }
 
