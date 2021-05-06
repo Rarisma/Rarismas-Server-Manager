@@ -41,8 +41,39 @@ namespace SSM
             ServerInfo.ServerWorldSize = SSM_INI[SSM_INI.IndexOf("### Server size") + 1];
         }
         
-        public static void OpenFolder(string path) { Process.Start("explorer.exe", "/select" + path);  }
-        public static void OpenLink(string link) 
+        public static void BuildServer()
+        {
+            LibRarisma.IO.DownloadFile(ServerInfo.ServerURL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//", "Server.jar");
+            SSMGeneric.Make_INI_File();
+            
+            // This switch handles extras such as making aditional files if needed.
+            switch (ServerInfo.ServerGame)
+            {
+                case "Minecraft Java":
+                    System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//" + "eula.txt", "#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).\n# made by SSM\neula = true"); //Makes the EULA accepted
+                    if (ServerInfo.ServerVariant == "Forge")
+                    {
+                        Process cmd = new();
+                        cmd.StartInfo.FileName = "cmd.exe";
+                        cmd.StartInfo.RedirectStandardInput = true;
+                        cmd.StartInfo.CreateNoWindow = false;
+                        cmd.StartInfo.UseShellExecute = false;
+                        cmd.StartInfo.AutoFlush = true;
+                        cmd.Start();
+                        cmd.StandardInput.WriteLine("cd Servers");
+                        cmd.StandardInput.WriteLine("cd " + ServerInfo.ServerLabel);
+                        cmd.StandardInput.WriteLine("java -jar Server.jar --installServer exit");
+                    }                    
+                    break;
+            }
+            
+            ModernWpf.MessageBox.Show("Finished downloading server files");
+            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.Welcome();
+        }
+        
+        
+        public static void OpenFolder(string path) { Process.Start("explorer.exe", "/select" + path);  } //This is going in LibRarisma
+        public static void OpenLink(string link) //Also going in LibRarisma
         {
             var LinkOpener = new ProcessStartInfo(link)
             {
