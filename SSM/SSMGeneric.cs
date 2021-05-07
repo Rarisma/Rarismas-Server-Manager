@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
+using Sytem.Diagnostics;
 //Useful and reusuable functions are stored here,
 //Most functions will be pushed to LibRarisma unless it's SSM Spesific
 namespace SSM
@@ -59,7 +59,7 @@ namespace SSM
                         cmd.StartInfo.RedirectStandardInput = true;
                         cmd.StartInfo.CreateNoWindow = false;
                         cmd.StartInfo.UseShellExecute = false;
-                        cmd.StartInfo.AutoFlush = true;
+                        cmd.StartInfo.StandardInput.AutoFlush = true;
                         cmd.Start();
                         cmd.StandardInput.WriteLine("cd Servers");
                         cmd.StandardInput.WriteLine("cd " + ServerInfo.ServerLabel);
@@ -69,7 +69,7 @@ namespace SSM
             }
             
             ModernWpf.MessageBox.Show("Finished downloading server files");
-            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.Welcome();
+            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Pages.SSM_GUI.Welcome();
         }
         
         
