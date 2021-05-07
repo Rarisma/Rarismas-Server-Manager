@@ -19,7 +19,7 @@ namespace SSM.Pages.Terraria
             
             string[] URLs = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//TerraiaTShock");
             ServerInfo.ServerVersion = URLs[0];
-            ServerInfo.ServerVariant = "Normal";
+
             ServerInfo.ServerURL = URLs[1];
         }
 
@@ -37,15 +37,7 @@ namespace SSM.Pages.Terraria
             ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.Welcome();
         }
 
-        private void Continue(object sender, RoutedEventArgs e)
-        {
-            LibRarisma.IO.DownloadFile(ServerInfo.ServerURL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//", "Terraria.zip",true);
-            LibRarisma.IO.DownloadFile("https://github.com/Rarisma/Simple-Server-Manager/blob/main/ServerFiles/Terraria/SSMHelper.dll?raw=true", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//ServerPlugins//", "SSMHelper.dll");
-            SSMGeneric.Make_INI_File();
-            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new SSM_GUI.Welcome();
-            File.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//Terraria.zip");
-            ModernWpf.MessageBox.Show("Finished downloading server files");
-        }
+        private void Continue(object sender, RoutedEventArgs e) { SSMGeneric.BuildServer(); }
 
     }
 }
