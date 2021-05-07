@@ -74,7 +74,7 @@ namespace SSM.Pages.Minecraft_Java
             ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new RamAllocation();
         }
         
-        private void Continue(object sender, RoutedEventArgs e) { SSMGeneric.BuildServer() }
+        private void Continue(object sender, RoutedEventArgs e) { SSMGeneric.BuildServer(); }
 
     }
 }
