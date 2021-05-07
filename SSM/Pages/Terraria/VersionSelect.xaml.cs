@@ -7,11 +7,6 @@ using System.Windows.Controls;
 //As ballin as possible
 namespace SSM.Pages.Terraria
 {
-    /// <summary>
-    /// Interaction logic for VersionSelect.xaml
-    /// </summary>
-    /// 
-
     class Servers { public static List<String> URLs = new(); }
 
     public partial class VersionSelect : UserControl
