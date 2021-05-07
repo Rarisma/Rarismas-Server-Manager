@@ -28,5 +28,12 @@ namespace SSM
 			ServerInfo.ServerURL = ServerReader[1];
        		SSMGeneric.BuildServer();
 		}
+
+		public static void CreateTerrariaServer()
+		{
+			ServerInfo.ServerWorldSize = "2";
+			SSMGeneric.BuildServer();
+		}
+		
 	}
 }
