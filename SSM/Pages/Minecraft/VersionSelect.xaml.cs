@@ -5,15 +5,7 @@ using System.Windows.Controls;
 
 namespace SSM.Pages.Minecraft_Java
 {
-    /// <summary>
-    /// Interaction logic for VersionSelect.xaml
-    /// </summary>
-    /// 
-
-    class Servers
-    {
-        public static List<String> URLs = new();
-    }
+    class Servers { public static List<String> URLs = new(); }
 
     public partial class VersionSelect : UserControl
     {
