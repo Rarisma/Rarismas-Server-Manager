@@ -58,17 +58,21 @@ namespace SSM
                         cmd.StartInfo.RedirectStandardInput = true;
                         cmd.StartInfo.CreateNoWindow = false;
                         cmd.StartInfo.UseShellExecute = false;
-                        cmd.StartInfo.StandardInput.AutoFlush = true;
+                        //cmd.StartInfo.StandardInput.AutoFlush = true; //Readd this
                         cmd.Start();
                         cmd.StandardInput.WriteLine("cd Servers");
+                        cmd.StandardInput.Flush();
                         cmd.StandardInput.WriteLine("cd " + ServerInfo.ServerLabel);
+                        cmd.StandardInput.Flush();
                         cmd.StandardInput.WriteLine("java -jar Server.jar --installServer exit");
+                        cmd.StandardInput.Flush();
+
                     }                    
                     break;
             }
             
             ModernWpf.MessageBox.Show("Finished downloading server files");
-            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Pages.SSM_GUI.Welcome();
+            //((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Pages.SSM_GUI.Welcome();
         }
         
         
