@@ -66,8 +66,14 @@ namespace SSM
                         cmd.StandardInput.Flush();
                         cmd.StandardInput.WriteLine("java -jar Server.jar --installServer exit");
                         cmd.StandardInput.Flush();
-
                     }                    
+                    break;
+                case "Terraria":
+                    ServerInfo.ServerVariant = "Normal";
+                    LibRarisma.IO.DownloadFile(ServerInfo.ServerURL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//", "Terraria.zip",true);
+                    LibRarisma.IO.DownloadFile("https://github.com/Rarisma/Simple-Server-Manager/blob/main/ServerFiles/Terraria/SSMHelper.dll?raw=true", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//ServerPlugins//", "SSMHelper.dll");
+                    SSMGeneric.Make_INI_File();
+                    File.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//Terraria.zip");
                     break;
             }
             
