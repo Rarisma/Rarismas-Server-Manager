@@ -34,8 +34,9 @@ namespace SSM.Pages.SSM_GUI
         {   //If clicked sends them to server manager ( unless its the new server option )
             string SelectedValue = ListView.SelectedValue.ToString();
             SelectedValue = SelectedValue.Replace("ModernWpf.Controls.ListViewItem: ","");
+            Automode.IsAutoModeEnabled = false;
             if (SelectedValue == "Create a new server") {((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
-            else if (SelectedValue == "Create new server (Automatic)") {((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
+            else if (SelectedValue == "Create new server (Automatic)") {((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); Automode.IsAutoModeEnabled = true; }
             else {LoadPage();} //Calls the function to start to load the game
         }
         

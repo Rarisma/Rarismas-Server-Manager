@@ -9,8 +9,9 @@
              xmlns:ui="http://schemas.modernwpf.com/2019">
 
     <ui:SimpleStackPanel>
-        <Border Height="50" />
+        <Border Height="25" />
         <TextBlock Text="Lets get started!" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" />
+        <TextBlock Text="Automode is enabled" Name="AutoModeNotice" Foreground="#fff" HorizontalAlignment="Center" Opacity="0" FontSize="20" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" />
         <Border Height="50" />
         <TextBlock Text="What game do you want to make a server for?" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" FontSize="20" />
         <Border Height="20" />

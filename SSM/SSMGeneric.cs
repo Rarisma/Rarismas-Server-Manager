@@ -68,20 +68,32 @@ namespace SSM
                         cmd.StandardInput.Flush();
                     }                    
                     break;
+                case "Minecraft Bedrock":
+                    ServerInfo.ServerVariant = "Bedrock";
+                    ServerInfo.RAM = 0;
+
+                    //Gets latest links to server
+                    LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Minecraft/bedrock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Bedrock");
+                    string[] ServerFile = System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Bedrock");
+                    ServerInfo.ServerVersion = ServerFile[0];
+                    ServerInfo.ServerURL = ServerFile[1];
+                    LibRarisma.IO.DownloadFile(ServerFile[1], AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel, "//Server.zip", true);
+                    break;
+
+
                 case "Terraria":
                     ServerInfo.ServerVariant = "Normal";
                     LibRarisma.IO.DownloadFile(ServerInfo.ServerURL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//", "Terraria.zip",true);
                     LibRarisma.IO.DownloadFile("https://github.com/Rarisma/Simple-Server-Manager/blob/main/ServerFiles/Terraria/SSMHelper.dll?raw=true", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//ServerPlugins//", "SSMHelper.dll");
-                    SSMGeneric.Make_INI_File();
                     System.IO.File.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel + "//Terraria.zip");
                     break;
             }
             
             ModernWpf.MessageBox.Show("Finished downloading server files");
-            //((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Pages.SSM_GUI.Welcome();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new SSM.Pages.SSM_GUI.Welcome();
         }
-        
-        
+
+
         public static void OpenFolder(string path) { Process.Start("explorer.exe", "/select" + path);  } //This is going in LibRarisma
         public static void OpenLink(string link) //Also going in LibRarisma
         {
