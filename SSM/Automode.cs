@@ -5,7 +5,8 @@ namespace SSM
 {
 	class Automode 
 	{
-    	public static void CreatePaperServer()
+        public static bool IsAutoModeEnabled; //Used by Welcome and NewServer to know if they should call this
+        public static void CreatePaperServer()
     	{
        		ServerInfo.ServerVariant = "Paper";
        		LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Minecraft/Paper", AppDomain.CurrentDomain.BaseDirectory + "//Cache//","Paper");
@@ -34,6 +35,8 @@ namespace SSM
 			ServerInfo.ServerWorldSize = "2";
 			SSMGeneric.BuildServer();
 		}
+
+        public static void CreateBedrockServer() { SSMGeneric.BuildServer(); }
 		
 	}
 }

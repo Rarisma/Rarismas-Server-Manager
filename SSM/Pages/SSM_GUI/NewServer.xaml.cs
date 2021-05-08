@@ -12,11 +12,13 @@ namespace SSM.Pages.SSM_GUI
         public NewServer()
         {
             InitializeComponent();
+            if (Automode.IsAutoModeEnabled == true) { AutoModeNotice.Opacity = 1; } // Shows warning that automode is on when applicable.
+
+
             AvailableServers.Items.Add("Minecraft Java");
             AvailableServers.Items.Add("Minecraft Bedrock");
             AvailableServers.Items.Add("Terraria");
-            //AvailableServers.Items.Add("Terraria - TSHOCK"); //no, not yet.
-            //AvailableServers.Items.Add("Terraria - Modded"); //You can wait.
+            //AvailableServers.Items.Add("Factorio"); //no, not yet.
             //AvailableServers.Items.Add("Minecraft Unified"); //Coming eventually
         }
 
@@ -61,26 +63,15 @@ namespace SSM.Pages.SSM_GUI
         private void Continue(object sender, RoutedEventArgs e)
         {
             System.IO.Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "//Servers"); //Tries to make a servers folder
-            LibRarisma.IO.RecreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "//Cache");
+            LibRarisma.IO.RecreateDirectory(AppDomain .CurrentDomain.BaseDirectory + "//Cache");
 
-            if (ServerInfo.ServerLabel != "None Set" && ServerInfo.ServerGame != "None Set")
+            if (ServerInfo.ServerLabel != "None Set" && ServerInfo.ServerGame != "None Set" && Automode.IsAutoModeEnabled == false)
             {
                 switch (ServerInfo.ServerGame)
                 {
 
                     case "Minecraft Bedrock":
-                        ServerInfo.ServerVariant = "Bedrock";
-                        ServerInfo.RAM = 0;
-
-                        //Gets latest links to server
-                        LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Minecraft/bedrock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Bedrock");
-                        string[] ServerFile = System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Bedrock");
-                        ServerInfo.ServerVersion = ServerFile[0];
-                        LibRarisma.IO.DownloadFile(ServerFile[1], AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.ServerLabel, "//Server.zip", true);
-                        
-                        SSMGeneric.Make_INI_File();
-                        ModernWpf.MessageBox.Show("Finished downloading!");
-                        ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Welcome();
+                        Automode.CreateBedrockServer();
                         break;
 
                     case "Minecraft Java":
@@ -95,6 +86,16 @@ namespace SSM.Pages.SSM_GUI
                         ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new Terraria.VersionSelect();
                         break;
                         
+                }
+            }
+            else if (ServerInfo.ServerLabel != "None Set" && ServerInfo.ServerGame != "None Set" && Automode.IsAutoModeEnabled == true)
+            {
+                switch (ServerInfo.ServerGame)
+                {
+                    case "Minecraft Java (Vanilla)": Automode.CreatePaperServer(); break;
+                    case "Minecraft Java (Modded)": Automode.CreateForgeServer(); break;
+                    case "Minecraft Bedrock": Automode.CreateBedrockServer(); break;
+                    case "Terraria": Automode.CreateTerrariaServer(); break;
                 }
             }
 

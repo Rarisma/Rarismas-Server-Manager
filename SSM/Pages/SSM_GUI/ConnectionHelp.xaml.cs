@@ -14,7 +14,7 @@ namespace SSM.Pages.SSM_GUI
         }
 
         private void Hamachi(object sender, RoutedEventArgs e) { SSMGeneric.OpenLink("https://rarisma.github.io/Simple-Server-Manager/help/connections/general/hamachi"); }
-        private void PortForwarding(object sender, RoutedEventArgs e) { SSMGeneric.OpenLink("https://rarisma.github.io/Simple-Server-Manager/help/connections/general/PortForwarding"); }
+        private void PortForwarding(object sender, RoutedEventArgs e) { SSMGeneric.OpenLink("https://rarisma.github.io/Simple-Server-Manager/help/connections/general/Help"); }
         private void LearnMore(object sender, RoutedEventArgs e) { SSMGeneric.OpenLink("https://rarisma.github.io/Simple-Server-Manager/help/connections/general/hamachi"); }
     }
 }
