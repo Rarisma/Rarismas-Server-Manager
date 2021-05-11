@@ -1,6 +1,6 @@
 # Aknowledgements
 
-### SSM uses the following server software:
+### RSM uses the following server software:
 #### Minecraft
   - [Vanilla server software](https://www.minecraft.net/)
   - [Paper server software](https://github.com/PaperMC)
@@ -14,4 +14,4 @@
   - Modern WPF Message box by [OpenByteDev](https://github.com/OpenByteDev/) [Github Repository](https://github.com/OpenByteDev/ModernWpf.MessageBox) [Nuget Package](https://www.nuget.org/packages/ModernWpf.MessageBox/)
   - LibRarisma by [Rarisma](https://github.com/Rarisma/) [Github Repository](https://github.com/Rarisma/LibRarisma) [Nuget Package](https://www.nuget.org/packages/LibRarisma/)
 
-  SSM is writen in WPF and programmed in C# using the .Net 5 framework
+  RSM is writen in WPF and programmed in C# using the .Net 5 framework
