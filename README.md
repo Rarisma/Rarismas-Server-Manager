@@ -9,37 +9,22 @@ RSM is made for people who:
  - Don't want to spend hours tweaking their servers or fixing issues
  - Just want to get into the game as fast as possible
 
-
-To get started just go to the releases page and download the latest version
-
+[To get started just go to the releases page and download the latest version](https://github.com/Rarisma/Rarismas-Server-Manager/releases)
 
 ## FAQ
 
 ### What servers does RSM support
 Currently RSM supports the following:
- - Minecraft
+ - Minecraft (Bedrock and Java and Modded)
  - Terraria
 
-### The app says I'm missing .NET 
+### The app says I'm missing .NET 5
 [Download .NET 5 here](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.5-windows-x64-installer)
 
 ### Do you plan to support other games?
 Yes, currently we are working on minecraft, however once that is complete we want to try and work on the following:
-- Gmod
+- Factorio
+- Don't Starve
 - Starbound
 - Ark
 - Rust
-
-
-### Acknowledgements
- #### Minecraft
-   - Mojang
-   - Paper Team
-   - Spiggot
-   - Bukkit
-   - That one forge dev who said this was a terrible idea for an hour straight
-### Terraria
-   - Relogic
-   - 505 Games
-   - TModloader Team
-   - TShock Team
