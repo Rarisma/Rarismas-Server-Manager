@@ -1,0 +1,39 @@
+﻿<Page x:Class="RSM.RSMGeneric.UI.ServerManger"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RSM.RSMGeneric.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="790" d:DesignWidth="790"
+      xmlns:ui="http://schemas.modernwpf.com/2019">
+
+    <ui:SimpleStackPanel Background="#000">
+
+        <Border Height="40" />
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Server label"       Name="ServerName"    FontSize="50" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Minecraft VERSION"  Name="ServerVersion" FontSize="25" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+
+        <Border Height="100" />
+
+        <Button Foreground="#fff" Content="Load server" HorizontalAlignment="Center" Width="150" Click="Launcher" />
+        <Border Height="50" />
+
+        <Button Foreground="#fff" IsEnabled="True" Content="Configure server" HorizontalAlignment="Center" Width="150" Click="ConfigServer" />
+        <Border Height="50" />
+
+        <Button Foreground="#fff" Content="Help people connect to this server" HorizontalAlignment="Center" Grid.Column="0" Click="ConnectionHelp"/>
+        <Border Height="50" />
+
+        <Button Foreground="#fff" Content="Delete Server" HorizontalAlignment="Center" Width="150" Click="DeleteServer" />
+        <Border Height="50" />
+
+        <Button Foreground="#fff" Content="Go back" HorizontalAlignment="Center" Width="150" Click="GoBack" />
+        <Border Height="50" />
+
+        <Button Foreground="#fff" Content="Open mods folder" HorizontalAlignment="Center" Width="150" Name="ModButton" Click="Mods" Grid.Column="0"/>
+        <Border Height="50" />
+
+        <Button Foreground="#fff" Content="Open plugins folder" HorizontalAlignment="Center" Width="150" Name="PluginButton" Click="OpenPluginFolder" Grid.Column="1"/>
+    </ui:SimpleStackPanel>
+</Page>
