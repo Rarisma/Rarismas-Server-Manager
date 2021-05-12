@@ -1,0 +1,30 @@
+﻿<Window x:Class="RSM.RSMGeneric.UI.ConnectionHelper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RSM.RSMGeneric.UI"
+        mc:Ignorable="d"
+         Title="Connection help" Height="250" Width="500"
+        ui:ThemeManager.RequestedTheme="Dark"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        xmlns:ui="http://schemas.modernwpf.com/2019">
+
+    <ui:SimpleStackPanel Background="#000">
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="The easiest way to connect to a server is either by Hamachi or port forward. Port forwarding requires access to your router page, but to use hamachi you need it to be installed on everyones computer" FontSize="14" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" Padding="10" TextAlignment="Center" />
+        <Border Height="30"/>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="So how would you like to connect?"  FontSize="14" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+        <Border Height="20"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="165"/>
+                <ColumnDefinition Width="165"/>
+                <ColumnDefinition Width="165"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Hamachi" Grid.Column="0" HorizontalAlignment="Center" Foreground="#fff" Click="Hamachi" />
+            <Button Content="Learn more" Grid.Column="1" HorizontalAlignment="Center" Foreground="#fff" Click="LearnMore"/>
+            <Button Content="Port Forwarding" Grid.Column="2" HorizontalAlignment="Center" Foreground="#fff" Click="PortForwarding"/>
+        </Grid>
+    </ui:SimpleStackPanel>
+</Window>

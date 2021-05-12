@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="RSM.QuickCommands.Minecraft"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RSM.QuickCommands"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="750">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="0" Grid.Row="0" Content="Close Server" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="StopServer" />
+        <Button Grid.Column="1" Grid.Row="0" Content="Open Server" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="160" Click="OpenServer" />
+        <Button Name="SaveButton" Grid.Column="2" Grid.Row="0" Content="Save" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Save" />
+
+        <Button Grid.Column="2" Grid.Row="1" Content="Clear weather" Foreground="#fff" HorizontalAlignment="Center"         VerticalAlignment="Center"      Width="160"    Click="WeatherClear" />
+        <Button Grid.Column="0" Grid.Row="1" Content="Set the time to day" Foreground="#fff" HorizontalAlignment="Center"   VerticalAlignment="Center"      Width="160"    Click="TimeSetDay" />
+        <Button Grid.Column="1" Grid.Row="1" Content="Set the time to night" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center"      Width="160"    Click="TimeSetNight" />
+        <Button Name="SeedButton" Grid.Column="3" Grid.Row="1" Content="Show seed" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Seed" />
+
+        <Button Grid.Column="0" Grid.Row="2" Content="Set difficulty peaceful" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Peaceful" />
+        <Button Grid.Column="1" Grid.Row="2" Content="Set difficulty to easy" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Easy" />
+        <Button Grid.Column="2" Grid.Row="2" Content="Set difficulty to normal" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Normal" />
+        <Button Grid.Column="3" Grid.Row="2" Content="Set difficulty to hard" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Hard" />
+    </Grid>
+
+</UserControl>
