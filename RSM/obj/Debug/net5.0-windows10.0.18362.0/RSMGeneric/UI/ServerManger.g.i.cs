@@ -99,7 +99,7 @@ namespace RSM.RSMGeneric.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/RSM;V1.0.0.0;component/rsmgeneric/ui/servermanger.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/RSM;component/rsmgeneric/ui/servermanger.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\RSMGeneric\UI\ServerManger.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

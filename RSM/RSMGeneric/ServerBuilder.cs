@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,16 @@ namespace RSM.RSMGeneric
                 cmd.StartInfo.RedirectStandardInput = true;
                 cmd.StartInfo.CreateNoWindow = false;
                 cmd.StartInfo.UseShellExecute = false;
-                cmd.StandardInput.AutoFlush = true;
                 cmd.Start();
+                cmd.StandardInput.AutoFlush = true;
                 cmd.StandardInput.WriteLine("cd Servers");
                 cmd.StandardInput.WriteLine("cd " + ServerInfo.Label);
-                cmd.StandardInput.WriteLine("java -jar Server.jar --installServer exit");
+                cmd.StandardInput.WriteLine("java -jar Server.jar --installServer");
+                cmd.WaitForExit();
+                File.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//Server.jar");
+                List<String> Jarfiles = new(); 
+                Jarfiles.AddRange(Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//", "*.jar", SearchOption.TopDirectoryOnly));
+                if (Jarfiles[0].Contains("forge")) { File.Move(Jarfiles[0], AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//" + "Server.jar"); } else { File.Move(Jarfiles[1], AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//" + "Server.jar"); }
             }
             Finish();
         }
@@ -48,7 +54,7 @@ namespace RSM.RSMGeneric
             ServerInfo.Variant = "Normal";
             LibRarisma.IO.DownloadFile(ServerInfo.URL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//", "Terraria.zip", true);
             LibRarisma.IO.DownloadFile("https://github.com/Rarisma/Simple-Server-Manager/blob/main/ServerFiles/Terraria/SSMHelper.dll?raw=true", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//ServerPlugins//", "SSMHelper.dll");
-            System.IO.File.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//Terraria.zip");
+            File.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//Terraria.zip");
             Finish();
         }
 

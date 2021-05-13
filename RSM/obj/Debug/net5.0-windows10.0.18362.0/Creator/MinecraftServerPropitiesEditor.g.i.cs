@@ -163,7 +163,7 @@ namespace RSM.Creator {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/RSM;V1.0.0.0;component/creator/minecraftserverpropitieseditor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/RSM;component/creator/minecraftserverpropitieseditor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Creator\MinecraftServerPropitiesEditor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
