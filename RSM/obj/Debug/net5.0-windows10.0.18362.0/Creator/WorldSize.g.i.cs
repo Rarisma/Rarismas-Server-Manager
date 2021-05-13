@@ -67,7 +67,7 @@ namespace RSM.Creator {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/RSM;V1.0.0.0;component/creator/worldsize.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/RSM;component/creator/worldsize.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Creator\WorldSize.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

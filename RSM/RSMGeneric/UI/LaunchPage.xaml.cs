@@ -32,7 +32,7 @@ namespace RSM.RSMGeneric.UI
             SelectedValue = SelectedValue.Replace("ModernWpf.Controls.ListViewItem: ", "");
             ServerInfo.Automatic = false;
             if (SelectedValue == "Create a new server") { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
-            else if (SelectedValue == "Create new server (Automatic)") { ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new NewServer(); ServerInfo.Automatic = true; }
+            else if (SelectedValue == "Create new server (Automatic)") { ServerInfo.Automatic = true; ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new NewServer(); }
             else { LoadPage(); } //Calls the function to start to load the game
         }
 

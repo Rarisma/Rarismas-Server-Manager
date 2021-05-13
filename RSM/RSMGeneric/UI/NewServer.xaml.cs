@@ -23,7 +23,11 @@ namespace RSM.RSMGeneric.UI
         public NewServer()
         {
             InitializeComponent();
-            if (ServerInfo.Automatic == true) { AutoModeNotice.Opacity = 1; } // Shows warning that automode is on when applicable.
+            if (ServerInfo.Automatic == true) 
+            {
+                AutoModeNotice.Opacity = 1; // Shows warning that automode is on when applicable.
+                AvailableServers.Items.Add("Minecraft Java (Modded)");
+            } 
 
 
             AvailableServers.Items.Add("Minecraft Java");
@@ -45,6 +49,11 @@ namespace RSM.RSMGeneric.UI
                 case "Minecraft Java":
                     ServerInfo.Game = "Minecraft Java";
                     ServerDescription.Text = "Minecraft Java is the original PC version, however you can only connect to other minecraft java players, it is worth noting that these servers support plugins and custom resource packs, Minecraft Java servers are easier to setup.";
+                    break;
+
+                case "Minecraft Java (Modded)":
+                    ServerInfo.Game = "Minecraft Java (Modded)";
+                    ServerDescription.Text = "Minecraft Java is the original PC version, however this version has mod support.";
                     break;
 
                 case "Minecraft Unified":
@@ -92,8 +101,8 @@ namespace RSM.RSMGeneric.UI
             {
                 switch (ServerInfo.Game)
                 {
-                    case "Minecraft Java (Vanilla)": Automode.CreatePaperServer(); break;
-                    case "Minecraft Java (Modded)": Automode.CreateForgeServer(); break;
+                    case "Minecraft Java": Automode.CreatePaperServer(); break;
+                    case "Minecraft Java (Modded)": ServerInfo.Game = "Minecraft Java"; Automode.CreateForgeServer(); break;
                     case "Minecraft Bedrock": Automode.CreateBedrockServer(); break;
                     case "Terraria": Automode.CreateTerrariaServer(); break;
                 }
