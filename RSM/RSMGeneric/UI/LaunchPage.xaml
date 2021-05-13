@@ -20,6 +20,7 @@
             </ui:ListView>
         </Grid>
 
-        <TextBlock Text="                                       RSM is made by Rarisma&#x0a;This program is licenced under the GNU General Public License v3.0" HorizontalAlignment="Center" Padding="10" FontSize="15" Foreground="#fff" />
+        <TextBlock Text="RSM is made by Rarisma" HorizontalAlignment="Center" Padding="10" FontSize="15" Foreground="#fff" />
+        <TextBlock Text="This program is licenced under the GNU General Public License v3.0" HorizontalAlignment="Center" Padding="10" FontSize="15" Foreground="#fff" />
     </ui:SimpleStackPanel>
 </Page>

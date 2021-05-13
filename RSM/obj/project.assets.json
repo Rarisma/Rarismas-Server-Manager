@@ -1360,11 +1360,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Repositories\\Simple-Server-Manager\\RSM\\RSM\\RSM.csproj",
+      "projectUniqueName": "A:\\Repositories\\RSM\\RSM\\RSM.csproj",
       "projectName": "RSM",
-      "projectPath": "A:\\Repositories\\Simple-Server-Manager\\RSM\\RSM\\RSM.csproj",
+      "projectPath": "A:\\Repositories\\RSM\\RSM\\RSM.csproj",
       "packagesPath": "C:\\Users\\Rarisma\\.nuget\\packages\\",
-      "outputPath": "A:\\Repositories\\Simple-Server-Manager\\RSM\\RSM\\obj\\",
+      "outputPath": "A:\\Repositories\\RSM\\RSM\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
