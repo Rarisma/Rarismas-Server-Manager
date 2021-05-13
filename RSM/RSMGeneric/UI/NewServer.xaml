@@ -8,26 +8,37 @@
              d:DesignHeight="790" d:DesignWidth="790"
              xmlns:ui="http://schemas.modernwpf.com/2019">
 
-    <ui:SimpleStackPanel>
-        <Border Height="25" />
-        <TextBlock Text="Lets get started!" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" />
-        <TextBlock Text="Automode is enabled" Name="AutoModeNotice" Foreground="#fff" HorizontalAlignment="Center" Opacity="0" FontSize="20" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" />
-        <Border Height="50" />
-        <TextBlock Text="What game do you want to make a server for?" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" FontSize="20" />
-        <Border Height="20" />
-        <ComboBox Name="AvailableServers" SelectionChanged="ServerChoiceUpdated" Width="200" HorizontalAlignment="Center" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="370"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
 
-        <Border Height="50" />
-        <TextBlock Text="What do you want to call this server?" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" FontSize="20" />
-        <TextBlock Text="This is to differenciate servers however some games may show the server name to players connecting" Width="300" TextAlignment="Center" Foreground="#fff" HorizontalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" FontSize="14" TextWrapping="Wrap" />
-        <Border Height="20" />
-        <TextBox Width="200" Name="ServerName" TextChanged="ServerNameUpdated" />
+        <ui:SimpleStackPanel Grid.Row="0">
+            <Border Height="25" />
+            <TextBlock Text="Lets get started!" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" />
+            <TextBlock Text="Automode is enabled" Name="AutoModeNotice" Foreground="#fff" HorizontalAlignment="Center" Opacity="0" FontSize="20" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" />
+            <Border Height="50" />
+            <TextBlock Text="What game do you want to make a server for?" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" FontSize="20" />
+            <Border Height="20" />
+            <ComboBox Name="AvailableServers" SelectionChanged="ServerChoiceUpdated" Width="200" HorizontalAlignment="Center" />
+        </ui:SimpleStackPanel>
 
-        <Border Height="30" />
-        <TextBlock Name="ServerDescription" Text="Select a server and it's description will be shown here" Width="700" Height="170" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-        <Border Height="20" />
+        <ui:SimpleStackPanel Grid.Row="1">
+            <Border Height="50" />
+            <TextBlock Text="What do you want to call this server?" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" FontSize="20" />
+            <TextBlock Text="This is to differenciate servers however some games may show the server name to players connecting" Width="300" TextAlignment="Center" Foreground="#fff" HorizontalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" FontSize="14" TextWrapping="Wrap" />
+            <Border Height="20" />
+            <TextBox Width="200" Name="ServerName" TextChanged="ServerNameUpdated" />
 
-        <Grid Height="50">
+            <Border Height="30" />
+            <TextBlock Name="ServerDescription" Text="Select a server and it's description will be shown here" Width="700" Height="170" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <Border Height="20" />
+
+        </ui:SimpleStackPanel>
+
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="390" />
                 <ColumnDefinition Width="390" />
@@ -35,5 +46,5 @@
             <Button Foreground="#fff"  Content="Continue" Grid.Column="1" HorizontalAlignment="Center" Click="Continue" />
             <Button Foreground="#fff"  Content="Go back"  Grid.Column="0" HorizontalAlignment="Center" Click="GoBack" />
         </Grid>
-    </ui:SimpleStackPanel>
+    </Grid>
 </Page>

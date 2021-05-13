@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yOCw8vo4vO1ZaaW1Qto3mVebpZthsh2BT1LmWcdt7quWVAL+ey2YOrwJ7RqD/+qi0S6jD900+Xo7gRoD3RcN9A==",
+  "dgSpecHash": "cTQRsuTjJh6Yn5yoLJv5fuAitC7KeaEwdeZMyoaEYr28l2sRllQoBwHjjQ1RZwTReXVsRqpC9pVQAaFFo0VZ7w==",
   "success": true,
-  "projectFilePath": "A:\\Repositories\\Simple-Server-Manager\\RSM\\RSM\\RSM.csproj",
+  "projectFilePath": "A:\\Repositories\\RSM\\RSM\\RSM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rarisma\\.nuget\\packages\\librarisma\\1.4.0\\librarisma.1.4.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",

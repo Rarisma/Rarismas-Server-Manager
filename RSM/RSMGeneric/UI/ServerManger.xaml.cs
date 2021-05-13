@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 //K-Rino Flow Sessions are legendary
 namespace RSM.RSMGeneric.UI
 {
@@ -29,12 +18,13 @@ namespace RSM.RSMGeneric.UI
 
             switch (ServerInfo.Variant) //adjusts visible buttons to users so /mods/ and /plugins/ can't be accessed on server variants that dont support them
             {
-                case "Paper": ModButton.Opacity = 0; ModButton.IsEnabled = false; break;
-                case "Forge": PluginButton.Opacity = 0; PluginButton.IsEnabled = false; break;
-                case "Normal": ModButton.Opacity = 0; ModButton.IsEnabled = false; break;
+                case "Paper": ModButton.IsEnabled = false; Config.IsEnabled = true; break;
+                case "Forge": PluginButton.IsEnabled = false; Config.IsEnabled = true; break;
+                case "Normal": ModButton.IsEnabled = false; Config.IsEnabled = false;  break;
                 default:
-                    PluginButton.Opacity = 0; PluginButton.IsEnabled = false;
-                    ModButton.Opacity = 0; ModButton.IsEnabled = false;
+                    PluginButton.IsEnabled = false;
+                    ModButton.IsEnabled = false;
+                    Config.IsEnabled = false;
                     break;
             }
 
@@ -71,9 +61,18 @@ namespace RSM.RSMGeneric.UI
 
         private void Mods(object sender, RoutedEventArgs e) { Utilities.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label + "\\mods\\"); }
 
-        private void GoBack(object sender, RoutedEventArgs e) { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new ServerManger(); }
+        private void GoBack(object sender, RoutedEventArgs e) { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new LaunchPage(); }
 
-        private void OpenPluginFolder(object sender, RoutedEventArgs e) { Utilities.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "Servers\\" + ServerInfo.Label + "\\plugins\\"); }
+        private void OpenPluginFolder(object sender, RoutedEventArgs e) 
+        {
+            MessageBox.Show(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label);
+            switch (ServerInfo.Game)
+            {
+                case "Terraria": Utilities.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label + "\\ServerPlugins\\"); break;
+                default: Utilities.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label + "\\plugins\\"); break;
+            }
+
+        }
 
         private void ConnectionHelp(object sender, RoutedEventArgs e)
         {

@@ -8,32 +8,40 @@
       d:DesignHeight="790" d:DesignWidth="790"
       xmlns:ui="http://schemas.modernwpf.com/2019">
 
+
+    
+    
     <ui:SimpleStackPanel Background="#000">
 
         <Border Height="40" />
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Server label"       Name="ServerName"    FontSize="50" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Minecraft VERSION"  Name="ServerVersion" FontSize="25" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Server Label"       Name="ServerName"    FontSize="50" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Server Version"  Name="ServerVersion" FontSize="25" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
 
-        <Border Height="100" />
+        <Border Height="100"/>
+        <Button Foreground="#fff" Content="Load server" HorizontalAlignment="Center" Width="350" Click="Launcher" />
+        <Border Height="20"/>
 
-        <Button Foreground="#fff" Content="Load server" HorizontalAlignment="Center" Width="150" Click="Launcher" />
-        <Border Height="50" />
+        <Grid HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
 
-        <Button Foreground="#fff" IsEnabled="True" Content="Configure server" HorizontalAlignment="Center" Width="150" Click="ConfigServer" />
-        <Border Height="50" />
+            <Button Foreground="#fff" Grid.Row="0" Grid.Column="1" IsEnabled="True" Content="Configure server" HorizontalAlignment="Center" Width="150" Click="ConfigServer" Name="Config" />
+            <Button Foreground="#fff" Grid.Row="1" Grid.Column="1" Content="Delete Server" HorizontalAlignment="Center" Width="150" Click="DeleteServer" />
 
-        <Button Foreground="#fff" Content="Help people connect to this server" HorizontalAlignment="Center" Grid.Column="0" Click="ConnectionHelp"/>
-        <Border Height="50" />
-
-        <Button Foreground="#fff" Content="Delete Server" HorizontalAlignment="Center" Width="150" Click="DeleteServer" />
-        <Border Height="50" />
-
-        <Button Foreground="#fff" Content="Go back" HorizontalAlignment="Center" Width="150" Click="GoBack" />
-        <Border Height="50" />
-
-        <Button Foreground="#fff" Content="Open mods folder" HorizontalAlignment="Center" Width="150" Name="ModButton" Click="Mods" Grid.Column="0"/>
-        <Border Height="50" />
-
-        <Button Foreground="#fff" Content="Open plugins folder" HorizontalAlignment="Center" Width="150" Name="PluginButton" Click="OpenPluginFolder" Grid.Column="1"/>
+            <Button Foreground="#fff" Grid.Row="0" Grid.Column="2" Content="Open mods folder" HorizontalAlignment="Center" Width="150" Name="ModButton" Click="Mods"/>
+            <Button Foreground="#fff" Grid.Row="1" Grid.Column="2" Content="Open plugins folder" HorizontalAlignment="Center" Width="150" Name="PluginButton" Click="OpenPluginFolder"/>
+        </Grid>
+        
+        <Button Foreground="#fff" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Content="Go back" HorizontalAlignment="Center" Width="350" Click="GoBack" />
+        <Border Height="40"/>
+        <Button Foreground="#fff" Content="Help people connect to this server" HorizontalAlignment="Center" Click="ConnectionHelp" Width="350"/>
     </ui:SimpleStackPanel>
 </Page>

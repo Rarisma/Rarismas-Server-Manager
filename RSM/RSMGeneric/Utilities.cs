@@ -56,7 +56,7 @@ namespace RSM.RSMGeneric
             }
         }
 
-        public static void OpenFolder(string path) { Process.Start("explorer.exe", "/select" + path); } //This is going in LibRarisma
+        public static void OpenFolder(string path) { Process.Start("explorer.exe", "/select " + path); } //This is going in LibRarisma
         public static void OpenLink(string link) //Also going in LibRarisma
         {
             var LinkOpener = new ProcessStartInfo(link) { UseShellExecute = true, Verb = "open" };

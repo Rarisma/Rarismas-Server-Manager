@@ -4,12 +4,12 @@
 winexe
 C#
 .cs
-A:\Repositories\Simple-Server-Manager\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\
+A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\
 RSM
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-A:\Repositories\Simple-Server-Manager\RSM\RSM\App.xaml
+A:\Repositories\RSM\RSM\App.xaml
 121683401
 
 18596144302

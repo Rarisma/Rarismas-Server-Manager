@@ -8,26 +8,31 @@
       d:DesignHeight="790" d:DesignWidth="790"
       xmlns:ui="http://schemas.modernwpf.com/2019">
 
-    <ui:SimpleStackPanel>
-        <ui:SimpleStackPanel Height="100">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="700"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <ui:SimpleStackPanel>
             <Border Height="30"/>
             <TextBlock Text="Just one last step" FontSize="30" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-        </ui:SimpleStackPanel>
-
-        <ui:SimpleStackPanel Height="590" >
             <Border Height="230"/>
             <TextBlock Text="How big do you want your world to be?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
             <Border Height="20"/>
             <ComboBox Name="SizeBox" SelectionChanged="WorldSizeUpdated" Width="200" HorizontalAlignment="Center"/>
         </ui:SimpleStackPanel>
 
-        <Grid Height="100">
+
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="390"/>
-                <ColumnDefinition Width="390"/>
+                <ColumnDefinition Width="390" />
+                <ColumnDefinition Width="390" />
             </Grid.ColumnDefinitions>
-            <Button Foreground="#fff"  Content="Continue" Grid.Column="1" HorizontalAlignment="Center" Click="Continue"/>
-            <Button Foreground="#fff"  Content="Go back"  Grid.Column="0" HorizontalAlignment="Center" Click="GoBack"/>
+            <Button Foreground="#fff"  Content="Continue" Grid.Column="1" HorizontalAlignment="Center" Click="Continue" />
+            <Button Foreground="#fff"  Content="Go back"  Grid.Column="0" HorizontalAlignment="Center" Click="GoBack" />
         </Grid>
-    </ui:SimpleStackPanel>
+    </Grid>
+
 </Page>

@@ -8,26 +8,34 @@
       d:DesignHeight="790" d:DesignWidth="790"
       xmlns:ui="http://schemas.modernwpf.com/2019">
 
-    <ui:SimpleStackPanel>
-        <Border Height="20" />
-        <TextBlock Text="Just one last step" FontSize="30" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-        <Border Height="100" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="700"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
 
-        <TextBlock Text="What server type do you want?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-        <Border Height="20" />
-        <ComboBox SelectionChanged="VariantsUpdated" Name="Variants" Width="200" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
-        <Border Height="50" />
+        <ui:SimpleStackPanel Grid.Row="0">
+            <Border Height="20" />
+            <TextBlock Text="Just one last step" FontSize="30" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <Border Height="100" />
 
-        <TextBlock Name="Description" Width="500" Height="50" Text="Select a server type to see a description here" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <TextBlock Text="What server type do you want?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <Border Height="20" />
+            <ComboBox SelectionChanged="VariantsUpdated" Name="Variants" Width="200" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+            <Border Height="50" />
 
-        <Border Height="100" />
-        <TextBlock Text="What version do you want your server to run?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-        <Border Height="20" />
-        <ComboBox Name="Version" SelectionChanged="VersionUpdated" Width="200" HorizontalAlignment="Center" />
-        <Border Height="140" />
-        <TextBlock Name="EULA"  Text="" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-        <Border Height="40"/>
-        <Grid Height="50">
+            <TextBlock Name="Description" Width="500" Height="50" Text="Select a server type to see a description here" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+
+            <Border Height="100" />
+            <TextBlock Text="What version do you want your server to run?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <Border Height="20" />
+            <ComboBox Name="Version" SelectionChanged="VersionUpdated" Width="200" HorizontalAlignment="Center" />
+            <Border Height="140" />
+            <TextBlock Name="EULA"  Text="" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <Border Height="40"/>
+        </ui:SimpleStackPanel>
+
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="390" />
                 <ColumnDefinition Width="390" />
@@ -35,5 +43,6 @@
             <Button Foreground="#fff"  Content="Continue" Grid.Column="1" HorizontalAlignment="Center" Click="Continue" />
             <Button Foreground="#fff"  Content="Go back"  Grid.Column="0" HorizontalAlignment="Center" Click="GoBack" />
         </Grid>
-    </ui:SimpleStackPanel>
+    </Grid>
+   
 </Page>
