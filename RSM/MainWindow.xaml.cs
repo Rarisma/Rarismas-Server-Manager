@@ -37,12 +37,11 @@ namespace RSM
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            try
+            if (ServerInfo.Running == true)
             {
-                if (ServerInfo.cmd.HasExited != true)
-                { ServerInfo.cmd.Close(); }
-            } //Kills the server prorcess, should be updated to call somthing like the function when Exit() is pressed
-            catch { System.Threading.Thread.Sleep(10); } //Executed if server hasn't been initalised eg closed on welcome page
+                e.Cancel = true;
+                ModernWpf.MessageBox.Show("Please close the server before closing RSM");
+            }
         }
     }
 }

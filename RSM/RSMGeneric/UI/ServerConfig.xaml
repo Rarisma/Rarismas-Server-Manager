@@ -1,0 +1,31 @@
+﻿<Page x:Class="RSM.RSMGeneric.UI.ServerConfig"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RSM.RSMGeneric.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="790" d:DesignWidth="790"
+      Title="ServerConfig"
+      xmlns:ui="http://schemas.modernwpf.com/2019">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="700"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0" Width="780" HorizontalAlignment="Center">
+            <TabItem Header="General">
+                
+            </TabItem>
+            <TabItem Header="Backups">
+
+            </TabItem>
+            <TabItem Header="Updates">
+
+            </TabItem>
+        </TabControl>
+        
+    </Grid>
+</Page>
