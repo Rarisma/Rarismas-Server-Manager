@@ -57,7 +57,7 @@ namespace RSM.RSMGeneric.UI
                 ModernWpf.MessageBox.Show("Server deleted");
                 ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new UI.LaunchPage();
             }
-        }
+        }   
 
         private void Mods(object sender, RoutedEventArgs e) { Utilities.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label + "\\mods\\"); }
 
@@ -65,11 +65,10 @@ namespace RSM.RSMGeneric.UI
 
         private void OpenPluginFolder(object sender, RoutedEventArgs e) 
         {
-            MessageBox.Show(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label);
             switch (ServerInfo.Game)
             {
-                case "Terraria": Utilities.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label + "\\ServerPlugins\\"); break;
-                default: Utilities.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label + "\\plugins\\"); break;
+                case "Terraria": Utilities.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "Servers\\" + ServerInfo.Label + "\\ServerPlugins\\"); break;
+                default: Utilities.OpenFolder(AppDomain.CurrentDomain.BaseDirectory + "Servers\\" + ServerInfo.Label + "\\plugins\\"); break;
             }
 
         }

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace RSM.RSMGeneric
 {
@@ -56,7 +57,16 @@ namespace RSM.RSMGeneric
             }
         }
 
-        public static void OpenFolder(string path) { Process.Start("explorer.exe", "/select " + path); } //This is going in LibRarisma
+        public static void OpenFolder(string path)
+        {
+            Clipboard.SetText(path);
+            Process.Start(new ProcessStartInfo()
+            {
+                FileName = path,
+                UseShellExecute = true,
+                Verb = "open"
+            });
+        } //This is going in LibRarisma
         public static void OpenLink(string link) //Also going in LibRarisma
         {
             var LinkOpener = new ProcessStartInfo(link) { UseShellExecute = true, Verb = "open" };

@@ -24,9 +24,8 @@
             <ComboBox SelectionChanged="VariantsUpdated" Name="Variants" Width="200" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
             <Border Height="50" />
 
-            <TextBlock Name="Description" Width="500" Height="50" Text="Select a server type to see a description here" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <TextBlock Name="Description" Width="500" Height="150" Text="Select a server type to see a description here" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
 
-            <Border Height="100" />
             <TextBlock Text="What version do you want your server to run?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
             <Border Height="20" />
             <ComboBox Name="Version" SelectionChanged="VersionUpdated" Width="200" HorizontalAlignment="Center" />
