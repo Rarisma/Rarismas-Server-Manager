@@ -15,6 +15,8 @@ namespace RSM
         public static string Version = "None Set";    //Used to keep track of what version the server is running
         public static string Variant = "None Set";    //Used if there are multiple variants (Eg Paper, Bukkit ans spiggot)
         public static string WorldSize = "None Set";  //Used if World size is configurable
+        public static string BackupFrequency= "Weekly";     //Used by RSM for backups
+        public static string Lastbackup= "Never";          //Used by RSM for backups
         public static Int64 RAM = 0;                  //Used for servers that need RAM to be allocated, servers that don't will just have it set as 0
 
         public static bool Automatic = false;         //Used to know if automode should be used

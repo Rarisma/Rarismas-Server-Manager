@@ -24,8 +24,6 @@ namespace RSM
         public MainWindow()
         {
             InitializeComponent();
-            ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark; //Forces darkmode, lightmode should be added at somepoint
-            ThemeManager.Current.AccentColor = Colors.White;
             UserDisplay.Content = new RSMGeneric.UI.LaunchPage();
         }
 
