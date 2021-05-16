@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Collections.Generic;
 //K-Rino Flow Sessions are legendary
 namespace RSM.RSMGeneric.UI
 {
@@ -30,8 +31,22 @@ namespace RSM.RSMGeneric.UI
 
         }
 
+        void Backup()
+        { //If you care, the server that was used to test this was called solitaire, which is a reference to a song (Its a banger!)
+            Int32 stagingfolder = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            Utilities.DirectoryCopy(AppDomain.CurrentDomain.BaseDirectory + "Servers//" + ServerInfo.Label + "//", AppDomain.CurrentDomain.BaseDirectory + "//Backups//" + ServerInfo.Label + " - " + stagingfolder + "//", true);
+        }
+
+
         public void Launcher(object sender, RoutedEventArgs e)
         {
+            DateTime time = DateTime.Parse(ServerInfo.Lastbackup);
+            Int64 daysbetween = Convert.ToInt64(Convert.ToString(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy")) - time).Replace(".00:00:00",""));
+
+            if (daysbetween >= 7 && ServerInfo.BackupFrequency == "Weekly") { Backup(); }
+            else if (daysbetween >= 30 && ServerInfo.BackupFrequency == "Monthly") { Backup(); }
+            else if (ServerInfo.BackupFrequency == "On Launch") { Backup(); }
+
             switch (ServerInfo.Game)
             {
                 default: ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new CLI(); break;

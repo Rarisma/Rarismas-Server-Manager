@@ -82,7 +82,6 @@ namespace RSM.RSMGeneric
         {
             Utilities.Make_INI_File();
             ModernWpf.MessageBox.Show("Finished downloading server files");
-            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//RSM//Backups");
             ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new UI.LaunchPage();
         }
 
