@@ -25,7 +25,11 @@ namespace RSM.RSMGeneric
                 "### Server version\n" +
                 ServerInfo.Version + "\n\n" +
                 "### Server size\n" +
-                ServerInfo.WorldSize);
+                ServerInfo.WorldSize + "\n\n" +
+                "### Backup Frequency\n" +
+                ServerInfo.BackupFrequency + "\n\n" +
+                "### Last Backup\n" +
+                ServerInfo.Lastbackup );
         }
 
         public static void Read_INI_File(Object ServerName)

@@ -184,3 +184,7 @@ A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\RSM.dll
 A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\ref\RSM.dll
 A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\RSM.pdb
 A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\RSM.genruntimeconfig.cache
+A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\PerGameSettings\Minecraft.g.cs
+A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\RSMGeneric\UI\ServerConfig.g.cs
+A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\PerGameSettings\Minecraft.baml
+A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\RSMGeneric\UI\ServerConfig.baml

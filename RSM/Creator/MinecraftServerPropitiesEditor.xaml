@@ -28,6 +28,8 @@
                 <RowDefinition Height="50" />
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
+            <TextBlock       Grid.Row="1" Grid.Column="0" Text="Command blocks" FontSize="22" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <ui:ToggleSwitch Name="CommandBlocks"  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20" />
 
             <TextBlock Grid.Row="1" Grid.Column="1" Text="PVP" FontSize="22" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
             <ui:ToggleSwitch Name="PVP" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20" />
@@ -35,8 +37,6 @@
             <TextBlock       Grid.Row="1" Grid.Column="2" Text="Hardcore mode" FontSize="22" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
             <ui:ToggleSwitch Name="Hardcore" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20" />
 
-            <TextBlock       Grid.Row="1" Grid.Column="0" Text="Command blocks" FontSize="22" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-            <ui:ToggleSwitch Name="CommandBlocks"  Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20" />
 
             <TextBlock       Grid.Row="1" Grid.Column="3" Text="Spawn monsters" FontSize="22" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
             <ui:ToggleSwitch Name="MobSpawning" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20" />

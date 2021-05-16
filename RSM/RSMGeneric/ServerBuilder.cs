@@ -14,6 +14,7 @@ namespace RSM.RSMGeneric
         public static void MinecraftJava()
         {
             LibRarisma.IO.DownloadFile(ServerInfo.URL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//", "Server.jar");
+            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Minecraft/ServerConfigs/stock", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//", "server.properties");
             File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//" + "eula.txt", "#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).\n# made by SSM\neula = true"); //Makes the EULA accepted
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//" + "plugins//");
             if (ServerInfo.Variant == "Forge")
@@ -81,6 +82,7 @@ namespace RSM.RSMGeneric
         {
             Utilities.Make_INI_File();
             ModernWpf.MessageBox.Show("Finished downloading server files");
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//RSM//Backups");
             ((MainWindow)System.Windows.Application.Current.MainWindow).UserDisplay.Content = new UI.LaunchPage();
         }
 

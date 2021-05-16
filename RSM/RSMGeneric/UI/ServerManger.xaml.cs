@@ -38,16 +38,7 @@ namespace RSM.RSMGeneric.UI
             }
         }
 
-        private void ConfigServer(object sender, RoutedEventArgs e)
-        {
-            switch (ServerInfo.Game)
-            {
-                case "Minecraft Java":
-                    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label + "\\server.properties")) { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Creator.MinecraftServerPropitiesEditor(); }
-                    else { ModernWpf.MessageBox.Show("Failed to find server propities file, try launching the server and comming back here"); }
-                    break;
-            }
-        }
+        private void ConfigServer(object sender, RoutedEventArgs e) { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new ServerConfig(); }
 
         private void DeleteServer(object sender, RoutedEventArgs e)
         {

@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET5_0;NETCOREAPP
 A:\Repositories\RSM\RSM\App.xaml
-121683401
+14-7514795
 
-201052662073
+22-311903245
 200-190600290
-Creator\MinecraftServerPropitiesEditor.xaml;Creator\RAMAllocator.xaml;Creator\VersionSelecter.xaml;Creator\WorldSize.xaml;MainWindow.xaml;QuickCommands\Minecraft.xaml;QuickCommands\Terraria.xaml;RSMGeneric\UI\CLI.xaml;RSMGeneric\UI\ConnectionHelper.xaml;RSMGeneric\UI\LaunchPage.xaml;RSMGeneric\UI\NewServer.xaml;RSMGeneric\UI\ServerManger.xaml;
+Creator\MinecraftServerPropitiesEditor.xaml;Creator\RAMAllocator.xaml;Creator\VersionSelecter.xaml;Creator\WorldSize.xaml;MainWindow.xaml;PerGameSettings\Minecraft.xaml;QuickCommands\Minecraft.xaml;QuickCommands\Terraria.xaml;RSMGeneric\UI\CLI.xaml;RSMGeneric\UI\ConnectionHelper.xaml;RSMGeneric\UI\LaunchPage.xaml;RSMGeneric\UI\NewServer.xaml;RSMGeneric\UI\ServerConfig.xaml;RSMGeneric\UI\ServerManger.xaml;
 
-True
+False
 

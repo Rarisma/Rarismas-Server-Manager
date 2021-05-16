@@ -7,11 +7,11 @@
         <Application.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
-                    <ui:ThemeResources />
+                <ui:ThemeResources>
+                </ui:ThemeResources>
                     <ui:XamlControlsResources />
-                    <!-- Other merged dictionaries here -->
-                </ResourceDictionary.MergedDictionaries>
-                <!-- Other app resources here -->
-            </ResourceDictionary>
+                <ui:ThemeResources RequestedTheme="Dark" AccentColor="DarkBlue" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
         </Application.Resources>
     </Application>

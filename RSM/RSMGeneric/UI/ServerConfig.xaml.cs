@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
 
 namespace RSM.RSMGeneric.UI
 {
@@ -23,6 +10,19 @@ namespace RSM.RSMGeneric.UI
         public ServerConfig()
         {
             InitializeComponent();
+            ServerName.Text = ServerInfo.Label + " configuration";
+
+            //Sets the page for general
+            switch (ServerInfo.Game)
+            {
+                case "Minecraft Java": PerGameSettings.Content = new PerGameSettings.Minecraft(); break;
+            }
+        }
+
+        private void Save(object sender, System.Windows.RoutedEventArgs e)
+        {
+            switch()
+            ServerInfo.BackupFrequency = 
         }
     }
 }

@@ -1,0 +1,62 @@
+﻿<Page x:Class="RSM.PerGameSettings.Minecraft"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RSM.PerGameSettings"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="600"
+      xmlns:ui="http://schemas.modernwpf.com/2019">
+
+    <ui:SimpleStackPanel HorizontalAlignment="Center">
+        <Border Height="50"/>
+        <Grid HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <ui:ToggleSwitch Header="Command blocks" Name="CommandBlocks"  Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="20"/>
+            <ui:ToggleSwitch Header="PVP"           Name="PVP" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"          FontSize="20"/>
+            <ui:ToggleSwitch Header="Hardcore mode" Name="Hardcore" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center"    FontSize="20"/>
+            <ui:ToggleSwitch Header="Mob Spawning"  Name="MobSpawning" Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+            <ui:ToggleSwitch Header="Whitelist"     Name="Whitelist" Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="20"/>
+            <ui:ToggleSwitch Header="Online mode"   Name="OnlineMode" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Difficulty" FontSize="22" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <ComboBox Name="Difficulty" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="140">
+                <ComboBoxItem Content="Peaceful" />
+                <ComboBoxItem Content="Easy" />
+                <ComboBoxItem Content="Normal" />
+                <ComboBoxItem Content="Hard" />
+            </ComboBox>
+
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Game mode" FontSize="22" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+            <ComboBox Name="Gamemode" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="140">
+                <ComboBoxItem Content="Survival" />
+                <ComboBoxItem Content="Creative" />
+            </ComboBox>
+        </Grid>
+        <TextBlock Text="Message of the day" FontSize="22" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" Padding="20"/>
+        <TextBox Name="MOTD" Width="400" Height="30" VerticalAlignment="Bottom" />
+        <Border Height="20"/>
+        <Button Content="Save" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Save"/>
+    </ui:SimpleStackPanel>
+</Page>

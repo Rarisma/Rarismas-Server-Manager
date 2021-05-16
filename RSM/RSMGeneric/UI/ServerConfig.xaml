@@ -11,18 +11,29 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="700"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="600"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <TabControl Grid.Row="0" Width="780" HorizontalAlignment="Center">
+        <TextBlock VerticalAlignment="Center" Name="ServerName" HorizontalAlignment="Center" Text="SERVER NAME Configuration"      FontSize="30" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+
+        <TabControl Background="#121212" Grid.Row="1" Width="780" HorizontalAlignment="Center">
             <TabItem Header="General">
-                
+                <Frame Name="PerGameSettings" Height="700" Width="700"/>
             </TabItem>
             <TabItem Header="Backups">
-
+                <ui:SimpleStackPanel>
+                    <TextBlock HorizontalAlignment="Center" Padding="20" FontSize="25" Text="How often should we make a backup of your server?" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Content="Every launch (May get Large)"/>
+                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Content="Weekly                                   "/>
+                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Content="Monthly                                 "/>
+                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Content="Never (Not recommended)   "/>
+                    <Border Height="200"/>
+                    <Button Content="Save" HorizontalAlignment="Center" Click="Button_Click" />
+                </ui:SimpleStackPanel>
             </TabItem>
-            <TabItem Header="Updates">
+            <TabItem Header="Server Version">
 
             </TabItem>
         </TabControl>
