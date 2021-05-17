@@ -24,10 +24,10 @@
             <TabItem Header="Backups">
                 <ui:SimpleStackPanel VerticalAlignment="Center">
                     <TextBlock HorizontalAlignment="Center" Padding="20" FontSize="25" Text="How often should we make a backup of your server?" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
-                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Content="Every launch" Click="FrequencyOnLaunch"/>
-                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Content="Weekly" Click="FrequencyWeekly"/>
-                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Content="Monthly" Click="FrequencyMonthly"/>
-                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Content="Never" Click="FrequencyDisabled"/>
+                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Name="OnLaunch" Content="Every launch" Click="FrequencyOnLaunch"/>
+                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Name="Weekly" Content="Weekly"  Click="FrequencyWeekly"/>
+                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Name="Monthly" Content="Monthly" Click="FrequencyMonthly"/>
+                    <RadioButton HorizontalAlignment="Center" GroupName="frequency" Name="Disabled" Content="Never" Click="FrequencyDisabled"/>
                 </ui:SimpleStackPanel>
             </TabItem>
             <TabItem Header="Server Version">

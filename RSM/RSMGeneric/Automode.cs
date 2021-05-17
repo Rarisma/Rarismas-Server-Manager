@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 //This class fills out the stuff that RSM needs, and then calls ServerBuilder
 namespace RSM.RSMGeneric
@@ -18,7 +19,7 @@ namespace RSM.RSMGeneric
             ServerInfo.Version = ServerReader[0];
             ServerInfo.URL = ServerReader[1];
             ServerInfo.RAM = Convert.ToInt64(LibRarisma.IO.GetRAM()) - 4096; //Should leave enough for the user to play aswell
-            ServerBuilder.MinecraftJava();
+            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new RSMGeneric.UI.Downloader();
         }
 
         public static void CreateForgeServer()
@@ -30,7 +31,7 @@ namespace RSM.RSMGeneric
             ServerInfo.Version = ServerReader[0];
             ServerInfo.RAM = Convert.ToInt64(LibRarisma.IO.GetRAM()) - 4096; //Should leave enough for the user to play aswell
             ServerInfo.URL = ServerReader[1];
-            ServerBuilder.MinecraftJava();
+            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new RSMGeneric.UI.Downloader();
         }
 
         public static void CreateTerrariaServer()
@@ -42,9 +43,8 @@ namespace RSM.RSMGeneric
             ServerInfo.URL = URLs[1];
 
             ServerInfo.WorldSize = "2";
-            ServerBuilder.Terraria();
+            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new UI.Downloader();
         }
 
-        public static void CreateBedrockServer() { ServerBuilder.MinecraftBedrock(); }
     }
 }

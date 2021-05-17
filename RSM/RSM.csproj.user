@@ -36,6 +36,9 @@
     <Compile Update="RSMGeneric\UI\ConnectionHelper.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="RSMGeneric\UI\Downloader.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="RSMGeneric\UI\LaunchPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -78,6 +81,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RSMGeneric\UI\ConnectionHelper.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RSMGeneric\UI\Downloader.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RSMGeneric\UI\LaunchPage.xaml">

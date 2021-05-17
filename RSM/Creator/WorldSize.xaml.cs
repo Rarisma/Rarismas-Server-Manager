@@ -56,14 +56,6 @@ namespace RSM.Creator
             ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new RSMGeneric.UI.LaunchPage();
         }
 
-        private void Continue(object sender, RoutedEventArgs e)
-        {
-            switch (ServerInfo.Game)
-            {
-                case "Terraria": RSMGeneric.ServerBuilder.Terraria(); break;
-            }
-            ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new RSMGeneric.UI.LaunchPage();
-
-        }
+        private void Continue(object sender, RoutedEventArgs e) { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new RSMGeneric.UI.Downloader(); }
     }
 }

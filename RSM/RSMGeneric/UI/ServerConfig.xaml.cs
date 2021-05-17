@@ -9,6 +9,14 @@ namespace RSM.RSMGeneric.UI
         {
             InitializeComponent();
             ServerName.Text = ServerInfo.Label + " configuration";
+            
+            switch (ServerInfo.BackupFrequency)
+            {
+                case "Disabled": Disabled.IsChecked = true; break;
+                case "Monthly": Monthly.IsChecked = true; break;
+                case "On Launch": OnLaunch.IsChecked = true; break;
+                default: Weekly.IsChecked = true; break;
+            }
 
             //Sets the page for general
             switch (ServerInfo.Game)
@@ -16,7 +24,6 @@ namespace RSM.RSMGeneric.UI
                 case "Minecraft Java": PerGameSettings.Content = new PerGameSettings.Minecraft(); break ;
             }
         }
-
 
         private void FrequencyOnLaunch(object sender, System.Windows.RoutedEventArgs e) { ServerInfo.BackupFrequency = "On Launch"; Utilities.Make_INI_File(); }
         private void FrequencyWeekly(object sender, System.Windows.RoutedEventArgs e) { ServerInfo.BackupFrequency = "Weekly"; Utilities.Make_INI_File(); }

@@ -374,3 +374,5 @@ A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\RSMGeneric\UI\Serve
 A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\RSMGeneric\UI\ServerConfig.baml
 A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\PerGameSettings\Minecraft.g.cs
 A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\PerGameSettings\Minecraft.baml
+A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\RSMGeneric\UI\Downloader.g.cs
+A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\RSMGeneric\UI\Downloader.baml
