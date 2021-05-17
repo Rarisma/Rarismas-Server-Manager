@@ -89,8 +89,7 @@ namespace RSM.RSMGeneric.UI
             {
                 switch (ServerInfo.Game)
                 {
-
-                    case "Minecraft Bedrock": Automode.CreateBedrockServer(); break;
+                    case "Minecraft Bedrock": ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Downloader(); break;
                     case "Minecraft Java": ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Creator.RAMAllocator(); break;
                     case "Minecraft Reunion": ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Creator.RAMAllocator(); break;
                     case "Terraria": ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Creator.WorldSize(); break;
@@ -103,7 +102,7 @@ namespace RSM.RSMGeneric.UI
                 {
                     case "Minecraft Java": Automode.CreatePaperServer(); break;
                     case "Minecraft Java (Modded)": ServerInfo.Game = "Minecraft Java"; Automode.CreateForgeServer(); break;
-                    case "Minecraft Bedrock": Automode.CreateBedrockServer(); break;
+                    case "Minecraft Bedrock": ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Downloader(); break;
                     case "Terraria": Automode.CreateTerrariaServer(); break;
                 }
             }

@@ -13,7 +13,7 @@ namespace RSM.RSMGeneric
     {
         public static void Make_INI_File()
         {
-            System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//RSM.ini",
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//RSM.ini",
                 "RSM Config File V3\n\n" +
                 "### Game Name\n" +
                  ServerInfo.Game + "\n\n" +

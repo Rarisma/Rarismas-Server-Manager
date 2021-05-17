@@ -85,15 +85,7 @@ namespace RSM.Creator
             }
         }
 
-        private void Continue(object sender, RoutedEventArgs e) 
-        {
-            switch (ServerInfo.Game)
-            {
-                case "Minecraft Java": RSMGeneric.ServerBuilder.MinecraftJava(); break;
-                case "Terraria": RSMGeneric.ServerBuilder.Terraria();    break;
-            }
-
-        }
+        private void Continue(object sender, RoutedEventArgs e)  { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new RSMGeneric.UI.Downloader(); }
 
     }
 }

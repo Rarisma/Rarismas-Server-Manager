@@ -19,13 +19,12 @@ namespace RSM.RSMGeneric.UI
 
             switch (ServerInfo.Variant) //adjusts visible buttons to users so /mods/ and /plugins/ can't be accessed on server variants that dont support them
             {
-                case "Paper": ModButton.IsEnabled = false; Config.IsEnabled = true; break;
-                case "Forge": PluginButton.IsEnabled = false; Config.IsEnabled = true; break;
-                case "Normal": ModButton.IsEnabled = false; Config.IsEnabled = false;  break;
+                case "Paper": ModButton.IsEnabled = false; break;
+                case "Forge": PluginButton.IsEnabled = false; break;
+                case "Normal": ModButton.IsEnabled = false;  break;
                 default:
                     PluginButton.IsEnabled = false;
                     ModButton.IsEnabled = false;
-                    Config.IsEnabled = false;
                     break;
             }
 
@@ -35,13 +34,15 @@ namespace RSM.RSMGeneric.UI
         { //If you care, the server that was used to test this was called solitaire, which is a reference to a song (Its a banger!)
             Int32 stagingfolder = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             Utilities.DirectoryCopy(AppDomain.CurrentDomain.BaseDirectory + "Servers//" + ServerInfo.Label + "//", AppDomain.CurrentDomain.BaseDirectory + "//Backups//" + ServerInfo.Label + " - " + stagingfolder + "//", true);
+            ServerInfo.Lastbackup = DateTime.Now.ToString("dd/MM/yyyy");
+            Utilities.Make_INI_File();
         }
 
 
         public void Launcher(object sender, RoutedEventArgs e)
         {
-            DateTime time = DateTime.Parse(ServerInfo.Lastbackup);
-            Int64 daysbetween = Convert.ToInt64(Convert.ToString(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy")) - time).Replace(".00:00:00",""));
+            Int64 daysbetween = Convert.ToInt64((DateTime.Now - Convert.ToDateTime(ServerInfo.Lastbackup)).TotalDays) - 1;
+            Clipboard.SetText(Convert.ToString(daysbetween)); 
 
             if (daysbetween >= 7 && ServerInfo.BackupFrequency == "Weekly") { Backup(); }
             else if (daysbetween >= 30 && ServerInfo.BackupFrequency == "Monthly") { Backup(); }
