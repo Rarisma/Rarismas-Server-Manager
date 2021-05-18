@@ -1,0 +1,11 @@
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\bin\Debug\SSMHelper.dll
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\bin\Debug\SSMHelper.pdb
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\bin\Debug\OTAPI.dll
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\bin\Debug\TerrariaServer.exe
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\bin\Debug\TShockAPI.dll
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\bin\Debug\Newtonsoft.Json.dll
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\obj\Debug\RSMHelper.csprojAssemblyReference.cache
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\obj\Debug\RSMHelper.csproj.CoreCompileInputs.cache
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\obj\Debug\RSMHelper.csproj.CopyComplete
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\obj\Debug\SSMHelper.dll
+A:\Repositories\RSM\ServerFiles\Terraria\RSMHelper Source Code\RSMHelper\obj\Debug\SSMHelper.pdb

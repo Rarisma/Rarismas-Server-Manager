@@ -1,0 +1,11 @@
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Release\SSMHelper.dll
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Release\SSMHelper.pdb
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Release\OTAPI.dll
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Release\TerrariaServer.exe
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Release\TShockAPI.dll
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\bin\Release\Newtonsoft.Json.dll
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Release\SSMHelper.csproj.CoreCompileInputs.cache
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Release\SSMHelper.csproj.CopyComplete
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Release\SSMHelper.dll
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Release\SSMHelper.pdb
+A:\Repositories\Simple-Server-Manager\ServerFiles\Terraria\SSMHelper Source Code\SSMHelper\obj\Release\SSMHelper.csprojAssemblyReference.cache

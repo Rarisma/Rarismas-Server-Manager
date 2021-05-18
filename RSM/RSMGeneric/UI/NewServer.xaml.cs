@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -102,7 +103,17 @@ namespace RSM.RSMGeneric.UI
                 {
                     case "Minecraft Java": Automode.CreatePaperServer(); break;
                     case "Minecraft Java (Modded)": ServerInfo.Game = "Minecraft Java"; Automode.CreateForgeServer(); break;
-                    case "Minecraft Bedrock": ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Downloader(); break;
+                    case "Minecraft Bedrock":
+                        ServerInfo.Variant = "Bedrock";
+                        ServerInfo.RAM = 0;
+
+                        //Gets latest links to server
+                        LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Minecraft/bedrock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Bedrock");
+                        string[] ServerFile = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Bedrock");
+                        ServerInfo.Version = ServerFile[0];
+                        ServerInfo.URL = ServerFile[1];
+                        ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new Downloader(); 
+                        break;
                     case "Terraria": Automode.CreateTerrariaServer(); break;
                 }
             }
