@@ -35,7 +35,7 @@ namespace RSM.RSMGeneric.UI
 
         }
 
-                public void DownloadFiles()
+        public void DownloadFiles()
         {
             switch (ServerInfo.Game)
             {
@@ -57,7 +57,6 @@ namespace RSM.RSMGeneric.UI
 
         public void ServerSetup()
         {
-
             switch (ServerInfo.Variant)
             {
                 case "Forge":
@@ -73,7 +72,7 @@ namespace RSM.RSMGeneric.UI
                     cmd.StandardInput.WriteLine("Forge.bat");
                     cmd.WaitForExit();
                     break;
-                case "TShock": LibRarisma.IO.DownloadFile("https://github.com/Rarisma/Rarismas-Server-Manager/raw/main/ServerFiles/Terraria/SSMHelper.dll", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//ServerPlugins//", "RSM.dll"); break;
+                case "TShock": LibRarisma.IO.DownloadFile("https://github.com/Rarisma/Rarismas-Server-Manager/raw/main/ServerFiles/Terraria/RSMHelper.dll", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//ServerPlugins//", "RSM.dll"); break;
 
             }
         }

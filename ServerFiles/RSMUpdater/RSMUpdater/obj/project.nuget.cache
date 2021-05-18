@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "3gvi/t+oGCvh6XaoofM4QlBfRrIEXZ5lF7MWX5Y3teABwxA6FHF2S3J1C0qxVV6wlRmc76XJ9ebaFcl0KrpaHQ==",
+  "success": true,
+  "projectFilePath": "A:\\Repositories\\RSM\\ServerFiles\\RSMUpdater\\RSMUpdater\\RSMUpdater.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rarisma\\.nuget\\packages\\librarisma\\1.4.0\\librarisma.1.4.0.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\system.management\\5.0.0\\system.management.5.0.0.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

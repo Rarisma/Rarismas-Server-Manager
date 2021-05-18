@@ -30,8 +30,13 @@
                     <RadioButton HorizontalAlignment="Center" GroupName="frequency" Name="Disabled" Content="Never" Click="FrequencyDisabled"/>
                 </ui:SimpleStackPanel>
             </TabItem>
-            <TabItem Header="Server Version">
-
+            <TabItem Header="Server Version and update" Name="ServerVer">
+                <ui:SimpleStackPanel>
+                    <TextBlock HorizontalAlignment="Center" Padding="20" FontSize="25" Text="Current Version: VER" Name="ServerVersion" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+                    <TextBlock HorizontalAlignment="Center" Padding="20" FontSize="25" Text="Latest Version: VER" Name="LatestVersion" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+                    <Border Height="100"/>
+                    <Button Content="Update!" HorizontalAlignment="Center" Click="Button_Click"/>
+                </ui:SimpleStackPanel>
             </TabItem>
         </TabControl>
 

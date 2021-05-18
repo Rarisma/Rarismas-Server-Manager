@@ -1,18 +1,6 @@
-﻿using ModernWpf;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.Reflection;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RSM
 {
@@ -30,7 +18,6 @@ namespace RSM
         public static void Manager() //For some reason if the server.propities file isn't found
         { //it will still load the page even though the code tries to send it back, so this is called instead
             ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new RSMGeneric.UI.ServerManger();
-            ModernWpf.MessageBox.Show("Failed to find server.propities file, try loading the server, closing it and then come back.");
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

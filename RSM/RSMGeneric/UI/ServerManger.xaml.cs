@@ -21,7 +21,7 @@ namespace RSM.RSMGeneric.UI
             {
                 case "Paper": ModButton.IsEnabled = false; break;
                 case "Forge": PluginButton.IsEnabled = false; break;
-                case "Normal": ModButton.IsEnabled = false;  break;
+                case "TShock": ModButton.IsEnabled = false;  break;
                 default:
                     PluginButton.IsEnabled = false;
                     ModButton.IsEnabled = false;

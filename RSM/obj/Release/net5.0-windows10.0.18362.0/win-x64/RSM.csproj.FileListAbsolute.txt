@@ -186,3 +186,5 @@ A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\PerGameSe
 A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\RSMGeneric\UI\ServerConfig.g.cs
 A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\PerGameSettings\Minecraft.baml
 A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\RSMGeneric\UI\ServerConfig.baml
+A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\RSMGeneric\UI\Downloader.g.cs
+A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\RSMGeneric\UI\Downloader.baml

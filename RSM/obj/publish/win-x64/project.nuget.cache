@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "87KNFMQ5o9Ye71YvCLCCG389AzHGiGyH+RgAEkp+dhLVgNWdFtHJqCsctRj3FDpYJJI083a8+znjZCgsUGfPzA==",
+  "dgSpecHash": "c8IdjEFLz5TtFr+DWMqGDK4vNX5B/m2V3/TdsK4b34tHxiFN2iBBY7ziyDywdWfgo+f6jJtLG7Zfih1tETLn2Q==",
   "success": true,
   "projectFilePath": "A:\\Repositories\\RSM\\RSM\\RSM.csproj",
   "expectedPackageFiles": [
@@ -13,9 +13,9 @@
     "C:\\Users\\Rarisma\\.nuget\\packages\\system.management\\5.0.0\\system.management.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.5\\microsoft.netcore.app.runtime.win-x64.5.0.5.nupkg.sha512",
-    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.5\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.5.nupkg.sha512",
-    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.5\\microsoft.aspnetcore.app.runtime.win-x64.5.0.5.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.6\\microsoft.netcore.app.runtime.win-x64.5.0.6.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.6\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.6.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.6\\microsoft.aspnetcore.app.runtime.win-x64.5.0.6.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.18362.15\\microsoft.windows.sdk.net.ref.10.0.18362.15.nupkg.sha512"
   ],
   "logs": []
