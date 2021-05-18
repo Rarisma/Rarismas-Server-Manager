@@ -29,7 +29,7 @@ namespace RSM.Creator
             string[] URLs = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//TerraiaTShock");
             ServerInfo.Version = URLs[0];
             ServerInfo.URL = URLs[1];
-
+            ServerInfo.Variant = "TShock";
 
             //This sets the items inside the textbox
             switch (ServerInfo.Game)

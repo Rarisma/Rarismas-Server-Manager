@@ -30,6 +30,7 @@ namespace RSM.Creator
                     LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Minecraft/Forge", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Forge");
                     EULA.Text = "By clicking continue you agree to the Minecraft/Mojang EULA.";
                     break;
+                case "Terraria": ServerInfo.Variant = "TShock"; break;
             }
         }
 

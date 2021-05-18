@@ -25,12 +25,12 @@ namespace RSM.QuickCommands
 
         private void Dawn(object sender, RoutedEventArgs e) { SendCommand("dawn"); }
         private void Dusk(object sender, RoutedEventArgs e) { SendCommand("dusk"); }
-        private void Restart(object sender, RoutedEventArgs e) { SendCommand("restart"); }
-        private void Bloodmoon(object sender, RoutedEventArgs e) { SendCommand("bloodmoon"); }
-        private void Eclipse(object sender, RoutedEventArgs e) { SendCommand("ecl"); }
+        private void Restart(object sender, RoutedEventArgs e) { SendCommand("/restart"); }
+        private void Bloodmoon(object sender, RoutedEventArgs e) { SendCommand("/bloodmoon"); }
+        private void Eclipse(object sender, RoutedEventArgs e) { SendCommand("/eclipse"); }
 
-        private void Save(object sender, RoutedEventArgs e) { SendCommand("save"); }
-        public static void SendCommand(string command) { ServerInfo.cmd.StandardInput.WriteLine(command); }
+        private void Save(object sender, RoutedEventArgs e) { SendCommand("/save"); }
+        public static void SendCommand(string command) { File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label + "\\RSM\\RSM.txt", command); System.Threading.Thread.Sleep(1000); /*ServerInfo.cmd.StandardInput.WriteLine(command);*/ }
 
         private async void StopServer(object sender, RoutedEventArgs e)
         {

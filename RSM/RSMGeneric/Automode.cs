@@ -37,7 +37,7 @@ namespace RSM.RSMGeneric
         public static void CreateTerrariaServer()
         {
             LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Terraria/Tshock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "TerraiaTShock");
-
+            ServerInfo.Variant = "TShock";
             string[] URLs = System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//TerraiaTShock");
             ServerInfo.Version = URLs[0];
             ServerInfo.URL = URLs[1];

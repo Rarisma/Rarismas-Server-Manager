@@ -16,7 +16,5 @@
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Sit back and relax while we set up your server"  FontSize="20" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
         </ui:SimpleStackPanel>
         <Border Height="200"/>
-        <TextBox Name="ConsoleOutput" Width="600" Height="300"/>
     </ui:SimpleStackPanel>
-
 </Page>
