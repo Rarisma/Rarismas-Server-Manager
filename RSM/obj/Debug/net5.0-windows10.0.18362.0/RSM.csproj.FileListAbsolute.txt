@@ -376,3 +376,5 @@ A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\RSM.dll
 A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\ref\RSM.dll
 A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\RSM.pdb
 A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\RSM.genruntimeconfig.cache
+A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\Creator\Difficulty.g.cs
+A:\Repositories\RSM\RSM\obj\Debug\net5.0-windows10.0.18362.0\Creator\Difficulty.baml

@@ -41,8 +41,8 @@ namespace RSM.RSMGeneric
             string[] URLs = System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//TerraiaTShock");
             ServerInfo.Version = URLs[0];
             ServerInfo.URL = URLs[1];
-
-            ServerInfo.WorldSize = "2";
+            ServerInfo.Difficulty = "0"; //Creates a classic mode world
+            ServerInfo.WorldSize = "2"; //Creates a medium world
             ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new UI.Downloader();
         }
 

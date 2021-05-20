@@ -12,16 +12,17 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="650"/>
+            <RowDefinition Height="600"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
         <TextBlock VerticalAlignment="Center" Name="ServerName" HorizontalAlignment="Center" Text="SERVER NAME Configuration"      FontSize="30" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
 
         <TabControl Background="#121212" Grid.Row="1" Width="780" HorizontalAlignment="Center" Margin="0,0,0,50">
-            <TabItem Header="General">
-                <Frame Name="PerGameSettings" Height="700" Width="700"/>
+            <TabItem Header="General" Name="ConfigFileTab">
+                <Frame Name="ConfigFile" Height="700" Width="700"/>
             </TabItem>
-            <TabItem Header="Backups">
+            <TabItem Header="Backups" Name="Backup">
                 <ui:SimpleStackPanel VerticalAlignment="Center">
                     <TextBlock HorizontalAlignment="Center" Padding="20" FontSize="25" Text="How often should we make a backup of your server?" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
                     <RadioButton HorizontalAlignment="Center" GroupName="frequency" Name="OnLaunch" Content="Every launch" Click="FrequencyOnLaunch"/>
@@ -31,14 +32,16 @@
                 </ui:SimpleStackPanel>
             </TabItem>
             <TabItem Header="Server Version and update" Name="ServerVer">
-                <ui:SimpleStackPanel>
+                <ui:SimpleStackPanel VerticalAlignment="Center">
                     <TextBlock HorizontalAlignment="Center" Padding="20" FontSize="25" Text="Current Version: VER" Name="ServerVersion" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
                     <TextBlock HorizontalAlignment="Center" Padding="20" FontSize="25" Text="Latest Version: VER" Name="LatestVersion" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
+                    <TextBlock HorizontalAlignment="Center" Padding="20" FontSize="20" Opacity="0" Text="An update is available for your server!" Name="UpdateNotice" Style="{StaticResource HeaderTextBlockStyle}" Foreground="#fff" />
                     <Border Height="100"/>
-                    <Button Content="Update!" HorizontalAlignment="Center" Click="Button_Click"/>
+                    <Button Content="Update!" HorizontalAlignment="Center" Name="UpdateButton"  Click="Updater"/>
                 </ui:SimpleStackPanel>
             </TabItem>
         </TabControl>
 
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Go back" Grid.Row="2" Click="GoBack"/>
     </Grid>
 </Page>

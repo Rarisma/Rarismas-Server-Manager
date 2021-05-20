@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 //If you ain't in on the RSM train, you shoulda came
 namespace RSM.RSMGeneric.UI
@@ -14,23 +15,44 @@ namespace RSM.RSMGeneric.UI
             InitializeComponent();
             ServerName.Text = ServerInfo.Label + " configuration";
             ServerVersion.Text = "Server Version: " + ServerInfo.Version;
-
+            List<String> ServerReader = new();
+            
             switch (ServerInfo.Game) 
             {
                 case "Minecraft Java":
+                    ConfigFile.Content = new PerGameSettings.Minecraft();
                     if (ServerInfo.Variant == "Forge") { ServerVer.IsEnabled = false; ServerVer.Opacity = 0; }
                     else 
                     {
                         LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Minecraft/Paper", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Paper");
-                        List<String> ServerReader = new();
                         ServerReader.AddRange(System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Paper"));
-                        Version = ServerReader[0];
-                        URL = ServerReader[1];
-                        LatestVersion.Text = "Latest Version:" + Version;
                     }
+                    break;
+
+                case "Minecraft Bedrock":
+                    ConfigFile.Content = new PerGameSettings.Minecraft();
+                    LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Minecraft/bedrock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Bedrock");
+                    ServerReader.AddRange(System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Bedrock"));
+                    break;
+                
+                case "Terraria":
+                    ConfigFileTab.IsEnabled = false;
+                    Backup.IsSelected = true;
+                    LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Terraria/Tshock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "TShock");
+                    ServerReader.AddRange(System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//TShock"));
+                    break;
+
+                default:
+                    ServerReader.Add("You shouldn't see this. DO NOT CLICK UPDATE.");
+                    ServerReader.Add("This shouldn't happen. EVER.");
                     break;
             }
 
+            Version = ServerReader[0];
+            URL = ServerReader[1];
+            LatestVersion.Text = "Latest Version: " + Version;
+            if (Version == ServerInfo.Version) { UpdateButton.IsEnabled = false; UpdateButton.Content = "Your server is up to date!"; }
+            else { UpdateNotice.Opacity = 1; }
             switch (ServerInfo.BackupFrequency)
             {
                 case "Disabled": Disabled.IsChecked = true; break;
@@ -38,7 +60,6 @@ namespace RSM.RSMGeneric.UI
                 case "On Launch": OnLaunch.IsChecked = true; break;
                 default: Weekly.IsChecked = true; break;
             }
-
         }
 
         private void FrequencyOnLaunch(object sender, System.Windows.RoutedEventArgs e) { ServerInfo.BackupFrequency = "On Launch"; Utilities.Make_INI_File(); }
@@ -54,12 +75,19 @@ namespace RSM.RSMGeneric.UI
                     System.IO.File.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//Server.jar");
                     LibRarisma.IO.DownloadFile(URL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//", "Server.jar");
                     break;
+                case "Minecraft Bedrock":
+                    LibRarisma.IO.DownloadFile(URL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//", "Server.zip");
+                    System.IO.Compression.ZipFile.ExtractToDirectory(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//Server.zip", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//", true);
+                    break;
                 case "Terraria":
-                    //LibRarisma.IO.DownloadFile(URL)
+                    LibRarisma.IO.DownloadFile(URL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//", "Server.zip");
+                    System.IO.Compression.ZipFile.ExtractToDirectory(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//Server.zip", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//", true);
                     break;
             }
 
             ServerInfo.Version = Version;
         }
+
+        private void GoBack(object sender, RoutedEventArgs e) { ((MainWindow)Application.Current.MainWindow).UserDisplay.Content = new ServerManger(); }
     }
 }

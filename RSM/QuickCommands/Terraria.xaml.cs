@@ -13,7 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+//You might wonder why I put a lot of comments
+//Mainly programming is kinda boring but knowing that one day
+//someone may find these and understand the references
+//fills you with determination.
 namespace RSM.QuickCommands
 {
     /// <summary>
@@ -23,21 +26,15 @@ namespace RSM.QuickCommands
     {
         public Terraria() { InitializeComponent(); }
 
-        private void Dawn(object sender, RoutedEventArgs e) { SendCommand("dawn"); }
-        private void Dusk(object sender, RoutedEventArgs e) { SendCommand("dusk"); }
-        private void Restart(object sender, RoutedEventArgs e) { SendCommand("/restart"); }
-        private void Bloodmoon(object sender, RoutedEventArgs e) { SendCommand("bloodmoon"); }
-        private void Eclipse(object sender, RoutedEventArgs e) { SendCommand("eclipse"); }
-
         private void Save(object sender, RoutedEventArgs e) { SendCommand("/save"); }
         public static void SendCommand(string command) { File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Label + "\\RSM\\RSM.txt", command); System.Threading.Thread.Sleep(1000); /*ServerInfo.cmd.StandardInput.WriteLine(command);*/ }
 
         private async void StopServer(object sender, RoutedEventArgs e)
         {
-            SendCommand("stop");
+            SendCommand("/stop");
             ServerInfo.Running = false;
             await Task.Delay(10000); //Gives about enough time for the world to save
-            if (ModernWpf.MessageBox.Show("Do you want to close RSM?", "Server closed successfully", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (ModernWpf.MessageBox.Show("Do you want to go back?", "Server closed successfully", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 System.Diagnostics.Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\RSM.exe");
                 Application.Current.Shutdown();
