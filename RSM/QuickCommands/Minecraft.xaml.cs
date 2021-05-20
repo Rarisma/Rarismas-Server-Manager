@@ -99,7 +99,7 @@ namespace RSM.QuickCommands
             ServerInfo.cmd.StandardInput.Flush();
             ServerInfo.Running = false;
             await Task.Delay(10000); //Gives about enough time for the world to save
-            if (ModernWpf.MessageBox.Show("Do you want to close RSM?", "Server closed successfully", MessageBoxButton.YesNo) == MessageBoxResult.Yes) 
+            if (ModernWpf.MessageBox.Show("Do you want to go back?", "Server closed successfully", MessageBoxButton.YesNo) == MessageBoxResult.Yes) 
             {
                 System.Diagnostics.Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\RSM.exe");
                 Application.Current.Shutdown(); 

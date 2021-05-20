@@ -14,12 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+//hope for tomorrow is slim
 namespace RSM.RSMGeneric.UI
 {
-    /// <summary>
-    /// Interaction logic for CLI.xaml
-    /// </summary>
     public partial class CLI : Page
     {
         public CLI()
@@ -61,7 +58,7 @@ namespace RSM.RSMGeneric.UI
             {
                 case "Terraria":
                     ServerInfo.cmd.StartInfo.FileName = AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//TerrariaServer.exe";
-                    ServerInfo.cmd.StartInfo.Arguments = "-autocreate " + ServerInfo.WorldSize + " -world  " + AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//world.wld -redirect";
+                    ServerInfo.cmd.StartInfo.Arguments = "-autocreate " + ServerInfo.WorldSize + " -world World.wld -difficulty " + ServerInfo.Difficulty;
                     ServerInfo.cmd.StartInfo.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//";
                     ServerInfo.cmd.Start();
                     ServerInfo.cmd.BeginOutputReadLine();
@@ -96,6 +93,9 @@ namespace RSM.RSMGeneric.UI
         {
             switch (ServerInfo.Game)
             {
+                case "Terraira":
+                    
+                    break;
                 default:
                     ServerInfo.cmd.StandardInput.WriteLine(Input.Text);
                     ServerInfo.cmd.StandardInput.Flush();

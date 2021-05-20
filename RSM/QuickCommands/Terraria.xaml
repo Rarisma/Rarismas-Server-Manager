@@ -9,23 +9,10 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="400" />
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
-        <Button Grid.Column="0" Grid.Row="0" Content="Close Server" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="StopServer" />
+        <Button Grid.Column="0" Grid.Row="0" Content="Close Server"  Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="StopServer" />
         <Button Grid.Column="2" Grid.Row="0" Content="Save" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Save" />
-        <Button Grid.Column="1" Grid.Row="0" Content="Restart Server" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160"/>
-        <Button Grid.Column="0" Grid.Row="1" Content="Set time to day" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Dawn"/>
-        <Button Grid.Column="1" Grid.Row="1" Content="Set time to Night" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Dusk"/>
-
-        <Button Grid.Column="2" Grid.Row="1" Content="Summon Blood moon" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Bloodmoon" />
-        <Button Grid.Column="3" Grid.Row="1" Content="Summon Eclipse" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Click="Eclipse" />
     </Grid>
 </Page>

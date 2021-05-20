@@ -9,13 +9,14 @@ namespace RSM
 {
     class ServerInfo
     {
-        public static string Game = "None Set";       //Stores what game is being ran
-        public static string Label = "None Set";      //Stores the name of the server
-        public static string URL = "None Set";        //URL used to download server files
-        public static string Version = "None Set";    //Used to keep track of what version the server is running
-        public static string Variant = "None Set";    //Used if there are multiple variants (Eg Paper, Bukkit ans spiggot)
-        public static string WorldSize = "None Set";  //Used if World size is configurable
+        public static string Game = "None Set";             //Stores what game is being ran
+        public static string Label = "None Set";            //Stores the name of the server
+        public static string URL = "None Set";              //URL used to download server files
+        public static string Version = "None Set";          //Used to keep track of what version the server is running
+        public static string Variant = "None Set";          //Used if there are multiple variants (Eg Paper, Bukkit ans spiggot)
+        public static string WorldSize = "None Set";        //Used if World size is configurable
         public static string BackupFrequency= "Weekly";     //Used by RSM for backups
+        public static string Difficulty = "None Set";       //Used for difficulty
         public static string Lastbackup = DateTime.Now.ToString("dd/MM/yyyy");        //Used by RSM for backups
         public static Int64 RAM = 0;                  //Used for servers that need RAM to be allocated, servers that don't will just have it set as 0
 

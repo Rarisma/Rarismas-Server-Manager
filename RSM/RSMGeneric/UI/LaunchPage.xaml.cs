@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,11 +14,9 @@ namespace RSM.RSMGeneric.UI
         public LaunchPage()
         {
             InitializeComponent();
-            /*LibRarisma.IO.DownloadFile("",AppDomain.CurrentDomain.BaseDirectory)
-            string[] latest = System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "AutoUpdate");
-            if(Assembly.GetExecutingAssembly().GetName().Version.ToString() != latest[0]) { UpdateNotice.Opacity = 1; }*/
-
-
+            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/RSM/Autoupdater", AppDomain.CurrentDomain.BaseDirectory, "Autoupdate");
+            string[] latest = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "AutoUpdate");
+            if(Assembly.GetExecutingAssembly().GetName().Version.ToString() != latest[0]) { UpdateNotice.Opacity = 1; }
 
 
             if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "//Servers//"))

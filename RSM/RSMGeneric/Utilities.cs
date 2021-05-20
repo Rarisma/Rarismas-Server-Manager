@@ -30,7 +30,10 @@ namespace RSM.RSMGeneric
                 "### Backup Frequency\n" +
                 ServerInfo.BackupFrequency + "\n\n" +
                 "### Last Backup\n" +
-                ServerInfo.Lastbackup );
+                ServerInfo.Lastbackup + "\n\n" +
+                "### Difficulty\n" +
+                ServerInfo.Difficulty
+                );
         }
 
         public static void Read_INI_File(Object ServerName)
@@ -46,6 +49,7 @@ namespace RSM.RSMGeneric
             ServerInfo.WorldSize = SSM_INI[SSM_INI.IndexOf("### Server size") + 1];
             ServerInfo.BackupFrequency = SSM_INI[SSM_INI.IndexOf("### Backup Frequency") + 1];
             ServerInfo.Lastbackup = SSM_INI[SSM_INI.IndexOf("### Last Backup") + 1];
+            ServerInfo.Difficulty = SSM_INI[SSM_INI.IndexOf("### Difficulty") + 1];
         }
 
         public static void LaunchServer() //Handles actually launching the server and setting quick commands

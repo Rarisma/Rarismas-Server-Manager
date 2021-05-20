@@ -9,7 +9,6 @@
       xmlns:ui="http://schemas.modernwpf.com/2019">
 
     <ui:SimpleStackPanel HorizontalAlignment="Center">
-        <Border Height="50"/>
         <Grid HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>

@@ -9,6 +9,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Creator\Difficulty.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Creator\MinecraftServerPropitiesEditor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -53,6 +56,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Creator\Difficulty.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Creator\MinecraftServerPropitiesEditor.xaml">
       <SubType>Designer</SubType>
     </Page>
