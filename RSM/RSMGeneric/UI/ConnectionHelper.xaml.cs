@@ -24,8 +24,8 @@ namespace RSM.RSMGeneric.UI
             InitializeComponent();
         }
 
-        private void Hamachi(object sender, RoutedEventArgs e) { Utilities.OpenLink("https://rarisma.github.io/Simple-Server-Manager/help/connections/general/hamachi"); }
-        private void PortForwarding(object sender, RoutedEventArgs e) { Utilities.OpenLink("https://rarisma.github.io/Simple-Server-Manager/help/connections/general/Help"); }
-        private void LearnMore(object sender, RoutedEventArgs e) { Utilities.OpenLink("https://rarisma.github.io/Simple-Server-Manager/help/connections/general/hamachi"); }
+        private void Hamachi(object sender, RoutedEventArgs e) { Utilities.OpenLink("https://rarisma.github.io/Rarismas-Server-Manager/help/connections/general/hamachi"); }
+        private void PortForwarding(object sender, RoutedEventArgs e) { Utilities.OpenLink("https://rarisma.github.io/Rarismas-Server-Manager/help/connections/general/Help"); }
+        private void LearnMore(object sender, RoutedEventArgs e) { Utilities.OpenLink("https://rarisma.github.io/Rarismas-Server-Manager/help/connections/general/hamachi"); }
     }
 }

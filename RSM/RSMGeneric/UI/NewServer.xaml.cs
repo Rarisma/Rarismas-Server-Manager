@@ -83,8 +83,15 @@ namespace RSM.RSMGeneric.UI
 
         private void Continue(object sender, RoutedEventArgs e)
         {
-            System.IO.Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "//Servers"); //Tries to make a servers folder
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "//Servers"); //Tries to make a servers folder
             LibRarisma.IO.RecreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "//Cache");
+
+            try
+            {
+                Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\" + ServerInfo.Label);
+                Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "\\" + ServerInfo.Label);
+            }
+            catch { ModernWpf.MessageBox.Show("You can't call your server that name."); ServerName.Text = ""; return; }
 
             if (ServerInfo.Label != "None Set" && ServerInfo.Game != "None Set" && ServerInfo.Automatic == false)
             {

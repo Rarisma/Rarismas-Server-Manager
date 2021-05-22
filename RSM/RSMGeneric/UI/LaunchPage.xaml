@@ -13,11 +13,11 @@
         <TextBlock Text="Welcome to RSM!" Foreground="#fff" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" />
         <TextBlock Text="An update is available!" Name="UpdateNotice" Foreground="#fff" FontSize="20" Opacity="0" HorizontalAlignment="Center" Padding="10" Style="{StaticResource HeaderTextBlockStyle}" />
 
-        <Grid Height="610">
+        <Grid Height="570">
             <ui:ListView  Foreground="#fff" SelectionChanged="ServerSelectionChanged" Name="ListView" SelectionMode="Single" Background="#000" FontSize="25" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center">
                 <ui:ListViewItem Content="Create a new server" Foreground="#fff"/>
                 <ui:ListViewItem Content="Create new server (Automatic)" Foreground="#fff"/>
-                <ui:ListViewItem Content="Import a server" IsEnabled="False" Foreground="#fff"/>
+                <ui:ListViewItem Content="Import a server" Opacity="0" IsEnabled="False" Foreground="#fff"/>
             </ui:ListView>
         </Grid>
 

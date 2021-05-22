@@ -75,6 +75,17 @@ namespace RSM.RSMGeneric.UI
                 case "TShock": LibRarisma.IO.DownloadFile("https://github.com/Rarisma/Rarismas-Server-Manager/raw/main/ServerFiles/Terraria/RSMHelper.dll", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Label + "//ServerPlugins//", "RSM.dll"); break;
 
             }
+
+            if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java") == false)
+            {
+                LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/2.0/Java", AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\", "Java");
+                string[] Java = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\Java");
+                LibRarisma.IO.DownloadFile(Java[0], AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\", "JDK.zip");
+
+                System.IO.Compression.ZipFile.ExtractToDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\JDK.zip", AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
+                string[] Dirs = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
+                Directory.Move(Dirs[0], AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java");
+            }
         }
 
         public void CleanUp()
