@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 A:\Repositories\RSM\RSM\App.xaml
-161811565991
+171165417685
 
-23-1595384380
-200-190600290
-Creator\Difficulty.xaml;Creator\MinecraftServerPropitiesEditor.xaml;Creator\RAMAllocator.xaml;Creator\VersionSelecter.xaml;Creator\WorldSize.xaml;MainWindow.xaml;PerGameSettings\Minecraft.xaml;QuickCommands\Minecraft.xaml;QuickCommands\Terraria.xaml;RSMGeneric\UI\CLI.xaml;RSMGeneric\UI\ConnectionHelper.xaml;RSMGeneric\UI\Downloader.xaml;RSMGeneric\UI\LaunchPage.xaml;RSMGeneric\UI\NewServer.xaml;RSMGeneric\UI\ServerConfig.xaml;RSMGeneric\UI\ServerManger.xaml;
+24-399084263
+200-1220349144
+Creator\Difficulty.xaml;Creator\MinecraftServerPropitiesEditor.xaml;Creator\RAMAllocator.xaml;Creator\VersionSelecter.xaml;Creator\WorldSize.xaml;MainWindow.xaml;PerGameSettings\Minecraft.xaml;PerGameSettings\MinecraftText.xaml;QuickCommands\Minecraft.xaml;QuickCommands\Terraria.xaml;RSMGeneric\UI\CLI.xaml;RSMGeneric\UI\ConnectionHelper.xaml;RSMGeneric\UI\Downloader.xaml;RSMGeneric\UI\LaunchPage.xaml;RSMGeneric\UI\NewServer.xaml;RSMGeneric\UI\ServerConfig.xaml;RSMGeneric\UI\ServerManger.xaml;
 
 True
 

@@ -18,6 +18,7 @@ namespace RSM.RSMGeneric.UI
             string[] latest = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "AutoUpdate");
             if(Assembly.GetExecutingAssembly().GetName().Version.ToString() != latest[0]) { UpdateNotice.Opacity = 1; }
 
+            if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory +"//Cache//")) { Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "//Cache//", true); }
 
             if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "//Servers//"))
             {

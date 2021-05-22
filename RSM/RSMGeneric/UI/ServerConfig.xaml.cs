@@ -20,7 +20,7 @@ namespace RSM.RSMGeneric.UI
             switch (ServerInfo.Game) 
             {
                 case "Minecraft Java":
-                    ConfigFile.Content = new PerGameSettings.Minecraft();
+                    ConfigFile.Content = new PerGameSettings.MinecraftText();
                     if (ServerInfo.Variant == "Forge") { ServerVer.IsEnabled = false; ServerVer.Opacity = 0; }
                     else 
                     {
@@ -62,12 +62,12 @@ namespace RSM.RSMGeneric.UI
             }
         }
 
-        private void FrequencyOnLaunch(object sender, System.Windows.RoutedEventArgs e) { ServerInfo.BackupFrequency = "On Launch"; Utilities.Make_INI_File(); }
-        private void FrequencyWeekly(object sender, System.Windows.RoutedEventArgs e) { ServerInfo.BackupFrequency = "Weekly"; Utilities.Make_INI_File(); }
-        private void FrequencyMonthly(object sender, System.Windows.RoutedEventArgs e) { ServerInfo.BackupFrequency = "Monthly"; Utilities.Make_INI_File(); }
-        private void FrequencyDisabled(object sender, System.Windows.RoutedEventArgs e) { ServerInfo.BackupFrequency = "Disabled"; Utilities.Make_INI_File(); }
+        private void FrequencyOnLaunch(object sender, RoutedEventArgs e) { ServerInfo.BackupFrequency = "On Launch"; Utilities.Make_INI_File(); }
+        private void FrequencyWeekly(object sender, RoutedEventArgs e)   { ServerInfo.BackupFrequency = "Weekly"; Utilities.Make_INI_File(); }
+        private void FrequencyMonthly(object sender, RoutedEventArgs e)  { ServerInfo.BackupFrequency = "Monthly"; Utilities.Make_INI_File(); }
+        private void FrequencyDisabled(object sender, RoutedEventArgs e) { ServerInfo.BackupFrequency = "Disabled"; Utilities.Make_INI_File(); }
 
-        private void Updater(object sender, System.Windows.RoutedEventArgs e)
+        private void Updater(object sender, RoutedEventArgs e)
         {
             switch (ServerInfo.Game)
             {

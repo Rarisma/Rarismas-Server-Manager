@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0-windows10.0.18362": {
-      "LibRarisma/1.4.0": {
+      "LibRarisma/1.5.0": {
         "type": "package",
         "dependencies": {
           "System.Management": "5.0.0"
@@ -538,7 +538,7 @@
       }
     },
     "net5.0-windows10.0.18362/win-x64": {
-      "LibRarisma/1.4.0": {
+      "LibRarisma/1.5.0": {
         "type": "package",
         "dependencies": {
           "System.Management": "5.0.0"
@@ -1047,15 +1047,15 @@
     }
   },
   "libraries": {
-    "LibRarisma/1.4.0": {
-      "sha512": "pd7e9lcZ2poP0KGm6e3diPC4waxi4/5BiB2JkWQDl1a8S3XeaJtAEV2PRxphx6BLhy7hJ/ZB05MQNDHuQBJYnQ==",
+    "LibRarisma/1.5.0": {
+      "sha512": "mi0qSkeMqQpF8Gkx5gll/N6Dx08+o8e9206rADCCdPMcCt4IztXqOU5VhM8UkSwVwGm8MUm1Ht63MKnlv41/Wg==",
       "type": "package",
-      "path": "librarisma/1.4.0",
+      "path": "librarisma/1.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net5.0/LibRarisma.dll",
-        "librarisma.1.4.0.nupkg.sha512",
+        "librarisma.1.5.0.nupkg.sha512",
         "librarisma.nuspec"
       ]
     },
@@ -1855,7 +1855,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows10.0.18362": [
-      "LibRarisma >= 1.4.0",
+      "LibRarisma >= 1.5.0",
       "ModernWpf.MessageBox >= 0.5.1",
       "ModernWpfUI >= 0.9.4"
     ]
@@ -1909,7 +1909,7 @@
         "dependencies": {
           "LibRarisma": {
             "target": "Package",
-            "version": "[1.4.0, )"
+            "version": "[1.5.0, )"
           },
           "ModernWpf.MessageBox": {
             "target": "Package",

@@ -6,14 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "LibRarisma/1.4.0": {
+      "LibRarisma/1.5.0": {
         "dependencies": {
           "System.Management": "5.0.0"
         },
         "runtime": {
           "lib/net5.0/LibRarisma.dll": {
-            "assemblyVersion": "1.4.0.0",
-            "fileVersion": "1.4.0.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           }
         }
       },
@@ -533,12 +533,12 @@
     }
   },
   "libraries": {
-    "LibRarisma/1.4.0": {
+    "LibRarisma/1.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pd7e9lcZ2poP0KGm6e3diPC4waxi4/5BiB2JkWQDl1a8S3XeaJtAEV2PRxphx6BLhy7hJ/ZB05MQNDHuQBJYnQ==",
-      "path": "librarisma/1.4.0",
-      "hashPath": "librarisma.1.4.0.nupkg.sha512"
+      "sha512": "sha512-mi0qSkeMqQpF8Gkx5gll/N6Dx08+o8e9206rADCCdPMcCt4IztXqOU5VhM8UkSwVwGm8MUm1Ht63MKnlv41/Wg==",
+      "path": "librarisma/1.5.0",
+      "hashPath": "librarisma.1.5.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/5.0.0": {
       "type": "package",

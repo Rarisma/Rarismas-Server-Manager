@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RSM"
         mc:Ignorable="d"
-        Title="SSM - Next" Height="800" Width="800"
+        Height="800" Width="800"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:ThemeManager.RequestedTheme="Dark"
         ui:WindowHelper.UseModernWindowStyle="True"

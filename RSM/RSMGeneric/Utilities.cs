@@ -62,7 +62,7 @@ namespace RSM.RSMGeneric
                     break;
 
                 case "Minecraft Java":
-                    ServerInfo.cmd.StandardInput.WriteLine("java -Xms" + ServerInfo.RAM + "M -jar Server.jar nogui");
+                    ServerInfo.cmd.StandardInput.WriteLine(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java\\bin\\java.exe -Xms" + ServerInfo.RAM + "M -jar Server.jar nogui");
                     ServerInfo.cmd.StandardInput.Flush();
                     break;
             }

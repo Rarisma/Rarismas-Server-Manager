@@ -1,5 +1,6 @@
 ﻿
 FA:\Repositories\RSM\RSM\App.xaml;;
+FA:\Repositories\RSM\RSM\Creator\Difficulty.xaml;;
 FA:\Repositories\RSM\RSM\Creator\MinecraftServerPropitiesEditor.xaml;;
 FA:\Repositories\RSM\RSM\Creator\RAMAllocator.xaml;;
 FA:\Repositories\RSM\RSM\Creator\VersionSelecter.xaml;;
@@ -15,5 +16,5 @@ FA:\Repositories\RSM\RSM\RSMGeneric\UI\LaunchPage.xaml;;
 FA:\Repositories\RSM\RSM\RSMGeneric\UI\NewServer.xaml;;
 FA:\Repositories\RSM\RSM\RSMGeneric\UI\ServerConfig.xaml;;
 FA:\Repositories\RSM\RSM\RSMGeneric\UI\ServerManger.xaml;;
-FA:\Repositories\RSM\RSM\Creator\Difficulty.xaml;;
+FA:\Repositories\RSM\RSM\PerGameSettings\MinecraftText.xaml;;
 

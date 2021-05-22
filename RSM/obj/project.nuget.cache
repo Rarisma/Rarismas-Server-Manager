@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IjCQYtX25tRcLhP0UfoEx9nx1uRMKf41bMUG2HEkvtNbly3HirrgpSnhMUsCqflmug66KXOFLd2L3lFozP9Rog==",
+  "dgSpecHash": "JQoUdGPRXw2gizC8MtqO/y1Uk1aCQgVjt4M8J+DuxFfZzwvmEH9SDY/ay7yEQkGczfSL+IgNBPxk8x3Tv4Ch7g==",
   "success": true,
   "projectFilePath": "A:\\Repositories\\RSM\\RSM\\RSM.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rarisma\\.nuget\\packages\\librarisma\\1.4.0\\librarisma.1.4.0.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\librarisma\\1.5.0\\librarisma.1.5.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\modernwpf.messagebox\\0.5.1\\modernwpf.messagebox.0.5.1.nupkg.sha512",

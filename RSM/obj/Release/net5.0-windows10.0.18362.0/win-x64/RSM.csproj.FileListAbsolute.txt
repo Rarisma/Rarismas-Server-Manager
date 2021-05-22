@@ -188,3 +188,7 @@ A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\PerGameSe
 A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\RSMGeneric\UI\ServerConfig.baml
 A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\RSMGeneric\UI\Downloader.g.cs
 A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\RSMGeneric\UI\Downloader.baml
+A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Creator\Difficulty.g.cs
+A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\Creator\Difficulty.baml
+A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\PerGameSettings\MinecraftText.g.cs
+A:\Repositories\RSM\RSM\obj\Release\net5.0-windows10.0.18362.0\win-x64\PerGameSettings\MinecraftText.baml

@@ -27,6 +27,9 @@
     <Compile Update="PerGameSettings\Minecraft.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="PerGameSettings\MinecraftText.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="QuickCommands\Minecraft.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -75,6 +78,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PerGameSettings\Minecraft.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PerGameSettings\MinecraftText.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="QuickCommands\Minecraft.xaml">
