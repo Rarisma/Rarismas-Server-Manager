@@ -77,7 +77,7 @@ namespace RSM.RSMGeneric.UI
             }
 
             if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java") == false)
-            {
+             {
                 LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/2.0/Java", AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\", "Java");
                 string[] Java = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\Java");
                 LibRarisma.IO.DownloadFile(Java[0], AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\", "JDK.zip");

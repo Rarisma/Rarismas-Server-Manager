@@ -29,6 +29,7 @@ namespace RSM.RSMGeneric.UI
 
             ServerInfo.cmd.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
             {
+
                 if (!String.IsNullOrEmpty(e.Data)) { Application.Current.Dispatcher.Invoke(new Action(() => { ServerConsole.AppendText("\n" + e.Data); })); }
                 Application.Current.Dispatcher.Invoke(new Action(() => { ServerConsole.ScrollToEnd(); }));
             });
