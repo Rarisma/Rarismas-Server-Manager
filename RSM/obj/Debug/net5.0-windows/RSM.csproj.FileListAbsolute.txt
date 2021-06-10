@@ -1,5 +1,0 @@
-A:\Repositories\Simple-Server-Manager\RSM\RSM\obj\Debug\net5.0-windows\RSM.csprojAssemblyReference.cache
-A:\Repositories\Simple-Server-Manager\RSM\RSM\obj\Debug\net5.0-windows\MainWindow.g.cs
-A:\Repositories\Simple-Server-Manager\RSM\RSM\obj\Debug\net5.0-windows\App.g.cs
-A:\Repositories\Simple-Server-Manager\RSM\RSM\obj\Debug\net5.0-windows\RSM_MarkupCompile.cache
-A:\Repositories\Simple-Server-Manager\RSM\RSM\obj\Debug\net5.0-windows\RSM_MarkupCompile.lref

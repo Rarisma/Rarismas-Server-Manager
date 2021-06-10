@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+             x:Class="RSM2.Server.CLI" >
+	<StackPanel>
+		<Border Height="20" />
+		<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="ServerName"  Name="ServerName" FontSize="25" />
+		<Border Height="50"/>
+
+		<TextBox Name="ServerConsole" Text="Server Console Initalised." Margin="10"  Height="250" Width="580"/>
+		<Border Height="20" />
+
+		<Grid HorizontalAlignment="Left" Width="600" Height="40">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="500"/>
+				<ColumnDefinition Width="100"/>
+			</Grid.ColumnDefinitions>
+			<AutoCompleteBox Name="Input" Grid.Column="0" Width="480" HorizontalAlignment="Center" Height="40"  BorderThickness="3" Foreground="LightBlue"/>
+			<Button Content="Send" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="SendInput" />
+		</Grid>
+		<Border Height="20" VerticalAlignment="Bottom" />
+		<ContentControl Name="QuickCommandsFrame" Height="150"/>
+	</StackPanel>
+</UserControl>

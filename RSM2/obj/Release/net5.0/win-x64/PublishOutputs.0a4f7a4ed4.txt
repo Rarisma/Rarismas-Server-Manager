@@ -1,0 +1,8 @@
+C:\Users\Rarisma\Desktop\RSM2x64\RSM2.pdb
+C:\Users\Rarisma\Desktop\RSM2x64\clrcompression.dll
+C:\Users\Rarisma\Desktop\RSM2x64\clrjit.dll
+C:\Users\Rarisma\Desktop\RSM2x64\coreclr.dll
+C:\Users\Rarisma\Desktop\RSM2x64\mscordaccore.dll
+C:\Users\Rarisma\Desktop\RSM2x64\libHarfBuzzSharp.dll
+C:\Users\Rarisma\Desktop\RSM2x64\libSkiaSharp.dll
+C:\Users\Rarisma\Desktop\RSM2x64\RSM2.exe

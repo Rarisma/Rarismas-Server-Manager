@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+             x:Class="RSM2.Server.Manager">
+	<StackPanel>
+
+		<Border Height="40" />
+		<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Server Label"       Name="ServerName"    FontSize="50" />
+		<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Server Version"  Name="ServerVersion" FontSize="25"/>
+
+		<Border Height="100"/>
+		<Button Content="Load server" HorizontalAlignment="Center" Width="200" Click="Launcher" HorizontalContentAlignment="Center"/>
+		<Border Height="50"/>
+		
+		<Button Grid.Row="0" Grid.Column="1" IsEnabled="True" Content="Configure server" HorizontalAlignment="Center" Width="200" Click="ConfigServer" Name="Config" HorizontalContentAlignment="Center"/>
+		<Border Height="50"/>
+
+
+		<Button  Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Content="Go back" HorizontalAlignment="Center" Width="200" Click="GoBack" HorizontalContentAlignment="Center"/>
+		<Border Height="40"/>
+	</StackPanel>
+</UserControl>

@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RSM2.UI.Downloader">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="200"/>
+			<RowDefinition Height="200"/>
+			<RowDefinition Height="200"/>
+		</Grid.RowDefinitions>
+		<TextBlock VerticalAlignment="Center" Grid.Row="0" HorizontalAlignment="Center" Padding="10" Text="Setting up ServerName"  Name="ServerVersion" FontSize="25" FontFamily="Segoe.ttf"/>
+		<TextBlock VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Center" Text="TASK NAME"  FontSize="25" Name="CurrentTask" FontFamily="Segoe.ttf"/>
+		<TextBlock VerticalAlignment="Center" Grid.Row="2" HorizontalAlignment="Center" Text="Sit back and relax while we set up your server"  FontSize="20" FontFamily="Segoe.ttf"/>
+	</Grid>	
+</UserControl>

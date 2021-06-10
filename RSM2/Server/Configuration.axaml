@@ -1,0 +1,91 @@
+
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+             x:Class="RSM2.Server.Configuration">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40"/>
+			<RowDefinition Height="500"/>
+			<RowDefinition Height="60"/>
+		</Grid.RowDefinitions>
+
+		<TextBlock VerticalAlignment="Center" Name="ServerName" HorizontalAlignment="Center" Text="SERVER NAME Configuration"      FontSize="30" />
+
+		<TabControl Grid.Row="1" Width="600">
+			<TabItem Header="Config File" Name="ConfigFileTab">
+				<ContentControl VerticalContentAlignment="Center" Name="ConfigFile" Height="500" Width="700"/>
+			</TabItem>
+			<TabItem Header="General">
+				<StackPanel>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="100"/>
+							<RowDefinition Height="40"/>
+							<RowDefinition Height="40"/>
+							<RowDefinition Height="40"/>
+							<RowDefinition Height="40"/>
+							<RowDefinition Height="200"/>
+							<RowDefinition Height="40"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="400"/>
+							<ColumnDefinition Width="200"/>
+						</Grid.ColumnDefinitions>
+
+						<Label FontFamily="Segoe.ttf" Grid.Row="1" Grid.Column="0" FontSize="25" Content="Backup frequency"/>
+						<ComboBox Width="150" Grid.Row="1" Grid.Column="1" Name="BackupFrequency">
+							<ComboBoxItem Content="Never"/>
+							<ComboBoxItem Content="On launch"/>
+							<ComboBoxItem Content="Weekly"/>
+							<ComboBoxItem Content="Monthly"/>
+						</ComboBox>
+
+						<Label Content="Update status" Grid.Row="2" Grid.Column="0" FontSize="25" FontFamily="Segoe.ttf"/>
+						<Button Content="No update needed" Grid.Row="2" Grid.Column="1" Width="150" HorizontalContentAlignment="Center" Name="UpdateButton"/>
+					</Grid>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Help">
+				<StackPanel>
+					<Border Height="50"/>
+					<Button Content="Open Datapacks folder" Name="Datapacks" HorizontalAlignment="Center" Width="350" Click="Datapacks" IsEnabled="False" HorizontalContentAlignment="Center"/>
+					<Border Height="50"/>
+					<Button Content="Open mods folder" Name="Mod" HorizontalAlignment="Center" Width="350" Click="Mods" IsEnabled="False" HorizontalContentAlignment="Center"/>
+					<Border Height="100"/>
+					<Button Content="Open plugins folder" Name="Plugin" HorizontalAlignment="Center" Width="350" Click="Plugins" IsEnabled="False" HorizontalContentAlignment="Center"/>
+					<Border Height="100"/>
+					<Button Content="Help people connect to this server" HorizontalAlignment="Center" Click="ShowHelp" Width="350" HorizontalContentAlignment="Center"/>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Infomation">
+				<ScrollViewer>
+					<StackPanel>
+						<Border Height="20"/>
+						<Label Content="Server name: " FontSize="20"  Name="InfoName" HorizontalAlignment="Center"/>
+						<Label Content="Server game: " FontSize="20" Name="InfoGame" HorizontalAlignment="Center"/>
+						<Label Content="Server variant: " FontSize="20" Name="InfoVariant" HorizontalAlignment="Center"/>
+						<Label Content="World Size: " FontSize="20" Name="InfoSize" HorizontalAlignment="Center"/>
+						<Label Content="Difficulty: " FontSize="20" Name="InfoDifficulty" HorizontalAlignment="Center"/>
+						<Label Content="Ram allocated " FontSize="20" Name="InfoRAM" HorizontalAlignment="Center"/>
+						<Label Content="Is Updating supported: " FontSize="20" Name="InfoUpdateStatus" HorizontalAlignment="Center"/>
+						<Label Content="Total filesize: " FontSize="20" Name="InfoFileSize" HorizontalAlignment="Center"/>
+						<Label Content="RSM Status: " FontSize="20" Name="InfoImported" HorizontalAlignment="Center"/>
+						<Label Content="Backup frequency: " FontSize="20"  Name="InfoFreq" HorizontalAlignment="Center"/>
+						<Label Content="Last backup: " FontSize="20" Name="InfoLastBackup" HorizontalAlignment="Center"/>
+					</StackPanel>
+				</ScrollViewer>
+			</TabItem>
+		</TabControl>
+		<Grid Grid.Row="6">
+			<Grid.ColumnDefinitions >
+				<ColumnDefinition Width="300"/>
+				<ColumnDefinition Width="300"/>
+			</Grid.ColumnDefinitions>
+			<Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Save" Click="Save" Grid.Column="1"/>
+			<Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Go back" Click="GoBack" Grid.Column="0"/>
+		</Grid>
+	</Grid>
+</UserControl>

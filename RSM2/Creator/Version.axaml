@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RSM2.Creator.Version">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="500"/>
+			<RowDefinition Height="100"/>
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.Row="0">
+			<TextBlock Text="What version do you want to play?" Padding="20" FontSize="30" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe.ttf"/>
+			<Border Height="200" />
+			<ComboBox Name="Version" Width="200" HorizontalAlignment="Center" FontFamily="Segoe.ttf" HorizontalContentAlignment="Center"/>
+			<Border Height="200" />
+		</StackPanel>
+
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition MinWidth="300" />
+				<ColumnDefinition MinWidth="300" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="50"></RowDefinition>
+				<RowDefinition Height="50"></RowDefinition>
+			</Grid.RowDefinitions>
+			<TextBlock Name="EULA"  Text="" Grid.ColumnSpan="2" Grid.Row="0" FontSize="15" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe.ttf"/>
+			<Button Content="Continue" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Click="Continue" FontFamily="Segoe.ttf"/>
+			<Button Content="Go back"  Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Click="GoBack" FontFamily="Segoe.ttf"/>
+		</Grid>
+	</Grid>
+</UserControl>

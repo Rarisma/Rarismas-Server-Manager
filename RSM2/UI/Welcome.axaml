@@ -1,0 +1,14 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+             x:Class="RSM2.UI.Welcome"
+			 Height="400" Width="400">
+	<StackPanel HorizontalAlignment="Center">
+		<TextBlock Text="Welcome to RSM2" HorizontalAlignment="Center" Padding="20" FontFamily="Segoe.ttf" FontSize="30" />
+        <Border Height="100"/>
+		<TextBlock Margin="20" Name="Debuga" Text="Select an option to get started" HorizontalAlignment="Center" FontFamily="Segoe.ttf"/>
+		<ComboBox x:Name="ServerList" SelectionChanged="ServerSelectionChanged" Width="350" HorizontalAlignment="Center"/>
+	</StackPanel>
+</UserControl>
