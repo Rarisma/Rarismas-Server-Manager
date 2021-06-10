@@ -1,0 +1,50 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+             x:Class="RSM2.Creator.RAM">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="550"/>
+			<RowDefinition Height="50"/>
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.Row="0">
+			<Border Height="20" />
+			<TextBlock Text="How much RAM do you want allocate?" FontSize="30" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe.ttf"/>
+			<Border Height="50" />
+			<Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="150" />
+					<ColumnDefinition Width="250" />
+					<ColumnDefinition Width="150" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="20" />
+					<RowDefinition Height="50" />
+					<RowDefinition Height="40" />
+				</Grid.RowDefinitions>
+
+				<Label Content="1024MB" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23" />
+				<Slider Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Name="RamSlider" Minimum="1024"  />
+				<Label Name="MaxRam" FontSize="20" Content="MaxRAM" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+				<Label Grid.Row="2" Grid.Column="1" Content="{Binding ElementName=RamSlider,Path=Value,StringFormat=Ammount allocated: {0:#} MB}}" HorizontalAlignment="Center" FontFamily="Segoe.ttf" FontSize="15"/>
+			</Grid>
+
+			<Border Height="50" />
+			<TextBlock Text="How much RAM should I allocate?" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe.ttf" />
+			<Border Height="20" />
+			<TextBlock Text="" Name="AllocationAdvice" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe.ttf" Margin="20"/>
+		</StackPanel>
+
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="300" />
+				<ColumnDefinition Width="300" />
+			</Grid.ColumnDefinitions>
+			<Button Content="Continue" Grid.Column="1" HorizontalAlignment="Center" Click="Continue" />
+			<Button Content="Go back"  Grid.Column="0" HorizontalAlignment="Center" Click="GoBack" />
+		</Grid>
+	</Grid>
+</UserControl>

@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+        x:Class="RSM2.UI.ConnectionHelper"
+        Title="ConnectionHelper"
+		Width="600" Height="600">
+	
+    <StackPanel>
+		<Border Height="25"/>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" FontSize="25" Text="The easiest way to connect to a server is either by Hamachi or port forward. Port forwarding requires access to your router page, but to use hamachi you need it to be installed on everyones computer" TextWrapping="Wrap"  Padding="10" TextAlignment="Center" />
+        <Border Height="30"/>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="So how would you like to connect?"  FontSize="14"/>
+        <Border Height="50"/>
+
+        <Button Content="Hamachi"          HorizontalAlignment="Center" Click="Hamachi" Width="200" HorizontalContentAlignment="Center"/>
+        <Border Height="50"/>
+		
+		<Button Content="Learn more"       HorizontalAlignment="Center" Click="LearnMore" HorizontalContentAlignment="Center" Width="200"/>
+		<Border Height="50"/>
+
+		<Button Content="Port Forwarding"  HorizontalAlignment="Center" Click="PortForwarding" HorizontalContentAlignment="Center" Width="200"/>
+    </StackPanel>
+</Window>

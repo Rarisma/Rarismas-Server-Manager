@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RSM2.Creator.Difficulty">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="550"/>
+			<RowDefinition Height="50"/>
+		</Grid.RowDefinitions>
+
+		<StackPanel>
+			<TextBlock Text="What difficulty do you want your server to run?" FontSize="30" TextAlignment="Center" TextWrapping="Wrap" Padding="20" FontFamily="Segoe.ttf"/>
+			<Border Height="200"/>
+			<ComboBox Name="DifficultyCombox" Width="200" HorizontalAlignment="Center"/>
+		</StackPanel>
+
+
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="300" />
+				<ColumnDefinition Width="300" />
+			</Grid.ColumnDefinitions>
+			<Button Content="Continue" Grid.Column="1" HorizontalAlignment="Center" Click="Continue" />
+			<Button Content="Go back"  Grid.Column="0" HorizontalAlignment="Center" Click="GoBack" />
+		</Grid>
+	</Grid>
+</UserControl>
