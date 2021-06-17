@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RSM.Creator.New">
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50"/>
+			<RowDefinition MinHeight="80" MaxHeight="200"/>
+			<RowDefinition Height="100"/>
+			<RowDefinition MinHeight="50" MaxHeight="200"/>
+			<RowDefinition Height="100"/>
+			<RowDefinition MinHeight="50" MaxHeight="100"/>
+			<RowDefinition MinHeight="50"/>
+		</Grid.RowDefinitions>
+
+		<Label Content="Lets get started" Classes="Header" Grid.Row="1"/>
+		
+		<StackPanel Grid.Row="2">
+			<Label Content="What do you want to make a server for?" Grid.Row="2" Classes="Subheader"/>
+			<ComboBox Name="Games" Width="400" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Margin="20"/>
+		</StackPanel>
+
+		<StackPanel Grid.Row="4">
+			<Label Content="What do you want to call your server?" Classes="Subheader" />
+			<TextBox Width="400" Name="Servername" HorizontalContentAlignment="Center" Height="20"/>
+		</StackPanel>
+		
+		<CheckBox Name="Auto"  HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Row="5" Content="Automatically make server"/>
+		<Grid Grid.Row="6" VerticalAlignment="Bottom">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition MinWidth="300"/>
+				<ColumnDefinition MinWidth="300"/>
+			</Grid.ColumnDefinitions>
+			<Button Content="Continue"  HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Column="1" Click="Continue"/>
+			<Button Content="Go back" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Click="GoBack"/>
+		</Grid>
+	</Grid>
+</UserControl>
