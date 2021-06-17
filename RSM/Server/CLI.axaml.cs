@@ -1,0 +1,162 @@
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Interactivity;
+using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
+using Mono.Nat;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+//Incredibly Based hotel and casino
+namespace RSM.Server
+{
+    public partial class CLI : UserControl
+    {
+        public CLI()
+        {
+            AvaloniaXamlLoader.Load(this);
+            this.Find<TextBlock>("ServerName").Text = ServerInfo.Name;
+            GenericSetup();
+            SetExecutable();
+            OpenPorts();
+            SetQuickCommands();
+            SetupOutput();
+
+        }
+
+        void GenericSetup() //Just redirects output, input and tells the os not to make a window
+        {
+            Global.Server.StartInfo.RedirectStandardInput = true;
+            Global.Server.StartInfo.RedirectStandardOutput = true;
+            Global.Server.StartInfo.RedirectStandardError = true;
+            Global.Server.StartInfo.CreateNoWindow = true;
+            Global.Server.StartInfo.WorkingDirectory = ServerInfo.Dir;
+        }
+
+        void SetExecutable() //Sets the server executable and any arguments
+        {
+            switch (ServerInfo.Game)
+            {
+                case "Terraria":
+                    Global.Server.StartInfo.FileName = AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Name + "//TerrariaServer.exe";
+                    Global.Server.StartInfo.Arguments = "-autocreate " + ServerInfo.WorldSize + " -world \"" + AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Name + "\\World.wld\" -difficulty " + ServerInfo.Difficulty;
+                    break;
+
+                case "Minecraft Java":
+                    if (ServerInfo.Variant != "Modded")
+                    {
+                        Global.Server.StartInfo.FileName = Global.Java16 + "//Java.exe";
+                        Global.Server.StartInfo.Arguments = "-Xms" + ServerInfo.RAM + "M -jar \"" + ServerInfo.Dir + "Server.jar\" nogui";
+                    }
+                    else
+                    {
+                        Global.Server.StartInfo.FileName = Global.Java8 + "//Java.exe";
+                        List<String> Jarfiles = new();
+                        Jarfiles.AddRange(Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Name + "//", "*.jar", SearchOption.TopDirectoryOnly));
+                        string ServerFile = "";
+                        if (Jarfiles[0].Contains("forge")) { ServerFile = Jarfiles[0]; }
+                        else { ServerFile = Jarfiles[1]; }
+                        Global.Server.StartInfo.Arguments = "-Xms" + ServerInfo.RAM + "M -jar \"" + ServerFile + "\" nogui";
+                    }
+                    break;
+
+                case "Minecraft Bedrock":
+                    Global.Server.StartInfo.FileName = ServerInfo.Dir + "//bedrock_server.exe";
+                    break;
+
+                case "Factorio":
+                    Global.Server.StartInfo.FileName = ServerInfo.Dir + "//bin//x64//factorio.exe";
+                    Global.Server.StartInfo.Arguments = "--start-server \"" + ServerInfo.Dir + "\\bin\\x64\\saves\\RSM.zip\"";
+                    break;
+            }
+        }
+
+        void SetupOutput() //Sets event handlers for error and output events
+        {
+            TextBox ServerConsole = this.Find<TextBox>("ServerConsole");
+            Global.Server.OutputDataReceived += new DataReceivedEventHandler((sender, e) =>
+            {
+                if (!String.IsNullOrEmpty(e.Data))
+                {
+                    Dispatcher.UIThread.InvokeAsync(new Action(() => { ServerConsole.Text += "\n" + Cloudspotter.Filter(Cloudspotter.Filter(e.Data.ToString())); }));
+                }
+                Dispatcher.UIThread.InvokeAsync(new Action(() => { ServerConsole.CaretIndex = int.MaxValue - 200; }));
+            });
+
+            Global.Server.ErrorDataReceived += new DataReceivedEventHandler((sender, e) =>
+            {
+                if (!String.IsNullOrEmpty(e.Data)) { Dispatcher.UIThread.InvokeAsync(new Action(() => { ServerConsole.Text += "\nERROR: " + e.Data; })); }
+                Dispatcher.UIThread.InvokeAsync(new Action(() => { ServerConsole.CaretIndex = int.MaxValue; }));
+            });
+
+            Global.Server.Start();
+            Global.Server.BeginErrorReadLine();
+            Global.Server.BeginOutputReadLine();
+        }
+
+
+        void OpenPorts()//Doesnt actually forward the ports but gets it started
+        {
+            NatUtility.DeviceFound += DeviceFound;
+            NatUtility.StartDiscovery();
+        }
+        private void DeviceFound(object sender, DeviceEventArgs args)
+        {
+            INatDevice device = args.Device;
+            Dispatcher.UIThread.InvokeAsync(new Action(() => { this.Find<Label>("ExternalIP").Content = "Tell people to join your server at: " + device.GetExternalIP().ToString(); }));
+            switch (ServerInfo.Game)
+            {
+                case "Minecraft Java":
+                    device.CreatePortMap(new Mapping(Protocol.Tcp, 25565, 25565));
+                    device.CreatePortMap(new Mapping(Protocol.Udp, 25565, 25565));
+                    break;
+                case "Minecraft Bedrock": //Creating all the ports as a just in case thing
+                    device.CreatePortMap(new Mapping(Protocol.Udp, 19132, 19132));
+                    device.CreatePortMap(new Mapping(Protocol.Udp, 19133, 19133));
+                    device.CreatePortMap(new Mapping(Protocol.Tcp, 19132, 19132));
+                    device.CreatePortMap(new Mapping(Protocol.Tcp, 19133, 19133));
+                    break;
+                case "Terraria":
+                    device.CreatePortMap(new Mapping(Protocol.Tcp, 7777, 7777));
+                    break;
+                case "Factorio":
+                    device.CreatePortMap(new Mapping(Protocol.Udp, 34197, 34197));
+                    break;
+            }
+        }
+
+        private void SetQuickCommands() //Sets Quick command frame
+        {
+            ContentControl QuickCommandsFrame = this.Find<ContentControl>("QuickCommandsFrame");
+            switch (ServerInfo.Game)
+            {
+                case "Minecraft Bedrock":
+                    QuickCommandsFrame.Content = new Game.Minecraft();
+                    break;
+                case "Minecraft Java":
+                    this.Find<AutoCompleteBox>("Input").Items = new string[] { "help", "ban", "clear", "deop", "difficulty", "kick", "op", "save", "say", "seed", "stop", "tp", "weather", "xp" };
+                    QuickCommandsFrame.Content = new Game.Minecraft();
+                    break;
+                case "Terraria": 
+                    //QuickCommandsFrame.Content = new QuickCommands.Terraria(); 
+                    break;
+            }
+        }
+
+        private void SendInput(object sender, RoutedEventArgs e)
+        {
+            switch (ServerInfo.Game)
+            {
+                default:
+                    AutoCompleteBox Input = this.Find<AutoCompleteBox>("Input");
+                    Global.Server.StandardInput.WriteLine(Input.Text);
+                    Global.Server.StandardInput.Flush();
+                    Input.Text = "";
+                    break;
+            }
+
+        }
+        private void Stop(object sender, RoutedEventArgs e){ Utilities.StopServer(); }
+    }
+}

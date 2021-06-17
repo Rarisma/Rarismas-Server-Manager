@@ -1,4 +1,0 @@
-C:\Users\Rarisma\Desktop\RSM\RSM2.pdb
-C:\Users\Rarisma\Desktop\RSM\libHarfBuzzSharp.dll
-C:\Users\Rarisma\Desktop\RSM\libSkiaSharp.dll
-C:\Users\Rarisma\Desktop\RSM\RSM2.exe

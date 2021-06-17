@@ -1,0 +1,4 @@
+C:\Users\Rarisma\Desktop\RSM BLACKED\RSM.pdb
+C:\Users\Rarisma\Desktop\RSM BLACKED\libHarfBuzzSharp.dll
+C:\Users\Rarisma\Desktop\RSM BLACKED\libSkiaSharp.dll
+C:\Users\Rarisma\Desktop\RSM BLACKED\RSM.exe
