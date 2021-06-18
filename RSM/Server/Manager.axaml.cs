@@ -92,7 +92,14 @@ namespace RSM.Server
             switch (ServerInfo.Game)
             {
                 case "Minecraft Java": this.Find<TextBox>("ConfigFile").Text = File.ReadAllText(ServerInfo.Dir + "Server.properties"); break;
-                case "Minecraft Bedrock": this.Find<TextBox>("ConfigFile").Text = File.ReadAllText(ServerInfo.Dir + "Server.properties"); break;
+                case "Minecraft Bedrock":
+                    try
+                    {
+                        this.Find<TextBox>("ConfigFile").Text = File.ReadAllText(ServerInfo.Dir + "Server.properties"); break;
+
+                    }
+                    catch {this.Find<TextBox>("ConfigFile").Opacity = 0; this.Find<TextBox>("ConfigFile").IsEnabled = false; }
+                    break;
                 default: this.Find<TextBox>("ConfigFile").Opacity = 0; this.Find<TextBox>("ConfigFile").IsEnabled = false; break;
 
             }

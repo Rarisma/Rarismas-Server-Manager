@@ -40,7 +40,7 @@ namespace RSM.Server
             {
                 case "Terraria":
                     Global.Server.StartInfo.FileName = AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Name + "//TerrariaServer.exe";
-                    Global.Server.StartInfo.Arguments = "-autocreate " + ServerInfo.WorldSize + " -world \"" + AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\" + ServerInfo.Name + "\\World.wld\" -difficulty " + ServerInfo.Difficulty;
+                    Global.Server.StartInfo.Arguments = "-autocreate " + ServerInfo.WorldSize + " -world \"" + ServerInfo.Dir + "World.wld\" -difficulty " + ServerInfo.Difficulty;
                     break;
 
                 case "Minecraft Java":
@@ -79,9 +79,11 @@ namespace RSM.Server
             {
                 if (!String.IsNullOrEmpty(e.Data))
                 {
+                    if (e.Data.Contains("/setup") && Global.Admininfo == "") { Global.Admininfo = "Type " + e.Data.ToString().Substring(44) + " to give yourself admin"; Dispatcher.UIThread.InvokeAsync(new Action(() => { this.Find<ContentControl>("QuickCommandsFrame").Content = new Game.Terraria(); })); }
+
                     Dispatcher.UIThread.InvokeAsync(new Action(() => { ServerConsole.Text += "\n" + Cloudspotter.Filter(Cloudspotter.Filter(e.Data.ToString())); }));
+                    Dispatcher.UIThread.InvokeAsync(new Action(() => { ServerConsole.CaretIndex = int.MaxValue - 200; }));
                 }
-                Dispatcher.UIThread.InvokeAsync(new Action(() => { ServerConsole.CaretIndex = int.MaxValue - 200; }));
             });
 
             Global.Server.ErrorDataReceived += new DataReceivedEventHandler((sender, e) =>
@@ -133,13 +135,14 @@ namespace RSM.Server
             {
                 case "Minecraft Bedrock":
                     QuickCommandsFrame.Content = new Game.Minecraft();
+                    this.Find<AutoCompleteBox>("Input").Items = new string[] { "help", "ban", "clear", "deop", "difficulty", "kick", "op", "save", "say", "seed", "stop", "tp", "weather", "xp" };
                     break;
                 case "Minecraft Java":
                     this.Find<AutoCompleteBox>("Input").Items = new string[] { "help", "ban", "clear", "deop", "difficulty", "kick", "op", "save", "say", "seed", "stop", "tp", "weather", "xp" };
                     QuickCommandsFrame.Content = new Game.Minecraft();
                     break;
-                case "Terraria": 
-                    //QuickCommandsFrame.Content = new QuickCommands.Terraria(); 
+                case "Factorio":
+                    this.Find<AutoCompleteBox>("Input").Items = new string[] { "/clear", "/evolution", "/seed", "/time", "/ban", "/unban", "/demote", "/promote", "/kick", "/players", "/whitelist", "/help" };
                     break;
             }
         }

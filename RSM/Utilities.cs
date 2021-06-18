@@ -93,7 +93,7 @@ namespace RSM
             switch (ServerInfo.Game)
             {
                 case "Minecraft Java":
-                    Global.Server.StandardInput.WriteLine("stop");
+                    Global.Server.StandardInput.WriteLine("/quit");
                     break;
                 case "Minecraft Bedrock":
                     Global.Server.StandardInput.WriteLine("stop");

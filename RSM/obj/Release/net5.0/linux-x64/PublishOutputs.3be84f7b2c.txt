@@ -1,0 +1,4 @@
+C:\Users\Rarisma\Desktop\RSMLin\RSM.pdb
+C:\Users\Rarisma\Desktop\RSMLin\libHarfBuzzSharp.so
+C:\Users\Rarisma\Desktop\RSMLin\libSkiaSharp.so
+C:\Users\Rarisma\Desktop\RSMLin\RSM
