@@ -24,11 +24,13 @@
 		<Border Height="10"/>
 		<Grid>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="300"/>
-				<ColumnDefinition Width="300"/>
+				<ColumnDefinition Width="100"/>
+				<ColumnDefinition Width="200"/>
+				<ColumnDefinition Width="200"/>
+				<ColumnDefinition Width="100"/>
 			</Grid.ColumnDefinitions>
-			<Button Grid.Column="0" Content="Stop server" Width="130" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Click="Stop"/>
-			<Button Grid.Column="1" Content="Save" Width="130" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+			<Button Grid.Column="1" Content="Stop server" Width="130" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Click="Stop"/>
+			<Button Grid.Column="2" Content="Save" Width="130" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
 		</Grid>
 		<ContentControl Name="QuickCommandsFrame" Height="120" Width="470"/>
 	</StackPanel>

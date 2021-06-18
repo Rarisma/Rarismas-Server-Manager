@@ -1,0 +1,4 @@
+/media/rarisma/Main/Repositories/RSM/RSM/bin/Release/net5.0/linux-x64/publish/RSM.pdb
+/media/rarisma/Main/Repositories/RSM/RSM/bin/Release/net5.0/linux-x64/publish/libHarfBuzzSharp.so
+/media/rarisma/Main/Repositories/RSM/RSM/bin/Release/net5.0/linux-x64/publish/libSkiaSharp.so
+/media/rarisma/Main/Repositories/RSM/RSM/bin/Release/net5.0/linux-x64/publish/RSM

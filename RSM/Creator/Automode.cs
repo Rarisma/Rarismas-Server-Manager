@@ -44,9 +44,9 @@ namespace RSM.Creator
 
         private static void CreateTerrariaServer()
         {
-            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Terraria/Tshock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "TerraiaTShock");
+            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Terraria/Tshock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "TerrariaTShock");
             ServerInfo.Variant = "TShock";
-            ServerReader.AddRange(File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//TerraiaTShock"));
+            ServerReader.AddRange(File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//TerrariaTShock"));
             ServerInfo.Difficulty = "0"; //Creates a classic mode world
             ServerInfo.WorldSize = "2"; //Creates a medium world
         }
@@ -57,7 +57,7 @@ namespace RSM.Creator
             ServerInfo.RAM = 0;
 
             //Gets latest links to server
-            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Simple-Server-Manager/main/ServerFiles/Minecraft/bedrock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Bedrock");
+            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Minecraft/bedrock", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Bedrock");
             ServerReader.AddRange(File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Bedrock"));
         }
     }

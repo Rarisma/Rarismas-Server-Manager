@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Give me my respect Im Don Coreleone 
+//This comment has been removed as I deemed it as cringe
 namespace RSM
 {
     //This stores variables that are called across pages (Similar to how serverinfo used to be)
@@ -19,6 +19,7 @@ namespace RSM
         public static string Pass = "";               //Used for steam games
         public static Process Server = new();         //Contains the server process
         public static bool IsServerRunning = false;   //Used to tell if the server is running
+        public static string Admininfo = "";          //Used by terraria to show the user how to get admin
 
         public static string Steam = AppDomain.CurrentDomain.BaseDirectory + "//Tools//Steam//";
         public static string Java16 = AppDomain.CurrentDomain.BaseDirectory + "//Tools//Java16//bin//";
