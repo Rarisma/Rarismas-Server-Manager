@@ -1,0 +1,4 @@
+C:\Users\Rarisma\Desktop\RSM1911edition\RSM.pdb
+C:\Users\Rarisma\Desktop\RSM1911edition\libHarfBuzzSharp.dll
+C:\Users\Rarisma\Desktop\RSM1911edition\libSkiaSharp.dll
+C:\Users\Rarisma\Desktop\RSM1911edition\RSM.exe

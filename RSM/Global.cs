@@ -20,6 +20,8 @@ namespace RSM
         public static Process Server = new();         //Contains the server process
         public static bool IsServerRunning = false;   //Used to tell if the server is running
         public static string Admininfo = "";          //Used by terraria to show the user how to get admin
+        public static string IP = "";                 //Stores External IP
+        public static Window mainwindow;
 
         public static string Steam = AppDomain.CurrentDomain.BaseDirectory + "//Tools//Steam//";
         public static string Java16 = AppDomain.CurrentDomain.BaseDirectory + "//Tools//Java16//bin//";

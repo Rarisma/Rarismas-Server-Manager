@@ -1,25 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/media/rarisma/Main/Repositories/RSM/RSM/RSM.csproj": {}
+    "A:\\Repositories\\RSM\\RSM\\RSM.csproj": {}
   },
   "projects": {
-    "/media/rarisma/Main/Repositories/RSM/RSM/RSM.csproj": {
-      "version": "1.0.0-2.1",
+    "A:\\Repositories\\RSM\\RSM\\RSM.csproj": {
+      "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/rarisma/Main/Repositories/RSM/RSM/RSM.csproj",
+        "projectUniqueName": "A:\\Repositories\\RSM\\RSM\\RSM.csproj",
         "projectName": "RSM",
-        "projectPath": "/media/rarisma/Main/Repositories/RSM/RSM/RSM.csproj",
-        "packagesPath": "/home/rarisma/.nuget/packages/",
-        "outputPath": "/media/rarisma/Main/Repositories/RSM/RSM/obj/",
+        "projectPath": "A:\\Repositories\\RSM\\RSM\\RSM.csproj",
+        "packagesPath": "C:\\Users\\Rarisma\\.nuget\\packages\\",
+        "outputPath": "A:\\Repositories\\RSM\\RSM\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/home/rarisma/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Rarisma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,6 +69,10 @@
             "Mono.Nat": {
               "target": "Package",
               "version": "[3.0.1, )"
+            },
+            "TextCopy": {
+              "target": "Package",
+              "version": "[4.3.1, )"
             }
           },
           "imports": [
@@ -73,27 +85,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
-              "version": "[5.0.7, 5.0.7]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
-              "version": "[5.0.7, 5.0.7]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

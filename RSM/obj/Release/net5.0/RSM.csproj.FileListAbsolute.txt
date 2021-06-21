@@ -278,3 +278,5 @@ A:\Repositories\RSM\RSM\obj\Release\net5.0\RSM.dll
 A:\Repositories\RSM\RSM\obj\Release\net5.0\ref\RSM.dll
 A:\Repositories\RSM\RSM\obj\Release\net5.0\RSM.pdb
 A:\Repositories\RSM\RSM\obj\Release\net5.0\RSM.genruntimeconfig.cache
+A:\Repositories\RSM\RSM\bin\Release\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+A:\Repositories\RSM\RSM\bin\Release\net5.0\TextCopy.dll

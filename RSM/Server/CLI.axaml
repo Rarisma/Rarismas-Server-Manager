@@ -8,7 +8,7 @@
 		<StackPanel>
 			<Border Height="20"/>
 			<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="ServerName"  Name="ServerName" FontSize="25" />
-			<Label Name="ExternalIP" Content="Connect at: EXTERNAL IP" Classes="Subheader"/>
+			<Button Name="ExternalIP" Content="Connect at: EXTERNAL IP" Click="CopyIP" HorizontalAlignment="Center"/>
 		</StackPanel>
 		<TextBox Name="ServerConsole" Text="Server Console Initalised." Margin="10"  Height="250" Width="580" FontSize="12" TextWrapping="Wrap"/>
 		<Border Height="20" />
