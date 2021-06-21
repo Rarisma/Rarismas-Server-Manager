@@ -92,10 +92,13 @@ namespace RSM
             //SaveServer();
             switch (ServerInfo.Game)
             {
-                case "Minecraft Java":
+                case "Factorio":
                     Global.Server.StandardInput.WriteLine("/quit");
                     break;
                 case "Minecraft Bedrock":
+                    Global.Server.StandardInput.WriteLine("stop");
+                    break;
+                case "Minecraft Java":
                     Global.Server.StandardInput.WriteLine("stop");
                     break;
                 case "Terraria":

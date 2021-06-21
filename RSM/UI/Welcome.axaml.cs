@@ -24,7 +24,7 @@ namespace RSM.UI
                 foreach (string dir in Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "//Servers//"))
                 {
                     //Gets the name of the folder from the path if it has RSM.ini
-                    if (File.Exists(dir + "//RSM.ini")) { Servers.Add(Path.GetFileName(dir)); }
+                    if (File.Exists(dir + "//RSM.ini")) { Servers.Add(Path.GetFileName(dir)); } ;
                 }
             }
 

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using TextCopy;
 //Incredibly Based hotel and casino
 namespace RSM.Server
 {
@@ -106,7 +107,8 @@ namespace RSM.Server
         private void DeviceFound(object sender, DeviceEventArgs args)
         {
             INatDevice device = args.Device;
-            Dispatcher.UIThread.InvokeAsync(new Action(() => { this.Find<Label>("ExternalIP").Content = "Tell people to join your server at: " + device.GetExternalIP().ToString(); }));
+            Global.IP = device.GetExternalIP().ToString();
+            Dispatcher.UIThread.InvokeAsync(new Action(() => { this.Find<Button>("ExternalIP").Content = "Tell people to join your server at: " + Global.IP; }));
             switch (ServerInfo.Game)
             {
                 case "Minecraft Java":
@@ -160,6 +162,9 @@ namespace RSM.Server
             }
 
         }
+        
+        private void CopyIP(object sender, RoutedEventArgs e) { ClipboardService.SetText(Global.IP); }
+        
         private void Stop(object sender, RoutedEventArgs e){ Utilities.StopServer(); }
     }
 }

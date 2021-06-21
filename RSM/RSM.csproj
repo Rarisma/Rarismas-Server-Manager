@@ -20,6 +20,7 @@
     <PackageReference Include="Avalonia.ThemeManager" Version="0.10.4" />
     <PackageReference Include="LibRarisma" Version="1.6.0" />
     <PackageReference Include="Mono.Nat" Version="3.0.1" />
+    <PackageReference Include="TextCopy" Version="4.3.1" />
    </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" Link="Avalonia\.editorconfig" />

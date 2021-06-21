@@ -115,3 +115,5 @@ A:\Repositories\RSM\RSM\bin\Release\net5.0\win-x64\Avalonia.ThemeManager.dll
 A:\Repositories\RSM\RSM\bin\Release\net5.0\win-x64\DynamicData.dll
 A:\Repositories\RSM\RSM\bin\Release\net5.0\win-x64\ReactiveUI.dll
 A:\Repositories\RSM\RSM\bin\Release\net5.0\win-x64\Splat.dll
+A:\Repositories\RSM\RSM\bin\Release\net5.0\win-x64\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+A:\Repositories\RSM\RSM\bin\Release\net5.0\win-x64\TextCopy.dll

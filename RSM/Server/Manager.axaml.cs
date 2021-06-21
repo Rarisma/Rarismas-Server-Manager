@@ -140,7 +140,7 @@ namespace RSM.Server
                         switch (ServerInfo.Game)
                         {
                             case "Terraria": LibRarisma.Utils.OpenFolder(ServerInfo.Dir + "//ServerPlugins//"); break;
-                            default: LibRarisma.Utils.OpenFolder(ServerInfo.Dir + ServerInfo.Name + "//plugins//"); break;
+                            default: LibRarisma.Utils.OpenFolder(ServerInfo.Dir +  "//plugins//"); break;
                         }
                         break;
 
@@ -206,8 +206,15 @@ namespace RSM.Server
                     System.IO.File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Name + "//Server.properties", File);
                     break;
             }
-            ServerInfo.BackupFrequency = this.Find<ComboBox>("BackupFrequency").SelectedItem.ToString();
+
+            if (this.Find<ComboBox>("BackupFrequency").SelectedIndex == 0) { ServerInfo.BackupFrequency = "Never"; }
+            else if (this.Find<ComboBox>("BackupFrequency").SelectedIndex == 1) { ServerInfo.BackupFrequency = "On Launch"; }
+            else if (this.Find<ComboBox>("BackupFrequency").SelectedIndex == 3) { ServerInfo.BackupFrequency = "Monthly"; }
+            else { ServerInfo.BackupFrequency = "Weekly"; }
+
             Utilities.MakeINI();
+            Utilities.ReadINI(ServerInfo.Name);
+            Global.Display.Content = new Manager();
         }
 
         private void GoBack(object sender, RoutedEventArgs e) { Global.Display.Content = new UI.Welcome(); }
