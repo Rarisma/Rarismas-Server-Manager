@@ -21,9 +21,12 @@ namespace RSM
 
             if (System.IO.Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Servers\\EasterEgg"))
             {
-                Random Randint = new Random();
+                Random Randint = new();
                 this.Title = "RSM " + Server.Cloudspotter.EaserEgg[Randint.Next(0, Server.Cloudspotter.EaserEgg.Length)];
             }
+
+            if (Environment.OSVersion.Platform.ToString() == "Win32NT") { Global.IsWindows = true; }
+            else { Global.IsWindows = false; }
         }
 
 

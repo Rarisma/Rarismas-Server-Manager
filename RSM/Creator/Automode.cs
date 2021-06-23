@@ -20,17 +20,28 @@ namespace RSM.Creator
                 case "Minecraft Bedrock": CreateBedrockServer(); break;
                 case "Terraria": CreateTerrariaServer(); break;
                 case "Factorio": ServerInfo.Variant = "Vanilla"; Global.AppID = "427520"; Global.Display.Content = new UI.Steam(); break;
+                case "Mindustry": CreateMindustryServer();  break;
             }
             ServerInfo.Version = ServerReader[0];
             ServerInfo.URL = ServerReader[1];
             Global.Display.Content = new UI.Downloader();
         }
+
+        private static void CreateMindustryServer()
+        {
+            ServerInfo.Variant = "Vanilla";
+            LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerURLs/Windows/Mindustry", Global.Cache, "Mindustry");
+            ServerReader.AddRange(File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Mindustry"));
+        }
+
         private static void CreatePaperServer()
         {
             ServerInfo.Variant = "Vanilla";
             LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Minecraft/Paper", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Paper");
             ServerReader.AddRange(File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Paper"));
-            ServerInfo.RAM = Convert.ToInt64(LibRarisma.IO.GetRAM()) - 4096; //Should leave enough for the user to play aswell
+            var client = new MemoryMetricsClient();
+            var metrics = client.GetMetrics();
+            ServerInfo.RAM = Convert.ToInt64(metrics.Total / 2) - 10; //Should leave enough for the user to play aswell
         }
 
         private static void CreateForgeServer()
@@ -39,7 +50,9 @@ namespace RSM.Creator
             ServerInfo.Variant = "Modded";
             LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Minecraft/Forge", AppDomain.CurrentDomain.BaseDirectory + "//Cache//", "Forge");
             ServerReader.AddRange(File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "//Cache//Forge"));
-            ServerInfo.RAM = Convert.ToInt64(LibRarisma.IO.GetRAM()) - 4096; //Should leave enough for the user to play aswell
+            var client = new MemoryMetricsClient();
+            var metrics = client.GetMetrics();
+            ServerInfo.RAM = Convert.ToInt64(metrics.Total / 2) - 1000; //Should leave enough for the user to play aswell
         }
 
         private static void CreateTerrariaServer()

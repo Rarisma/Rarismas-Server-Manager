@@ -101,6 +101,10 @@ namespace RSM
                 case "Minecraft Java":
                     Global.Server.StandardInput.WriteLine("stop");
                     break;
+                case "Mindustry":
+                    Global.Server.StandardInput.WriteLine("save 1");
+                    Global.Server.StandardInput.WriteLine("exit");
+                    break;
                 case "Terraria":
                     File.WriteAllText(ServerInfo.Dir + "RSM//RSM.txt", "/stop");
                     break;
@@ -131,7 +135,39 @@ namespace RSM
                 case "Factorio":
                     device.DeletePortMap(new Mapping(Protocol.Udp, 34197, 34197));
                     break;
+                case "Mindustry":
+                    device.DeletePortMap(new Mapping(Protocol.Udp, 6567, 6567));
+                    device.DeletePortMap(new Mapping(Protocol.Tcp, 6567, 6567));
+                    break;
             }
         }
+
+        public static void InstallJava16()
+        {
+            string url;
+            if (Global.IsWindows) { url = "https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerURLs/Windows/Tools/Java16"; }
+            else { url = "https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerURLs/Linux/Tools/Java16"; }
+            LibRarisma.IO.DownloadFile(url, Global.Cache, "Java");
+
+            string[] Java = File.ReadAllLines(Global.Cache + "Java");
+            LibRarisma.IO.DownloadFile(Java[0], Global.Cache, "JDK.zip");
+            System.IO.Compression.ZipFile.ExtractToDirectory(Global.Cache + "JDK.zip", AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
+            string[] Dirs = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
+            Directory.Move(Dirs[0], AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java16\\");
+        }
+
+        public static void InstallJava8()
+        {
+            string url;
+            if (Global.IsWindows) { url = "https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerURLs/Windows/Tools/Java8"; }
+            else { url = "https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerURLs/Linux/Tools/Java8"; }
+
+            LibRarisma.IO.DownloadFile("https://www.dropbox.com/s/qdrgmj607r92uch/Java8.zip?dl=1", Global.Cache, "JDK8.zip");
+            System.IO.Compression.ZipFile.ExtractToDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\JDK8.zip", AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
+            string[] Dirs = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
+            Directory.Move(Dirs[0], AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java8\\");
+        }
+
+
     }
 }

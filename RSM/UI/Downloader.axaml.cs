@@ -28,6 +28,9 @@ namespace RSM.UI
 
             CurrentTask.Content = "Configuring Server";
             await Task.Run(() => ServerConfig());
+            
+            CurrentTask.Content = "Downloading dependencies";
+            await Task.Run(() => ServerDependencies());
 
             CurrentTask.Content = "Setting up your server";
             await Task.Run(() => ServerSetup());
@@ -48,9 +51,10 @@ namespace RSM.UI
         {
             switch (ServerInfo.Game)
             {
-                case "Minecraft Java": LibRarisma.IO.DownloadFile(ServerInfo.URL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Name + "//", "Server.jar"); break;
+                case "Minecraft Java": LibRarisma.IO.DownloadFile(ServerInfo.URL, ServerInfo.Dir, "Server.jar"); break;
+                case "Mindustry": LibRarisma.IO.DownloadFile(ServerInfo.URL, ServerInfo.Dir, "Server.jar"); break;
                 case "Factorio": try { LibRarisma.IO.DownloadFile("https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.1/depotdownloader-2.4.1.zip", AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Steam\\", "Steam.zip", true); } catch { }; break;
-                default: LibRarisma.IO.DownloadFile(ServerInfo.URL, AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Name, "//Server.zip", true); break;
+                default: LibRarisma.IO.DownloadFile(ServerInfo.URL, ServerInfo.Dir, "Server.zip", true); break;
             }
         }
 
@@ -59,24 +63,22 @@ namespace RSM.UI
             switch (ServerInfo.Game)
             {
                 case "Minecraft Java":
-                    if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java16") == false)
-                    {
-                        LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/2.0/Java", AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\", "Java");
-                        string[] Java = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\Java");
-                        LibRarisma.IO.DownloadFile(Java[0], AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\", "JDK.zip");
-                        System.IO.Compression.ZipFile.ExtractToDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\JDK.zip", AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
-                        string[] Dirs = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
-                        Directory.Move(Dirs[0], AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java16\\");
-                    }
-                    if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java8") == false)
-                    {
-                        LibRarisma.IO.DownloadFile("https://www.dropbox.com/s/qdrgmj607r92uch/Java8.zip?dl=1", AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\", "JDK8.zip");
-                        System.IO.Compression.ZipFile.ExtractToDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\JDK8.zip", AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
-                        string[] Dirs = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
-                        Directory.Move(Dirs[0], AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java8\\");
-                    }
                     LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Minecraft/ServerConfigs/stock", AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Name + "//", "server.properties");
                     File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Name + "//" + "eula.txt", "#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).\n# made by RSM\neula = true"); //Makes the EULA accepted
+                    break;
+
+            }
+        }
+        public void ServerDependencies() //Creates/Configures server files
+        {
+            switch (ServerInfo.Game)
+            {
+                case "Minecraft Java":
+                    if (Directory.Exists(Global.Java16) == false && ServerInfo.Variant == "Vanilla"){ Utilities.InstallJava16(); }
+                    if (Directory.Exists(Global.Java8) == false && ServerInfo.Variant == "Modded") { Utilities.InstallJava8(); }
+                    break;
+                case "Mindustry":
+                    if (Directory.Exists(Global.Java16) == false) { Utilities.InstallJava16(); }
                     break;
             }
         }
@@ -86,8 +88,9 @@ namespace RSM.UI
             switch (Convert.ToString(ServerInfo.Game + " " + ServerInfo.Variant))
             {
                 case "Minecraft Java Modded":
-                    Process cmd = new();
-                    cmd.StartInfo.FileName = Global.Java8 + "Java.exe";
+                        Process cmd = new();
+                    if (Global.IsWindows) { cmd.StartInfo.FileName = Global.Java8 + "Java.exe"; }
+                    else { cmd.StartInfo.FileName = Global.Java8 + "Java"; }
                     cmd.StartInfo.Arguments = "-jar \""  + ServerInfo.Dir + "Server.jar\" --installServer";
                     cmd.StartInfo.WorkingDirectory = ServerInfo.Dir;
                     cmd.StartInfo.CreateNoWindow = false;

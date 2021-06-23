@@ -26,5 +26,7 @@ namespace RSM
         public static string Steam = AppDomain.CurrentDomain.BaseDirectory + "//Tools//Steam//";
         public static string Java16 = AppDomain.CurrentDomain.BaseDirectory + "//Tools//Java16//bin//";
         public static string Java8 = AppDomain.CurrentDomain.BaseDirectory + "//Tools//Java8//bin//";
+        public static string Cache = AppDomain.CurrentDomain.BaseDirectory + "//Cache//";
+        public static bool IsWindows = true;
     }
 }

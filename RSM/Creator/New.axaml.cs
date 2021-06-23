@@ -13,7 +13,7 @@ namespace RSM.Creator
         {
             AvaloniaXamlLoader.Load(this);
             //Loads the currently supported games into the game combobox
-            this.Find<ComboBox>("Games").Items = new string[] { "Minecraft Java (Modded)", "Minecraft Java", "Minecraft Bedrock", "Terraria", "Factorio" };
+            this.Find<ComboBox>("Games").Items = new string[] { "Minecraft Java (Modded)", "Minecraft Java", "Minecraft Bedrock", "Terraria", "Factorio", "Mindustry" };
         }
 
         private void NameCheck() //checks if a folder can be made
@@ -31,7 +31,6 @@ namespace RSM.Creator
                 ServerInfo.Name = "None set";
                 return; 
             }
-
         }
 
         private void Continue(object sender, RoutedEventArgs e)
@@ -47,6 +46,7 @@ namespace RSM.Creator
                     if (ServerInfo.Game == "Minecraft Java") { ServerInfo.Variant = "Vanilla"; Global.Display.Content = new RAM(); }
                     else if (ServerInfo.Game == "Minecraft Java (Modded)") { ServerInfo.Game = "Minecraft Java"; ServerInfo.Variant = "Modded"; Global.Display.Content = new RAM(); }
                     else if (ServerInfo.Game == "Minecraft Bedrock") { Automode.Build(); }
+                    else if (ServerInfo.Game == "Mindustry") { Automode.Build(); }
                     else if (ServerInfo.Game == "Terraria") { Global.Display.Content = new WorldSize(); }
                     else if (ServerInfo.Game == "Factorio") { ServerInfo.Variant = "Vanilla"; Global.AppID = "427520"; Global.Display.Content = new UI.Steam(); }
                 }
