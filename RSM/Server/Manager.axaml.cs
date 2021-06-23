@@ -34,11 +34,10 @@ namespace RSM.Server
                 case "Minecraft Java": LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Minecraft/Paper", ServerInfo.Dir, "Update"); break;
                 case "Minecraft Bedrock": LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Minecraft/bedrock", ServerInfo.Dir, "Update");  break;
                 case "Terraria": LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Terraria/Tshock", ServerInfo.Dir, "Update"); break;
-                case "Factorio": LibRarisma.IO.DownloadFile("https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerFiles/Factorio", ServerInfo.Dir, "Update"); break;
             }
 
             Button UpdateButton = this.Find<Button>("UpdateButton");
-            if (ServerInfo.Variant != "Modded")
+            if (ServerInfo.Game != "Factorio" && ServerInfo.Game != "Mindustry" && ServerInfo.Variant != "Modded")
             {
                 string[] UpdateFile = File.ReadAllLines(ServerInfo.Dir + "Update");
                 if (ServerInfo.Version != UpdateFile[0]) //If version is missmatched

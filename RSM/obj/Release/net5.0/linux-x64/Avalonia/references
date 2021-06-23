@@ -36,6 +36,7 @@
 /home/rarisma/.nuget/packages/microsoft.codeanalysis.common/3.4.0/lib/netstandard2.0/Microsoft.CodeAnalysis.dll
 /home/rarisma/.nuget/packages/microsoft.codeanalysis.scripting.common/3.4.0/lib/netstandard2.0/Microsoft.CodeAnalysis.Scripting.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/5.0.0/ref/net5.0/Microsoft.CSharp.dll
+/home/rarisma/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/5.0.0/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/5.0.0/ref/net5.0/Microsoft.VisualBasic.Core.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/5.0.0/ref/net5.0/Microsoft.VisualBasic.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/5.0.0/ref/net5.0/Microsoft.Win32.Primitives.dll
@@ -195,5 +196,6 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/5.0.0/ref/net5.0/System.Xml.XmlSerializer.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/5.0.0/ref/net5.0/System.Xml.XPath.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/5.0.0/ref/net5.0/System.Xml.XPath.XDocument.dll
+/home/rarisma/.nuget/packages/textcopy/4.3.1/lib/net5.0/TextCopy.dll
 /home/rarisma/.nuget/packages/tmds.dbus/0.9.0/lib/netstandard2.0/Tmds.DBus.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/5.0.0/ref/net5.0/WindowsBase.dll

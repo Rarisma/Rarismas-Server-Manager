@@ -47,14 +47,16 @@ namespace RSM.Server
                 case "Minecraft Java":
                     if (ServerInfo.Variant != "Modded")
                     {
-                        Global.Server.StartInfo.FileName = Global.Java16 + "//Java.exe";
-                        Global.Server.StartInfo.Arguments = "-Xms" + ServerInfo.RAM + "M -jar \"" + ServerInfo.Dir + "Server.jar\" nogui";
+                        if (Global.IsWindows) { Global.Server.StartInfo.FileName = Global.Java16 + "Java.exe"; }
+                        else { Global.Server.StartInfo.FileName = Global.Java16 + "Java"; }
+                        Global.Server.StartInfo.Arguments = "-Xms" + ServerInfo.RAM + "M -jar \"" + ServerInfo.Dir + "Server.jar\" nogui"; 
                     }
                     else
                     {
-                        Global.Server.StartInfo.FileName = Global.Java8 + "//Java.exe";
+                        if (Global.IsWindows) { Global.Server.StartInfo.FileName = Global.Java8 + "Java.exe"; }
+                        else { Global.Server.StartInfo.FileName = Global.Java8 + "Java"; }
                         List<String> Jarfiles = new();
-                        Jarfiles.AddRange(Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "//Servers//" + ServerInfo.Name + "//", "*.jar", SearchOption.TopDirectoryOnly));
+                        Jarfiles.AddRange(Directory.GetFiles(ServerInfo.Dir, "*.jar", SearchOption.TopDirectoryOnly));
                         string ServerFile = "";
                         if (Jarfiles[0].Contains("forge")) { ServerFile = Jarfiles[0]; }
                         else { ServerFile = Jarfiles[1]; }
@@ -69,6 +71,12 @@ namespace RSM.Server
                 case "Factorio":
                     Global.Server.StartInfo.FileName = ServerInfo.Dir + "//bin//x64//factorio.exe";
                     Global.Server.StartInfo.Arguments = "--start-server \"" + ServerInfo.Dir + "\\bin\\x64\\saves\\RSM.zip\"";
+                    break;
+
+                case "Mindustry":
+                    if (Global.IsWindows) { Global.Server.StartInfo.FileName = Global.Java16 + "Java.exe"; }
+                    else { Global.Server.StartInfo.FileName = Global.Java16 + "Java"; }
+                    Global.Server.StartInfo.Arguments = "-jar \"" + ServerInfo.Dir + "Server.jar\" -name'"+ServerInfo.Name+ "' -desc'Hosted with RSM' -autoUpdate 'on' -strict on -antiSpam on -motd'Welcome to " + ServerInfo.Name + "";
                     break;
             }
         }
@@ -124,6 +132,10 @@ namespace RSM.Server
                 case "Terraria":
                     device.CreatePortMap(new Mapping(Protocol.Tcp, 7777, 7777));
                     break;
+                case "Mindustry":
+                    device.CreatePortMap(new Mapping(Protocol.Tcp, 6567, 6567));
+                    device.CreatePortMap(new Mapping(Protocol.Udp, 6567, 6567));
+                    break;
                 case "Factorio":
                     device.CreatePortMap(new Mapping(Protocol.Udp, 34197, 34197));
                     break;
@@ -146,6 +158,9 @@ namespace RSM.Server
                 case "Factorio":
                     this.Find<AutoCompleteBox>("Input").Items = new string[] { "/clear", "/evolution", "/seed", "/time", "/ban", "/unban", "/demote", "/promote", "/kick", "/players", "/whitelist", "/help" };
                     break;
+                case "Mindustry":
+                    this.Find<AutoCompleteBox>("Input").Items = new string[] { "help", "exit", "host", "maps", "status", "reloadmaps", "mods", "say", "pause on", "pause off", "rules", "playerlimit", "fillitems ", "shuffle all", "shuffle none", "shuffle builtin", "nextmap", "kick", "ban", "unban", "pardon", "admins", "admins", "Players", "runwave", "gameover",  "info"};
+                    break;
             }
         }
 
@@ -165,6 +180,14 @@ namespace RSM.Server
         
         private void CopyIP(object sender, RoutedEventArgs e) { ClipboardService.SetText(Global.IP); }
         
-        private void Stop(object sender, RoutedEventArgs e){ Utilities.StopServer(); }
+        private void Stop(object sender, RoutedEventArgs e)
+        {
+            Utilities.StopServer();
+            Global.Server.CancelOutputRead();
+            Global.Server.CancelErrorRead();
+            Global.Server.WaitForExit();
+            Global.Server.Close();
+            Global.Display.Content = new Manager();
+        }
     }
 }

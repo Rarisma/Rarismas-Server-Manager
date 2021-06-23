@@ -583,6 +583,15 @@
           "lib/netstandard1.3/Microsoft.CSharp.dll": {}
         }
       },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
         "compile": {
@@ -1249,6 +1258,18 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "TextCopy/4.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/TextCopy.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/TextCopy.dll": {}
+        }
+      },
       "Tmds.DBus/0.9.0": {
         "type": "package",
         "dependencies": {
@@ -1790,6 +1811,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.CSharp.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/5.0.0": {
@@ -2616,6 +2646,18 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "TextCopy/4.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/TextCopy.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/TextCopy.dll": {}
+        }
+      },
       "Tmds.DBus/0.9.0": {
         "type": "package",
         "dependencies": {
@@ -3338,6 +3380,26 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+      "sha512": "ORj7Zh81gC69TyvmcUm9tSzytcy8AVousi+IVRAI8nLieQjOFryRusSFh7+aLk16FN9pQNqJAiMd7BTKINK0kA==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net461/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.NETCore.Platforms/5.0.0": {
@@ -6330,6 +6392,33 @@
         "version.txt"
       ]
     },
+    "TextCopy/4.3.1": {
+      "sha512": "IpRENnjTZXZk7Hi8q0ze6VEFGny9+IIEe+51f/OVQYYzyWVhY8ZLOpYB9CRQoQpo+5/ALKaION1Bxn5LuRCrCw==",
+      "type": "package",
+      "path": "textcopy/4.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/monoandroid90/TextCopy.dll",
+        "lib/monoandroid90/TextCopy.xml",
+        "lib/net461/TextCopy.dll",
+        "lib/net461/TextCopy.xml",
+        "lib/net5.0/TextCopy.dll",
+        "lib/net5.0/TextCopy.xml",
+        "lib/netstandard2.0/TextCopy.dll",
+        "lib/netstandard2.0/TextCopy.xml",
+        "lib/netstandard2.1/TextCopy.dll",
+        "lib/netstandard2.1/TextCopy.xml",
+        "lib/uap10.0.15063/TextCopy.dll",
+        "lib/uap10.0.15063/TextCopy.pri",
+        "lib/uap10.0.15063/TextCopy.xml",
+        "lib/xamarinios10/TextCopy.dll",
+        "lib/xamarinios10/TextCopy.xml",
+        "textcopy.4.3.1.nupkg.sha512",
+        "textcopy.nuspec"
+      ]
+    },
     "Tmds.DBus/0.9.0": {
       "sha512": "KcTWL9aKuob9Qo2sOTTKFePs1rKGTwZrcBvMFuGVIVR5RojX3oIFj5UBLYfSGjYgrcImC7LjQI3DdCFwUnhNXw==",
       "type": "package",
@@ -6351,7 +6440,8 @@
       "Avalonia.Diagnostics >= 0.10.6",
       "Avalonia.ThemeManager >= 0.10.4",
       "LibRarisma >= 1.6.0",
-      "Mono.Nat >= 3.0.1"
+      "Mono.Nat >= 3.0.1",
+      "TextCopy >= 4.3.1"
     ]
   },
   "packageFolders": {
@@ -6424,6 +6514,10 @@
           "Mono.Nat": {
             "target": "Package",
             "version": "[3.0.1, )"
+          },
+          "TextCopy": {
+            "target": "Package",
+            "version": "[4.3.1, )"
           }
         },
         "imports": [
