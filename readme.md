@@ -17,14 +17,11 @@ RSM is made for people who:
 Currently RSM supports the following:
  - Minecraft (Bedrock and Java and Modded)
  - Terraria
+ - Factorio
+ - Mindustry
 
 ### The app says I'm missing .NET 5
 [Download .NET 5 here](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.5-windows-x64-installer)
 
 ### Do you plan to support other games?
-Yes, currently we are working on minecraft, however once that is complete we want to try and work on the following:
-- Factorio
-- Don't Starve
-- Starbound
-- Ark
-- Rust
+We are looking at servers constantly and we are open for suggestions
