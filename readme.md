@@ -3,6 +3,7 @@
 ### What is RSM
 Rarisma's Server Manager (or RSM for short) is an app that aims to make a hosting and configuring a server as easy and painless as possible, the app has been designed with a simple and sleek UI to make the program easy to understand.
 
+
 RSM is made for people who:
  - Don't want to pay hosting fees
  - Don't know how to setup a server
@@ -10,6 +11,7 @@ RSM is made for people who:
  - Just want to get into the game as fast as possible
 
 [To get started just go to the releases page and download the latest version](https://github.com/Rarisma/Rarismas-Server-Manager/releases)
+![Image of Server](https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/docs/Images/Examples/A.png)
 
 ## FAQ
 
