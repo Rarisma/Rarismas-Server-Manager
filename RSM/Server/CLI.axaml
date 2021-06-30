@@ -21,7 +21,7 @@
 			<AutoCompleteBox Name="Input" Grid.Column="0" Width="480" HorizontalAlignment="Center" Height="40"  BorderThickness="3" Foreground="LightBlue"/>
 			<Button Content="Send" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="SendInput" />
 		</Grid>
-		<Border Height="10"/>
+		<Border Height="25"/>
 		<Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="100"/>

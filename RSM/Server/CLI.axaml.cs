@@ -23,9 +23,29 @@ namespace RSM.Server
             OpenPorts();
             SetQuickCommands();
             SetupOutput();
-
+            Extras();
         }
 
+        void Extras()
+        {
+            switch (ServerInfo.Game)
+            {
+                case "Mindustry":
+                    Global.Server.StandardInput.WriteLine("config autosave on");
+                    Global.Server.StandardInput.Flush();
+                    Global.Server.StandardInput.WriteLine("config desc Hosted by RSM");
+                    Global.Server.StandardInput.Flush();
+                    Global.Server.StandardInput.WriteLine("config name " + ServerInfo.Name);
+                    Global.Server.StandardInput.Flush();
+                    Global.Server.StandardInput.WriteLine("config strict on");
+                    Global.Server.StandardInput.Flush();
+                    Global.Server.StandardInput.WriteLine("config antiSpam on");
+                    Global.Server.StandardInput.Flush();
+                    Global.Server.StandardInput.WriteLine("config motd Welcome to " + ServerInfo.Name);
+                    Global.Server.StandardInput.Flush();
+                    break;
+            }
+        }
         void GenericSetup() //Just redirects output, input and tells the os not to make a window
         {
             Global.Server.StartInfo.RedirectStandardInput = true;
@@ -76,7 +96,7 @@ namespace RSM.Server
                 case "Mindustry":
                     if (Global.IsWindows) { Global.Server.StartInfo.FileName = Global.Java16 + "Java.exe"; }
                     else { Global.Server.StartInfo.FileName = Global.Java16 + "Java"; }
-                    Global.Server.StartInfo.Arguments = "-jar \"" + ServerInfo.Dir + "Server.jar\" -name'"+ServerInfo.Name+ "' -desc'Hosted with RSM' -autoUpdate 'on' -strict on -antiSpam on -motd'Welcome to " + ServerInfo.Name + "";
+                    Global.Server.StartInfo.Arguments = "-jar \"" + ServerInfo.Dir + "Server.jar\"";
                     break;
             }
         }
