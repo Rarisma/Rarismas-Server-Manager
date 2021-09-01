@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="RSMUltra" version="1.0" primary="true">
+		<Qualifiers/>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="App.xbf" uri="ms-resource://RSMUltra/Files/App.xbf">
+				<Candidate type="Path">
+					<Value>App.xbf</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MainWindow.xbf" uri="ms-resource://RSMUltra/Files/MainWindow.xbf">
+				<Candidate type="Path">
+					<Value>MainWindow.xbf</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="UltraUI">
+				<NamedResource name="NewServer.xbf" uri="ms-resource://RSMUltra/Files/UltraUI/NewServer.xbf">
+					<Candidate type="Path">
+						<Value>UltraUI\NewServer.xbf</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Settings.xbf" uri="ms-resource://RSMUltra/Files/UltraUI/Settings.xbf">
+					<Candidate type="Path">
+						<Value>UltraUI\Settings.xbf</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

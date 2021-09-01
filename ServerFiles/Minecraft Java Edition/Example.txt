@@ -1,0 +1,3 @@
+Name
+Java/exe/AppID/other
+global command

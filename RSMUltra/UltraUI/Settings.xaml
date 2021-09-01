@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="RSMUltra.UltraUI.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RSMUltra.UltraUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <TextBlock Text="About" FontSize="50" HorizontalAlignment="Center" Margin="50"/>
+        <TextBlock HorizontalAlignment="Center">
+            RSM 3.0 is Licensed under the GPL-3.0 License
+            <LineBreak/>
+            RSM 3.0 collects no data however some of the 3rd party components may collect data.
+            <LineBreak/>
+            RSM was made by Rarisma
+        </TextBlock>
+        <TextBox Header="Repositories" Margin="50" PlaceholderText="Put custom server repository URLs here" Width="600" Height="300" HorizontalContentAlignment="Center"/>
+
+    </StackPanel>
+</Page>

@@ -1,0 +1,42 @@
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\RSMUltra (Package).wapproj.CoreCompileInputs.cache
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\App.xbf
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\MainWindow.xbf
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\Microsoft.ApplicationModel.Resources.Projection.dll
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\Microsoft.WinUI.dll
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\Microsoft.Windows.SDK.NET.dll
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\WinRT.Runtime.dll
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\RSMUltra.deps.json
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\RSMUltra.runtimeconfig.dev.json
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\App.xbf
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\MainWindow.xbf
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\RSMUltra.exe
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\Microsoft.ApplicationModel.Resources.Projection.pdb
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\RSMUltra.runtimeconfig.json
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\RSMUltra.dll
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\RSMUltra.pdb
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\resources.pri
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\AppxManifest.xml
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra (Package).build.appxrecipe
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\RSMUltra (Package).wapproj.AssemblyReference.cache
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\RSMUltra.pri.xml
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\priconfig.xml
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\priconfig.xml.intermediate
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\unfiltered.layout.resfiles
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\filtered.layout.resfiles
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\filtered.layout.resfiles.intermediate
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\excluded.layout.resfiles
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\excluded.layout.resfiles.intermediate
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\resources.resfiles
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\resources.resfiles.intermediate
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\pri.resfiles
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\pri.resfiles.intermediate
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\qualifiers.txt
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\qualifiers.txt.intermediate
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\ProjectArchitectures.txt
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\obj\x86\Debug\RSMUltra (Package).wapproj.LastBuild.txt
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\UltraUI\NewServer.xbf
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\UltraUI\NewServer.xbf
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\UltraUI\Settings.xbf
+D:\Projects\RSM3\RSMUltra\RSMUltra (Package)\bin\x86\Debug\RSMUltra\UltraUI\Settings.xbf
