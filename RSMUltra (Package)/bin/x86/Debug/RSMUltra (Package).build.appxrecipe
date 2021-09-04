@@ -10,65 +10,68 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>6689893b-26f1-4e43-8e67-8069be02a037</PackageIdentityName>
     <PackageIdentityPublisher>CN=Rarisma</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\Projects\RSM3\RSMUltra %28Package%29\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>D:\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>D:\Projects\RSM3\RSMUltra %28Package%29\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\bin\x86\Debug\AppxManifest.xml">
+    <AppXManifest Include="D:\Projects\RSM3\RSMUltra %28Package%29\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\App.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\MainWindow.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\MainWindow.xbf">
       <PackagePath>MainWindow.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\NewServer.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\NewServer.xbf">
       <PackagePath>UltraUI\NewServer.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\Settings.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\Settings.xbf">
       <PackagePath>UltraUI\Settings.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\Redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\SplashScreen.scale-200.png">
       <PackagePath>Images\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\LockScreenLogo.scale-200.png">
       <PackagePath>Images\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\Square150x150Logo.scale-200.png">
       <PackagePath>Images\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\Square44x44Logo.scale-200.png">
       <PackagePath>Images\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\StoreLogo.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\StoreLogo.png">
       <PackagePath>Images\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\Wide310x150Logo.scale-200.png">
       <PackagePath>Images\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Rarisma\.nuget\packages\librarisma\2.0.3\lib\net5.0\LibRarisma.dll">
+      <PackagePath>RSMUltra\LibRarisma.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Rarisma\.nuget\packages\microsoft.projectreunion.foundation\0.8.2\lib\net5.0-windows\Microsoft.ApplicationModel.Resources.Projection.dll">
       <PackagePath>RSMUltra\Microsoft.ApplicationModel.Resources.Projection.dll</PackagePath>
@@ -82,31 +85,31 @@
     <AppxPackagedFile Include="C:\Users\Rarisma\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.19\lib\WinRT.Runtime.dll">
       <PackagePath>RSMUltra\WinRT.Runtime.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.deps.json">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.deps.json">
       <PackagePath>RSMUltra\RSMUltra.deps.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.runtimeconfig.dev.json">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.runtimeconfig.dev.json">
       <PackagePath>RSMUltra\RSMUltra.runtimeconfig.dev.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\App.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\App.xbf">
       <PackagePath>RSMUltra\App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\MainWindow.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\MainWindow.xbf">
       <PackagePath>RSMUltra\MainWindow.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\NewServer.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\NewServer.xbf">
       <PackagePath>RSMUltra\UltraUI\NewServer.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\Settings.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\Settings.xbf">
       <PackagePath>RSMUltra\UltraUI\Settings.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\apphost.exe">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\apphost.exe">
       <PackagePath>RSMUltra\RSMUltra.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.runtimeconfig.json">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.runtimeconfig.json">
       <PackagePath>RSMUltra\RSMUltra.runtimeconfig.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.dll">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.dll">
       <PackagePath>RSMUltra\RSMUltra.dll</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

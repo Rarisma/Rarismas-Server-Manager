@@ -8,9 +8,25 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <TextBlock Text="What server would you like to make?" HorizontalAlignment="Center" FontSize="40" Padding="50"/>
-        <ComboBox Name="GameLists"/>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  Name="GameSelect">
+        <TextBlock Text="What game would you like to a server for?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Padding="30"/>
+        <ComboBox Name="GameLists" Width="300" HorizontalAlignment="Center" SelectionChanged="GameChanged"/>
 
+        <StackPanel HorizontalAlignment="Center" Opacity="0" Name="VersionPanel">
+            <TextBlock Text="Okay what version would you like to play?" FontSize="25" Padding="50" HorizontalAlignment="Center" />
+            <ComboBox Name="Versions" SelectionChanged="VersionChanged" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" Opacity="0" Name="VariantPanel" >
+            <TextBlock Text="So what variant of that version should we use?" FontSize="25" Padding="50" HorizontalAlignment="Center"/>
+            <ComboBox Name="Variant" HorizontalAlignment="Center" SelectionChanged="EnableContinue"/>
+        </StackPanel>
+
+        <Border Height="50"/>
+        <TextBox Header="All you need to do now is give it a name" Width="400" Name="NameBox" Opacity="0" FontSize="20"/> 
+
+        <Border Height="100"/>
+        <Button Content="Continue" HorizontalAlignment="Center" VerticalAlignment="Bottom" Opacity="0" Name="Continue" Click="ContinueClick"/>
+        <Border Height="30"/>
     </StackPanel>
 </Page>

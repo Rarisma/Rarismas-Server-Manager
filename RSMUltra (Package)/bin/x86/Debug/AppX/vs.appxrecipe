@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>6689893b-26f1-4e43-8e67-8069be02a037</PackageIdentityName>
     <PackageIdentityPublisher>CN=Rarisma</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\Projects\RSM3\RSMUltra %28Package%29\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>D:\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>D:\Projects\RSM3\RSMUltra %28Package%29\bin\x86\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>63E6AB51F422AFC4D4EFE2D79C8636FE8A3F7682D13979E2D6AB9A633DAB525E</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>6689893b-26f1-4e43-8e67-8069be02a037_1.0.0.0_x86__9rjdckjh9bgnm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>6689893b-26f1-4e43-8e67-8069be02a037_9rjdckjh9bgnm!App</RegisteredUserModeAppID>
@@ -27,70 +27,74 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\bin\x86\Debug\AppxManifest.xml">
+    <AppXManifest Include="D:\Projects\RSM3\RSMUltra %28Package%29\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-08-31T22:31:36.769</Modified>
+      <Modified>2021-09-01T16:26:45.330</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\App.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-08-31T16:53:42.729</Modified>
+      <Modified>2021-09-01T16:26:44.164</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\MainWindow.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\MainWindow.xbf">
       <PackagePath>MainWindow.xbf</PackagePath>
-      <Modified>2021-08-31T22:27:48.120</Modified>
+      <Modified>2021-09-01T16:26:44.164</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\NewServer.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\NewServer.xbf">
       <PackagePath>UltraUI\NewServer.xbf</PackagePath>
-      <Modified>2021-08-31T16:53:42.730</Modified>
+      <Modified>2021-09-01T16:26:44.164</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\Settings.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\Settings.xbf">
       <PackagePath>UltraUI\Settings.xbf</PackagePath>
-      <Modified>2021-08-31T22:31:35.528</Modified>
+      <Modified>2021-09-01T16:26:44.165</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\Redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
       <Modified>2020-12-02T03:59:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\SplashScreen.scale-200.png">
       <PackagePath>Images\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-08-30T18:55:34.476</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\LockScreenLogo.scale-200.png">
       <PackagePath>Images\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2021-08-30T18:55:34.470</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\Square150x150Logo.scale-200.png">
       <PackagePath>Images\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-08-30T18:55:34.480</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\Square44x44Logo.scale-200.png">
       <PackagePath>Images\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-08-30T18:55:34.483</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-08-30T18:55:34.484</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\StoreLogo.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\StoreLogo.png">
       <PackagePath>Images\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-08-30T18:55:34.485</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\Images\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\Images\Wide310x150Logo.scale-200.png">
       <PackagePath>Images\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-08-30T18:55:34.493</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra %28Package%29\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra %28Package%29\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-08-31T14:49:44.334</Modified>
+      <Modified>2021-09-01T09:05:00.935</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Rarisma\.nuget\packages\librarisma\2.0.3\lib\net5.0\LibRarisma.dll">
+      <PackagePath>RSMUltra\LibRarisma.dll</PackagePath>
+      <Modified>2021-08-13T20:47:20.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Rarisma\.nuget\packages\microsoft.projectreunion.foundation\0.8.2\lib\net5.0-windows\Microsoft.ApplicationModel.Resources.Projection.dll">
       <PackagePath>RSMUltra\Microsoft.ApplicationModel.Resources.Projection.dll</PackagePath>
@@ -108,41 +112,41 @@
       <PackagePath>RSMUltra\WinRT.Runtime.dll</PackagePath>
       <Modified>2021-07-15T21:41:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.deps.json">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.deps.json">
       <PackagePath>RSMUltra\RSMUltra.deps.json</PackagePath>
-      <Modified>2021-08-31T14:49:42.950</Modified>
+      <Modified>2021-09-01T09:04:59.800</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.runtimeconfig.dev.json">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.runtimeconfig.dev.json">
       <PackagePath>RSMUltra\RSMUltra.runtimeconfig.dev.json</PackagePath>
-      <Modified>2021-08-31T10:37:05.117</Modified>
+      <Modified>2021-09-01T09:04:59.824</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\App.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\App.xbf">
       <PackagePath>RSMUltra\App.xbf</PackagePath>
-      <Modified>2021-08-31T16:53:42.729</Modified>
+      <Modified>2021-09-01T16:26:44.164</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\MainWindow.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\MainWindow.xbf">
       <PackagePath>RSMUltra\MainWindow.xbf</PackagePath>
-      <Modified>2021-08-31T22:27:48.120</Modified>
+      <Modified>2021-09-01T16:26:44.164</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\NewServer.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\NewServer.xbf">
       <PackagePath>RSMUltra\UltraUI\NewServer.xbf</PackagePath>
-      <Modified>2021-08-31T16:53:42.730</Modified>
+      <Modified>2021-09-01T16:26:44.164</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\Settings.xbf">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\UltraUI\Settings.xbf">
       <PackagePath>RSMUltra\UltraUI\Settings.xbf</PackagePath>
-      <Modified>2021-08-31T22:31:35.528</Modified>
+      <Modified>2021-09-01T16:26:44.165</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\apphost.exe">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\obj\x86\Debug\net5.0-windows10.0.19041.0\apphost.exe">
       <PackagePath>RSMUltra\RSMUltra.exe</PackagePath>
-      <Modified>2021-08-31T22:31:35.711</Modified>
+      <Modified>2021-09-01T16:26:44.373</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.runtimeconfig.json">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.runtimeconfig.json">
       <PackagePath>RSMUltra\RSMUltra.runtimeconfig.json</PackagePath>
-      <Modified>2021-08-31T10:37:05.113</Modified>
+      <Modified>2021-09-01T09:04:59.822</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.dll">
+    <AppxPackagedFile Include="D:\Projects\RSM3\RSMUltra\bin\x86\Debug\net5.0-windows10.0.19041.0\RSMUltra.dll">
       <PackagePath>RSMUltra\RSMUltra.dll</PackagePath>
-      <Modified>2021-08-31T22:31:35.694</Modified>
+      <Modified>2021-09-01T16:26:44.354</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

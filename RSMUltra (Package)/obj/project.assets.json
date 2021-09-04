@@ -837,11 +837,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra (Package)\\RSMUltra (Package).wapproj",
+      "projectUniqueName": "D:\\Projects\\RSM3\\RSMUltra (Package)\\RSMUltra (Package).wapproj",
       "projectName": "RSMUltra (Package)",
-      "projectPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra (Package)\\RSMUltra (Package).wapproj",
+      "projectPath": "D:\\Projects\\RSM3\\RSMUltra (Package)\\RSMUltra (Package).wapproj",
       "packagesPath": "C:\\Users\\Rarisma\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra (Package)\\obj\\",
+      "outputPath": "D:\\Projects\\RSM3\\RSMUltra (Package)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Installed\\Visual Studio 2019\\SDKs\\NuGetPackages",
@@ -864,8 +864,8 @@
         "uap10.0.19041": {
           "targetAlias": "net451",
           "projectReferences": {
-            "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra\\RSMUltra.csproj": {
-              "projectPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra\\RSMUltra.csproj"
+            "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj": {
+              "projectPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj"
             }
           }
         }

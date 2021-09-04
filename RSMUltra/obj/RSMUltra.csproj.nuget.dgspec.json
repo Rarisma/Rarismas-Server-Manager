@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra\\RSMUltra.csproj": {}
+    "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra\\RSMUltra.csproj": {
+    "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra\\RSMUltra.csproj",
+        "projectUniqueName": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj",
         "projectName": "RSMUltra",
-        "projectPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra\\RSMUltra.csproj",
+        "projectPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj",
         "packagesPath": "C:\\Users\\Rarisma\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra\\obj\\",
+        "outputPath": "D:\\Projects\\RSM3\\RSMUltra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Installed\\Visual Studio 2019\\SDKs\\NuGetPackages",
@@ -46,6 +46,10 @@
         "net5.0-windows10.0.19041": {
           "targetAlias": "net5.0-windows10.0.19041.0",
           "dependencies": {
+            "LibRarisma": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
             "Microsoft.ProjectReunion": {
               "target": "Package",
               "version": "[0.8.2, )"
