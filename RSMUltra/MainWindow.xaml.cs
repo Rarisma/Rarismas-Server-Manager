@@ -35,6 +35,15 @@ namespace RSMUltra
         {
             this.InitializeComponent();
             Title = "RSM 3.0 Alpha";
+
+            //Loads instances
+            if (Directory.Exists(Global.Instances))
+            {
+                foreach (var VARIABLE in Directory.GetDirectories(Global.Instances))
+                {
+                    SideBar.MenuItems.Add(Path.GetFileName(VARIABLE));
+                }
+            }
         }
 
 
@@ -42,10 +51,10 @@ namespace RSMUltra
         {
             switch (args.SelectedItemContainer.Name)
             {
-                case "Create new server":
+                case "New":
                     MainFrame.Content = new UltraUI.NewServer();
                     break;
-                case "Import a server":
+                case "Import":
                     break;
                 case "Settings":
                     MainFrame.Content = new UltraUI.Settings();

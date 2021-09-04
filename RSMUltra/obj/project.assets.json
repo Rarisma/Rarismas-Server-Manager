@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0-windows10.0.19041": {
+      "LibRarisma/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/LibRarisma.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/LibRarisma.dll": {}
+        }
+      },
       "Microsoft.ProjectReunion/0.8.2": {
         "type": "package",
         "dependencies": {
@@ -56,6 +65,15 @@
       }
     },
     "net5.0-windows10.0.19041/win10-arm64": {
+      "LibRarisma/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/LibRarisma.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/LibRarisma.dll": {}
+        }
+      },
       "Microsoft.ProjectReunion/0.8.2": {
         "type": "package",
         "dependencies": {
@@ -110,6 +128,15 @@
       }
     },
     "net5.0-windows10.0.19041/win10-x64": {
+      "LibRarisma/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/LibRarisma.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/LibRarisma.dll": {}
+        }
+      },
       "Microsoft.ProjectReunion/0.8.2": {
         "type": "package",
         "dependencies": {
@@ -164,6 +191,15 @@
       }
     },
     "net5.0-windows10.0.19041/win10-x86": {
+      "LibRarisma/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/LibRarisma.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/LibRarisma.dll": {}
+        }
+      },
       "Microsoft.ProjectReunion/0.8.2": {
         "type": "package",
         "dependencies": {
@@ -219,6 +255,18 @@
     }
   },
   "libraries": {
+    "LibRarisma/2.0.3": {
+      "sha512": "yMxEsrk0xPWWokhzfCamtZ7wej/4nXHZ5v77IbwG/kSXRgz9PO8B86LWFDKNTx3JCAlsvLYaLn8MA1Crd/eUfg==",
+      "type": "package",
+      "path": "librarisma/2.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/LibRarisma.dll",
+        "librarisma.2.0.3.nupkg.sha512",
+        "librarisma.nuspec"
+      ]
+    },
     "Microsoft.ProjectReunion/0.8.2": {
       "sha512": "hMJbuJ0li35RqefyVzgzafFXFrlL+DlqiIlSAo5h8UBd15w1UnIu+3l2eENeYgktaM/wwWj+DQU+F6oHeXja4g==",
       "type": "package",
@@ -523,6 +571,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows10.0.19041": [
+      "LibRarisma >= 2.0.3",
       "Microsoft.ProjectReunion >= 0.8.2",
       "Microsoft.ProjectReunion.Foundation >= 0.8.2",
       "Microsoft.ProjectReunion.WinUI >= 0.8.2"
@@ -536,11 +585,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra\\RSMUltra.csproj",
+      "projectUniqueName": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj",
       "projectName": "RSMUltra",
-      "projectPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra\\RSMUltra.csproj",
+      "projectPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj",
       "packagesPath": "C:\\Users\\Rarisma\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra\\obj\\",
+      "outputPath": "D:\\Projects\\RSM3\\RSMUltra\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Installed\\Visual Studio 2019\\SDKs\\NuGetPackages",
@@ -575,6 +624,10 @@
       "net5.0-windows10.0.19041": {
         "targetAlias": "net5.0-windows10.0.19041.0",
         "dependencies": {
+          "LibRarisma": {
+            "target": "Package",
+            "version": "[2.0.3, )"
+          },
           "Microsoft.ProjectReunion": {
             "target": "Package",
             "version": "[0.8.2, )"
