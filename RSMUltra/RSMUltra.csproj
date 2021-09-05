@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
@@ -10,6 +10,8 @@
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Manager\General.xaml" />
+    <None Remove="UltraUI\Manager.xaml" />
     <None Remove="UltraUI\NewServer.xaml" />
     <None Remove="UltraUI\Settings.xaml" />
   </ItemGroup>
@@ -23,6 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="UltraUI\Manager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="UltraUI\Settings.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -30,6 +38,12 @@
 
   <ItemGroup>
     <Page Update="UltraUI\NewServer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Manager\General.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
