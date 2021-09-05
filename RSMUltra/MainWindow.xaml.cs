@@ -1,26 +1,14 @@
-﻿using Microsoft.UI.Xaml;
+﻿using System.Collections.Generic;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.ApplicationModel.Background;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-
 //Int ErnalScreaming = 1;
 
 namespace RSMUltra
 {
     /* This is a complete rewrite of RSM, titled RSM3 (or RSMUltra Internally)
      * Ideally this should be the last rewrite and should be easily extendable
-     * RSM2 has not been referenced spesifcally as a challenge so it will
+     * RSM2 hasn't been referenced specifically as a challenge so it will
      * not be backwards compatible as I plan to introduce a new ini format
      * Also there aren't gonna be a lot of easter eggs and the code base is gonna
      * be well documented so some other dude can work on this when its finished
@@ -30,17 +18,21 @@ namespace RSMUltra
      */
     public sealed partial class MainWindow : Window
     {
-
+        private List<string> Paths = new();
+        private List<string> Names = new();
+        public static Frame GlobalFrame = new();
         public MainWindow()
         {
             this.InitializeComponent();
             Title = "RSM 3.0 Alpha";
-
+            GlobalFrame = MainFrame;
             //Loads instances
             if (Directory.Exists(Global.Instances))
             {
                 foreach (var VARIABLE in Directory.GetDirectories(Global.Instances))
                 {
+                    Paths.Add(VARIABLE);
+                    Names.Add(Path.GetFileName(VARIABLE));
                     SideBar.MenuItems.Add(Path.GetFileName(VARIABLE));
                 }
             }
@@ -60,7 +52,15 @@ namespace RSMUltra
                     MainFrame.Content = new UltraUI.Settings();
                     break;
                 default:
-                    //SideBar.SelectedItem.ToString();
+                    Global.ServerDir = Paths[Names.IndexOf(args.SelectedItemContainer.Content.ToString())];
+                    string[] ini = File.ReadAllLines(Global.ServerDir + "\\RSM.ini");
+                    ServerInfo.Name = args.SelectedItemContainer.Content.ToString();
+                    ServerInfo.Game = ini[1];
+                    ServerInfo.Version = ini[2];
+                    ServerInfo.Variant = ini[3];
+                    ServerInfo.LastBackup = ini[5];
+                    ServerInfo.BackupFrequency = ini[4];
+                    MainFrame.Content = new UltraUI.Manager();
                     break;
             }
         }

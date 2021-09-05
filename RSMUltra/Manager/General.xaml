@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="RSMUltra.Manager.General"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RSMUltra.Manager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <TextBlock Name="Name" HorizontalAlignment="Center" FontSize="40"/>
+        <TextBlock Name="Game" HorizontalAlignment="Center" FontSize="30"/>
+        <Border MinHeight="200"/>
+        <Button Content="Launch Server"/>
+        <SplitButton Name="Links"/>
+        <Button Content="Delete server" Click="Delete"/>
+    </StackPanel>
+</Page>

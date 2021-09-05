@@ -27,7 +27,7 @@ namespace RSMUltra.UltraUI
         public NewServer()
         {
             InitializeComponent();
-            Task.Run(UpdateSources);
+            UpdateSources();
 
             //This lists every game RSM is capable of installing
             foreach (string directory in Directory.GetDirectories(Global.Sources))
@@ -110,7 +110,7 @@ namespace RSMUltra.UltraUI
             {
                 LibRarisma.Connectivity.DownloadFile(InfoFile[0], Global.ServerDir, "Server.zip",true);
             }
-            else if (InfoFile.Contains(".jar"))
+            else if (InfoFile[0].Contains(".jar"))
             {
                 LibRarisma.Connectivity.DownloadFile(InfoFile[0], Global.ServerDir, "Server.jar");
 
@@ -119,6 +119,16 @@ namespace RSMUltra.UltraUI
 
             File.WriteAllText(Global.ServerDir + "//RSM.ini",$"RSMUltra info file\n{GameLists.SelectedItem}\n{Versions.SelectedItem}\n{Variant.SelectedItem}\nWeekly\n{DateTime.Now:dd/MM/yyyy}\nRAM PLACEHOLDER\nWORLD PLACEHOLDER");
 
+            //Reads ini
+            string[] ini = File.ReadAllLines(Global.ServerDir + "//RSM.ini");
+            ServerInfo.Name = NameBox.Text;
+            ServerInfo.Game = ini[1];
+            ServerInfo.Version = ini[2];
+            ServerInfo.Variant = ini[3];
+            ServerInfo.LastBackup = ini[5];
+            ServerInfo.BackupFrequency = ini[4];
+
+            MainWindow.GlobalFrame.Content = new RSMUltra.Manager.General();
         }
     }
 }

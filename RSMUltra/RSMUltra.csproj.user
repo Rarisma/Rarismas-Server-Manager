@@ -8,6 +8,12 @@
     <None Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="Manager\General.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UltraUI\Manager.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UltraUI\Settings.xaml">
       <SubType>Designer</SubType>
     </Page>
