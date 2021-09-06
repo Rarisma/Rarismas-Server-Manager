@@ -6,8 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Appointments;
 using Windows.Foundation.Metadata;
+ using ABI.Microsoft.UI.Xaml.Controls;
 
-namespace RSMUltra
+ namespace RSMUltra
 {
     class Global
     {
@@ -18,7 +19,6 @@ namespace RSMUltra
         public static string Instances = AppDomain.CurrentDomain.BaseDirectory + "//Instances//";
         public static string ServerDir = "";
 
-        //Server Info
-
+        public static Microsoft.UI.Xaml.Controls.Frame GlobalFrame;
     }
 }
