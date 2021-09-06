@@ -9,11 +9,20 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
-        <TextBlock Name="Name" HorizontalAlignment="Center" FontSize="40"/>
-        <TextBlock Name="Game" HorizontalAlignment="Center" FontSize="30"/>
-        <Border MinHeight="200"/>
-        <Button Content="Launch Server"/>
-        <SplitButton Name="Links"/>
-        <Button Content="Delete server" Click="Delete"/>
+        <TextBlock Name="Name" HorizontalAlignment="Center" FontSize="60" Margin="50"/>
+        <TextBlock Name="Game" HorizontalAlignment="Center" FontSize="40"/>
+        <Border Height="100"/>
+        <Button Content="Launch Server" HorizontalAlignment="Center" Margin="50"/>
+        <StackPanel Name="LinkPanels"/>
+        <Button Content="Delete server" Margin="50" HorizontalAlignment="Center">
+            <Button.Flyout>
+                <Flyout>
+                    <StackPanel>
+                        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="Are you sure you want to delete this server?" Margin="0,0,0,12" />
+                        <Button Click="DeleteServer" Content="Yes" Background="Red" Foreground="White" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
+        </Button>
     </StackPanel>
 </Page>

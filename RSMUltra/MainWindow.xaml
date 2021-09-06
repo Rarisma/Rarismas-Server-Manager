@@ -7,26 +7,5 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <NavigationView Name="SideBar" IsBackButtonVisible="Collapsed" IsSettingsVisible="False" VerticalAlignment="Stretch" SelectionChanged="SelectionChanged" >
-        <NavigationView.MenuItems>
-            <NavigationViewItem Content="Create new server" Name="New">
-                <NavigationViewItem.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xf4a5;"/>
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem Content="Import a server" Name="Import">
-                <NavigationViewItem.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xf0d2;"/>
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-        </NavigationView.MenuItems>
-        <NavigationView.FooterMenuItems>
-            <NavigationViewItem Content="Settings" Name="Settings">
-                <NavigationViewItem.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE713;"/>
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-        </NavigationView.FooterMenuItems>
-        <Frame Name="MainFrame"/>
-    </NavigationView>
+    <Frame Name="MainFrame" />
 </Window>

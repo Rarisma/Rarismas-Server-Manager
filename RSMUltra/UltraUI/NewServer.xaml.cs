@@ -127,8 +127,8 @@ namespace RSMUltra.UltraUI
             ServerInfo.Variant = ini[3];
             ServerInfo.LastBackup = ini[5];
             ServerInfo.BackupFrequency = ini[4];
-
-            MainWindow.GlobalFrame.Content = new RSMUltra.Manager.General();
+            MainWindow.Frame.Content = new Main();
+            Global.GlobalFrame.Content = new RSMUltra.Manager.General();
         }
     }
 }

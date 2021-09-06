@@ -12,6 +12,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Security.Cryptography.Core;
 using ABI.Windows.UI.Popups;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -30,32 +31,42 @@ namespace RSMUltra.Manager
             Name.Text = $"{ServerInfo.Name}";
             Game.Text = $"{ServerInfo.Game} {ServerInfo.Version} ({ ServerInfo.Variant})";
 
-            StackPanel Content = new();
+            //This section controls the buttons that appears in LinkButtons
             switch (ServerInfo.Game)
             {
                 case "Minecraft Java Edition":
-                    Content.Children.Add(new TextBlock{Text = "Open Mods folder"});
-                    Content.Children.Add(new TextBlock{Text = "Open Datapacks folder"});
-                    Content.Children.Add(new TextBlock{Text = "Open Plugins folder"});
+                    Button modButton = new() { Content = "Open Mods folder", HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(20) };
+                    modButton.Click += Mods();
+                    LinkPanels.Children.Add(modButton);
+                    Button DatapacksButton = new(){Content = "Open Datapacks folder", HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(20) };
+                    DatapacksButton.Click += Plugins();
+                    LinkPanels.Children.Add(DatapacksButton);
+                    Button PluginsButton = new(){Content = "Open Plugins folder", HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(20) };
+                    PluginsButton.Click += Datapacks();
+                    LinkPanels.Children.Add(PluginsButton);
                     break;
             }
-            //Links.Flyout.SetValue(StackPanel,Content);
+
         }
 
-        private async void Delete(object sender, RoutedEventArgs e)
+        private RoutedEventHandler Mods()
         {
-            ContentDialog DeleteMessage = new ContentDialog();
-            DeleteMessage.Title = "Are you sure you want to delete this server?";
-            DeleteMessage.PrimaryButtonText = "Delete";
-            DeleteMessage.CloseButtonText = "Go back";
-            DeleteMessage.ShowAsync();
-            /*
-            var test = .GetResults();
-
-            if (test == ContentDialogResult.Primary)
-            {
-                Directory.Delete(Global.ServerDir, true);
-            }*/
+            return null;
         }
+        private RoutedEventHandler Plugins()
+        {
+            return null;
+        }
+        private RoutedEventHandler Datapacks()
+        {
+            return null;
+        }
+
+        private void DeleteServer(object sender, RoutedEventArgs e)
+        {
+            Directory.Delete(Global.ServerDir,true);
+            MainWindow.Frame.Content = new UltraUI.Main();
+        }
+
     }
 }
