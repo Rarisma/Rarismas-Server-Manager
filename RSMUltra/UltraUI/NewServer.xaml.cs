@@ -127,8 +127,45 @@ namespace RSMUltra.UltraUI
             ServerInfo.Variant = ini[3];
             ServerInfo.LastBackup = ini[5];
             ServerInfo.BackupFrequency = ini[4];
+
+            //Java downloader
+            switch (ServerInfo.Game)
+            {
+                case "Minecraft Java Edition":
+                    if (Directory.Exists(Global.Java16) == false && ServerInfo.Variant == "Vanilla") { InstallJava16(); }
+                    if (Directory.Exists(Global.Java8) == false && ServerInfo.Variant == "Modded") { InstallJava8(); }
+                    break;
+                case "Mindustry":
+                    if (Directory.Exists(Global.Java16) == false) { InstallJava16(); }
+                    break;
+            }
+
+
             MainWindow.Frame.Content = new Main();
             Global.GlobalFrame.Content = new RSMUltra.Manager.General();
         }
+
+        public static void InstallJava16()
+        {
+            string url = "https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerURLs/Windows/Tools/Java16";
+            LibRarisma.Connectivity.DownloadFile(url, Global.Cache, "Java");
+
+            string[] Java = File.ReadAllLines(Global.Cache + "Java");
+            LibRarisma.Connectivity.DownloadFile(Java[0], Global.Cache, "JDK.zip");
+            System.IO.Compression.ZipFile.ExtractToDirectory(Global.Cache + "JDK.zip", AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
+            string[] Dirs = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
+            Directory.Move(Dirs[0], AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java16\\");
+        }
+
+        public static void InstallJava8()
+        {
+            string url = "https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerURLs/Windows/Tools/Java8";
+
+            LibRarisma.IO.DownloadFile("https://www.dropbox.com/s/qdrgmj607r92uch/Java8.zip?dl=1", Global.Cache, "JDK8.zip");
+            System.IO.Compression.ZipFile.ExtractToDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\JDK8.zip", AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
+            string[] Dirs = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
+            Directory.Move(Dirs[0], AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java8\\");
+        }
+
     }
 }

@@ -12,6 +12,7 @@
   <ItemGroup>
     <None Remove="Manager\General.xaml" />
     <None Remove="Manager\Server.xaml" />
+    <None Remove="Resources.xaml" />
     <None Remove="UltraUI\Main.xaml" />
     <None Remove="UltraUI\Manager.xaml" />
     <None Remove="UltraUI\NewServer.xaml" />
@@ -24,6 +25,12 @@
     <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.2" />
     <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.2" />
     <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
