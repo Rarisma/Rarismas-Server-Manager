@@ -68,5 +68,9 @@ namespace RSMUltra.Manager
             MainWindow.Frame.Content = new UltraUI.Main();
         }
 
+        private void Click(object sender, RoutedEventArgs e)
+        {
+            Global.GlobalFrame.Content = new Server();
+        }
     }
 }

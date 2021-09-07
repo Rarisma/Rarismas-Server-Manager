@@ -12,7 +12,7 @@
         <TextBlock Name="Name" HorizontalAlignment="Center" FontSize="60" Margin="50"/>
         <TextBlock Name="Game" HorizontalAlignment="Center" FontSize="40"/>
         <Border Height="100"/>
-        <Button Content="Launch Server" HorizontalAlignment="Center" Margin="50"/>
+        <Button Content="Launch Server" HorizontalAlignment="Center" Margin="50" Click="Click"/>
         <StackPanel Name="LinkPanels"/>
         <Button Content="Delete server" Margin="50" HorizontalAlignment="Center">
             <Button.Flyout>
