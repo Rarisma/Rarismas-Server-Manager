@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,5 +15,7 @@ namespace RSMUltra
         public static string Version = "";
         public static string LastBackup = "";
         public static string BackupFrequency = "";
+
+        public static Process Server = new();
     }
 }

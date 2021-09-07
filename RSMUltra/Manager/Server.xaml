@@ -5,31 +5,43 @@
     xmlns:local="using:RSMUltra.Manager"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="using:System"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <TextBlock Name="ServerName" Width="600" Height="400"/>
+    <StackPanel Height="500">
 
-        <CommandBar>
-            <AppBarButton Label="Start" Name="Start">
+        <TextBlock Name="ServerName" />
+
+        <CommandBar Name="CmdBar" PointerEntered="CmdBarFix" PointerExited="CmdBarUnfix" HorizontalAlignment="Center" IsDynamicOverflowEnabled="False" OverflowButtonVisibility="Collapsed" DefaultLabelPosition="Bottom" HorizontalContentAlignment="Stretch">
+            <AppBarButton Label="Start" Name="Start" IsCompact="False" Visibility="Visible" Click="StartServer">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe72a;"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton Label="Restart" Name="Restart">
+            <AppBarButton Label="Restart" Name="Restart" IsCompact="False" Visibility="Visible">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe72c;"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton Label="Stop" Name="Stop">
+            <AppBarButton Label="Stop" Name="Stop" IsCompact="False" Visibility="Visible" IsEnabled="False">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe711;"/>
                 </AppBarButton.Icon>
             </AppBarButton>
+            <AppBarButton Label="Save" Name="Save" IsCompact="False" Visibility="Visible">
+                <AppBarButton.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe74e;"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Label="Clear" Name="Clear" IsCompact="False" Visibility="Visible">
+                <AppBarButton.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe75c;"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
         </CommandBar>
 
-        <TextBox Name="Output" HorizontalAlignment="Center" Width="600" Height="450"/>
+        <TextBox Name="Output" IsReadOnly="True" HorizontalAlignment="Stretch" Height="300" Margin="20,0" PlaceholderText="When your server does something it will show up here"/>
+        <AutoSuggestBox Name="CommandBar" HorizontalAlignment="Stretch" Margin="20,0" PlaceholderText="Put commands here"/>
     </StackPanel>
-
 </Page>
