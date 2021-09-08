@@ -41,7 +41,7 @@
             </AppBarButton>
         </CommandBar>
 
-        <TextBox Name="Output" IsReadOnly="True" HorizontalAlignment="Stretch" Height="300" Margin="20,0" PlaceholderText="When your server does something it will show up here"/>
-        <AutoSuggestBox Name="CommandBar" HorizontalAlignment="Stretch" Margin="20,0" PlaceholderText="Put commands here"/>
+        <TextBox Name="ServerConsole" IsReadOnly="False" HorizontalAlignment="Stretch" Height="450" Margin="20,0" Foreground="White" Background="Black" AcceptsReturn="True" PlaceholderText="When your server does something it will show up here"/>
+        <AutoSuggestBox Name="CommandBar" HorizontalAlignment="Stretch" Margin="20,0" PlaceholderText="Put commands here" />
     </StackPanel>
 </Page>

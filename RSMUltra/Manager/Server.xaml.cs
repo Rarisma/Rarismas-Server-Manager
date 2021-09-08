@@ -7,11 +7,15 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
+using Microsoft.UI.Dispatching;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -63,7 +67,28 @@ namespace RSMUltra.Manager
 
             }
 
-            ServerInfo.Server.Start();
+            //Setups handling for output
+            ServerInfo.Server.OutputDataReceived += new DataReceivedEventHandler((sender, e) => { if (!String.IsNullOrEmpty(e.Data)) { OutputRecieved(e.Data); }});
+            ServerInfo.Server.ErrorDataReceived += new DataReceivedEventHandler((sender, e) => { if (!String.IsNullOrEmpty(e.Data)) { OutputRecieved(e.Data); }});
+
+            ServerInfo.Server.Start(); //Starts the server running
+            ServerInfo.Server.BeginErrorReadLine(); //Tells RSM to start reading any errors
+            ServerInfo.Server.BeginOutputReadLine(); //Tells RSM to start reading the output
+        }
+
+        public async Task OutputRecieved(string Data) //Actually displays output.
+        {
+            //TODO
+            //Reimplement Cloudspotter
+            //await Window.Current.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { ServerConsole.Text += "\n" + Data; });
+            //await MainWindow.Current.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => { }).AsTask();
+
+            DispatcherQueue.TryEnqueue(
+                () =>
+                {
+                    ServerConsole.Text += "\n" + Data;
+                });
+
         }
 
     }

@@ -132,40 +132,36 @@ namespace RSMUltra.UltraUI
             switch (ServerInfo.Game)
             {
                 case "Minecraft Java Edition":
-                    if (Directory.Exists(Global.Java16) == false && ServerInfo.Variant == "Vanilla") { InstallJava16(); }
-                    if (Directory.Exists(Global.Java8) == false && ServerInfo.Variant == "Modded") { InstallJava8(); }
+                    if (Directory.Exists(Global.Java16) == false && ServerInfo.Variant != "Forge") { GetJava(); }
+                    else { GetJava(true); }
                     break;
                 case "Mindustry":
-                    if (Directory.Exists(Global.Java16) == false) { InstallJava16(); }
+                    if (Directory.Exists(Global.Java16) == false) { GetJava(); }
                     break;
             }
-
 
             MainWindow.Frame.Content = new Main();
             Global.GlobalFrame.Content = new RSMUltra.Manager.General();
         }
 
-        public static void InstallJava16()
+        public static void GetJava(bool Legacy = false)
         {
-            string url = "https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerURLs/Windows/Tools/Java16";
-            LibRarisma.Connectivity.DownloadFile(url, Global.Cache, "Java");
+            if (Legacy)
+            {
+                if (!File.Exists(Global.Java8))
+                {
+                    LibRarisma.Connectivity.DownloadFile(File.ReadAllLines(Global.Sources + "//RSM//Java8")[0],Global.Tools + "//Java8//", "Java8.zip", true);
 
-            string[] Java = File.ReadAllLines(Global.Cache + "Java");
-            LibRarisma.Connectivity.DownloadFile(Java[0], Global.Cache, "JDK.zip");
-            System.IO.Compression.ZipFile.ExtractToDirectory(Global.Cache + "JDK.zip", AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
-            string[] Dirs = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
-            Directory.Move(Dirs[0], AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java16\\");
+                }
+            }
+            else
+            {
+                if (!File.Exists(Global.Java16))
+                {
+                    LibRarisma.Connectivity.DownloadFile(File.ReadAllLines(Global.Sources + "//RSM//Java16")[0], Global.Tools + "//Java16//", "Java16.zip", true);
+                }
+            }
+
         }
-
-        public static void InstallJava8()
-        {
-            string url = "https://raw.githubusercontent.com/Rarisma/Rarismas-Server-Manager/main/ServerURLs/Windows/Tools/Java8";
-
-            LibRarisma.IO.DownloadFile("https://www.dropbox.com/s/qdrgmj607r92uch/Java8.zip?dl=1", Global.Cache, "JDK8.zip");
-            System.IO.Compression.ZipFile.ExtractToDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\JDK8.zip", AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
-            string[] Dirs = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Temp\\");
-            Directory.Move(Dirs[0], AppDomain.CurrentDomain.BaseDirectory + "\\Tools\\Java8\\");
-        }
-
     }
 }

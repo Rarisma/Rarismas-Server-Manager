@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System.IO;
@@ -25,6 +26,9 @@ namespace RSMUltra
             Title = "RSM 3.0 Beta";
             Frame = MainFrame;
             MainFrame.Content = new UltraUI.Main();
+
+            Debug.WriteLine("Rarisma's Server Manager 3.0 (RSMUltra) by Rarisma");
+            Debug.WriteLine($"Here's the Global vars\nTools: {Global.Tools}\nInstances: {Global.Instances}\nSources: {Global.Sources}");
         }
     }
 }
