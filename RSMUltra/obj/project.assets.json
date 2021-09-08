@@ -11,27 +11,27 @@
           "lib/net5.0/LibRarisma.dll": {}
         }
       },
-      "Microsoft.ProjectReunion/0.8.2": {
+      "Microsoft.ProjectReunion/0.8.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.ProjectReunion.DWrite": "0.8.2",
-          "Microsoft.ProjectReunion.Foundation": "0.8.2",
-          "Microsoft.ProjectReunion.InteractiveExperiences": "0.8.2",
-          "Microsoft.ProjectReunion.WinUI": "0.8.2"
+          "Microsoft.ProjectReunion.DWrite": "0.8.3",
+          "Microsoft.ProjectReunion.Foundation": "0.8.3",
+          "Microsoft.ProjectReunion.InteractiveExperiences": "0.8.3",
+          "Microsoft.ProjectReunion.WinUI": "0.8.3"
         },
         "build": {
           "build/Microsoft.ProjectReunion.props": {},
           "build/Microsoft.ProjectReunion.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.DWrite/0.8.2": {
+      "Microsoft.ProjectReunion.DWrite/0.8.3": {
         "type": "package",
         "build": {
           "build/Microsoft.ProjectReunion.DWrite.props": {},
           "build/Microsoft.ProjectReunion.DWrite.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.Foundation/0.8.2": {
+      "Microsoft.ProjectReunion.Foundation/0.8.3": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows/Microsoft.ApplicationModel.Resources.Projection.dll": {}
@@ -44,13 +44,13 @@
           "build/Microsoft.ProjectReunion.Foundation.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.InteractiveExperiences/0.8.2": {
+      "Microsoft.ProjectReunion.InteractiveExperiences/0.8.3": {
         "type": "package",
         "build": {
           "build/net5.0-windows10.0.17763.0/Microsoft.ProjectReunion.InteractiveExperiences.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.WinUI/0.8.2": {
+      "Microsoft.ProjectReunion.WinUI/0.8.3": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.WinUI.dll": {}
@@ -61,6 +61,15 @@
         "build": {
           "buildTransitive/Microsoft.ProjectReunion.WinUI.props": {},
           "buildTransitive/Microsoft.ProjectReunion.WinUI.targets": {}
+        }
+      },
+      "Mono.Nat/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Mono.Nat.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Mono.Nat.dll": {}
         }
       }
     },
@@ -74,27 +83,27 @@
           "lib/net5.0/LibRarisma.dll": {}
         }
       },
-      "Microsoft.ProjectReunion/0.8.2": {
+      "Microsoft.ProjectReunion/0.8.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.ProjectReunion.DWrite": "0.8.2",
-          "Microsoft.ProjectReunion.Foundation": "0.8.2",
-          "Microsoft.ProjectReunion.InteractiveExperiences": "0.8.2",
-          "Microsoft.ProjectReunion.WinUI": "0.8.2"
+          "Microsoft.ProjectReunion.DWrite": "0.8.3",
+          "Microsoft.ProjectReunion.Foundation": "0.8.3",
+          "Microsoft.ProjectReunion.InteractiveExperiences": "0.8.3",
+          "Microsoft.ProjectReunion.WinUI": "0.8.3"
         },
         "build": {
           "build/Microsoft.ProjectReunion.props": {},
           "build/Microsoft.ProjectReunion.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.DWrite/0.8.2": {
+      "Microsoft.ProjectReunion.DWrite/0.8.3": {
         "type": "package",
         "build": {
           "build/Microsoft.ProjectReunion.DWrite.props": {},
           "build/Microsoft.ProjectReunion.DWrite.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.Foundation/0.8.2": {
+      "Microsoft.ProjectReunion.Foundation/0.8.3": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows/Microsoft.ApplicationModel.Resources.Projection.dll": {}
@@ -107,13 +116,13 @@
           "build/Microsoft.ProjectReunion.Foundation.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.InteractiveExperiences/0.8.2": {
+      "Microsoft.ProjectReunion.InteractiveExperiences/0.8.3": {
         "type": "package",
         "build": {
           "build/net5.0-windows10.0.17763.0/Microsoft.ProjectReunion.InteractiveExperiences.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.WinUI/0.8.2": {
+      "Microsoft.ProjectReunion.WinUI/0.8.3": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.WinUI.dll": {}
@@ -124,6 +133,15 @@
         "build": {
           "buildTransitive/Microsoft.ProjectReunion.WinUI.props": {},
           "buildTransitive/Microsoft.ProjectReunion.WinUI.targets": {}
+        }
+      },
+      "Mono.Nat/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Mono.Nat.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Mono.Nat.dll": {}
         }
       }
     },
@@ -137,27 +155,27 @@
           "lib/net5.0/LibRarisma.dll": {}
         }
       },
-      "Microsoft.ProjectReunion/0.8.2": {
+      "Microsoft.ProjectReunion/0.8.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.ProjectReunion.DWrite": "0.8.2",
-          "Microsoft.ProjectReunion.Foundation": "0.8.2",
-          "Microsoft.ProjectReunion.InteractiveExperiences": "0.8.2",
-          "Microsoft.ProjectReunion.WinUI": "0.8.2"
+          "Microsoft.ProjectReunion.DWrite": "0.8.3",
+          "Microsoft.ProjectReunion.Foundation": "0.8.3",
+          "Microsoft.ProjectReunion.InteractiveExperiences": "0.8.3",
+          "Microsoft.ProjectReunion.WinUI": "0.8.3"
         },
         "build": {
           "build/Microsoft.ProjectReunion.props": {},
           "build/Microsoft.ProjectReunion.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.DWrite/0.8.2": {
+      "Microsoft.ProjectReunion.DWrite/0.8.3": {
         "type": "package",
         "build": {
           "build/Microsoft.ProjectReunion.DWrite.props": {},
           "build/Microsoft.ProjectReunion.DWrite.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.Foundation/0.8.2": {
+      "Microsoft.ProjectReunion.Foundation/0.8.3": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows/Microsoft.ApplicationModel.Resources.Projection.dll": {}
@@ -170,13 +188,13 @@
           "build/Microsoft.ProjectReunion.Foundation.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.InteractiveExperiences/0.8.2": {
+      "Microsoft.ProjectReunion.InteractiveExperiences/0.8.3": {
         "type": "package",
         "build": {
           "build/net5.0-windows10.0.17763.0/Microsoft.ProjectReunion.InteractiveExperiences.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.WinUI/0.8.2": {
+      "Microsoft.ProjectReunion.WinUI/0.8.3": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.WinUI.dll": {}
@@ -187,6 +205,15 @@
         "build": {
           "buildTransitive/Microsoft.ProjectReunion.WinUI.props": {},
           "buildTransitive/Microsoft.ProjectReunion.WinUI.targets": {}
+        }
+      },
+      "Mono.Nat/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Mono.Nat.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Mono.Nat.dll": {}
         }
       }
     },
@@ -200,27 +227,27 @@
           "lib/net5.0/LibRarisma.dll": {}
         }
       },
-      "Microsoft.ProjectReunion/0.8.2": {
+      "Microsoft.ProjectReunion/0.8.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.ProjectReunion.DWrite": "0.8.2",
-          "Microsoft.ProjectReunion.Foundation": "0.8.2",
-          "Microsoft.ProjectReunion.InteractiveExperiences": "0.8.2",
-          "Microsoft.ProjectReunion.WinUI": "0.8.2"
+          "Microsoft.ProjectReunion.DWrite": "0.8.3",
+          "Microsoft.ProjectReunion.Foundation": "0.8.3",
+          "Microsoft.ProjectReunion.InteractiveExperiences": "0.8.3",
+          "Microsoft.ProjectReunion.WinUI": "0.8.3"
         },
         "build": {
           "build/Microsoft.ProjectReunion.props": {},
           "build/Microsoft.ProjectReunion.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.DWrite/0.8.2": {
+      "Microsoft.ProjectReunion.DWrite/0.8.3": {
         "type": "package",
         "build": {
           "build/Microsoft.ProjectReunion.DWrite.props": {},
           "build/Microsoft.ProjectReunion.DWrite.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.Foundation/0.8.2": {
+      "Microsoft.ProjectReunion.Foundation/0.8.3": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows/Microsoft.ApplicationModel.Resources.Projection.dll": {}
@@ -233,13 +260,13 @@
           "build/Microsoft.ProjectReunion.Foundation.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.InteractiveExperiences/0.8.2": {
+      "Microsoft.ProjectReunion.InteractiveExperiences/0.8.3": {
         "type": "package",
         "build": {
           "build/net5.0-windows10.0.17763.0/Microsoft.ProjectReunion.InteractiveExperiences.targets": {}
         }
       },
-      "Microsoft.ProjectReunion.WinUI/0.8.2": {
+      "Microsoft.ProjectReunion.WinUI/0.8.3": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.WinUI.dll": {}
@@ -250,6 +277,15 @@
         "build": {
           "buildTransitive/Microsoft.ProjectReunion.WinUI.props": {},
           "buildTransitive/Microsoft.ProjectReunion.WinUI.targets": {}
+        }
+      },
+      "Mono.Nat/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Mono.Nat.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Mono.Nat.dll": {}
         }
       }
     }
@@ -267,10 +303,10 @@
         "librarisma.nuspec"
       ]
     },
-    "Microsoft.ProjectReunion/0.8.2": {
-      "sha512": "hMJbuJ0li35RqefyVzgzafFXFrlL+DlqiIlSAo5h8UBd15w1UnIu+3l2eENeYgktaM/wwWj+DQU+F6oHeXja4g==",
+    "Microsoft.ProjectReunion/0.8.3": {
+      "sha512": "AcCpV47awOAfGRnQXuSBK68Euh/MUquLFkcjm66VWLpAoJuCpImtGcXp7YrjI6/L5Ap0mPuDOIl4lUg1B0yL6g==",
       "type": "package",
-      "path": "microsoft.projectreunion/0.8.2",
+      "path": "microsoft.projectreunion/0.8.3",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -284,18 +320,18 @@
         "build/MicrosoftProjectReunionFoundationAppXVersion.props",
         "build/native/Microsoft.ProjectReunion.props",
         "license.txt",
-        "microsoft.projectreunion.0.8.2.nupkg.sha512",
+        "microsoft.projectreunion.0.8.3.nupkg.sha512",
         "microsoft.projectreunion.nuspec",
-        "tools/MSIX/CodeSignSummary-d043e607-7f12-43c4-9aca-a83155a32305.md",
+        "tools/MSIX/CodeSignSummary-b72cd09f-41b1-484c-904f-7d923a12a39f.md",
         "tools/MSIX/win10-arm64/Microsoft.ProjectReunion.0.8.msix",
         "tools/MSIX/win10-x64/Microsoft.ProjectReunion.0.8.msix",
         "tools/MSIX/win10-x86/Microsoft.ProjectReunion.0.8.msix"
       ]
     },
-    "Microsoft.ProjectReunion.DWrite/0.8.2": {
-      "sha512": "RTCsIevdihGtY5ItKXSyT7DBNhZOn8PeEy4uW6MDkvIdFehDlCLGa9L8OHasNImlrFaK9upnEEuGlMdaBELoCg==",
+    "Microsoft.ProjectReunion.DWrite/0.8.3": {
+      "sha512": "P7cY+kAjzg4Fn3x0dJWxzsKXNGoWPPwQEBVG/A+X9vKoaWb2CrigtvGN9+wZIRWtvqBKvo/Rd61Ef89vAAXSHg==",
       "type": "package",
-      "path": "microsoft.projectreunion.dwrite/0.8.2",
+      "path": "microsoft.projectreunion.dwrite/0.8.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -311,14 +347,14 @@
         "lib/native/windows/x64/release/DWriteCore.lib",
         "lib/native/windows/x86/release/DWriteCore.lib",
         "license.txt",
-        "microsoft.projectreunion.dwrite.0.8.2.nupkg.sha512",
+        "microsoft.projectreunion.dwrite.0.8.3.nupkg.sha512",
         "microsoft.projectreunion.dwrite.nuspec"
       ]
     },
-    "Microsoft.ProjectReunion.Foundation/0.8.2": {
-      "sha512": "u96+6C+Q86iyKdlwKSrzobmKtVCjfEt2PMYh1GJOggWAyP8QZu9oiItoScZunXi74hWkAIhfCPzU3RwrkIo94Q==",
+    "Microsoft.ProjectReunion.Foundation/0.8.3": {
+      "sha512": "YJfOgBxsXQMwVJZN3PZRvc0jh2moi4ng2VAOSEag0AiLpiziQJRvStvtyAWIPSdnToYY9YuGN7HBHxYcRih7cQ==",
       "type": "package",
-      "path": "microsoft.projectreunion.foundation/0.8.2",
+      "path": "microsoft.projectreunion.foundation/0.8.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -348,14 +384,14 @@
         "lib/win10-arm64/MRM.lib",
         "lib/win10-x64/MRM.lib",
         "lib/win10-x86/MRM.lib",
-        "microsoft.projectreunion.foundation.0.8.2.nupkg.sha512",
+        "microsoft.projectreunion.foundation.0.8.3.nupkg.sha512",
         "microsoft.projectreunion.foundation.nuspec"
       ]
     },
-    "Microsoft.ProjectReunion.InteractiveExperiences/0.8.2": {
-      "sha512": "wPT/2JaB1QcGnxTgacsFO5WOccm0mM9zrWHT1SRh2dT7wCtXd0ylvRMOrbOygYGxssGCaanmvupJh92vQq1a8A==",
+    "Microsoft.ProjectReunion.InteractiveExperiences/0.8.3": {
+      "sha512": "dj61eMG5K+0XncF2s87rCphOVGBGyTvf0IALO9SadOphbP7nykSMQNnAwmFUvKg+HXT2BxGok5ZYdjdeXAN8tA==",
       "type": "package",
-      "path": "microsoft.projectreunion.interactiveexperiences/0.8.2",
+      "path": "microsoft.projectreunion.interactiveexperiences/0.8.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -400,14 +436,14 @@
         "lib/native/win10-x64/Microsoft.Internal.FrameworkUdk.lib",
         "lib/native/win10-x86/Microsoft.Internal.FrameworkUdk.lib",
         "license.txt",
-        "microsoft.projectreunion.interactiveexperiences.0.8.2.nupkg.sha512",
+        "microsoft.projectreunion.interactiveexperiences.0.8.3.nupkg.sha512",
         "microsoft.projectreunion.interactiveexperiences.nuspec"
       ]
     },
-    "Microsoft.ProjectReunion.WinUI/0.8.2": {
-      "sha512": "wnDfPzA/J7bPsQvEsvKaMm+K4XDN+VV727I3hZ40mcXFR9vCtUBGuksaOzqVDK2kUXCmBTIsFX1QFqcfKc8riw==",
+    "Microsoft.ProjectReunion.WinUI/0.8.3": {
+      "sha512": "FI6vzuEiLk8JwFPvL0VrizlyChexzIon7vtnPyo06vZKXWz8AGUiY1i3tT+Hg6Qtjx4+Ryi3XIsYpO8jq/LtdA==",
       "type": "package",
-      "path": "microsoft.projectreunion.winui/0.8.2",
+      "path": "microsoft.projectreunion.winui/0.8.3",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -551,7 +587,7 @@
         "lib/uap10.0/Microsoft.UI/Themes/generic.xaml",
         "lib/uap10.0/Microsoft.Web.WebView2.Core.winmd",
         "license.txt",
-        "microsoft.projectreunion.winui.0.8.2.nupkg.sha512",
+        "microsoft.projectreunion.winui.0.8.3.nupkg.sha512",
         "microsoft.projectreunion.winui.nuspec",
         "tools/Microsoft.Build.Framework.dll",
         "tools/Microsoft.Build.Msix.dll",
@@ -567,14 +603,31 @@
         "tools/x64/GenXbf.dll",
         "tools/x86/GenXbf.dll"
       ]
+    },
+    "Mono.Nat/3.0.1": {
+      "sha512": "TLaz/q4i81y5nRyqBlJO2JS73JRyB1y6uhcgxhiyIn3MMIgH1mlTOPZNX7uUB0XYg6+7Igp4tFAqf/u+Unc3tw==",
+      "type": "package",
+      "path": "mono.nat/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/netstandard2.0/Mono.Nat.dll",
+        "lib/netstandard2.0/Mono.Nat.xml",
+        "lib/netstandard2.1/Mono.Nat.dll",
+        "lib/netstandard2.1/Mono.Nat.xml",
+        "mono.nat.3.0.1.nupkg.sha512",
+        "mono.nat.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows10.0.19041": [
       "LibRarisma >= 2.0.3",
-      "Microsoft.ProjectReunion >= 0.8.2",
-      "Microsoft.ProjectReunion.Foundation >= 0.8.2",
-      "Microsoft.ProjectReunion.WinUI >= 0.8.2"
+      "Microsoft.ProjectReunion >= 0.8.3",
+      "Microsoft.ProjectReunion.Foundation >= 0.8.3",
+      "Microsoft.ProjectReunion.WinUI >= 0.8.3",
+      "Mono.Nat >= 3.0.1"
     ]
   },
   "packageFolders": {
@@ -630,15 +683,19 @@
           },
           "Microsoft.ProjectReunion": {
             "target": "Package",
-            "version": "[0.8.2, )"
+            "version": "[0.8.3, )"
           },
           "Microsoft.ProjectReunion.Foundation": {
             "target": "Package",
-            "version": "[0.8.2, )"
+            "version": "[0.8.3, )"
           },
           "Microsoft.ProjectReunion.WinUI": {
             "target": "Package",
-            "version": "[0.8.2, )"
+            "version": "[0.8.3, )"
+          },
+          "Mono.Nat": {
+            "target": "Package",
+            "version": "[3.0.1, )"
           }
         },
         "imports": [

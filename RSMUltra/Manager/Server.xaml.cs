@@ -16,6 +16,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
 using Microsoft.UI.Dispatching;
+using Mono.Nat;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -31,6 +32,8 @@ namespace RSMUltra.Manager
         {
             this.InitializeComponent();
             CmdBar.IsOpen = true;
+            Name.Text = $"{ServerInfo.Name}";
+            Game.Text = $"{ServerInfo.Game} {ServerInfo.Version} ({ ServerInfo.Variant})";
         }
 
         //Shows CMDBar when pointer has entered
@@ -55,7 +58,7 @@ namespace RSMUltra.Manager
                 case "Minecraft Java Edition":
                     if (ServerInfo.Variant == "Forge")
                     {
-                        ServerInfo.Server.StartInfo.FileName = Global.Java8; //Forge doesn't work on Java8
+                        ServerInfo.Server.StartInfo.FileName = Global.Java8; //Forge doesn't work on Java16
                     }
                     else
                     {
@@ -74,19 +77,49 @@ namespace RSMUltra.Manager
             ServerInfo.Server.Start(); //Starts the server running
             ServerInfo.Server.BeginErrorReadLine(); //Tells RSM to start reading any errors
             ServerInfo.Server.BeginOutputReadLine(); //Tells RSM to start reading the output
+            
+            //Starts the search for the router to Port Forward to via UPNP
+            NatUtility.DeviceFound += PortForward;
+            NatUtility.StartDiscovery();
+        }
+
+        private void PortForward(object sender, DeviceEventArgs args)
+        {
+            switch (ServerInfo.Game)
+            {
+                case "Minecraft Java":
+                    args.Device.CreatePortMap(new Mapping(Protocol.Tcp, 25565, 25565));
+                    args.Device.CreatePortMap(new Mapping(Protocol.Udp, 25565, 25565));
+                    break;
+                case "Minecraft Bedrock": //Creating all the ports as a just in case thing
+                    args.Device.CreatePortMap(new Mapping(Protocol.Udp, 19132, 19132));
+                    args.Device.CreatePortMap(new Mapping(Protocol.Udp, 19133, 19133));
+                    args.Device.CreatePortMap(new Mapping(Protocol.Tcp, 19132, 19132));
+                    args.Device.CreatePortMap(new Mapping(Protocol.Tcp, 19133, 19133));
+                    break;
+                case "Terraria":
+                    args.Device.CreatePortMap(new Mapping(Protocol.Tcp, 7777, 7777));
+                    break;
+                case "Mindustry":
+                    args.Device.CreatePortMap(new Mapping(Protocol.Tcp, 6567, 6567));
+                    args.Device.CreatePortMap(new Mapping(Protocol.Udp, 6567, 6567));
+                    break;
+                case "Factorio":
+                    args.Device.CreatePortMap(new Mapping(Protocol.Udp, 34197, 34197));
+                    break;
+            }
         }
 
         public async Task OutputRecieved(string Data) //Actually displays output.
         {
             //TODO
             //Reimplement Cloudspotter
-            //await Window.Current.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { ServerConsole.Text += "\n" + Data; });
-            //await MainWindow.Current.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => { }).AsTask();
 
             DispatcherQueue.TryEnqueue(
                 () =>
                 {
                     ServerConsole.Text += "\n" + Data;
+                    ServerConsole.SelectionStart = int.MaxValue;
                 });
 
         }

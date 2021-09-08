@@ -47,12 +47,12 @@ namespace RSMUltra.UltraUI
             switch (args.SelectedItemContainer.Name)
             {
                 case "New":
-                    MainFrame.Content = new UltraUI.NewServer();
+                    MainFrame.Content = new RepoUpdater();
                     break;
                 case "Import":
                     break;
                 case "Settings":
-                    MainFrame.Content = new UltraUI.Settings();
+                    MainFrame.Content = new Settings();
                     break;
                 default:
                     Global.ServerDir = Paths[Names.IndexOf(args.SelectedItemContainer.Content.ToString())];
@@ -63,9 +63,10 @@ namespace RSMUltra.UltraUI
                     ServerInfo.Variant = ini[3];
                     ServerInfo.LastBackup = ini[5];
                     ServerInfo.BackupFrequency = ini[4];
-                    MainFrame.Content = new UltraUI.Manager();
+                    MainFrame.Content = new Manager();
                     break;
             }
         }
+
     }
 }

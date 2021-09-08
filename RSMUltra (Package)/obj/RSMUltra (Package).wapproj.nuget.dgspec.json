@@ -146,15 +146,19 @@
             },
             "Microsoft.ProjectReunion": {
               "target": "Package",
-              "version": "[0.8.2, )"
+              "version": "[0.8.3, )"
             },
             "Microsoft.ProjectReunion.Foundation": {
               "target": "Package",
-              "version": "[0.8.2, )"
+              "version": "[0.8.3, )"
             },
             "Microsoft.ProjectReunion.WinUI": {
               "target": "Package",
-              "version": "[0.8.2, )"
+              "version": "[0.8.3, )"
+            },
+            "Mono.Nat": {
+              "target": "Package",
+              "version": "[3.0.1, )"
             }
           },
           "imports": [

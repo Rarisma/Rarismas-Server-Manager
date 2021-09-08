@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using Windows.Devices.WiFi;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using RSMUltra.Manager;
+
 //It looks like things are gonna get worse before they get better
 
 //This is gonna be a lot more complicated than the original NewServer page
@@ -27,13 +29,16 @@ namespace RSMUltra.UltraUI
         public NewServer()
         {
             InitializeComponent();
-            UpdateSources();
 
             //This lists every game RSM is capable of installing
             foreach (string directory in Directory.GetDirectories(Global.Sources))
             {
                 //Path.GetDirectoryName doesn't help and FileName probably just strips anything before the last \
-                GameLists.Items.Add(Path.GetFileName(directory));   
+                if (Path.GetFileName(directory) != "RSM") //RSM folder in sources stores tools and stuff like Java
+                {
+                    GameLists.Items.Add(Path.GetFileName(directory));
+
+                }
             }
 
         }
@@ -81,12 +86,7 @@ namespace RSMUltra.UltraUI
             NameBox.Opacity = 1;
         }
 
-        //Downloads sources to make sure they are up to date.
-        static void UpdateSources()
-        {
-            if (Directory.Exists(Global.Sources)) { Directory.Delete(Global.Sources, true); }
-            LibRarisma.Connectivity.DownloadFile(Global.DefaultRepository, Global.Sources, "Temp.zip", true);
-        }
+
 
         //Downloads the server
         private void ContinueClick(object sender, RoutedEventArgs e)
@@ -138,6 +138,11 @@ namespace RSMUltra.UltraUI
                 case "Mindustry":
                     if (Directory.Exists(Global.Java16) == false) { GetJava(); }
                     break;
+            }
+
+            if (ServerInfo.Game == "Minecraft Java Edition") //Accepts the Minecraft Eula
+            {
+                File.WriteAllText(Global.ServerDir + "eula.txt", "#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).\n# made by RSM\neula = true");
             }
 
             MainWindow.Frame.Content = new Main();

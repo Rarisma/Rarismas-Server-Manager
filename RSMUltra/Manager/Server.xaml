@@ -9,9 +9,15 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel Height="500">
+    <StackPanel>
 
-        <TextBlock Name="ServerName" />
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Name="Name" HorizontalAlignment="Center" FontSize="30" VerticalAlignment="Bottom" Padding="10"/>
+            <Border Width="20"/> 
+            <TextBlock Name="Game" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <Border Height="20"/>
 
         <CommandBar Name="CmdBar" PointerEntered="CmdBarFix" PointerExited="CmdBarUnfix" HorizontalAlignment="Center" IsDynamicOverflowEnabled="False" OverflowButtonVisibility="Collapsed" DefaultLabelPosition="Bottom" HorizontalContentAlignment="Stretch">
             <AppBarButton Label="Start" Name="Start" IsCompact="False" Visibility="Visible" Click="StartServer">
@@ -40,8 +46,10 @@
                 </AppBarButton.Icon>
             </AppBarButton>
         </CommandBar>
-
-        <TextBox Name="ServerConsole" IsReadOnly="False" HorizontalAlignment="Stretch" Height="450" Margin="20,0" Foreground="White" Background="Black" AcceptsReturn="True" PlaceholderText="When your server does something it will show up here"/>
+        
+        <ScrollViewer Name="ScrollViewer">
+            <TextBox Name="ServerConsole" IsReadOnly="True" ScrollViewer.ZoomMode="Enabled" HorizontalAlignment="Stretch" Height="450" Margin="20,0" Foreground="White" Background="Black" AcceptsReturn="True" PlaceholderText="When your server does something it will show up here"/>
+        </ScrollViewer>
         <AutoSuggestBox Name="CommandBar" HorizontalAlignment="Stretch" Margin="20,0" PlaceholderText="Put commands here" />
     </StackPanel>
 </Page>
