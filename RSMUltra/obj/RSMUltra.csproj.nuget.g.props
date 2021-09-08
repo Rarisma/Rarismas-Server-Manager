@@ -18,13 +18,13 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.projectreunion.winui\0.8.2\buildTransitive\Microsoft.ProjectReunion.WinUI.props" Condition="Exists('$(NuGetPackageRoot)microsoft.projectreunion.winui\0.8.2\buildTransitive\Microsoft.ProjectReunion.WinUI.props')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.projectreunion.foundation\0.8.2\build\Microsoft.ProjectReunion.Foundation.props" Condition="Exists('$(NuGetPackageRoot)microsoft.projectreunion.foundation\0.8.2\build\Microsoft.ProjectReunion.Foundation.props')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.projectreunion.dwrite\0.8.2\build\Microsoft.ProjectReunion.DWrite.props" Condition="Exists('$(NuGetPackageRoot)microsoft.projectreunion.dwrite\0.8.2\build\Microsoft.ProjectReunion.DWrite.props')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.projectreunion\0.8.2\build\Microsoft.ProjectReunion.props" Condition="Exists('$(NuGetPackageRoot)microsoft.projectreunion\0.8.2\build\Microsoft.ProjectReunion.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.projectreunion.winui\0.8.3\buildTransitive\Microsoft.ProjectReunion.WinUI.props" Condition="Exists('$(NuGetPackageRoot)microsoft.projectreunion.winui\0.8.3\buildTransitive\Microsoft.ProjectReunion.WinUI.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.projectreunion.foundation\0.8.3\build\Microsoft.ProjectReunion.Foundation.props" Condition="Exists('$(NuGetPackageRoot)microsoft.projectreunion.foundation\0.8.3\build\Microsoft.ProjectReunion.Foundation.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.projectreunion.dwrite\0.8.3\build\Microsoft.ProjectReunion.DWrite.props" Condition="Exists('$(NuGetPackageRoot)microsoft.projectreunion.dwrite\0.8.3\build\Microsoft.ProjectReunion.DWrite.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.projectreunion\0.8.3\build\Microsoft.ProjectReunion.props" Condition="Exists('$(NuGetPackageRoot)microsoft.projectreunion\0.8.3\build\Microsoft.ProjectReunion.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_ProjectReunion_WinUI Condition=" '$(PkgMicrosoft_ProjectReunion_WinUI)' == '' ">C:\Users\Rarisma\.nuget\packages\microsoft.projectreunion.winui\0.8.2</PkgMicrosoft_ProjectReunion_WinUI>
-    <PkgMicrosoft_ProjectReunion Condition=" '$(PkgMicrosoft_ProjectReunion)' == '' ">C:\Users\Rarisma\.nuget\packages\microsoft.projectreunion\0.8.2</PkgMicrosoft_ProjectReunion>
+    <PkgMicrosoft_ProjectReunion_WinUI Condition=" '$(PkgMicrosoft_ProjectReunion_WinUI)' == '' ">C:\Users\Rarisma\.nuget\packages\microsoft.projectreunion.winui\0.8.3</PkgMicrosoft_ProjectReunion_WinUI>
+    <PkgMicrosoft_ProjectReunion Condition=" '$(PkgMicrosoft_ProjectReunion)' == '' ">C:\Users\Rarisma\.nuget\packages\microsoft.projectreunion\0.8.3</PkgMicrosoft_ProjectReunion>
   </PropertyGroup>
 </Project>

@@ -9,8 +9,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
-        <TextBlock Name="Name" HorizontalAlignment="Center" FontSize="60" Margin="50"/>
-        <TextBlock Name="Game" HorizontalAlignment="Center" FontSize="40"/>
+        <TextBlock Name="Name" HorizontalAlignment="Center" FontSize="30"/>
+        <TextBlock Name="Game" HorizontalAlignment="Center" FontSize="20"/>
         <Border Height="100"/>
         <Button Content="Launch Server" HorizontalAlignment="Center" Margin="50" Click="Click"/>
         <StackPanel Name="LinkPanels"/>

@@ -16,15 +16,23 @@
     <None Remove="UltraUI\Main.xaml" />
     <None Remove="UltraUI\Manager.xaml" />
     <None Remove="UltraUI\NewServer.xaml" />
+    <None Remove="UltraUI\RepoUpdater.xaml" />
     <None Remove="UltraUI\Settings.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LibRarisma" Version="2.0.3" />
-    <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.2" />
-    <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.2" />
-    <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.2" />
+    <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.3" />
+    <PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.3" />
+    <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.3" />
+    <PackageReference Include="Mono.Nat" Version="3.0.1" />
     <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="UltraUI\RepoUpdater.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
