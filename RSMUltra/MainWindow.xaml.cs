@@ -25,11 +25,14 @@ namespace RSMUltra
             this.InitializeComponent();
             Title = "RSM 3.0 Beta";
             Frame = MainFrame;
-            MainFrame.Content = new UltraUI.Main();
 
             Debug.WriteLine(@" |  __ \ / ____|  \/  | |  | | | |\n| |__) | (___ | \  / | |  | | | |_ _ __ __ _ \n|  _  / \___ \| |\/| | |  | | | __| '__/ _` |\n| | \ \ ____) | |  | | |__| | | |_| | | (_| |\n|_|  \_\_____/|_|  |_|\____/|_|\__|_|  \__,_|");
             Debug.WriteLine("Rarisma's Server Manager 3.0 (RSMUltra) by Rarisma");
             Debug.WriteLine($"Here's the Global vars\nTools: {Global.Tools}\nInstances: {Global.Instances}\nSources: {Global.Sources}");
+
+            //Gets the boring stuff out the way to prevent crashes later
+
+            MainFrame.Content = new UltraUI.Main();
         }
     }
 }
