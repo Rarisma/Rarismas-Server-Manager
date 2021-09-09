@@ -8,6 +8,7 @@ using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -34,6 +35,8 @@ namespace RSMUltra.Manager
             CmdBar.IsOpen = true;
             Name.Text = $"{ServerInfo.Name}";
             Game.Text = $"{ServerInfo.Game} {ServerInfo.Version} ({ ServerInfo.Variant})";
+
+
         }
 
         //Shows CMDBar when pointer has entered
@@ -47,9 +50,8 @@ namespace RSMUltra.Manager
             Start.IsEnabled = false;
             Stop.IsEnabled = true;
 
-            ServerInfo.Server.StartInfo.RedirectStandardInput = true;
-            ServerInfo.Server.StartInfo.RedirectStandardError = true;
-            ServerInfo.Server.StartInfo.RedirectStandardOutput = true;
+            ServerConsole.Text += "[WARNING] This server is using RSM and has Project CloudSpotter enabled.\nIf you are reading this for debugging/error infomation see the following https://github.com/Rarisma/Rarismas-Server-Manager/wiki/Project-Cloudspotter";
+
             ServerInfo.Server.StartInfo.CreateNoWindow = false; //Might want to set this to true when debugging to see if the server is actually running
             ServerInfo.Server.StartInfo.WorkingDirectory = Global.ServerDir;
 
@@ -71,58 +73,52 @@ namespace RSMUltra.Manager
             }
 
             //Setups handling for output
+            ServerInfo.Server.StartInfo.RedirectStandardInput = true;
+            ServerInfo.Server.StartInfo.RedirectStandardError = true;
+            ServerInfo.Server.StartInfo.RedirectStandardOutput = true;
             ServerInfo.Server.OutputDataReceived += new DataReceivedEventHandler((sender, e) => { if (!String.IsNullOrEmpty(e.Data)) { OutputRecieved(e.Data); }});
             ServerInfo.Server.ErrorDataReceived += new DataReceivedEventHandler((sender, e) => { if (!String.IsNullOrEmpty(e.Data)) { OutputRecieved(e.Data); }});
 
             ServerInfo.Server.Start(); //Starts the server running
+
+
             ServerInfo.Server.BeginErrorReadLine(); //Tells RSM to start reading any errors
             ServerInfo.Server.BeginOutputReadLine(); //Tells RSM to start reading the output
-            
-            //Starts the search for the router to Port Forward to via UPNP
-            NatUtility.DeviceFound += PortForward;
-            NatUtility.StartDiscovery();
-        }
 
-        private void PortForward(object sender, DeviceEventArgs args)
-        {
-            switch (ServerInfo.Game)
-            {
-                case "Minecraft Java":
-                    args.Device.CreatePortMap(new Mapping(Protocol.Tcp, 25565, 25565));
-                    args.Device.CreatePortMap(new Mapping(Protocol.Udp, 25565, 25565));
-                    break;
-                case "Minecraft Bedrock": //Creating all the ports as a just in case thing
-                    args.Device.CreatePortMap(new Mapping(Protocol.Udp, 19132, 19132));
-                    args.Device.CreatePortMap(new Mapping(Protocol.Udp, 19133, 19133));
-                    args.Device.CreatePortMap(new Mapping(Protocol.Tcp, 19132, 19132));
-                    args.Device.CreatePortMap(new Mapping(Protocol.Tcp, 19133, 19133));
-                    break;
-                case "Terraria":
-                    args.Device.CreatePortMap(new Mapping(Protocol.Tcp, 7777, 7777));
-                    break;
-                case "Mindustry":
-                    args.Device.CreatePortMap(new Mapping(Protocol.Tcp, 6567, 6567));
-                    args.Device.CreatePortMap(new Mapping(Protocol.Udp, 6567, 6567));
-                    break;
-                case "Factorio":
-                    args.Device.CreatePortMap(new Mapping(Protocol.Udp, 34197, 34197));
-                    break;
-            }
+            //Starts the search for the router to Port Forward to via UPNP
+            NatUtility.DeviceFound += ServerUtils.Forward;
+            NatUtility.StartDiscovery();
         }
 
         public async Task OutputRecieved(string Data) //Actually displays output.
         {
-            //TODO
-            //Reimplement Cloudspotter
-
             DispatcherQueue.TryEnqueue(
                 () =>
                 {
-                    ServerConsole.Text += "\n" + Data;
+                    ServerConsole.Text += "\n" + ServerUtils.Filter(Data);
                     ServerConsole.SelectionStart = int.MaxValue;
                 });
-
         }
+
+        private void Reboot(object sender, RoutedEventArgs e)
+        {
+            ServerUtils.StopServer();
+            StartServer(null,null);
+        }
+
+        private async void Cease(object sender, RoutedEventArgs e)
+        {
+            await Task.Run(() => ServerUtils.StopServer());
+
+            //Ends read operations to prevent crashes if Global.Server is needed again
+            ServerInfo.Server.CancelErrorRead(); //Ends error read
+            ServerInfo.Server.CancelOutputRead(); //Ends output read
+            Start.IsEnabled = true;
+            Stop.IsEnabled = false;
+        }
+
+        private void ClearConsole(object sender, RoutedEventArgs e) { ServerConsole.Text = ""; } //Deletes server log (Does not delete server logs if server makes them itself.)
+
 
     }
 }

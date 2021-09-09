@@ -25,22 +25,17 @@
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe72a;"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton Label="Restart" Name="Restart" IsCompact="False" Visibility="Visible">
+            <AppBarButton Label="Restart" Name="Restart" IsCompact="False" Visibility="Visible" IsEnabled="False" Click="Reboot">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe72c;"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton Label="Stop" Name="Stop" IsCompact="False" Visibility="Visible" IsEnabled="False">
+            <AppBarButton Label="Stop" Name="Stop" IsCompact="False" Visibility="Visible" IsEnabled="False" Click="Cease">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe711;"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton Label="Save" Name="Save" IsCompact="False" Visibility="Visible">
-                <AppBarButton.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe74e;"/>
-                </AppBarButton.Icon>
-            </AppBarButton>
-            <AppBarButton Label="Clear" Name="Clear" IsCompact="False" Visibility="Visible">
+            <AppBarButton Label="Clear" Name="Clear" IsCompact="False" Visibility="Visible" Click="ClearConsole">
                 <AppBarButton.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe75c;"/>
                 </AppBarButton.Icon>
@@ -50,6 +45,6 @@
         <ScrollViewer Name="ScrollViewer">
             <TextBox Name="ServerConsole" IsReadOnly="True" ScrollViewer.ZoomMode="Enabled" HorizontalAlignment="Stretch" Height="450" Margin="20,0" Foreground="White" Background="Black" AcceptsReturn="True" PlaceholderText="When your server does something it will show up here"/>
         </ScrollViewer>
-        <AutoSuggestBox Name="CommandBar" HorizontalAlignment="Stretch" Margin="20,0" PlaceholderText="Put commands here" />
+        <AutoSuggestBox Name="CommandBar" HorizontalAlignment="Stretch" Margin="20" PlaceholderText="Send commands to your here" />
     </StackPanel>
 </Page>
