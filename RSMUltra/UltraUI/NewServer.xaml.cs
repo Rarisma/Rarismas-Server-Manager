@@ -117,7 +117,7 @@ namespace RSMUltra.UltraUI
             }
 
 
-            File.WriteAllText(Global.ServerDir + "//RSM.ini",$"RSMUltra info file\n{GameLists.SelectedItem}\n{Versions.SelectedItem}\n{Variant.SelectedItem}\nWeekly\n{DateTime.Now:dd/MM/yyyy}\nRAM PLACEHOLDER\nWORLD PLACEHOLDER");
+            File.WriteAllText(Global.ServerDir + "//RSM.ini",$"RSMUltra info file\n{GameLists.SelectedItem}\n{Versions.SelectedItem}\n{Variant.SelectedItem}\nWeekly\n{DateTime.Now:dd/MM/yyyy}\n{ServerInfo.AllocatedRAM}\nWORLD PLACEHOLDER");
 
             //Reads ini
             string[] ini = File.ReadAllLines(Global.ServerDir + "//RSM.ini");
@@ -127,6 +127,7 @@ namespace RSMUltra.UltraUI
             ServerInfo.Variant = ini[3];
             ServerInfo.LastBackup = ini[5];
             ServerInfo.BackupFrequency = ini[4];
+            ServerInfo.AllocatedRAM = Convert.ToString(Convert.ToInt32(LibRarisma.Tools.GetRAM() / 2) - 1024) ;
 
             //Java downloader
             switch (ServerInfo.Game)
@@ -146,7 +147,7 @@ namespace RSMUltra.UltraUI
             }
 
             MainWindow.Frame.Content = new Main();
-            Global.GlobalFrame.Content = new RSMUltra.Manager.General();
+            Global.GlobalFrame.Content = new RSMUltra.Manager.Server();
         }
 
         public static void GetJava(bool Legacy = false)

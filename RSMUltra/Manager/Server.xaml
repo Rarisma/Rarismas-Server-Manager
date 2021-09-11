@@ -46,5 +46,18 @@
             <TextBox Name="ServerConsole" IsReadOnly="True" ScrollViewer.ZoomMode="Enabled" HorizontalAlignment="Stretch" Height="450" Margin="20,0" Foreground="White" Background="Black" AcceptsReturn="True" PlaceholderText="When your server does something it will show up here"/>
         </ScrollViewer>
         <AutoSuggestBox Name="CommandBar" HorizontalAlignment="Stretch" Margin="20" PlaceholderText="Send commands to your here" />
+
+        <StackPanel Name="LinkPanels">
+            <Button Content="Delete server" Margin="50" HorizontalAlignment="Center">
+                <Button.Flyout>
+                    <Flyout>
+                        <StackPanel>
+                            <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="Are you sure you want to delete this server?" Margin="0,0,0,12" />
+                            <Button Click="DeleteServer" Content="Yes" Background="Red" Foreground="White" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+        </StackPanel>
     </StackPanel>
 </Page>

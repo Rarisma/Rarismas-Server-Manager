@@ -18,6 +18,8 @@ using Windows.Foundation.Collections;
 using Windows.UI.Core;
 using Microsoft.UI.Dispatching;
 using Mono.Nat;
+using RSMUltra;
+using RSMUltra.Manager;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -36,7 +38,21 @@ namespace RSMUltra.Manager
             Name.Text = $"{ServerInfo.Name}";
             Game.Text = $"{ServerInfo.Game} {ServerInfo.Version} ({ ServerInfo.Variant})";
 
-
+            //This section controls the buttons that appears in LinkButtons
+            switch (ServerInfo.Game)
+            {
+                case "Minecraft Java Edition":
+                    Button modButton = new() { Content = "Open Mods folder", HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(20) };
+                    modButton.Click += Mods();
+                    LinkPanels.Children.Add(modButton);
+                    Button DatapacksButton = new() { Content = "Open Datapacks folder", HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(20) };
+                    DatapacksButton.Click += Plugins();
+                    LinkPanels.Children.Add(DatapacksButton);
+                    Button PluginsButton = new() { Content = "Open Plugins folder", HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(20) };
+                    PluginsButton.Click += Datapacks();
+                    LinkPanels.Children.Add(PluginsButton);
+                    break;
+            }
         }
 
         //Shows CMDBar when pointer has entered
@@ -68,8 +84,6 @@ namespace RSMUltra.Manager
                     }
                     ServerInfo.Server.StartInfo.Arguments = "-Xmx" + Convert.ToInt32((LibRarisma.Tools.GetRAM() / 2) - 1024) + "M -jar \"" + Global.ServerDir + "\\Server.jar" + "\" nogui";
                     break;
-
-
             }
 
             //Setups handling for output
@@ -119,6 +133,24 @@ namespace RSMUltra.Manager
 
         private void ClearConsole(object sender, RoutedEventArgs e) { ServerConsole.Text = ""; } //Deletes server log (Does not delete server logs if server makes them itself.)
 
+        private RoutedEventHandler Mods()
+        {
+            return null;
+        }
+        private RoutedEventHandler Plugins()
+        {
+            return null;
+        }
+        private RoutedEventHandler Datapacks()
+        {
+            return null;
+        }
+
+        private void DeleteServer(object sender, RoutedEventArgs e)
+        {
+            Directory.Delete(Global.ServerDir, true);
+            MainWindow.Frame.Content = new UltraUI.Main();
+        }
 
     }
 }
