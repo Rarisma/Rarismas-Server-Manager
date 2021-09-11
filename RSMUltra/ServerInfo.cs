@@ -15,6 +15,8 @@ namespace RSMUltra
         public static string Version = "";
         public static string LastBackup = "";
         public static string BackupFrequency = "";
+        public static string AllocatedRAM = "";
+
 
         public static Process Server = new();
     }

@@ -20,7 +20,7 @@ namespace RSMUltra.UltraUI
         public Manager()
         {
             this.InitializeComponent();
-            ManagerFrame.Content = new RSMUltra.Manager.General();
+            ManagerFrame.Content = new RSMUltra.Manager.Server();
         }
 
         //Changes the manager frame

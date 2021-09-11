@@ -10,7 +10,6 @@
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Manager\General.xaml" />
     <None Remove="Manager\Server.xaml" />
     <None Remove="Resources.xaml" />
     <None Remove="UltraUI\Main.xaml" />
@@ -67,12 +66,6 @@
 
   <ItemGroup>
     <Page Update="UltraUI\NewServer.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Manager\General.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
