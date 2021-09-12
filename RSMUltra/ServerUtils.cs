@@ -158,6 +158,21 @@ namespace RSMUltra
             return data;
         }
 
-
+        public static string[] SetupCommands()
+        {
+            switch (ServerInfo.Game)
+            {
+                case "Minecraft Bedrock":
+                    return new[] { "help", "ban", "clear", "deop", "difficulty", "kick", "op", "save", "say", "seed", "stop", "tp", "weather", "xp" };
+                case "Minecraft Java Edition":
+                    return new[] { "help", "ban", "clear", "deop", "difficulty", "kick", "op", "save", "say", "seed", "stop", "tp", "weather", "xp" };
+                case "Factorio":
+                    return new[] { "/clear", "/evolution", "/seed", "/time", "/ban", "/unban", "/demote", "/promote", "/kick", "/players", "/whitelist", "/help" };
+                case "Mindustry":
+                    return new[] { "help", "exit", "host", "maps", "status", "reloadmaps", "mods", "say", "pause on", "pause off", "rules", "playerlimit", "fillitems ", "shuffle all", "shuffle none", "shuffle builtin", "nextmap", "kick", "ban", "unban", "pardon", "admins", "admins", "Players", "runwave", "gameover", "info" };
+                default:
+                    return new[] {""};
+            }
+        }
     }
 }

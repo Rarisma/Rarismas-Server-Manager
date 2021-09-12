@@ -10,7 +10,8 @@
 
     <StackPanel>
         <Slider Name="RAMSlider" Margin="50" TickPlacement="Outside" Header="Allocated RAM: MB" ValueChanged="RAMAllocationChanged" Minimum="1024"/>
-        <TextBox Name="ServerProps" Margin="50" HorizontalAlignment="Stretch" AcceptsReturn="True" Height="350" VerticalAlignment="Stretch" Header="Server Configuration file" />
-        <Button Content="Save" HorizontalAlignment="Center" Margin="30"/>
+        <TextBox Name="ServerName" Width="400" HorizontalAlignment="Center" Header="Server name" Margin="40"/>
+        <TextBox Name="ServerProps" Margin="50" HorizontalAlignment="Stretch" AcceptsReturn="True" VerticalAlignment="Stretch" Header="Server Configuration file" Height="255" />
+        <Button Content="Save" HorizontalAlignment="Center" Margin="30" Name="SaveButton" Click="Save"/>
     </StackPanel>
 </Page>

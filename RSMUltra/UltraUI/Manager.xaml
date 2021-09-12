@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <NavigationView PaneDisplayMode="Top" SelectionChanged="FrameChanged" IsBackButtonVisible="Collapsed" IsSettingsVisible="False">
+    <NavigationView Name="TopBar"  PaneDisplayMode="Top" SelectionChanged="FrameChanged" IsBackButtonVisible="Collapsed" IsSettingsVisible="False">
         <NavigationView.MenuItems>
             <NavigationViewItem  Content="General"/>
             <NavigationViewItem  Content="Settings"/>

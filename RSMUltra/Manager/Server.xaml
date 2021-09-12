@@ -45,7 +45,11 @@
         <ScrollViewer Name="ScrollViewer">
             <TextBox Name="ServerConsole" IsReadOnly="True" ScrollViewer.ZoomMode="Enabled" HorizontalAlignment="Stretch" Height="450" Margin="20,0" Foreground="White" Background="Black" AcceptsReturn="True" PlaceholderText="When your server does something it will show up here"/>
         </ScrollViewer>
-        <AutoSuggestBox Name="CommandBar" HorizontalAlignment="Stretch" Margin="20" PlaceholderText="Send commands to your here" />
+        <AutoSuggestBox Name="CommandBar" IsEnabled="False" HorizontalAlignment="Stretch" Margin="20" PlaceholderText="Send commands to your here" QuerySubmitted="SendCommand">
+            <AutoSuggestBox.QueryIcon>
+                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe725;"/>
+            </AutoSuggestBox.QueryIcon>
+        </AutoSuggestBox>
 
         <StackPanel Name="LinkPanels" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Delete server" Margin="20" HorizontalAlignment="Center" Background="Red">
@@ -58,6 +62,10 @@
                     </Flyout>
                 </Button.Flyout>
             </Button>
+            <Button Content="Open Mods folder" Click="Mods" Name="ModButton" Margin="20"/>
+            <Button Content="Open Plugins folder" Click="Plugins" Name="PluginButton" Margin="20"/>
+            <Button Content="Open Datapacks folder" Click="Datapacks" Name="DatapacksButton" Margin="20"/>
         </StackPanel>
+
     </StackPanel>
 </Page>
