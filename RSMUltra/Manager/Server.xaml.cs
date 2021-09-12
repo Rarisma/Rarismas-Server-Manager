@@ -38,19 +38,24 @@ namespace RSMUltra.Manager
             Name.Text = $"{ServerInfo.Name}";
             Game.Text = $"{ServerInfo.Game} {ServerInfo.Version} ({ ServerInfo.Variant})";
 
+            //Sets up suggestions for CommandBar
+            foreach (var VARIABLE in  ServerUtils.SetupCommands())
+            {
+                CommandBar.Items.Add(VARIABLE);
+            }
+
             //This section controls the buttons that appears in LinkButtons
             switch (ServerInfo.Game)
             {
                 case "Minecraft Java Edition":
-                    Button modButton = new() { Content = "Open Mods folder", HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(20) };
-                    modButton.Click += Mods();
-                    LinkPanels.Children.Add(modButton);
-                    Button DatapacksButton = new() { Content = "Open Datapacks folder", HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(20) };
-                    DatapacksButton.Click += Plugins();
-                    LinkPanels.Children.Add(DatapacksButton);
-                    Button PluginsButton = new() { Content = "Open Plugins folder", HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(20) };
-                    PluginsButton.Click += Datapacks();
-                    LinkPanels.Children.Add(PluginsButton);
+                    if (ServerInfo.Variant == "Forge")
+                    {
+                        LinkPanels.Children.Remove(PluginButton);
+                    }
+                    else if (ServerInfo.Variant == "Paper")
+                    {
+                        LinkPanels.Children.Remove(ModButton);
+                    }
                     break;
             }
         }
@@ -65,10 +70,11 @@ namespace RSMUltra.Manager
         {
             Start.IsEnabled = false;
             Stop.IsEnabled = true;
+            CommandBar.IsEnabled = true;
 
             ServerConsole.Text += "[WARNING] This server is using RSM and has Project CloudSpotter enabled.\nIf you are reading this for debugging/error infomation see the following https://github.com/Rarisma/Rarismas-Server-Manager/wiki/Project-Cloudspotter";
 
-            ServerInfo.Server.StartInfo.CreateNoWindow = false; //Might want to set this to true when debugging to see if the server is actually running
+            ServerInfo.Server.StartInfo.CreateNoWindow = true; //Might want to set this to true when debugging to see if the server is actually running
             ServerInfo.Server.StartInfo.WorkingDirectory = Global.ServerDir;
 
             switch (ServerInfo.Game)
@@ -129,21 +135,26 @@ namespace RSMUltra.Manager
             ServerInfo.Server.CancelOutputRead(); //Ends output read
             Start.IsEnabled = true;
             Stop.IsEnabled = false;
+            CommandBar.IsEnabled = false;
         }
 
         private void ClearConsole(object sender, RoutedEventArgs e) { ServerConsole.Text = ""; } //Deletes server log (Does not delete server logs if server makes them itself.)
 
-        private RoutedEventHandler Mods()
+        private void Mods(object sender, RoutedEventArgs e)
         {
-            return null;
+            if (!Directory.Exists(Global.ServerDir + "//Mods//"))
+            {
+                Directory.CreateDirectory(Global.ServerDir + "//Mods//");
+            }
+            LibRarisma.Tools.OpenLink(Global.ServerDir + "//Mods//");
         }
-        private RoutedEventHandler Plugins()
+        private void Plugins(object sender, RoutedEventArgs e)
         {
-            return null;
-        }
-        private RoutedEventHandler Datapacks()
-        {
-            return null;
+            if (!Directory.Exists(Global.ServerDir + "//Plugins//"))
+            {
+                Directory.CreateDirectory(Global.ServerDir + "//Plugins//");
+            }
+            LibRarisma.Tools.OpenLink(Global.ServerDir + "//Plugins//");
         }
 
         private void DeleteServer(object sender, RoutedEventArgs e)
@@ -152,5 +163,19 @@ namespace RSMUltra.Manager
             MainWindow.Frame.Content = new UltraUI.Main();
         }
 
+        private void Datapacks(object sender, RoutedEventArgs e)
+        {
+            if (!Directory.Exists(Global.ServerDir + "//World//Datapacks//"))
+            {
+                Directory.CreateDirectory(Global.ServerDir + "//World//Datapacks//");
+            }
+            LibRarisma.Tools.OpenLink(Global.ServerDir + "//World//Datapacks//");
+        }
+
+        private void SendCommand(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            ServerInfo.Server.StandardInput.WriteLine(CommandBar.Text);
+            CommandBar.Text = "";
+        }
     }
 }

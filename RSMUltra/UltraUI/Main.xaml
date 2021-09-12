@@ -28,6 +28,6 @@
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
         </NavigationView.FooterMenuItems>
-        <Frame Name="MainFrame"/>
+        <Frame Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
     </NavigationView>
 </Page>

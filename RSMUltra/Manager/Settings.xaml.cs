@@ -28,6 +28,24 @@ namespace RSMUltra.Manager
             RAMSlider.TickFrequency = LibRarisma.Tools.GetRAM() / (LibRarisma.Tools.GetRAM() / 1024);
             RAMSlider.Value = Convert.ToInt32(ServerInfo.AllocatedRAM);
 
+            ServerName.Text = ServerInfo.Name;
+            ServerName.PlaceholderText = ServerInfo.Name;
+            Global.TopBar.
+
+            try
+            {
+                if (!ServerInfo.Server.HasExited) //Prevents issues.
+                {
+                    SaveButton.Content = "You have to stop the server before saving your settings.";
+                    SaveButton.IsEnabled = false;
+                }
+            }
+            catch
+            {
+
+            }
+
+
             switch (ServerInfo.Game)
             {
                 case "Minecraft Java Edition":
@@ -39,6 +57,15 @@ namespace RSMUltra.Manager
         private void RAMAllocationChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
             RAMSlider.Header = "Allocated RAM " + RAMSlider.Value + " MB";
+        }
+
+        private void Save(object sender, RoutedEventArgs e) //TODO Add WorldSize 
+        {
+            ServerInfo.AllocatedRAM = RAMSlider.Value.ToString();
+            File.WriteAllText(Global.ServerDir + "\\server.properties",ServerProps.Text);
+            File.WriteAllText(Global.ServerDir + "//RSM.ini", $"RSMUltra info file\n{ServerInfo.Game}\n{ServerInfo.Version}\n{ServerInfo.Version}\n{ServerInfo.BackupFrequency}\n{ServerInfo.LastBackup}\n{ServerInfo.AllocatedRAM}\nWORLD PLACEHOLDER");
+            Directory.Move(Global.ServerDir,Global.Instances + "//" + ServerName.Text + "//");
+            MainWindow.Frame.Content = new UltraUI.Main(); //Reloads main page to force reload of the sidebar 
         }
     }
 }

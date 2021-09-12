@@ -21,6 +21,7 @@ namespace RSMUltra.UltraUI
         {
             this.InitializeComponent();
             ManagerFrame.Content = new RSMUltra.Manager.Server();
+            Global.TopBar = TopBar;
         }
 
         //Changes the manager frame
@@ -31,6 +32,7 @@ namespace RSMUltra.UltraUI
                 case "General":
                     ManagerFrame.Content = new RSMUltra.Manager.Server();
                     break;
+
                 case "Settings":
                     ManagerFrame.Content = new RSMUltra.Manager.Settings();
                     break;
