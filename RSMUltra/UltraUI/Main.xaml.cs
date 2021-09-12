@@ -34,9 +34,12 @@ namespace RSMUltra.UltraUI
             {
                 foreach (var VARIABLE in Directory.GetDirectories(Global.Instances))
                 {
-                    Paths.Add(VARIABLE);
-                    Names.Add(Path.GetFileName(VARIABLE));
-                    SideBar.MenuItems.Add(Path.GetFileName(VARIABLE));
+                    if (File.Exists(VARIABLE + "//RSM.ini")) //If a server doesnt have a RSM.ini file then RSM shouldn't deal with it
+                    {
+                        Paths.Add(VARIABLE);
+                        Names.Add(Path.GetFileName(VARIABLE));
+                        SideBar.MenuItems.Add(Path.GetFileName(VARIABLE));
+                    }
                 }
             }
         }
@@ -61,8 +64,9 @@ namespace RSMUltra.UltraUI
                     ServerInfo.Game = ini[1];
                     ServerInfo.Version = ini[2];
                     ServerInfo.Variant = ini[3];
-                    ServerInfo.LastBackup = ini[5];
                     ServerInfo.BackupFrequency = ini[4];
+                    ServerInfo.LastBackup = ini[5];
+                    ServerInfo.AllocatedRAM = ini[6];
                     MainFrame.Content = new Manager();
                     break;
             }

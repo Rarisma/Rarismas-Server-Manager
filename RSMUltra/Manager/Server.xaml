@@ -47,8 +47,8 @@
         </ScrollViewer>
         <AutoSuggestBox Name="CommandBar" HorizontalAlignment="Stretch" Margin="20" PlaceholderText="Send commands to your here" />
 
-        <StackPanel Name="LinkPanels">
-            <Button Content="Delete server" Margin="50" HorizontalAlignment="Center">
+        <StackPanel Name="LinkPanels" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Delete server" Margin="20" HorizontalAlignment="Center" Background="Red">
                 <Button.Flyout>
                     <Flyout>
                         <StackPanel>

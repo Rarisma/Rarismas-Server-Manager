@@ -15,7 +15,7 @@ namespace RSMUltra
         public static string Version = "";
         public static string LastBackup = "";
         public static string BackupFrequency = "";
-        public static string AllocatedRAM = "";
+        public static string AllocatedRAM = Convert.ToString(Convert.ToInt32(LibRarisma.Tools.GetRAM() / 2) - 1024);
 
 
         public static Process Server = new();

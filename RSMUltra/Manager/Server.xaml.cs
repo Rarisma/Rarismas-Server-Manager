@@ -82,12 +82,12 @@ namespace RSMUltra.Manager
                     {
                         ServerInfo.Server.StartInfo.FileName = Global.Java16; //Everything else is cool with Java16
                     }
-                    ServerInfo.Server.StartInfo.Arguments = "-Xmx" + Convert.ToInt32((LibRarisma.Tools.GetRAM() / 2) - 1024) + "M -jar \"" + Global.ServerDir + "\\Server.jar" + "\" nogui";
+                    ServerInfo.Server.StartInfo.Arguments = "-Xmx" + ServerInfo.AllocatedRAM + "M -jar \"" + Global.ServerDir + "\\Server.jar" + "\" nogui";
                     break;
             }
 
             //Setups handling for output
-            ServerInfo.Server.StartInfo.RedirectStandardInput = true;
+            ServerInfo.Server.StartInfo.RedirectStandardInput = true; 
             ServerInfo.Server.StartInfo.RedirectStandardError = true;
             ServerInfo.Server.StartInfo.RedirectStandardOutput = true;
             ServerInfo.Server.OutputDataReceived += new DataReceivedEventHandler((sender, e) => { if (!String.IsNullOrEmpty(e.Data)) { OutputRecieved(e.Data); }});
