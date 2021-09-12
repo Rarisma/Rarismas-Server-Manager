@@ -26,9 +26,14 @@ namespace RSMUltra.UltraUI
         //Changes the manager frame
         private void FrameChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            switch (args.SelectedItemContainer.Name)
+            switch (args.SelectedItemContainer.Content)
             {
-
+                case "General":
+                    ManagerFrame.Content = new RSMUltra.Manager.Server();
+                    break;
+                case "Settings":
+                    ManagerFrame.Content = new RSMUltra.Manager.Settings();
+                    break;
             }
         }
     }

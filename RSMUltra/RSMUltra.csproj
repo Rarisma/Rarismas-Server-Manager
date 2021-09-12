@@ -11,6 +11,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Manager\Server.xaml" />
+    <None Remove="Manager\Settings.xaml" />
     <None Remove="Resources.xaml" />
     <None Remove="UltraUI\Main.xaml" />
     <None Remove="UltraUI\Manager.xaml" />
@@ -26,6 +27,12 @@
     <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.3" />
     <PackageReference Include="Mono.Nat" Version="3.0.1" />
     <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Manager\Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>

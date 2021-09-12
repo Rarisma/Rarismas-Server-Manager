@@ -147,7 +147,7 @@ namespace RSMUltra.UltraUI
             }
 
             MainWindow.Frame.Content = new Main();
-            Global.GlobalFrame.Content = new RSMUltra.Manager.Server();
+            Global.GlobalFrame.Content = new Manager();
         }
 
         public static void GetJava(bool Legacy = false)
