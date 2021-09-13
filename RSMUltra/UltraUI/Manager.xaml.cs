@@ -17,11 +17,19 @@ namespace RSMUltra.UltraUI
 {
     public sealed partial class Manager : Page
     {
+        public static NavigationViewItem General = new ();
+        public static NavigationViewItem Backup = new ();
+        public static NavigationViewItem Setting = new ();
+        public static Frame ServerFrame = new ();
+
         public Manager()
         {
             this.InitializeComponent();
+            General = GeneralNavi;
+            Backup = BackupsNavi;
+            Setting = SettingsNavi;
             ManagerFrame.Content = new RSMUltra.Manager.Server();
-            Global.TopBar = TopBar;
+            ServerFrame = ManagerFrame;
         }
 
         //Changes the manager frame
@@ -35,6 +43,9 @@ namespace RSMUltra.UltraUI
 
                 case "Settings":
                     ManagerFrame.Content = new RSMUltra.Manager.Settings();
+                    break;
+                case "Backups":
+                    ManagerFrame.Content = new RSMUltra.Manager.Backups();
                     break;
             }
         }

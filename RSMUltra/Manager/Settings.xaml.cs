@@ -30,7 +30,6 @@ namespace RSMUltra.Manager
 
             ServerName.Text = ServerInfo.Name;
             ServerName.PlaceholderText = ServerInfo.Name;
-            Global.TopBar.
 
             try
             {
@@ -49,7 +48,15 @@ namespace RSMUltra.Manager
             switch (ServerInfo.Game)
             {
                 case "Minecraft Java Edition":
-                    ServerProps.Text = File.ReadAllText(Global.ServerDir + "\\server.properties");
+                    try
+                    {
+                        ServerProps.Text = File.ReadAllText(Global.ServerDir + "\\server.properties");
+                    }
+                    catch
+                    {
+                        ServerProps.Opacity = 0;
+                        ServerProps.IsEnabled = false;
+                    }
                     break;
             }
         }
@@ -64,7 +71,6 @@ namespace RSMUltra.Manager
             ServerInfo.AllocatedRAM = RAMSlider.Value.ToString();
             File.WriteAllText(Global.ServerDir + "\\server.properties",ServerProps.Text);
             File.WriteAllText(Global.ServerDir + "//RSM.ini", $"RSMUltra info file\n{ServerInfo.Game}\n{ServerInfo.Version}\n{ServerInfo.Version}\n{ServerInfo.BackupFrequency}\n{ServerInfo.LastBackup}\n{ServerInfo.AllocatedRAM}\nWORLD PLACEHOLDER");
-            Directory.Move(Global.ServerDir,Global.Instances + "//" + ServerName.Text + "//");
             MainWindow.Frame.Content = new UltraUI.Main(); //Reloads main page to force reload of the sidebar 
         }
     }

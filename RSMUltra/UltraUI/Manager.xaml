@@ -11,10 +11,9 @@
 
     <NavigationView Name="TopBar"  PaneDisplayMode="Top" SelectionChanged="FrameChanged" IsBackButtonVisible="Collapsed" IsSettingsVisible="False">
         <NavigationView.MenuItems>
-            <NavigationViewItem  Content="General"/>
-            <NavigationViewItem  Content="Settings"/>
-            <NavigationViewItem  Content="Backups"/>
-            <NavigationViewItem  Content="Information"/>
+            <NavigationViewItem  Content="General" Name="GeneralNavi"/>
+            <NavigationViewItem  Content="Settings" Name="SettingsNavi"/>
+            <NavigationViewItem  Content="Backups" Name="BackupsNavi"/>
         </NavigationView.MenuItems>
         <Frame Name="ManagerFrame"/>
     </NavigationView>

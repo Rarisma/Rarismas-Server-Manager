@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="RSMUltra.Manager.Backups"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RSMUltra.Manager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <Border Height="200"/>
+        <ComboBox Header="Your server is set to backup" SelectionChanged="FrequencyUpdated" HorizontalAlignment="Center" FontSize="20" Margin="20" Name="Backupbox">
+            <ComboBoxItem Content="Daily"/>
+            <ComboBoxItem Content="Weekly"/>
+            <ComboBoxItem Content="Fortnightly"/>
+            <ComboBoxItem Content="Monthly"/>
+            <ComboBoxItem Content="Never" Background="Red"/>
+        </ComboBox>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="50" >
+            <TextBlock Name="LastBackup"/>
+            <Button Content="Make a backup now" Click="BackupNow"/>
+        </StackPanel>
+
+        <StackPanel Margin="20" VerticalAlignment="Bottom" Name="RestorePanel">
+            <ComboBox Name="BackupList" HorizontalAlignment="Center" Margin="20" Width="300" HorizontalContentAlignment="Center" FontSize="20" Header="Restore a backup:"/>
+            <Button Content="Restore" HorizontalAlignment="Center" Margin="20" Click="Restore"/>
+        </StackPanel>
+
+    </StackPanel>
+</Page>

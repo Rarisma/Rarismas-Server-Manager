@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,15 @@ namespace RSMUltra
 {
     class ServerUtils
     {
+        public static void Backup()
+        {
+            string path = Global.Backups + "//" + ServerInfo.Name + "//" + Convert.ToString((Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds) + "//";
+            Directory.CreateDirectory(path);
+            LibRarisma.IO.CopyDirectory(Global.ServerDir,path);
+            File.WriteAllText(Global.ServerDir + "//RSM.ini", $"RSMUltra info file\n{ServerInfo.Game}\n{ServerInfo.Version}\n{ServerInfo.Version}\n{ServerInfo.BackupFrequency}\n{DateTime.Now:dd/MM/yyyy}\n{ServerInfo.AllocatedRAM}\nWORLD PLACEHOLDER");
+        }
+
+
         public static void StopServer()
         {
             switch (ServerInfo.Game)
