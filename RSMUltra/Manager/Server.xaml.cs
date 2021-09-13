@@ -38,6 +38,7 @@ namespace RSMUltra.Manager
             Name.Text = $"{ServerInfo.Name}";
             Game.Text = $"{ServerInfo.Game} {ServerInfo.Version} ({ ServerInfo.Variant})";
 
+
             //Sets up suggestions for CommandBar
             foreach (var VARIABLE in  ServerUtils.SetupCommands())
             {
@@ -71,6 +72,10 @@ namespace RSMUltra.Manager
             Start.IsEnabled = false;
             Stop.IsEnabled = true;
             CommandBar.IsEnabled = true;
+
+            UltraUI.Manager.Setting.IsEnabled = false;
+            UltraUI.Manager.General.IsEnabled = false;
+            UltraUI.Manager.Backup.IsEnabled = false;
 
             ServerConsole.Text += "[WARNING] This server is using RSM and has Project CloudSpotter enabled.\nIf you are reading this for debugging/error infomation see the following https://github.com/Rarisma/Rarismas-Server-Manager/wiki/Project-Cloudspotter";
 
@@ -136,6 +141,9 @@ namespace RSMUltra.Manager
             Start.IsEnabled = true;
             Stop.IsEnabled = false;
             CommandBar.IsEnabled = false;
+            UltraUI.Manager.Setting.IsEnabled = true;
+            UltraUI.Manager.General.IsEnabled = true;
+            UltraUI.Manager.Backup.IsEnabled = true;
         }
 
         private void ClearConsole(object sender, RoutedEventArgs e) { ServerConsole.Text = ""; } //Deletes server log (Does not delete server logs if server makes them itself.)
