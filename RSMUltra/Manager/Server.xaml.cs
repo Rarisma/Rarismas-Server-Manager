@@ -76,6 +76,10 @@ namespace RSMUltra.Manager
             UltraUI.Manager.Setting.IsEnabled = false;
             UltraUI.Manager.General.IsEnabled = false;
             UltraUI.Manager.Backup.IsEnabled = false;
+            /*foreach (var VARIABLE in UltraUI.Main.ButtonRegistry)
+            {
+                VARIABLE.IsEnabled = false;
+            }*/
 
             ServerConsole.Text += "[WARNING] This server is using RSM and has Project CloudSpotter enabled.\nIf you are reading this for debugging/error infomation see the following https://github.com/Rarisma/Rarismas-Server-Manager/wiki/Project-Cloudspotter";
 
@@ -94,6 +98,13 @@ namespace RSMUltra.Manager
                         ServerInfo.Server.StartInfo.FileName = Global.Java16; //Everything else is cool with Java16
                     }
                     ServerInfo.Server.StartInfo.Arguments = "-Xmx" + ServerInfo.AllocatedRAM + "M -jar \"" + Global.ServerDir + "\\Server.jar" + "\" nogui";
+                    break;
+                case "Mindustry":
+                    ServerInfo.Server.StartInfo.FileName = Global.Java16;
+                    ServerInfo.Server.StartInfo.Arguments = "-Xmx" + ServerInfo.AllocatedRAM + "M -jar \"" + Global.ServerDir + "\\Server.jar" + "\"";
+                    break;
+                case "Minecraft Bedrock":
+                    ServerInfo.Server.StartInfo.FileName = Global.ServerDir + "//bedrock_server.exe";
                     break;
             }
 
@@ -133,17 +144,22 @@ namespace RSMUltra.Manager
 
         private async void Cease(object sender, RoutedEventArgs e)
         {
+            Stop.IsEnabled = false;
+
             await Task.Run(() => ServerUtils.StopServer());
 
             //Ends read operations to prevent crashes if Global.Server is needed again
             ServerInfo.Server.CancelErrorRead(); //Ends error read
             ServerInfo.Server.CancelOutputRead(); //Ends output read
             Start.IsEnabled = true;
-            Stop.IsEnabled = false;
             CommandBar.IsEnabled = false;
             UltraUI.Manager.Setting.IsEnabled = true;
             UltraUI.Manager.General.IsEnabled = true;
             UltraUI.Manager.Backup.IsEnabled = true;
+            foreach (var VARIABLE in UltraUI.Main.ButtonRegistry)
+            {
+                VARIABLE.IsEnabled = true;
+            }
         }
 
         private void ClearConsole(object sender, RoutedEventArgs e) { ServerConsole.Text = ""; } //Deletes server log (Does not delete server logs if server makes them itself.)

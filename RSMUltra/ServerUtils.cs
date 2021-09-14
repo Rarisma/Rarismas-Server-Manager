@@ -28,6 +28,12 @@ namespace RSMUltra
                 case "Minecraft Java Edition":
                     ServerInfo.Server.StandardInput.WriteLine("stop");
                     break;
+                case "Minecraft Bedrock":
+                    ServerInfo.Server.StandardInput.WriteLine("stop");
+                    break;
+                case "Mindustry":
+                    ServerInfo.Server.StandardInput.WriteLine("stop");
+                    break;
             }
 
             System.Threading.Thread.Sleep(20000);
