@@ -25,10 +25,19 @@ namespace RSMUltra.UltraUI
     {
         private List<string> Paths = new();
         private List<string> Names = new();
+
+        public static List<NavigationViewItem> ButtonRegistry = new();
+
+
         public Main()
         {
             this.InitializeComponent();
             Global.GlobalFrame = MainFrame;
+
+            ButtonRegistry.Add(New);
+            ButtonRegistry.Add(Settings);
+            ButtonRegistry.Add(Import);
+            
             //Loads instances
             if (Directory.Exists(Global.Instances))
             {
@@ -38,10 +47,13 @@ namespace RSMUltra.UltraUI
                     {
                         Paths.Add(VARIABLE);
                         Names.Add(Path.GetFileName(VARIABLE));
+                        
                         SideBar.MenuItems.Add(Path.GetFileName(VARIABLE));
+                        ButtonRegistry.Add(SideBar.MenuItems.Last() as NavigationViewItem);
                     }
                 }
             }
+
         }
 
 

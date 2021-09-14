@@ -8,8 +8,8 @@
 
   <Identity
     Name="6689893b-26f1-4e43-8e67-8069be02a037"
-    Publisher="CN=Rarisma"
-    Version="1.0.0.0" />
+    Publisher="CN=Jake Rarisma"
+    Version="3.0.0.0" />
 
   <Properties>
     <DisplayName>RSMUltra (Package)</DisplayName>
