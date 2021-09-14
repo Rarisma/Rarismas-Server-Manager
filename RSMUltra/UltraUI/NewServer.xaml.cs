@@ -37,7 +37,6 @@ namespace RSMUltra.UltraUI
                 if (Path.GetFileName(directory) != "RSM") //RSM folder in sources stores tools and stuff like Java
                 {
                     GameLists.Items.Add(Path.GetFileName(directory));
-
                 }
             }
 

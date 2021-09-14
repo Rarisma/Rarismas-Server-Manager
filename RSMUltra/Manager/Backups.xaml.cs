@@ -69,7 +69,7 @@ namespace RSMUltra.Manager
         private void FrequencyUpdated(object sender, SelectionChangedEventArgs e)
         {
             ServerInfo.BackupFrequency = Backupbox.SelectedValue.ToString();
-            File.WriteAllText(Global.ServerDir + "//RSM.ini", $"RSMUltra info file\n{ServerInfo.Game}\n{ServerInfo.Version}\n{ServerInfo.Version}\n{ServerInfo.BackupFrequency}\n{ServerInfo.LastBackup}\n{ServerInfo.AllocatedRAM}\nWORLD PLACEHOLDER");
+            File.WriteAllText(Global.ServerDir + "//RSM.ini", $"RSMUltra info file\n{ServerInfo.Game}\n{ServerInfo.Version}\n{ServerInfo.Variant}\n{ServerInfo.BackupFrequency}\n{ServerInfo.LastBackup}\n{ServerInfo.AllocatedRAM}\nWORLD PLACEHOLDER");
         }
 
         private void BackupNow(object sender, RoutedEventArgs e)
@@ -81,7 +81,7 @@ namespace RSMUltra.Manager
         private void Restore(object sender, RoutedEventArgs e)
         {
             Directory.Delete(Global.ServerDir,true);
-            Directory.Move(Global.Backups + "//" + Dirs[BackupList.SelectedIndex] + "//", Global.ServerDir);
+            LibRarisma.IO.CopyDirectory(Global.Backups + "//" + ServerInfo.Name + "//"+ Dirs[BackupList.SelectedIndex] + "//", Global.ServerDir);
             UltraUI.Manager.ServerFrame.Content = new Manager.Backups();
 
         }

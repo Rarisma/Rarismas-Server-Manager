@@ -69,9 +69,18 @@ namespace RSMUltra.Manager
         private void Save(object sender, RoutedEventArgs e) //TODO Add WorldSize 
         {
             ServerInfo.AllocatedRAM = RAMSlider.Value.ToString();
-            File.WriteAllText(Global.ServerDir + "\\server.properties",ServerProps.Text);
-            File.WriteAllText(Global.ServerDir + "//RSM.ini", $"RSMUltra info file\n{ServerInfo.Game}\n{ServerInfo.Version}\n{ServerInfo.Version}\n{ServerInfo.BackupFrequency}\n{ServerInfo.LastBackup}\n{ServerInfo.AllocatedRAM}\nWORLD PLACEHOLDER");
-            MainWindow.Frame.Content = new UltraUI.Main(); //Reloads main page to force reload of the sidebar 
+
+            if (ServerProps.IsEnabled) //Only writes Server.props if it exists
+            {
+                File.WriteAllText(Global.ServerDir + "\\server.properties", ServerProps.Text);
+            }
+            File.WriteAllText(Global.ServerDir + "//RSM.ini", $"RSMUltra info file\n{ServerInfo.Game}\n{ServerInfo.Version}\n{ServerInfo.Variant}\n{ServerInfo.BackupFrequency}\n{ServerInfo.LastBackup}\n{ServerInfo.AllocatedRAM}\nWORLD PLACEHOLDER");
+
+            //Reloads main page to force reload of the sidebar if name is changed
+            if (ServerName.Text != ServerInfo.Name)
+            {
+                MainWindow.Frame.Content = new UltraUI.Main();
+            }
         }
     }
 }
