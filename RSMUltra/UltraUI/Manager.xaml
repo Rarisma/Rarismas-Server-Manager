@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="RSMUltra.UltraUI.Manager"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RSMUltra.UltraUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:ABI.Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <NavigationView Name="TopBar"  PaneDisplayMode="Top" SelectionChanged="FrameChanged" IsBackButtonVisible="Collapsed" IsSettingsVisible="False">
+        <NavigationView.MenuItems>
+            <NavigationViewItem  Content="General" Name="GeneralNavi"/>
+            <NavigationViewItem  Content="Settings" Name="SettingsNavi"/>
+            <NavigationViewItem  Content="Backups" Name="BackupsNavi"/>
+        </NavigationView.MenuItems>
+        <Frame Name="ManagerFrame"/>
+    </NavigationView>
+  </Page>

@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "3130ClBknf96VQM/ec3N1mrHzkKiY3lUo96FH+tkjcIrpV3bJ7YhZBXTvOBNtmNGDbpzwSY/Z2YBmlXPV9boOw==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rarisma\\.nuget\\packages\\librarisma\\2.0.3\\librarisma.2.0.3.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.projectreunion\\0.8.3\\microsoft.projectreunion.0.8.3.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.projectreunion.dwrite\\0.8.3\\microsoft.projectreunion.dwrite.0.8.3.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.projectreunion.foundation\\0.8.3\\microsoft.projectreunion.foundation.0.8.3.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.projectreunion.interactiveexperiences\\0.8.3\\microsoft.projectreunion.interactiveexperiences.0.8.3.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.projectreunion.winui\\0.8.3\\microsoft.projectreunion.winui.0.8.3.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\mono.nat\\3.0.1\\mono.nat.3.0.1.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.9\\microsoft.netcore.app.runtime.win-x64.5.0.9.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.9\\microsoft.aspnetcore.app.runtime.win-x64.5.0.9.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\5.0.9\\microsoft.netcore.app.runtime.win-arm64.5.0.9.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.9\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.9.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.19\\microsoft.windows.sdk.net.ref.10.0.19041.19.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\5.0.9\\microsoft.aspnetcore.app.runtime.win-arm64.5.0.9.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\5.0.9\\microsoft.netcore.app.runtime.win-x86.5.0.9.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\5.0.9\\microsoft.aspnetcore.app.runtime.win-x86.5.0.9.nupkg.sha512",
+    "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\5.0.9\\microsoft.windowsdesktop.app.runtime.win-x86.5.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
