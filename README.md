@@ -2,7 +2,7 @@
 ![Exmaple image](https://github.com/Rarisma/Rarismas-Server-Manager/blob/main/Example.png)
 RSM is an open source server hosting tool written in C# which aims to make server hosting easy and accessible to everyone. To do this RSM attempts to automate as much as it can, and handles tasks such as EULAs, Port Forwarding and installing tools like Java. This means that ideally anyone with a sufficently powerful computer should be able to get a server up and running in under 10 minutes. 
 
-###FAQ
+### FAQ
 
 ##### How do I Install RSM?
 You need to go to the releases tab and download the latest release
