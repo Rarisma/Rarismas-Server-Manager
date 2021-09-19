@@ -106,14 +106,18 @@ namespace RSMUltra.Manager
                 case "Minecraft Bedrock":
                     ServerInfo.Server.StartInfo.FileName = Global.ServerDir + "//bedrock_server.exe";
                     break;
+                case "Terraria":
+                    ServerInfo.Server.StartInfo.FileName = Global.ServerDir + "//TerrariaServer.exe";
+                    ServerInfo.Server.StartInfo.Arguments = "-autocreate " + ServerInfo.WorldSize + " -world \"" + Global.ServerDir + "World.wld\" -difficulty " + ServerInfo.Difficulty; break;  
+                    break;
             }
 
             //Setups handling for output
             ServerInfo.Server.StartInfo.RedirectStandardInput = true; 
             ServerInfo.Server.StartInfo.RedirectStandardError = true;
             ServerInfo.Server.StartInfo.RedirectStandardOutput = true;
-            ServerInfo.Server.OutputDataReceived += new DataReceivedEventHandler((sender, e) => { if (!String.IsNullOrEmpty(e.Data)) { OutputRecieved(e.Data); }});
-            ServerInfo.Server.ErrorDataReceived += new DataReceivedEventHandler((sender, e) => { if (!String.IsNullOrEmpty(e.Data)) { OutputRecieved(e.Data); }});
+            ServerInfo.Server.OutputDataReceived += new DataReceivedEventHandler((sender, e) => { if (!String.IsNullOrEmpty(e.Data)) { Task.Run(() => OutputRecieved(e.Data)); }});
+            ServerInfo.Server.ErrorDataReceived += new DataReceivedEventHandler((sender, e) => { if (!String.IsNullOrEmpty(e.Data)) { Task.Run(() => OutputRecieved(e.Data)); } });
 
             ServerInfo.Server.Start(); //Starts the server running
 
@@ -132,7 +136,7 @@ namespace RSMUltra.Manager
                 () =>
                 {
                     ServerConsole.Text += "\n" + ServerUtils.Filter(Data);
-                    ServerConsole.SelectionStart = int.MaxValue;
+
                 });
         }
 
@@ -172,6 +176,7 @@ namespace RSMUltra.Manager
             }
             LibRarisma.Tools.OpenLink(Global.ServerDir + "//Mods//");
         }
+        
         private void Plugins(object sender, RoutedEventArgs e)
         {
             if (!Directory.Exists(Global.ServerDir + "//Plugins//"))
@@ -195,7 +200,7 @@ namespace RSMUltra.Manager
             }
             LibRarisma.Tools.OpenLink(Global.ServerDir + "//World//Datapacks//");
         }
-
+ 
         private void SendCommand(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
             ServerInfo.Server.StandardInput.WriteLine(CommandBar.Text);

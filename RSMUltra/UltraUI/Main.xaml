@@ -15,11 +15,13 @@
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xf4a5;"/>
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
+            <!-- Not ready yet, might not be ever
             <NavigationViewItem Content="Import a server" Name="Import">
                 <NavigationViewItem.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xf0d2;"/>
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
+            -->
         </NavigationView.MenuItems>
         <NavigationView.FooterMenuItems>
             <NavigationViewItem Content="Settings" Name="Settings">

@@ -36,7 +36,7 @@ namespace RSMUltra.UltraUI
 
             ButtonRegistry.Add(New);
             ButtonRegistry.Add(Settings);
-            ButtonRegistry.Add(Import);
+            //ButtonRegistry.Add(Import);
             
             //Loads instances
             if (Directory.Exists(Global.Instances))
@@ -65,6 +65,7 @@ namespace RSMUltra.UltraUI
                     MainFrame.Content = new RepoUpdater();
                     break;
                 case "Import":
+                    MainFrame.Content = new Import();
                     break;
                 case "Settings":
                     MainFrame.Content = new Settings();

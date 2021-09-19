@@ -10,14 +10,17 @@
 
     <StackPanel>
         <TextBlock Text="About" FontSize="50" HorizontalAlignment="Center" Margin="50"/>
-        <TextBlock HorizontalAlignment="Center">
+        <Image Source="../RSMUltra.png" Width="380" Height="200" PointerPressed="EasterEgg"/>
+        <TextBlock HorizontalAlignment="Center" Name="About">
             RSM 3.0 is Licensed under the GPL-3.0 License
             <LineBreak/>
             RSM 3.0 collects no data however some of the 3rd party components may collect data.
             <LineBreak/>
             RSM was made by Rarisma
         </TextBlock>
-        <TextBox Header="Repositories" Margin="50" PlaceholderText="Put custom server repository URLs here" Width="600" Height="300" HorizontalContentAlignment="Center"/>
+
+        <!-- Repositories are gonna come in 3.1 if I ever have the motivation to make it-->
+        <TextBox IsEnabled=" False" Opacity="0" Header="Repositories" Margin="50" PlaceholderText="Put custom server repository URLs here" Width="600" Height="300" HorizontalContentAlignment="Center"/>
 
     </StackPanel>
 </Page>

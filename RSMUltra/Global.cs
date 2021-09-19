@@ -23,7 +23,8 @@ using Windows.Foundation.Metadata;
 
         public static Microsoft.UI.Xaml.Controls.Frame GlobalFrame;
         public static List<Microsoft.UI.Xaml.Controls.NavigationViewItem> SidebarBarRegistry = new(); //used to disable the sidebar
-        
+        public static string GlobalTitle;
+
         public static string Java8 = Tools + "Java8//jre1.8.0_202//bin//java.exe";  //Direct path to Java 8
         public static string Java16 = Tools + "Java16//jdk-16.0.1+9-jre//bin//java.exe";    //Direct path to Java 16
         
