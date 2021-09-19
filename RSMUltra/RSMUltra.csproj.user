@@ -8,6 +8,9 @@
     <None Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="UltraUI\Import.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Manager\Backups.xaml">
       <SubType>Designer</SubType>
     </Page>

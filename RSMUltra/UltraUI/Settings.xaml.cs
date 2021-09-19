@@ -12,6 +12,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using RSMUltra.Manager;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -26,6 +27,12 @@ namespace RSMUltra.UltraUI
         public Settings()
         {
             this.InitializeComponent();
+        }
+
+        private void EasterEgg(object sender, PointerRoutedEventArgs e)
+        {
+            About.Text += "\n" + ServerUtils.EaserEgg[new Random().Next(0, ServerUtils.EaserEgg.Length)];
+
         }
     }
 }

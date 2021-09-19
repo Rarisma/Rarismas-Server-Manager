@@ -138,6 +138,9 @@ namespace RSMUltra.UltraUI
                 case "Mindustry":
                     if (Directory.Exists(Global.Java16) == false) { GetJava(); }
                     break;
+                case "Terraria":
+                    File.Copy(Global.Sources + "//RSM//World.wld", Global.ServerDir + "//World.wld");
+                    break;
             }
 
             if (ServerInfo.Game == "Minecraft Java Edition") //Accepts the Minecraft Eula

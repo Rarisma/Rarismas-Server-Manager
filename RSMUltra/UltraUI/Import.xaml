@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="RSMUltra.UltraUI.Import"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RSMUltra.UltraUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <TextBlock Text="Import a server" FontSize="50" Margin="50" HorizontalAlignment="Center"/>
+        <TextBlock Text="This is supposed to be used if you want to transfer a server you already have to RSM"/>
+        <Border Height="40"/>
+        <StackPanel>
+            <TextBlock Text="Rename the file RSM should launch to Server.exe if it's a exe file or Server.jar for java files"/>
+            <TextBlock Text="Folder Selected: none" Name="SelectedFolderName" Margin="20"/>
+            <Button Content="Select Folder" Click="OpenFolder"/>
+        </StackPanel>
+    </StackPanel>
+</Page>
