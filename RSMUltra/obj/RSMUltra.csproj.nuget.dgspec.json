@@ -1,33 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj": {}
+    "D:\\Projects\\RSMOLD\\RSMUltra\\RSMUltra.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj": {
+    "D:\\Projects\\RSMOLD\\RSMUltra\\RSMUltra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj",
+        "projectUniqueName": "D:\\Projects\\RSMOLD\\RSMUltra\\RSMUltra.csproj",
         "projectName": "RSMUltra",
-        "projectPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj",
+        "projectPath": "D:\\Projects\\RSMOLD\\RSMUltra\\RSMUltra.csproj",
         "packagesPath": "C:\\Users\\Rarisma\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\RSM3\\RSMUltra\\obj\\",
+        "outputPath": "D:\\Projects\\RSMOLD\\RSMUltra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Installed\\Visual Studio 2019\\SDKs\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "D:\\Installed\\Visual Studio 2022\\SDKs\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\Rarisma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows10.0.19041"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -123,7 +122,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

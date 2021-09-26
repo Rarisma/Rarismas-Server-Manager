@@ -831,27 +831,24 @@
   },
   "packageFolders": {
     "C:\\Users\\Rarisma\\.nuget\\packages\\": {},
-    "D:\\Installed\\Visual Studio 2019\\SDKs\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "D:\\Installed\\Visual Studio 2022\\SDKs\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\RSM3\\RSMUltra (Package)\\RSMUltra (Package).wapproj",
+      "projectUniqueName": "D:\\Projects\\RSMOLD\\RSMUltra (Package)\\RSMUltra (Package).wapproj",
       "projectName": "RSMUltra (Package)",
-      "projectPath": "D:\\Projects\\RSM3\\RSMUltra (Package)\\RSMUltra (Package).wapproj",
+      "projectPath": "D:\\Projects\\RSMOLD\\RSMUltra (Package)\\RSMUltra (Package).wapproj",
       "packagesPath": "C:\\Users\\Rarisma\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\RSM3\\RSMUltra (Package)\\obj\\",
+      "outputPath": "D:\\Projects\\RSMOLD\\RSMUltra (Package)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Installed\\Visual Studio 2019\\SDKs\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "D:\\Installed\\Visual Studio 2022\\SDKs\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\Rarisma\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "uap10.0.19041"
@@ -864,8 +861,8 @@
         "uap10.0.19041": {
           "targetAlias": "net451",
           "projectReferences": {
-            "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj": {
-              "projectPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj"
+            "D:\\Projects\\RSMOLD\\RSMUltra\\RSMUltra.csproj": {
+              "projectPath": "D:\\Projects\\RSMOLD\\RSMUltra\\RSMUltra.csproj"
             }
           }
         }
@@ -901,7 +898,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

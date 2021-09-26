@@ -46,7 +46,7 @@
     <PackageCertificateThumbprint>0E0594410BAE29CF453B7C5B4CBE605DFDCDCD8C</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxPackageDir>C:\Users\Rarisma\Desktop\Ultra\</AppxPackageDir>
+    <AppxPackageDir>C:\Users\Rarisma\Desktop\UltraFINAL\</AppxPackageDir>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>

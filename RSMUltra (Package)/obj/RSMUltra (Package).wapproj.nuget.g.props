@@ -5,18 +5,14 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Rarisma\.nuget\packages\;D:\Installed\Visual Studio 2019\SDKs\NuGetPackages;C:\Program Files (x86)\Microsoft\Xamarin\NuGet\</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Rarisma\.nuget\packages\;D:\Installed\Visual Studio 2022\SDKs\NuGetPackages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.11.0</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.0.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\Rarisma\.nuget\packages\" />
-    <SourceRoot Include="D:\Installed\Visual Studio 2019\SDKs\NuGetPackages\" />
-    <SourceRoot Include="C:\Program Files (x86)\Microsoft\Xamarin\NuGet\" />
+    <SourceRoot Include="D:\Installed\Visual Studio 2022\SDKs\NuGetPackages\" />
   </ItemGroup>
-  <PropertyGroup>
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
-  </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.projectreunion.winui\0.8.2\buildTransitive\Microsoft.ProjectReunion.WinUI.props" Condition="Exists('$(NuGetPackageRoot)microsoft.projectreunion.winui\0.8.2\buildTransitive\Microsoft.ProjectReunion.WinUI.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.projectreunion.foundation\0.8.2\build\Microsoft.ProjectReunion.Foundation.props" Condition="Exists('$(NuGetPackageRoot)microsoft.projectreunion.foundation\0.8.2\build\Microsoft.ProjectReunion.Foundation.props')" />

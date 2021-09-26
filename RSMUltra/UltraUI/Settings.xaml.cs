@@ -31,7 +31,7 @@ namespace RSMUltra.UltraUI
 
         private void EasterEgg(object sender, PointerRoutedEventArgs e)
         {
-            About.Text += "\n" + ServerUtils.EaserEgg[new Random().Next(0, ServerUtils.EaserEgg.Length)];
+            //About.Text += "\n" + ServerUtils.EaserEgg[new Random().Next(0, ServerUtils.EaserEgg.Length)];
 
         }
     }

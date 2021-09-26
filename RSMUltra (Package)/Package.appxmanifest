@@ -10,7 +10,7 @@
   <Identity
     Name="6689893b-26f1-4e43-8e67-8069be02a037"
     Publisher="CN=Jake Rarisma"
-    Version="3.0.4.0" />
+    Version="3.1.5.0" />
 
   <Properties>
     <DisplayName>RSM</DisplayName>
