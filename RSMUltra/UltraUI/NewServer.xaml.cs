@@ -88,7 +88,7 @@ namespace RSMUltra.UltraUI
 
 
         //Downloads the server
-        private void ContinueClick(object sender, RoutedEventArgs e)
+        private async void ContinueClick(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -101,13 +101,26 @@ namespace RSMUltra.UltraUI
             }
 
             Continue.IsEnabled = false;
-            string[] InfoFile = File.ReadAllLines(Global.Sources + $"//{GameLists.SelectedItem}//{Versions.SelectedItem}//{Variant.SelectedItem}");
-            Global.ServerDir = Global.Instances + "//" + NameBox.Text + "//"; //Simplifies path to the server
+
+            string game = GameLists.SelectedItem.ToString();
+            string version = Versions.SelectedItem.ToString();
+            string variant = Variant.SelectedItem.ToString();
+            string name = NameBox.Text;
+
+            await Task.Run(() => BuildServer(game,version,variant, name));
+            MainWindow.Frame.Content = new Main();
+            Global.GlobalFrame.Content = new Manager();
+        }
+
+        async void BuildServer(string game, string version, string variant, string name)
+        {
+            string[] InfoFile = File.ReadAllLines(Global.Sources + $"//{game}//{version}//{variant}");
+            Global.ServerDir = Global.Instances + "//" + name + "//"; //Simplifies path to the server
 
             //This part downloads and extracts the file if needed
             if (InfoFile[0].Contains(".zip")) //Only extracts if .zip is in the url
             {
-                LibRarisma.Connectivity.DownloadFile(InfoFile[0], Global.ServerDir, "Server.zip",true);
+                LibRarisma.Connectivity.DownloadFile(InfoFile[0], Global.ServerDir, "Server.zip", true);
             }
             else if (InfoFile[0].Contains(".jar"))
             {
@@ -116,17 +129,17 @@ namespace RSMUltra.UltraUI
             }
 
 
-            File.WriteAllText(Global.ServerDir + "//RSM.ini",$"RSMUltra info file\n{GameLists.SelectedItem}\n{Versions.SelectedItem}\n{Variant.SelectedItem}\nWeekly\n{DateTime.Now:dd/MM/yyyy}\n{ServerInfo.AllocatedRAM}\nWORLD PLACEHOLDER");
+            File.WriteAllText(Global.ServerDir + "//RSM.ini", $"RSMUltra info file\n{game}\n{version}\n{variant}\nWeekly\n{DateTime.Now:dd/MM/yyyy}\n{ServerInfo.AllocatedRAM}\nWORLD PLACEHOLDER");
 
             //Reads ini
             string[] ini = File.ReadAllLines(Global.ServerDir + "//RSM.ini");
-            ServerInfo.Name = NameBox.Text;
+            ServerInfo.Name = name;
             ServerInfo.Game = ini[1];
             ServerInfo.Version = ini[2];
             ServerInfo.Variant = ini[3];
             ServerInfo.LastBackup = ini[5];
             ServerInfo.BackupFrequency = ini[4];
-            ServerInfo.AllocatedRAM = Convert.ToString(Convert.ToInt32(LibRarisma.Tools.GetRAM() / 2) - 1024) ;
+            ServerInfo.AllocatedRAM = Convert.ToString(Convert.ToInt32(LibRarisma.Tools.GetRAM() / 2) - 1024);
 
             //Java downloader
             switch (ServerInfo.Game)
@@ -146,10 +159,7 @@ namespace RSMUltra.UltraUI
             if (ServerInfo.Game == "Minecraft Java Edition") //Accepts the Minecraft Eula
             {
                 File.WriteAllText(Global.ServerDir + "eula.txt", "#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).\n# made by RSM\neula = true");
-            }
-
-            MainWindow.Frame.Content = new Main();
-            Global.GlobalFrame.Content = new Manager();
+            }   
         }
 
         public static void GetJava(bool Legacy = false)
@@ -159,7 +169,6 @@ namespace RSMUltra.UltraUI
                 if (!File.Exists(Global.Java8))
                 {
                     LibRarisma.Connectivity.DownloadFile(File.ReadAllLines(Global.Sources + "//RSM//Java8")[0],Global.Tools + "//Java8//", "Java8.zip", true);
-
                 }
             }
             else

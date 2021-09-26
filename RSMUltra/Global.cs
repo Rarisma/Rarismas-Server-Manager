@@ -14,11 +14,11 @@ using Windows.Foundation.Metadata;
     {
         public const string DefaultRepository = "https://github.com/Rarisma/Rarismas-Server-Manager/blob/RSM3/ServerFiles/ServerFiles.zip?raw=true"; //This is the default repo used by RSM.
 
-        public static string Cache = AppDomain.CurrentDomain.BaseDirectory + "//Cache//";
-        public static string Sources = AppDomain.CurrentDomain.BaseDirectory + "//Sources//";
-        public static string Instances = AppDomain.CurrentDomain.BaseDirectory + "//Instances//";
-        public static string Tools = AppDomain.CurrentDomain.BaseDirectory + "//Tools//";
-        public static string Backups = AppDomain.CurrentDomain.BaseDirectory + "//Backups//";
+        public static string Cache = Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path + "//Cache//";
+        public static string Sources = Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path + "//Sources//";
+        public static string Instances = Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path + "//Instances//";
+        public static string Tools = Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path + "//Tools//";
+        public static string Backups = Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path + "//Backups//";
         public static string ServerDir = "";
 
         public static Microsoft.UI.Xaml.Controls.Frame GlobalFrame;
