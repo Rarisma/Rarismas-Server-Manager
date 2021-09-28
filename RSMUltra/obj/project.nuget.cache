@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LX77VsZHXUEDkY1ONi3VO10a9BCDhwcYr0/v4pz9fLxBkVS7ialrTX8kNuJwEBbbUf0h0oSWrIe1rQr+CZy3Aw==",
+  "dgSpecHash": "v2ZH+JeJVH0T+hi2sYWdQr0fbkBXw8fVx4ADmriKSgqY80htQG/fKRViFicmV8qpAq5uYKZHDmv9+ETG2MByCg==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\RSMOLD\\RSMUltra\\RSMUltra.csproj",
+  "projectFilePath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rarisma\\.nuget\\packages\\librarisma\\2.0.3\\librarisma.2.0.3.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.projectreunion\\0.8.3\\microsoft.projectreunion.0.8.3.nupkg.sha512",

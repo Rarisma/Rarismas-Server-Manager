@@ -162,6 +162,10 @@ namespace RSMUltra.UltraUI
             }   
         }
 
+        /// <summary>
+        /// Checks if RSM has downloaded Java before, if not downloads the appropiate version of it
+        /// </summary>
+        /// <param name="Legacy"></param>
         public static void GetJava(bool Legacy = false)
         {
             if (Legacy)
