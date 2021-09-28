@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J6X3i7t4WDKSy7RYs0ZyhV9ViUz1AL+Jv5i0rGDpn2daLyYPzeh73Nj6TnPR2QQk8CuEzY+mDtssR8xdpQYjxQ==",
+  "dgSpecHash": "hBLEpsuBvF8mTsxEW0NGCrz53o/n+BXmEDGJWsfQbosISy1wsX9mpPJQe+4NY1dtnqDD2EZYahkw0vDWSOxEzQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\RSMOLD\\RSMUltra (Package)\\RSMUltra (Package).wapproj",
+  "projectFilePath": "D:\\Projects\\RSM3\\RSMUltra (Package)\\RSMUltra (Package).wapproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.projectreunion\\0.8.2\\microsoft.projectreunion.0.8.2.nupkg.sha512",
     "C:\\Users\\Rarisma\\.nuget\\packages\\microsoft.projectreunion.dwrite\\0.8.2\\microsoft.projectreunion.dwrite.0.8.2.nupkg.sha512",

@@ -637,11 +637,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\RSMOLD\\RSMUltra\\RSMUltra.csproj",
+      "projectUniqueName": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj",
       "projectName": "RSMUltra",
-      "projectPath": "D:\\Projects\\RSMOLD\\RSMUltra\\RSMUltra.csproj",
+      "projectPath": "D:\\Projects\\RSM3\\RSMUltra\\RSMUltra.csproj",
       "packagesPath": "C:\\Users\\Rarisma\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\RSMOLD\\RSMUltra\\obj\\",
+      "outputPath": "D:\\Projects\\RSM3\\RSMUltra\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Installed\\Visual Studio 2022\\SDKs\\NuGetPackages"

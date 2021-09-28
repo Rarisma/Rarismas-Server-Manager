@@ -45,5 +45,21 @@ namespace RSMUltra.UltraUI
             LibRarisma.Connectivity.DownloadFile(Global.DefaultRepository, Global.Sources, "Temp.zip", true);
         }
 
+        public static void ReadConfig(string path)
+        {
+            List<string> ConfigFile = new();
+            ConfigFile.AddRange(File.ReadAllLines(path + "//Config"));
+        
+            foreach (string line in ConfigFile)
+            {
+                if (line.Contains("#eula file path"))
+                {
+                    ServerInfo.ConfigEulaPath = ConfigFile[ConfigFile.IndexOf(line)].Contains("true")
+                }
+
+            }
+
+        }
+
     }
 }
