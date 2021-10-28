@@ -116,6 +116,7 @@ namespace RSMUltra.UltraUI
         {
             string[] InfoFile = File.ReadAllLines(Global.Sources + $"//{game}//{version}//{variant}");
             Global.ServerDir = Global.Instances + "//" + name + "//"; //Simplifies path to the server
+            Directory.CreateDirectory(Global.ServerDir);
 
             //This part downloads and extracts the file if needed
             if (InfoFile[0].Contains(".zip")) //Only extracts if .zip is in the url

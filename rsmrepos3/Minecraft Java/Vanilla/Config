@@ -1,0 +1,20 @@
+ #eula file path (relative to server path, null to disable)
+eula.txt
+
+#eula text (set to null to disable)
+#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).\n# made by RSM\neula = true
+
+#java (null, 8, 16)
+16
+
+#Launch Args (can be set to offically supported RSM games MCJE, MCBE, TERR, MIND)
+-Xmx RAM M -jar PATH SERVERFILE nogui
+
+#isInstaller? (false/true)
+false
+
+#Installer args
+null
+
+#cloudspotter args
+null

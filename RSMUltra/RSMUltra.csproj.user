@@ -5,25 +5,21 @@
     <None Update="App.xaml">
       <SubType>Designer</SubType>
     </None>
-    <None Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </None>
-    <Page Update="UltraUI\Import.xaml">
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Manager\Backups.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Manager\Server.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Manager\Settings.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UltraUI\RepoUpdater.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Resources.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Manager\Server.xaml">
+    <Page Update="UltraUI\Import.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UltraUI\Main.xaml">
@@ -32,10 +28,13 @@
     <Page Update="UltraUI\Manager.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UltraUI\Settings.xaml">
+    <Page Update="UltraUI\NewServer.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UltraUI\NewServer.xaml">
+    <Page Update="UltraUI\RepoUpdater.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UltraUI\Settings.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
