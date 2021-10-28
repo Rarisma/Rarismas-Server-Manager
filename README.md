@@ -7,9 +7,6 @@ RSM is an open source server hosting tool written in C# which aims to make serve
 ##### How do I Install RSM?
 You need to go to the releases tab and download the latest release
 
-WARNING:
-Due to RSM using a bleeding edge UI it cannot yet be distributed as a standard exe, for now you will need to run install.ps1 to install RSM. It will probably complain about it being an untrusted certificate this is because I cannot afford a code signing certificate so if you do not feel safe trusting the certificate I suggest you build RSM yourself or wait until the .exe version releases.  
-
 #### How do I build RSM?
 Open it in Visual Studio 2019 / 2022 and install Project Reunion / WinUI 3 and build the project called RSMUltra, not RSMUltra (packaged) unless you want to distribute your own build of RSM.
 
