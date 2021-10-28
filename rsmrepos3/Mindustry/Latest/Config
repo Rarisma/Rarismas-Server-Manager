@@ -1,0 +1,25 @@
+#eula file path (relative to server path, null to disable)
+null
+
+#eula text (set to null to disable)
+null
+
+#Launcher type (null, Java8, Java16, exe, appid)
+null
+
+#Launch Args (can be set to offically supported RSM games MCJE, MCBE, TERR, MIND)
+null
+
+#Server file name
+null
+
+#isInstaller? (false/true)
+false
+
+#Installer args
+null
+
+#Installer path
+
+#cloudspotter args (use a comma to split entries)
+null

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31815.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSMUltra", "RSMUltra.csproj", "{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|arm64 = Debug|arm64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|arm64 = Release|arm64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Debug|arm64.ActiveCfg = Debug|arm64
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Debug|arm64.Build.0 = Debug|arm64
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Debug|x64.ActiveCfg = Debug|x64
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Debug|x64.Build.0 = Debug|x64
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Debug|x86.ActiveCfg = Debug|x86
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Debug|x86.Build.0 = Debug|x86
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Release|arm64.ActiveCfg = Release|arm64
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Release|arm64.Build.0 = Release|arm64
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Release|x64.ActiveCfg = Release|x64
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Release|x64.Build.0 = Release|x64
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Release|x86.ActiveCfg = Release|x86
+		{E01502E7-D40B-416C-9C1D-4EBA44CF1C69}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98A857A9-B770-48F8-B5CC-769DB9F364B4}
+	EndGlobalSection
+EndGlobal

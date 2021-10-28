@@ -54,11 +54,12 @@ namespace RSMUltra.UltraUI
             {
                 if (line.Contains("#eula file path"))
                 {
-                    ServerInfo.ConfigEulaPath = ConfigFile[ConfigFile.IndexOf(line)].Contains("true")
+                    ServerInfo.ConfigEulaPath = ConfigFile[ConfigFile.IndexOf(line)];
+                    File.WriteAllText(ConfigFile[ConfigFile.IndexOf(line)], ConfigFile[ConfigFile.IndexOf(line)] + 2);
                 }
 
             }
-
+        
         }
 
     }
