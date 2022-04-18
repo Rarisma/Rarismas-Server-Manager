@@ -1,0 +1,31 @@
+﻿ <Page
+    x:Class="RSM.RSMConfig"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RSM"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Pivot VerticalAlignment="Stretch">
+        <PivotItem Header="UI">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100">These options are currently unavailable at this time.</TextBlock>
+        </PivotItem>
+        <PivotItem Header="Repositories">
+            <StackPanel Margin="10,10">
+                <TextBlock Margin="10" FontSize="14" Foreground="Red">These options can drastically affect RSM, be careful.</TextBlock>
+                <ListView Height="500"/>
+                <CheckBox Content="Disable RSMDefault.XML (Not recommended)"/>
+            </StackPanel>
+        </PivotItem>
+        <PivotItem Header="About" >
+            <StackPanel>
+                <TextBlock Name="Easter" HorizontalAlignment="Center" Margin="0,5" FontSize="25" Foreground="White" TextWrapping="Wrap"/>
+                <TextBlock Text="RSM is project by Rarisma" HorizontalAlignment="Center" FontSize="30" Margin="0,100,0,30"/>
+                <TextBlock Text="It's free and open source!" HorizontalAlignment="Center" FontSize="20"/>
+                <TextBlock Text="RSM is licensed under GNU GPLv3" HorizontalAlignment="Center" FontSize="20"/>
+                <Image Source="https://raw.githubusercontent.com/Rarisma/Rarisma.github.io/main/Projects/RSM40.png" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100" PointerPressed="EasterEgg"/>
+            </StackPanel>
+        </PivotItem>
+    </Pivot>
+</Page>
