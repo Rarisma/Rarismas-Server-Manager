@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="RSM.WideNodes"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:nodes="using:RSM.Nodes"
+    mc:Ignorable="d">
+
+    <StackPanel MinHeight="150" Width="1000" HorizontalAlignment="Center" CornerRadius="5" Background="#121212" Padding="5" Margin="0,10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" HorizontalAlignment="Left" FontSize="25" VerticalAlignment="Bottom" Margin="5,10,0,0" Text="{x:Bind Server.Name}"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="left" FontSize="15" VerticalAlignment="Bottom" Margin="15,0,0,0" Text="{x:Bind Server.Type}"/>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Left" FontSize="15" VerticalAlignment="Bottom" Margin="8,0" Text="{x:Bind Server.Variant}"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Left" FontSize="15" VerticalAlignment="Bottom" Margin="5,0" Text="{x:Bind Server.Version}"/>
+
+        </Grid>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" FontSize="10" VerticalAlignment="Center" Margin="5,0,0,0" PointerPressed="OpenServerFolder" Text="{x:Bind Server.ParentDirectory }"/>
+
+        <Expander Margin="5,10,5,0" Width="985" Background="#121212">
+            <Expander.Header >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Width="800">
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Center" Margin="20,0" Name="PowerStatus"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Center" Margin="20,0" Name="CPUStatus"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Center" Margin="20,0" Name="RAMStatus"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Center" Margin="20,0" Name="DiskStatus"/>
+                </StackPanel>
+            </Expander.Header>
+            <StackPanel Height="700" Width="900">
+                <CommandBar DefaultLabelPosition="Right" Visibility="Visible" HorizontalAlignment="Center">
+                    <AppBarButton Label="Power on" Name="PowerIcon" Click="TogglePower">
+                        <AppBarButton.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7E8;"/>
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+                    <AppBarButton Label="Reboot" Click="Reboot">
+                        <AppBarButton.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xF83E;"/>
+                        </AppBarButton.Icon>
+                    </AppBarButton><!--
+                    <AppBarButton Label="Save log">
+                        <AppBarButton.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE74E;"/>
+                        </AppBarButton.Icon>
+                    </AppBarButton>-->
+                    <AppBarButton Label="Clear" Click="ClearConsole">
+                        <AppBarButton.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE894;"/>
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+                    <AppBarButton Label="Delete" Icon="Delete">
+                        <AppBarButton.Flyout>
+                            <Flyout>
+                                <StackPanel>
+                                    <TextBlock Foreground="Red" HorizontalAlignment="Center">Are you sure you want to delete this server?</TextBlock>
+                                    <Button Margin="10" HorizontalAlignment="Center" Click="DeleteServer" Content="Delete"/>
+                                </StackPanel>
+                            </Flyout>
+                        </AppBarButton.Flyout>
+                    </AppBarButton>
+                    <AppBarButton Label="Configure" Click="ShowInfoMenu">
+                        <AppBarButton.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE713;"/>
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+                </CommandBar>
+                <ScrollViewer Name="Scroller" Height="610">
+                    <TextBox Name="ConsoleBox" ScrollViewer.ZoomMode="Enabled" PlaceholderText="When your server does something, you'll see it here!" IsReadOnly="True" AcceptsReturn="True" Width="900" Margin="0,5" MinHeight="600" TextWrapping="Wrap"/>
+                </ScrollViewer>
+                <AutoSuggestBox PlaceholderText="If you want to send a command put it here!" QueryIcon="Send" Name="AutoBar" QuerySubmitted="SendCommand" IsEnabled="False" />
+            </StackPanel>
+        </Expander>
+    </StackPanel>
+</Page>

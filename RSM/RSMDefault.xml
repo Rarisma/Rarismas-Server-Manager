@@ -1,0 +1,237 @@
+﻿<Repository>
+    <Info>
+        <Name>RSM4 Stock repository</Name>
+        <VersionString>4.0</VersionString>
+        <MD5>Disabled</MD5>
+        <Description>Everything you need to run RSM4!</Description>
+        <RSMVersionString>4.0</RSMVersionString>
+		<RSMSpec>1</RSMSpec>
+    </Info>
+    
+    <Loader>
+        <Name>JRELatest</Name>
+        <Description>Use this to run Java with the latest JRE</Description>
+        <URL>https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.1%2B12/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip</URL>
+        <EntryPoint>jdk-17.0.1+12/bin/java.exe</EntryPoint>
+		<FileType>jar</FileType>
+    </Loader>
+    
+    <Loader>
+        <Name>JRE8</Name>
+        <Description>Launch apps with the old Java 8, avoid this if you can</Description>
+        <URL>https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jre_x64_windows_hotspot_8u312b07.zip</URL>
+        <EntryPoint>jdk8u312-b07-jre/bin/java.exe</EntryPoint>
+	    <FileType>jar</FileType>
+    </Loader>
+
+	<Loader>
+		<Name>WinExe</Name>
+		<Description>Loads .exe files</Description>
+		<URL>NULL</URL>
+		<EntryPoint>cmd.exe</EntryPoint>
+		<FileType>Exe</FileType>
+		<LaunchCommand>/k {FILE}</LaunchCommand>
+	</Loader>
+
+	<ServerGroup>
+		<Name>Terraria</Name>
+		<Description>The other block game</Description>
+		<PostInstallCommands>NULL</PostInstallCommands>
+		<InstallType>WinExe</InstallType>
+		<IdealPort>7777</IdealPort>
+		<DownloadExtension></DownloadExtension>
+		<Zipped>true</Zipped>
+		<RamRequired>false</RamRequired>
+		<LaunchCommand>TerrariaServer.exe -autocreate 2  -world world.wld -difficulty 2</LaunchCommand>
+		<Variant>
+			<VariantName>Vanilla</VariantName>
+			<VariantDescription>TShock</VariantDescription>
+			<QuickCommands></QuickCommands>
+			<Version>
+				<VersionString>1.4.3.6</VersionString>
+				<URL>https://github.com/Pryaxis/TShock/releases/download/v4.5.17/TShock4.5.17_Terraria_1.4.3.6.zip</URL>
+			</Version>
+		</Variant>
+	</ServerGroup>
+
+	<ServerGroup>
+		<Name>Minecraft Bedrock</Name>
+		<Description>Please note that you may not be able to connect to your server from the same device that you are hosting it on</Description>
+		<PostInstallCommands>CheckNetIsolation LoopbackExempt -a -n="Microsoft.MinecraftUWP_8wekyb3d8bbwe"</PostInstallCommands>
+		<InstallType>WinExe</InstallType>
+		<IdealPort>19132</IdealPort>
+		<DownloadExtension></DownloadExtension>
+		<Zipped>true</Zipped>
+		<RamRequired>false</RamRequired>
+		<LaunchCommand>bedrock_server.exe</LaunchCommand>
+		<Variant>
+			<VariantName>Vanilla</VariantName>
+			<VariantDescription></VariantDescription>
+			<QuickCommands></QuickCommands>
+			<Version>
+				<VersionString>1.18.12.01</VersionString>
+				<URL>https://minecraft.azureedge.net/bin-win/bedrock-server-1.18.12.01.zip</URL>
+			</Version>
+		</Variant>
+	</ServerGroup>
+    
+	
+
+	<ServerGroup>
+        <Name>Minecraft Java Edition</Name>
+        <Description>The original block game</Description>
+        <PostInstallCommands>NULL</PostInstallCommands>
+        <InstallType>JRELatest</InstallType>
+		<IdealPort>25565</IdealPort>
+		<DownloadExtension>jar</DownloadExtension>
+		<Zipped>false</Zipped>
+		<RamRequired>true</RamRequired>
+		<LaunchCommand>-Xmx$RAMM -jar $LAUNCHFILE nogui</LaunchCommand>
+		<Eula>
+#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
+#Tue Nov 15 19:11:00 GMT 2022
+eula=true
+		</Eula>
+        <Variant>
+			<VariantName>Vanilla</VariantName>
+			<VariantDescription>Vanilla servers for the Vanilla experience, Some servers use paper. </VariantDescription>
+			<QuickCommands>
+				advancement,attribute,ban,ban-ip,banlist,bossbar,clear,clone,data,datapack,debug,defaultgamemode,deop,difficulty,effect,enchant,execute,experience,fill,forceload,function,gamemode,gamerule,give,item,jfr,kick,kill,list,locate,locatebiome,loot,me,msg,op,pardon,pardon-ip,particle,perf,playsound,save-all,save-off,save-on,say,schedule,scoreboard,seed,setblock,setidletimeout,setworldspawn,spawnpoint,spectate,spreadplayers,stop,stopsound,summon,tag,team,teammsg,teleport,tell,tellraw,time,title,tm,tp,trigger,w,weather,whitelist,worldboarder,xp
+			</QuickCommands>
+	        <Version>
+                <VersionString>1.18.2</VersionString>
+                <URL>https://papermc.io/api/v2/projects/paper/versions/1.18.2/builds/274/downloads/paper-1.18.2-274.jar</URL>
+            </Version>
+            <Version>
+                <VersionString>1.17.1</VersionString>
+                <URL>https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/408/downloads/paper-1.17.1-408.jar</URL>
+            </Version>
+            <Version>
+                <VersionString>1.16.5</VersionString>
+                <URL>https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/792/downloads/paper-1.16.5-792.jar</URL>
+            </Version>
+            <Version>
+                <VersionString>1.16.5</VersionString>
+                <URL>https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/792/downloads/paper-1.16.5-792.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.15.2</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.14.4</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/3dc3d84a581f14691199cf6831b71ed1296a9fdf/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.13.2</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.12.2</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.11.1</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/1f97bd101e508d7b52b3d6a7879223b000b5eba0/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.10.2</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/3d501b23df53c548254f5e3f66492d178a48db63/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.9.4</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/edbb7b1758af33d365bf835eb9d13de005b1e274/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.8.9</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/b58b2ceb36e01bcd8dbf49c8fb66c55a9f0676cd/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.7.10</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.6.4</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/050f93c1f3fe9e2052398f7bd6aca10c63d64a87/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.5.2</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/f9ae3f651319151ce99a0bfad6b34fa16eb6775f/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.4.7</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/2f0ec8efddd2f2c674c77be9ddb370b727dec676/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.3.2</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/3de2ae6c488135596e073a9589842800c9f53bfe/server.jar</URL>
+            </Version>
+			<Version>
+                <VersionString>1.2.5</VersionString>
+                <URL>https://launcher.mojang.com/v1/objects/d8321edc9470e56b8ad5c67bbd16beba25843336/server.jar</URL>
+            </Version>
+        </Variant>
+		<Variant>
+			<VariantName>Fabric</VariantName>
+			<PostInstallCommands>$ENTRYPOINT -jar ServerFile.jar server -mcversion $ServerVersion -downloadMinecraft</PostInstallCommands>
+			<LaunchFile>fabric-server-launch.jar</LaunchFile>
+			<VariantDescription></VariantDescription>
+			<QuickCommands>
+				advancement,attribute,ban,ban-ip,banlist,bossbar,clear,clone,data,datapack,debug,defaultgamemode,deop,difficulty,effect,enchant,execute,experience,fill,forceload,function,gamemode,gamerule,give,item,jfr,kick,kill,list,locate,locatebiome,loot,me,msg,op,pardon,pardon-ip,particle,perf,playsound,save-all,save-off,save-on,say,schedule,scoreboard,seed,setblock,setidletimeout,setworldspawn,spawnpoint,spectate,spreadplayers,stop,stopsound,summon,tag,team,teammsg,teleport,tell,tellraw,time,title,tm,tp,trigger,w,weather,whitelist,worldboarder,xp
+			</QuickCommands>
+			<Version>
+				<VersionString>1.18.2</VersionString>
+				<URL>https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.10.2/fabric-installer-0.10.2.jar</URL>
+			</Version>
+			<Version>
+				<VersionString>1.18</VersionString>
+				<URL>https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.10.2/fabric-installer-0.10.2.jar</URL>
+			</Version>
+			<Version>
+				<VersionString>1.17.1</VersionString>
+				<URL>https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.10.2/fabric-installer-0.10.2.jar</URL>
+			</Version>
+			<Version>
+				<VersionString>1.17</VersionString>
+				<URL>https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.10.2/fabric-installer-0.10.2.jar</URL>
+			</Version>
+			<Version>
+				<VersionString>1.16.5</VersionString>
+				<URL>https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.10.2/fabric-installer-0.10.2.jar</URL>
+			</Version>
+			<Version>
+				<VersionString>1.15.2</VersionString>
+				<URL>https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.10.2/fabric-installer-0.10.2.jar</URL>
+			</Version>
+			<Version>
+				<VersionString>1.15</VersionString>
+				<URL>https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.10.2/fabric-installer-0.10.2.jar</URL>
+			</Version>
+			<Version>
+				<VersionString>1.14.4</VersionString>
+				<URL>https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.10.2/fabric-installer-0.10.2.jar</URL>
+			</Version>
+			<Version>
+				<VersionString>1.14</VersionString>
+				<URL>https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.10.2/fabric-installer-0.10.2.jar</URL>
+			</Version>
+		</Variant>
+		<Variant>
+			<VariantName>Forge</VariantName>
+			<PostInstallCommands>$ENTRYPOINT -jar ServerFile.jar --installServer</PostInstallCommands>
+			<LaunchFile>forge-$Version-universal.jar</LaunchFile>
+			<VariantDescription>Lex Manos hates this.</VariantDescription>
+			<QuickCommands>
+				advancement,attribute,ban,ban-ip,banlist,bossbar,clear,clone,data,datapack,debug,defaultgamemode,deop,difficulty,effect,enchant,execute,experience,fill,forceload,function,gamemode,gamerule,give,item,jfr,kick,kill,list,locate,locatebiome,loot,me,msg,op,pardon,pardon-ip,particle,perf,playsound,save-all,save-off,save-on,say,schedule,scoreboard,seed,setblock,setidletimeout,setworldspawn,spawnpoint,spectate,spreadplayers,stop,stopsound,summon,tag,team,teammsg,teleport,tell,tellraw,time,title,tm,tp,trigger,w,weather,whitelist,worldboarder,xp
+			</QuickCommands>
+			<Version>
+				<VersionString>1.18.2-40.0.41</VersionString>
+				<URL>https://maven.minecraftforge.net/net/minecraftforge/forge/1.18.2-40.0.41/forge-1.18.2-40.0.41-installer.jar</URL>
+			</Version>
+			<Version>
+				<VersionString>1.17.1-37.1.1</VersionString>
+				<URL>https://maven.minecraftforge.net/net/minecraftforge/forge/1.17.1-37.1.1/forge-1.17.1-37.1.1-installer.jar</URL>
+			</Version>
+		</Variant>
+    </ServerGroup>
+</Repository>

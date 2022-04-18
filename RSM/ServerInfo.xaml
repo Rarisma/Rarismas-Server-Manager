@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="RSM.Info"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RSM"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel  Height="300">
+        <Pivot>
+            <PivotItem Header="Server Information">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Server Name" />
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Server.ServerName}" Name="ServerSKU" />
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="RAM Allocation:" VerticalAlignment="Center" Margin="0,0,0,6" />
+                    <Slider Grid.Row="2" Grid.Column="1" Name="RAMSlider" ValueChanged="RAMSlider_OnValueChanged" Minimum="1024" Margin="10,0,0,0" VerticalAlignment="Center" IsEnabled="{x:Bind Server.ShowRAM}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Name="RAMDisplay" VerticalAlignment="Top"/>                   
+
+                    <TextBlock Grid.Row="4" Text="Server Path:"/>
+                    <TextBlock Grid.Column="1" Grid.Row="4" Text="{x:Bind Server.ParentDirectory}" TextWrapping="Wrap"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Backup Configuration" Margin="10">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleSwitch  Header="Enable Backups Automatic Backups" Name="BackupEnabled" IsEnabledChanged="BackupToggle" HorizontalAlignment="Center" Margin="10,0"/>
+                        <ComboBox Name="BackupCombo" HorizontalAlignment="Center" SelectionChanged="BackupChanged" Header="Frequency" Width="150" Margin="40,0,0,0">
+                            <ComboBox.Items>
+                                <ComboBoxItem Content="Hourly" />
+                                <ComboBoxItem Content="Daily" />
+                                <ComboBoxItem Content="Weekly" />
+                                <ComboBoxItem Content="Monthly" />
+                                <ComboBoxItem Content="Never" Foreground="Red"/>
+                            </ComboBox.Items>
+                        </ComboBox>
+                    </StackPanel>
+                    <TextBlock Text="The last backup was error" Name="BackupInfo" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,30" HorizontalAlignment="Center">
+                        <Button Content="Make Backup now" Click="MakeBackupClick" HorizontalAlignment="Center" Margin="10,0" />
+                        <Button Content="Open Backup folder" Click="OpenBackupFolder" HorizontalAlignment="Center" Margin="10,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="Infomation">
+
+            </PivotItem>
+        </Pivot>
+    </StackPanel>
+</Page>
