@@ -22,25 +22,7 @@ public sealed partial class Main : Page
     public Main()
     {
         InitializeComponent();
-        Frame.Content = Data.Content;
-        Servers.GetServers();
-        Servers.Server a = new();
-        new WideNodes(ref a).Render();
-        DispatcherTimer Timer = new();
-        Timer.Interval = new(0, 0, 0, 0, 500);
-        Timer.Tick += UpdateTicker;
-        Timer.Start();
-    }
-
-    private void UpdateTicker(object? sender, object e)
-    {
-        Info.Text = Data.ShellComment;
-    }
-
-    private void ShowServers(object sender, RoutedEventArgs e)
-    {
-        Servers.Server a = new();
-        new WideNodes(ref a).Render();
+        //Servers.GetServers();
     }
 
     private async void LoadNew(object sender, RoutedEventArgs e)
@@ -54,7 +36,8 @@ public sealed partial class Main : Page
         ServerCreator.XamlRoot = XamlRoot;
         if (await ServerCreator.ShowAsync() == ContentDialogResult.Primary)
         {
-            Servers.Provision(XamlRoot, NSC.Name, NSC.Type, NSC.Variant, NSC.Version, NSC.VariantInfo, NSC.ServerFile, NSC.ServerURL);
+            throw new NotImplementedException();
+            //Servers.Provision(XamlRoot, NSC.Name, NSC.Type, NSC.Variant, NSC.Version, NSC.VariantInfo, NSC.ServerFile, NSC.ServerURL);
         }
     }
 

@@ -1,48 +1,25 @@
 ﻿<Repository>
-    <Info>
-        <Name>RSM4 Stock repository</Name>
-        <VersionString>4.0</VersionString>
-        <MD5>Disabled</MD5>
-        <Description>Everything you need to run RSM4!</Description>
-        <RSMVersionString>4.0</RSMVersionString>
-		<RSMSpec>1</RSMSpec>
-    </Info>
-    
-    <Loader>
+    <Dependency>
         <Name>JRELatest</Name>
-        <Description>Use this to run Java with the latest JRE</Description>
         <URL>https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.1%2B12/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip</URL>
         <EntryPoint>jdk-17.0.1+12/bin/java.exe</EntryPoint>
-		<FileType>jar</FileType>
-    </Loader>
-    
-    <Loader>
+        <GUID>4d66746e-06a8-4ce5-ad64-943099c97315</GUID>
+    </Dependency>
+
+	<Dependency>
         <Name>JRE8</Name>
-        <Description>Launch apps with the old Java 8, avoid this if you can</Description>
         <URL>https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jre_x64_windows_hotspot_8u312b07.zip</URL>
         <EntryPoint>jdk8u312-b07-jre/bin/java.exe</EntryPoint>
 	    <FileType>jar</FileType>
-    </Loader>
-
-	<Loader>
-		<Name>WinExe</Name>
-		<Description>Loads .exe files</Description>
-		<URL>NULL</URL>
-		<EntryPoint>cmd.exe</EntryPoint>
-		<FileType>Exe</FileType>
-		<LaunchCommand>/k {FILE}</LaunchCommand>
-	</Loader>
+		<GUID>a031f613-98c4-4adf-9a18-f1b69c01f3be</GUID>
+    </Dependency>
 
 	<ServerGroup>
-		<Name>Terraria</Name>
-		<Description>The other block game</Description>
-		<PostInstallCommands>NULL</PostInstallCommands>
-		<InstallType>WinExe</InstallType>
+		<Type>Terraria</Type>
 		<IdealPort>7777</IdealPort>
-		<DownloadExtension></DownloadExtension>
+		<DownloadExtension>.zip</DownloadExtension>
 		<Zipped>true</Zipped>
-		<RamRequired>false</RamRequired>
-		<LaunchCommand>TerrariaServer.exe -autocreate 2  -world world.wld -difficulty 2</LaunchCommand>
+		<LaunchCommand>cmd.exe /k TerrariaServer.exe -autocreate 2  -world world.wld -difficulty 2</LaunchCommand>
 		<Variant>
 			<VariantName>Vanilla</VariantName>
 			<VariantDescription>TShock</VariantDescription>
@@ -56,48 +33,38 @@
 
 	<ServerGroup>
 		<Name>Minecraft Bedrock</Name>
-		<Description>Please note that you may not be able to connect to your server from the same device that you are hosting it on</Description>
 		<PostInstallCommands>CheckNetIsolation LoopbackExempt -a -n="Microsoft.MinecraftUWP_8wekyb3d8bbwe"</PostInstallCommands>
-		<InstallType>WinExe</InstallType>
 		<IdealPort>19132</IdealPort>
-		<DownloadExtension></DownloadExtension>
+		<DownloadExtension>.zip</DownloadExtension>
 		<Zipped>true</Zipped>
-		<RamRequired>false</RamRequired>
 		<LaunchCommand>bedrock_server.exe</LaunchCommand>
 		<Variant>
 			<VariantName>Vanilla</VariantName>
-			<VariantDescription></VariantDescription>
-			<QuickCommands></QuickCommands>
 			<Version>
 				<VersionString>1.18.12.01</VersionString>
 				<URL>https://minecraft.azureedge.net/bin-win/bedrock-server-1.18.12.01.zip</URL>
 			</Version>
 		</Variant>
 	</ServerGroup>
-    
-	
 
 	<ServerGroup>
         <Name>Minecraft Java Edition</Name>
-        <Description>The original block game</Description>
-        <PostInstallCommands>NULL</PostInstallCommands>
-        <InstallType>JRELatest</InstallType>
+        <DesiredToolChain>4d66746e-06a8-4ce5-ad64-943099c97315</DesiredToolChain>
 		<IdealPort>25565</IdealPort>
 		<DownloadExtension>jar</DownloadExtension>
-		<Zipped>false</Zipped>
-		<RamRequired>true</RamRequired>
+		<DefaultRAM>4096</DefaultRAM>
 		<LaunchCommand>-Xmx$RAMM -jar $LAUNCHFILE nogui</LaunchCommand>
 		<Eula>
 #By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
 #Tue Nov 15 19:11:00 GMT 2022
 eula=true
 		</Eula>
-        <Variant>
+		<QuickCommands>
+			advancement,attribute,ban,ban-ip,banlist,bossbar,clear,clone,data,datapack,debug,defaultgamemode,deop,difficulty,effect,enchant,execute,experience,fill,forceload,function,gamemode,gamerule,give,item,jfr,kick,kill,list,locate,locatebiome,loot,me,msg,op,pardon,pardon-ip,particle,perf,playsound,save-all,save-off,save-on,say,schedule,scoreboard,seed,setblock,setidletimeout,setworldspawn,spawnpoint,spectate,spreadplayers,stop,stopsound,summon,tag,team,teammsg,teleport,tell,tellraw,time,title,tm,tp,trigger,w,weather,whitelist,worldboarder,xp
+		</QuickCommands>
+		<Variant>
 			<VariantName>Vanilla</VariantName>
-			<VariantDescription>Vanilla servers for the Vanilla experience, Some servers use paper. </VariantDescription>
-			<QuickCommands>
-				advancement,attribute,ban,ban-ip,banlist,bossbar,clear,clone,data,datapack,debug,defaultgamemode,deop,difficulty,effect,enchant,execute,experience,fill,forceload,function,gamemode,gamerule,give,item,jfr,kick,kill,list,locate,locatebiome,loot,me,msg,op,pardon,pardon-ip,particle,perf,playsound,save-all,save-off,save-on,say,schedule,scoreboard,seed,setblock,setidletimeout,setworldspawn,spawnpoint,spectate,spreadplayers,stop,stopsound,summon,tag,team,teammsg,teleport,tell,tellraw,time,title,tm,tp,trigger,w,weather,whitelist,worldboarder,xp
-			</QuickCommands>
+
 	        <Version>
                 <VersionString>1.18.2</VersionString>
                 <URL>https://papermc.io/api/v2/projects/paper/versions/1.18.2/builds/274/downloads/paper-1.18.2-274.jar</URL>

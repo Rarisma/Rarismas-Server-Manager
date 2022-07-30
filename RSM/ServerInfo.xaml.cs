@@ -3,32 +3,34 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 using System;
 using System.Diagnostics;
 using Microsoft.UI.Xaml;
+using RSM.Data;
+using RSM.Models;
 
 namespace RSM;
 
 public sealed partial class Info : Page
 {
-    Servers.Server Server;
-    public Info(ref Servers.Server server)
+    Server Server;
+    public Info(ref Server server)
     {
         this.InitializeComponent();
         Server = server;
-        ServerSKU.Text = $"{server.Type} {server.Variant} {server.Version}";
-        BackupInfo.Text = "The last backup was " + server.LastBackup;
-        if (server.ShowRAM)
+        ServerSKU.Text = Server.Branding;
+        BackupInfo.Text = "The last backup was UNIMPLIMNETED";
+        if (server.AllocatedRAM == -1)
         {
-            RAMSlider.Value = Server.MaxRAMLimit;
-            RAMSlider.Maximum = Data.MachineTotalRAM - 2048;
+            RAMSlider.Value = Server.AllocatedRAM;
+            RAMSlider.Maximum = Global.MachineTotalRAM - 2048;
         }
 
-        switch (server.BackupFrequency)
+        /*switch (server.BackupFrequency)
         {
             case "Hourly": BackupCombo.SelectedIndex = 0; break;
             case "Weekly": BackupCombo.SelectedIndex = 2; break;
             case "Monthly": BackupCombo.SelectedIndex = 3; break;
             case "Never": BackupCombo.SelectedIndex = 4; break;
             default: BackupCombo.SelectedIndex = 1; break;
-        }
+        }*/
     }
 
     private void RAMSlider_OnValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -36,28 +38,31 @@ public sealed partial class Info : Page
         if (RAMDisplay == null) { return; ; }
 
         RAMDisplay.Text = "Allocated: " + RAMSlider.Value + "MB";
-        Server.MaxRAMLimit = (int)RAMSlider.Value;
-        Server.WriteINI();
+        Server.AllocatedRAM = (int)RAMSlider.Value;
+        Server.SaveConfiguration();
     }
 
     private void MakeBackupClick(object sender, RoutedEventArgs e)
     {
-        Server.MakeBackup();
-        BackupInfo.Text = "The last backup was " + Server.LastBackup;
+        throw new NotImplementedException();
+        //Server.MakeBackup();
+        //BackupInfo.Text = "The last backup was " + Server.LastBackup;
     }
 
-    private void OpenBackupFolder(object sender, RoutedEventArgs e) { Process.Start("explorer.exe", "/select, " + Data.Backups + "\\"); }
+    private void OpenBackupFolder(object sender, RoutedEventArgs e) { Process.Start("explorer.exe", "/select, " + Data.Directories.Backups + "\\"); }
 
     private void BackupToggle(object sender, DependencyPropertyChangedEventArgs e)
     {
-        Server.BackupEnabled = BackupEnabled.IsOn;
-        Server.WriteINI();
+        throw new NotImplementedException();
+        //Server.BackupEnabled = BackupEnabled.IsOn;
+        //Server.WriteINI();
     }
 
     private void BackupChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (BackupCombo == null || Server.BackupFrequency == null) { return;;}
-        Server.BackupFrequency = BackupCombo.SelectionBoxItem.ToString();
-        Server.WriteINI();
+        throw new NotImplementedException();
+        //if (BackupCombo == null || Server.BackupFrequency == null) { return;;}
+        //Server.BackupFrequency = BackupCombo.SelectionBoxItem.ToString();
+        //Server.WriteINI();
     }
 }
