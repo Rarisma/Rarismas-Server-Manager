@@ -18,6 +18,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using ABI.Windows.ApplicationModel.Appointments.DataProvider;
 using Mono.Nat;
+using RSM.Data;
 
 namespace RSM;
 
@@ -32,24 +33,24 @@ public partial class App : Application
     /// <param name="args">Details about the launch request and process.</param>
     protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
     {
-        Data.MainWindow = new();
-        Data.PathCheck();
+        Global.MainWindow = new();
+        Directories.PathCheck();
         NatUtility.DeviceFound += NatUtilityOnDeviceFound;
         NatUtility.StartDiscovery();
-        Data.MainWindow.Height = 920;
-        Data.MainWindow.Width = 1500;
-        Data.MainWindow.MinHeight = 920;
-        Data.MainWindow.MinWidth = 1500;
-        Data.MainWindow.Title = "RSM 4.0 Closed Beta";
-        Data.MainWindow.Content = new Main();
-        Data.MainWindow.Activate();
-        Data.MainWindow.BringToFront();
+        Global.MainWindow.Height = 920;
+        Global.MainWindow.Width = 1500;
+        Global.MainWindow.MinHeight = 920;
+        Global.MainWindow.MinWidth = 1500;
+        Global.MainWindow.Title = "RSM 4.0";
+        Global.MainWindow.Content = new Main();
+        Global.MainWindow.Activate();
+        Global.MainWindow.BringToFront();
         GetTotalRAM();
     }
 
     private void NatUtilityOnDeviceFound(object? sender, DeviceEventArgs e)
     {
-        Data.Router = e.Device;
+        Global.Router = e.Device;
     }
 
     private void GetTotalRAM()
@@ -62,6 +63,6 @@ public partial class App : Application
         info.StartInfo.Arguments = "ComputerSystem get TotalPhysicalMemory";
         info.Start();
         info.WaitForExit();
-        Data.MachineTotalRAM = Int64.Parse(info.StandardOutput.ReadToEnd().Trim().Split("\n")[1]) / 1024 / 1024;
+        Global.MachineTotalRAM = Int64.Parse(info.StandardOutput.ReadToEnd().Trim().Split("\n")[1]) / 1024 / 1024;
     }
 }

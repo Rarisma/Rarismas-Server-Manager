@@ -17,16 +17,16 @@ internal class Preferences
         foreach (var URL in CustomURLs) { text += URL + ","; }
 
         text += $"\nRSMDefaultDisable={DisableRSMDefault}";
-        System.IO.File.WriteAllText(text, System.IO.Path.Combine(Data.RootFolder, "RSM.ini"));
+        System.IO.File.WriteAllText(text, System.IO.Path.Combine(Data.Directories.RootFolder, "RSM.ini"));
     }
 
     public void ReadConfig()
     {
-        string text = System.IO.File.ReadAllText(System.IO.Path.Combine(Data.RootFolder, "RSM.ini"));
+        string text = System.IO.File.ReadAllText(System.IO.Path.Combine(Data.Directories.RootFolder, "RSM.ini"));
 
         CustomURLs.Clear();
         foreach (var URL in text.Split("\n")[0].Split(",")) { CustomURLs.Add(URL); }
 
-        DisableRSMDefault = Boolean.Parse(System.IO.Path.Combine(Data.RootFolder, "RSM.ini"));
+        DisableRSMDefault = Boolean.Parse(System.IO.Path.Combine(Data.Directories.RootFolder, "RSM.ini"));
     }
 }

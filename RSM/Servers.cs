@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 using ABI.Windows.ApplicationModel.Chat;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using RSM.Data;
 
 namespace RSM;
-public class Servers
+public class OldServers
 {
     public struct Server
     {
@@ -20,7 +21,6 @@ public class Servers
         public string Type;
         public string Version;
         public string Variant;
-        public string Description;
         public string EntryPoint;
         public string EntryPointURL;
         public string QuickCommands;
@@ -54,7 +54,7 @@ public class Servers
 
         public void MakeBackup()
         {
-            ZipFile.CreateFromDirectory(Path.Combine(Data.Instances, ParentDirectory), Path.Combine(Data.Backups, $"{Name} as of {DateTime.Now.ToString().Replace(":"," ").Replace(@"/"," ")}.zip"), CompressionLevel.SmallestSize,false);
+            ZipFile.CreateFromDirectory(Path.Combine(Data.Directories.Instances, ParentDirectory), Path.Combine(Data.Directories.Backups, $"{Name} as of {DateTime.Now.ToString().Replace(":"," ").Replace(@"/"," ")}.zip"), CompressionLevel.SmallestSize,false);
             LastBackup = DateTime.Now.ToString();
             WriteINI();
         }
@@ -66,7 +66,7 @@ public class Servers
         {
             try
             {
-                File.WriteAllText(Path.Combine(Data.Instances, Name, "RSM.ini"),
+                File.WriteAllText(Path.Combine(Data.Directories.Instances, Name, "RSM.ini"),
                     $"Name={Name}" +
                     $"\nType={Type}" +
                     $"\nVersion={Version}" +
@@ -146,20 +146,7 @@ public class Servers
             return cpuUsageTotal * 100;
         }
     }
-
-    public static void GetServers()
-    {
-        if (Directory.GetDirectories(Data.Instances).Length == 0) {return;}
-        foreach (var directory in Directory.GetDirectories(Data.Instances))
-        {
-            if (!File.Exists(Path.Combine(directory, "RSM.ini"))) { continue; }
-            Server Listing = new();
-            Listing.ReadINI(Path.Combine(directory, "RSM.ini"));
-            Listing.ServerProcess = new();
-            Data.InstalledServers.Add(Listing);
-        }
-    }
-
+    /*
     public static async void Provision(XamlRoot Root,string Name, string Type, string Variant, string Version, Repositories.Variant VariantInfo, Repositories.ServerFile ServerInfo, string URL)
     {
         Data.ShellComment = "Creating server info...";
@@ -175,14 +162,14 @@ public class Servers
             IdealPort = ServerInfo.IdealPort,
             LaunchCommand = ServerInfo.LaunchCommand,
             LaunchFile = "ServerFile." + ServerInfo.DownloadExtension,
-            ParentDirectory = Directory.CreateDirectory(Path.Combine(Data.Instances, Name)).FullName,
+            ParentDirectory = Directory.CreateDirectory(Path.Combine(Data.Directories.Instances, Name)).FullName,
             ShowRAM = ServerInfo.IsRamRequired,
             MaxRAMLimit = 4096,
             LastBackup = "Never",
             BackupFrequency = "Daily"
         };
 
-        Data.ShellComment = "Dealing with legal stuff...";
+        Global.ShellComment = "Dealing with legal stuff...";
 
         //First complies with any EULA or legal agreement.
         if (!string.IsNullOrWhiteSpace(ServerInfo.Eula))
@@ -203,14 +190,14 @@ public class Servers
         }
 
         //Downloads file
-        Data.ShellComment = "Downloading Server...";
+        Global.ShellComment = "Downloading Server...";
         LibRarisma.Connectivity.DownloadFile(URL , NewServer.ParentDirectory, "ServerFile." + ServerInfo.DownloadExtension, ServerInfo.Zipped);
 
-        Data.ShellComment = "Downloading dependencies...";
+        Global.ShellComment = "Downloading dependencies...";
         //Configure toolchain
-        if (!File.Exists(Path.Combine(Data.ToolChains, NewServer.EntryPoint)) && NewServer.EntryPointURL != "NULL")
+        if (!File.Exists(Path.Combine(Data.Directories.Dependencies, NewServer.EntryPoint)) && NewServer.EntryPointURL != "NULL")
         {
-            LibRarisma.Connectivity.DownloadFile(NewServer.EntryPointURL, Data.ToolChains, "Temp.zip", true);
+            LibRarisma.Connectivity.DownloadFile(NewServer.EntryPointURL, Data.Directories.Dependencies, "Temp.zip", true);
         }
 
         if (VariantInfo.PostInstallCommand != "")
@@ -218,7 +205,7 @@ public class Servers
             var a = new ProcessStartInfo()
             {
                 FileName = "cmd.exe", CreateNoWindow = true,
-                Arguments = " /c " + VariantInfo.PostInstallCommand.Replace("$ENTRYPOINT",Path.Combine(Data.ToolChains,NewServer.EntryPoint))
+                Arguments = " /c " + VariantInfo.PostInstallCommand.Replace("$ENTRYPOINT",Path.Combine(Data.Directories.Dependencies,NewServer.EntryPoint))
                     .Replace("$ServerVersion", NewServer.Version),
                 WorkingDirectory = NewServer.ParentDirectory
             };
@@ -238,5 +225,5 @@ public class Servers
         Data.ShellComment = "Finished making server";
         Thread.Sleep(1000);
         Data.ShellComment = "";
-    }
+    }*/
 }

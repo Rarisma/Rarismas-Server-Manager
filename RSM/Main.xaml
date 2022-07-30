@@ -22,8 +22,13 @@
             <AppBarButton Icon="Setting" Content="Settings" Label="Settings" Click="LoadSettings"/>
         </CommandBar>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="" HorizontalAlignment="Right" VerticalAlignment="Center" Name="Info" Margin="10,0"/>
-        <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="ParentScroll" HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Auto" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto">
-            <Frame Name="Frame" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        </ScrollViewer>
+        <ItemsRepeater>
+            <DataTemplate x:Key="HorizontalBarTemplate" x:DataType="l:Bar">
+                <Border Background="{ThemeResource SystemChromeLowColor}" Width="{x:Bind MaxLength}" >
+                    <Rectangle Fill="{ThemeResource SystemAccentColor}" Width="{x:Bind Length}" 
+                               Height="24" HorizontalAlignment="Left"/>
+                </Border>
+            </DataTemplate>
+        </ItemsRepeater>
     </Grid>
 </Page>
