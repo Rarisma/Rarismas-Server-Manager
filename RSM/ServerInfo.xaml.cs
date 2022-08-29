@@ -5,12 +5,15 @@ using System.Diagnostics;
 using Microsoft.UI.Xaml;
 using RSM.Data;
 using RSM.Models;
+using CommunityToolkit.Mvvm.DependencyInjection;
 
 namespace RSM;
 
 public sealed partial class Info : Page
 {
     Server Server;
+    private Global GlobalVM = Ioc.Default.GetService<Global>();
+
     public Info(ref Server server)
     {
         this.InitializeComponent();
@@ -20,7 +23,7 @@ public sealed partial class Info : Page
         if (server.AllocatedRAM == -1)
         {
             RAMSlider.Value = Server.AllocatedRAM;
-            RAMSlider.Maximum = Global.MachineTotalRAM - 2048;
+            RAMSlider.Maximum = GlobalVM.MachineTotalRAM - 2048;
         }
 
         /*switch (server.BackupFrequency)

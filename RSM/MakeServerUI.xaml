@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="RSM.MakeServerUI"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RSM"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Padding="5">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styling.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <StackPanel Margin="20">
+        <ComboBox Header="Server Software: " SelectionChanged="ComboBox_SelectionChanged" Style="{StaticResource ResourceKey=ComboBoxUI}" DisplayMemberPath="Type" SelectedValue="{x:Bind GlobalVM.SelectedServer, Mode=TwoWay}" ItemsSource="{x:Bind GlobalVM.AvailableServers}"/>
+        <ComboBox Header="Server Variant: " Name="varbox" SelectionChanged="ComboBox_SelectionChanged" Style="{StaticResource ResourceKey=ComboBoxUI}" DisplayMemberPath="Name" SelectedValue="{x:Bind GlobalVM.SelectedVariant, Mode=TwoWay}" />
+        <ComboBox Header="Server Version: " Name="verbox" Style="{StaticResource ResourceKey=ComboBoxUI}" SelectedValue="{x:Bind GlobalVM.SelectedVersion, Mode=TwoWay}"/>
+        <TextBox Header="Server Label: " Style="{StaticResource ResourceKey=ComboBoxUI}" Text="{x:Bind GlobalVM.ServerLabel, Mode=TwoWay}" PlaceholderText="My new server"/>
+    </StackPanel>
+</Page>

@@ -6,33 +6,41 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using RSM.Data;
 using RSM.Models;
+
+//Down to the river to wash away all these things.
 
 namespace RSM
 {
     public static class Provisioner
     {
-        public static async void Provision(ServerGroup NewInstance, string url, bool zipped)
-        {
-            if (DownloadServerFile(NewInstance, url, zipped) == false) { return; }
-            if (DownloadDependencies(NewInstance, url) == false) { return; }
-            if (PostInstall(NewInstance, url) == false) { return; }
+        private static Global GlobalVM = Ioc.Default.GetService<Global>();
+        private static string ParentDirectory { get => Path.Combine(Directories.Instances, GlobalVM.ServerLabel); }
 
+        public static async void Provision()
+        {
+            Directory.CreateDirectory(ParentDirectory);
+            if (DownloadServerFile() == false) { return; }
+            if (DownloadDependencies() == false) { return; }
+            if (PostInstall() == false) { return; }
+            ConvertToServer();
 
         }
 
-        private static bool DownloadServerFile(ServerGroup NewInstance, string url, bool Zipped)
+        private static bool DownloadServerFile()
         {
             try
             {
-                new WebClient().DownloadFile(url, Path.Combine(NewInstance.ParentDirectory, "ServerFile"));
-                if (Zipped)
+                string url;
+                GlobalVM.SelectedVariant.Versions.TryGetValue(GlobalVM.SelectedVersion, out url);
+                new WebClient().DownloadFile(url, Path.Combine(ParentDirectory, "ServerFile"));
+                if (GlobalVM.SelectedServer.IsDownloadZipped)
                 {
                     try
                     {
-                        System.IO.Compression.ZipFile.ExtractToDirectory(Path.Combine(NewInstance.ParentDirectory, "ServerFile"), NewInstance.ParentDirectory);
-
+                        System.IO.Compression.ZipFile.ExtractToDirectory(Path.Combine(ParentDirectory, "ServerFile"), ParentDirectory);
                     }
                     catch
                     {
@@ -40,48 +48,69 @@ namespace RSM
                     }
                 }
             }
-            catch
-            {
-                throw new IOException();
-                return false;
-            }
+            catch { throw new IOException(); }
             return true;
         }
 
-        private static bool DownloadDependencies(ServerGroup NewInstance, string url)
+        private static bool DownloadDependencies()
         {
             try
             {
                 Dependency dep; 
-                Global.AvailableDependencies.TryGetValue(NewInstance.Dependency,out dep);
+                GlobalVM.AvailableDependencies.TryGetValue(GlobalVM.SelectedServer.RequiredDependency, out dep);
                 if (true)
                 {
-                    throw new NotImplementedException();
+                    Directory.CreateDirectory(Path.Combine(Directories.Dependencies, dep.Guid.ToString()));
                     new WebClient().DownloadFile(dep.DownloadURL, Path.Combine(Directories.Dependencies, dep.Guid.ToString(), "Download.zip"));
                     System.IO.Compression.ZipFile.ExtractToDirectory(Path.Combine(Directories.Dependencies, dep.Guid.ToString(), "Download.zip"), Path.Combine(Directories.Dependencies, dep.Guid.ToString()));
                 }
             }
             catch (Exception ex)
             {
+                return false;
             }
             return true;
         }
 
-        public static bool PostInstall(ServerGroup NewInstance, string InstallCommand)
+        /// <summary>
+        /// Posts the install.
+        /// </summary>
+        /// <returns></returns>
+        private static bool PostInstall()
         {
-            if (!String.IsNullOrEmpty(InstallCommand))
+            /*if (!String.IsNullOrEmpty(GlobalVM.SelectedServer.PostInstallCommand))
             {
+                throw new NotImplementedException();
                 var a = new ProcessStartInfo()
                 {
                     FileName = "cmd.exe",
                     CreateNoWindow = true,
-                    //Arguments = " /c " + NewInstance.PostInstallCommand.Replace("$ENTRYPOINT", Path.Combine(Directories.Dependencies, NewInstance.EntryPoint)).Replace("$ServerVersion", NewServer.Version),
-                    WorkingDirectory = NewInstance.ParentDirectory
+                    //Arguments = " /c " + NewInstance.PostInstallCommand.Replace("$ENTRYPOINT", Path.Combine(Directories.Dependencies, GlobalVM.SelectedServer.LaunchCommand)).Replace("$ServerVersion", GlobalVM.SelectedServer.Version),
+                    WorkingDirectory = ParentDirectory
                 };
                 Process.Start(a);
-            }
+
+            }*/
 
             return true;
+        }
+
+        /// <summary>
+        /// Converts bindings in GlobalVM to the server class.
+        /// </summary>  
+        /// <returns></returns>
+        private static void ConvertToServer()
+        {
+            Server NewServer = new(
+                    GlobalVM.ServerLabel,
+                    GlobalVM.SelectedServer.Branding,
+                    GlobalVM.SelectedServer.LaunchCommand,
+                    GlobalVM.SelectedServer.AllocatedRAM,
+                    Guid.NewGuid(),
+                    ParentDirectory,
+                    GlobalVM.SelectedServer.RequiredDependency);
+            NewServer.SaveConfiguration();
+            GlobalVM.InstalledServers.Add(NewServer.Guid, NewServer);
         }
     }
 }

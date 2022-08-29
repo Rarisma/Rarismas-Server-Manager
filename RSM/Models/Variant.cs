@@ -9,6 +9,6 @@ namespace RSM.Models
     public class Variant
     {
         public string Name { get; set; }
-        public List<string[]> Versions = new();
+        public Dictionary<string, string> Versions = new();
     }
 }
