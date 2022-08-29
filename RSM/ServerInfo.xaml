@@ -27,7 +27,7 @@
                     <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Server.ServerName}" Name="ServerSKU" />
 
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="RAM Allocation:" VerticalAlignment="Center" Margin="0,0,0,6" />
-                    <Slider Grid.Row="2" Grid.Column="1" Name="RAMSlider" ValueChanged="RAMSlider_OnValueChanged" Minimum="1024" Margin="10,0,0,0" VerticalAlignment="Center" IsEnabled="{x:Bind Server.ShowRAM}"/>
+                    <Slider Grid.Row="2" Grid.Column="1" Name="RAMSlider" ValueChanged="RAMSlider_OnValueChanged" Minimum="1024" Margin="10,0,0,0" VerticalAlignment="Center"/>
                     <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Name="RAMDisplay" VerticalAlignment="Top"/>                   
 
                     <TextBlock Grid.Row="4" Text="Server Path:"/>

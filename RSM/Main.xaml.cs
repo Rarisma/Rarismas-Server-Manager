@@ -1,56 +1,42 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
+using RSM.Data;
 using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using CommunityToolkit.Mvvm.DependencyInjection;
 
 namespace RSM;
-
-public sealed partial class Main : Page
+//Traveling around to see a world brand new?
+public sealed partial class Main
 {
-    public Main()
-    {
-        InitializeComponent();
-        //Servers.GetServers();
-    }
+    public Global GlobalVM = Ioc.Default.GetService<Global>();
+    public Main() { InitializeComponent(); }
 
     private async void LoadNew(object sender, RoutedEventArgs e)
     {
-        ServerCreator NSC = new();
-        ContentDialog ServerCreator = new();
-        ServerCreator.Title = "Create new server";
-        ServerCreator.PrimaryButtonText = "Create";
-        ServerCreator.SecondaryButtonText = "Cancel";
-        ServerCreator.Content = NSC;
-        ServerCreator.XamlRoot = XamlRoot;
+        XMLParser.UpdateRepositoryFiles();
+        ContentDialog ServerCreator = new()
+        {
+            Title = "Create new server",
+            PrimaryButtonText = "Create",
+            SecondaryButtonText = "Cancel",
+            Content = new MakeServerUI(),
+            XamlRoot = XamlRoot
+        };
         if (await ServerCreator.ShowAsync() == ContentDialogResult.Primary)
         {
-            throw new NotImplementedException();
-            //Servers.Provision(XamlRoot, NSC.Name, NSC.Type, NSC.Variant, NSC.Version, NSC.VariantInfo, NSC.ServerFile, NSC.ServerURL);
+            Provisioner.Provision();
         }
     }
 
     private async void LoadSettings(object sender, RoutedEventArgs e)
     {
-        await new ContentDialog()
+        await new ContentDialog
         {
             Content = new RSMConfig(),
-            XamlRoot = this.XamlRoot,
+            XamlRoot = XamlRoot,
             Title = "RSM Settings",
             PrimaryButtonText = "Save",
             SecondaryButtonText = "Cancel",
         }.ShowAsync();
     }
-
-};
+}

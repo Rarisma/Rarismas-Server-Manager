@@ -8,22 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using RSM.Models;
 using WinUIEx;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace RSM.Data
 {
-    public static class Global
+    public class Global : ObservableRecipient
     {
-        public static List<int> OpenPorts = new();
+        public List<int> OpenPorts = new();
 
-        public static long MachineTotalRAM;
+        public long MachineTotalRAM;
 
-        public static Dictionary<Guid, Server> InstalledServers = new();
-        public static Dictionary<Guid, Dependency> AvailableDependencies = new();
-        public static List<ServerGroup> AvailableServers = new();
-        public static string PublicIP { get => Router.GetExternalIP().ToString(); }
-        public static INatDevice Router;
-        public static WindowEx MainWindow = new();
-        public static Frame Content = new() { VerticalAlignment = VerticalAlignment.Stretch, HorizontalAlignment = HorizontalAlignment.Stretch, HorizontalContentAlignment = HorizontalAlignment.Stretch, VerticalContentAlignment = VerticalAlignment.Stretch };
-        public static string ShellComment = "Welcome to RSM";
+        public Dictionary<Guid, Server> InstalledServers = new();
+        public Dictionary<Guid, Dependency> AvailableDependencies = new();
+        public List<ServerGroup> AvailableServers = new();
+        public string PublicIP { get => Router.GetExternalIP().ToString(); }
+        public INatDevice Router;
+        public WindowEx MainWindow = new();
+        public Frame Content = new() { VerticalAlignment = VerticalAlignment.Stretch, HorizontalAlignment = HorizontalAlignment.Stretch, HorizontalContentAlignment = HorizontalAlignment.Stretch, VerticalContentAlignment = VerticalAlignment.Stretch };
+        public string ShellComment = "Welcome to RSM";
+
+        public ServerGroup SelectedServer { get; set; }
+        public Variant SelectedVariant { get; set; }
+        public string SelectedVersion { get; set; }
+        public string ServerLabel { get; set; }
     }
 }

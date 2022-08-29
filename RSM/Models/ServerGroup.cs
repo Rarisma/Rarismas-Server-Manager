@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -9,8 +10,8 @@ namespace RSM.Models
 {
     public class ServerGroup : Server
     {
-        public string Type;
-        public List<Variant> AvailableTypes = new();
+        public string Type { get; set; }
+        public ObservableCollection<Variant> AvailableVariants { get; set; }
         public string PostInstallCommand;
         public string LaunchCommand;
         public Guid RequiredDependency;

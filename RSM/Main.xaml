@@ -5,9 +5,17 @@
     xmlns:local="using:RSM"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:RSM.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styling.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="auto"/>
@@ -22,13 +30,71 @@
             <AppBarButton Icon="Setting" Content="Settings" Label="Settings" Click="LoadSettings"/>
         </CommandBar>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="" HorizontalAlignment="Right" VerticalAlignment="Center" Name="Info" Margin="10,0"/>
-        <ItemsRepeater>
-            <DataTemplate x:Key="HorizontalBarTemplate" x:DataType="l:Bar">
-                <Border Background="{ThemeResource SystemChromeLowColor}" Width="{x:Bind MaxLength}" >
-                    <Rectangle Fill="{ThemeResource SystemAccentColor}" Width="{x:Bind Length}" 
-                               Height="24" HorizontalAlignment="Left"/>
-                </Border>
-            </DataTemplate>
-        </ItemsRepeater>
+        <ScrollViewer Grid.Row="1">
+            <ItemsRepeater  ItemsSource="{x:Bind GlobalVM.InstalledServers.Values}">
+                <DataTemplate x:DataType="models:Server">
+                    <StackPanel Background="#121212" CornerRadius="5" Margin="20,15">
+                        <StackPanel Orientation="Horizontal" Height="40">
+                            <TextBlock Text="{x:Bind Path=ServerName}" Margin="5,0,0,0" FontSize="20"  Style="{StaticResource ResourceKey=TextUI}"/>
+                            <TextBlock Text="{x:Bind Path=Branding}" Margin="5,0,0,0" Style="{StaticResource ResourceKey=TextUI}"/>
+                        </StackPanel>
+                        <TextBlock Text="{x:Bind Path=ParentDirectory}" Margin="5,0,0,0" FontSize="10"  Style="{StaticResource ResourceKey=TextUI}"/>
+                        <Expander CornerRadius="5"  Width="700">
+                            <Expander.Header >
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Width="800" HorizontalAlignment="Stretch" Margin="125,0,0,0">
+                                    <TextBlock HorizontalAlignment="Left" Style="{StaticResource ResourceKey=TextUI}" Margin="10,0" Text="{x:Bind Path=PowerStatus}"/>
+                                    <TextBlock HorizontalAlignment="Left" Style="{StaticResource ResourceKey=TextUI}" Margin="10,0" Text="{x:Bind Path=CPUUsage}"/>
+                                    <TextBlock HorizontalAlignment="Left" Style="{StaticResource ResourceKey=TextUI}" Margin="10,0" Text="{x:Bind Path=RAMUsage}"/>
+                                    <TextBlock HorizontalAlignment="Left" Style="{StaticResource ResourceKey=TextUI}" Margin="10,0" Text="{x:Bind Path=DiskUsage}"/>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Height="700" Width="700">
+                                <CommandBar DefaultLabelPosition="Right" Visibility="Visible" HorizontalAlignment="Center">
+                                    <AppBarButton Label="Power on" Name="PowerIcon" Click="{x:Bind Path=TogglePower}">
+                                        <AppBarButton.Icon>
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7E8;"/>
+                                        </AppBarButton.Icon>
+                                    </AppBarButton>
+                                    <AppBarButton Label="Reboot" Click="{x:Bind Path=Reboot}" IsEnabled="{x:Bind IsOff}">
+                                        <AppBarButton.Icon>
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xF83E;"/>
+                                        </AppBarButton.Icon>
+                                    </AppBarButton>
+                                    <AppBarButton Label="Save log">
+                                        <AppBarButton.Icon>
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE74E;"/>
+                                        </AppBarButton.Icon>
+                                    </AppBarButton>
+                                    <AppBarButton Label="Clear" Click="{x:Bind Path=ClearConsole}">
+                                        <AppBarButton.Icon>
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE894;"/>
+                                        </AppBarButton.Icon>
+                                    </AppBarButton>
+                                    <AppBarButton Label="Delete" Icon="Delete">
+                                        <AppBarButton.Flyout>
+                                            <Flyout>
+                                                <StackPanel>
+                                                    <TextBlock Foreground="Red" HorizontalAlignment="Center">Are you sure you want to delete this server?</TextBlock>
+                                                    <Button Margin="10" HorizontalAlignment="Center" Click="{x:Bind Path=DeleteServer}" Content="Delete"/>
+                                                </StackPanel>
+                                            </Flyout>
+                                        </AppBarButton.Flyout>
+                                    </AppBarButton>
+                                    <AppBarButton Label="Configure" Click="{x:Bind Path=ShowInfoMenu}">
+                                        <AppBarButton.Icon>
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE713;"/>
+                                        </AppBarButton.Icon>
+                                    </AppBarButton>
+                                </CommandBar>
+                                <ScrollViewer Name="Scroller" Height="610">
+                                    <TextBox Name="ConsoleBox" ScrollViewer.ZoomMode="Enabled" PlaceholderText="When your server does something, you'll see it here!" IsReadOnly="True" AcceptsReturn="True" Width="600" Margin="0,5" MinHeight="600" TextWrapping="Wrap"/>
+                                </ScrollViewer>
+                                <AutoSuggestBox PlaceholderText="If you want to send a command put it here!" QueryIcon="Send" Name="AutoBar" QuerySubmitted="{x:Bind Path=SendCommand}" IsEnabled="False" Width="600"/>
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsRepeater>
+        </ScrollViewer>
     </Grid>
 </Page>

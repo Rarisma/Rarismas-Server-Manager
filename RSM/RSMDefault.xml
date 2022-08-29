@@ -32,7 +32,7 @@
 	</ServerGroup>
 
 	<ServerGroup>
-		<Name>Minecraft Bedrock</Name>
+		<Type>Minecraft Bedrock</Type>
 		<PostInstallCommands>CheckNetIsolation LoopbackExempt -a -n="Microsoft.MinecraftUWP_8wekyb3d8bbwe"</PostInstallCommands>
 		<IdealPort>19132</IdealPort>
 		<DownloadExtension>.zip</DownloadExtension>
@@ -48,7 +48,7 @@
 	</ServerGroup>
 
 	<ServerGroup>
-        <Name>Minecraft Java Edition</Name>
+		<Type>Minecraft Java Edition</Type>
         <DesiredToolChain>4d66746e-06a8-4ce5-ad64-943099c97315</DesiredToolChain>
 		<IdealPort>25565</IdealPort>
 		<DownloadExtension>jar</DownloadExtension>
@@ -72,10 +72,6 @@ eula=true
             <Version>
                 <VersionString>1.17.1</VersionString>
                 <URL>https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/408/downloads/paper-1.17.1-408.jar</URL>
-            </Version>
-            <Version>
-                <VersionString>1.16.5</VersionString>
-                <URL>https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/792/downloads/paper-1.16.5-792.jar</URL>
             </Version>
             <Version>
                 <VersionString>1.16.5</VersionString>

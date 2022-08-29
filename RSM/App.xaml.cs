@@ -1,61 +1,57 @@
 ﻿using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using Microsoft.UI.Xaml.Shapes;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using ABI.Windows.ApplicationModel.Appointments.DataProvider;
 using Mono.Nat;
 using RSM.Data;
+using CommunityToolkit.Mvvm.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using System.IO;
+using RSM.Models;
 
 namespace RSM;
-
+//MY MATRYOSHKA
 public partial class App : Application
 {
     public App() { InitializeComponent(); }
-
+    private Global GlobalVM;
+    
     /// <summary>
     /// Invoked when the application is launched normally by the end user.  Other entry points
     /// will be used such as when the application is launched to open a specific file.
     /// </summary>
     /// <param name="args">Details about the launch request and process.</param>
-    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+    protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        Global.MainWindow = new();
+        Ioc.Default.ConfigureServices(new ServiceCollection().AddSingleton<Global>().BuildServiceProvider());
+        GlobalVM = Ioc.Default.GetService<Global>();
+
+        GlobalVM.MainWindow = new();
         Directories.PathCheck();
         NatUtility.DeviceFound += NatUtilityOnDeviceFound;
         NatUtility.StartDiscovery();
-        Global.MainWindow.Height = 920;
-        Global.MainWindow.Width = 1500;
-        Global.MainWindow.MinHeight = 920;
-        Global.MainWindow.MinWidth = 1500;
-        Global.MainWindow.Title = "RSM 4.0";
-        Global.MainWindow.Content = new Main();
-        Global.MainWindow.Activate();
-        Global.MainWindow.BringToFront();
+        GlobalVM.MainWindow.Height = 920;
+        GlobalVM.MainWindow.Width = 1500;
+        GlobalVM.MainWindow.MinHeight = 920;
+        GlobalVM.MainWindow.MinWidth = 1500;
+        GlobalVM.MainWindow.Title = "RSM 4.0";
+        GlobalVM.MainWindow.Content = new Main();
+        GlobalVM.MainWindow.Activate();
+        GlobalVM.MainWindow.BringToFront();
         GetTotalRAM();
+
+        if (Directory.GetDirectories(Directories.Instances).Length == 0) { return; }
+        foreach (var directory in Directory.GetDirectories(Directories.Instances))
+        {
+            if (!File.Exists(Path.Combine(directory, "RSM.CONF"))) { continue; }
+            _ = new Server(Path.Combine(directory, "RSM.CONF"));
+        }
     }
 
-    private void NatUtilityOnDeviceFound(object? sender, DeviceEventArgs e)
-    {
-        Global.Router = e.Device;
-    }
+    private void NatUtilityOnDeviceFound(object? sender, DeviceEventArgs e) { GlobalVM.Router = e.Device; }
 
     private void GetTotalRAM()
     {
-        //todo update to use librarisma.
+        //TODO: update to use librarisma.
         Process info = new();
         info.StartInfo.RedirectStandardOutput = true;
         info.StartInfo.CreateNoWindow = true;
@@ -63,6 +59,6 @@ public partial class App : Application
         info.StartInfo.Arguments = "ComputerSystem get TotalPhysicalMemory";
         info.Start();
         info.WaitForExit();
-        Global.MachineTotalRAM = Int64.Parse(info.StandardOutput.ReadToEnd().Trim().Split("\n")[1]) / 1024 / 1024;
+        GlobalVM.MachineTotalRAM = Int64.Parse(info.StandardOutput.ReadToEnd().Trim().Split("\n")[1]) / 1024 / 1024;
     }
 }
