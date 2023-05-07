@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSM", "RSM.csproj", "{88ACE02E-4AB0-4050-A7BD-D5F89C4BE752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rarisma Server Manager", "Rarisma Server Manager.csproj", "{88ACE02E-4AB0-4050-A7BD-D5F89C4BE752}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

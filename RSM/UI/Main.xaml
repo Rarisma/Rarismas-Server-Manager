@@ -1,8 +1,8 @@
 ﻿<Page
-    x:Class="RSM.Main"
+    x:Class="RSM.UI.Main"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:RSM"
+    xmlns:local="using:RSM.UI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="using:RSM.Models"
@@ -11,7 +11,7 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styling.xaml"/>
+                <ResourceDictionary Source="/Styling.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
@@ -27,18 +27,19 @@
         </Grid.RowDefinitions>
         <CommandBar Visibility="Visible" DefaultLabelPosition="Right" HorizontalContentAlignment="Left">
             <AppBarButton Icon="Add" Content="Create new server" Label="Create new Server" Click="LoadNew"/>
+            <AppBarButton Icon="Add" Content="Create new server (docker)" Label="Create new Server (docker)" Click="OpenDockerUI"/>
             <AppBarButton Icon="Setting" Content="Settings" Label="Settings" Click="LoadSettings"/>
         </CommandBar>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="" HorizontalAlignment="Right" VerticalAlignment="Center" Name="Info" Margin="10,0"/>
         <ScrollViewer Grid.Row="1">
-            <ItemsRepeater  ItemsSource="{x:Bind GlobalVM.InstalledServers.Values}">
+            <ItemsRepeater ItemsSource="{x:Bind GlobalVM.InstalledServers, Mode=TwoWay}">
                 <DataTemplate x:DataType="models:Server">
                     <StackPanel Background="#121212" CornerRadius="5" Margin="20,15">
                         <StackPanel Orientation="Horizontal" Height="40">
                             <TextBlock Text="{x:Bind Path=ServerName}" Margin="5,0,0,0" FontSize="20"  Style="{StaticResource ResourceKey=TextUI}"/>
                             <TextBlock Text="{x:Bind Path=Branding}" Margin="5,0,0,0" Style="{StaticResource ResourceKey=TextUI}"/>
                         </StackPanel>
-                        <TextBlock Text="{x:Bind Path=ParentDirectory}" Margin="5,0,0,0" FontSize="10"  Style="{StaticResource ResourceKey=TextUI}"/>
+                        <TextBlock Text="{x:Bind Path=ParentDirectory}" Tapped="{x:Bind OpenParentDir}" Margin="5,0,0,0" FontSize="10"  Style="{StaticResource ResourceKey=TextUI}"/>
                         <Expander CornerRadius="5"  Width="700">
                             <Expander.Header >
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Width="800" HorizontalAlignment="Stretch" Margin="125,0,0,0">

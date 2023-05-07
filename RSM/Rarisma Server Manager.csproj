@@ -26,12 +26,11 @@
 		<Content Remove="C:\Users\Rarisma\.nuget\packages\librarisma\3.0.0\contentFiles\any\net6.0\Untitled.png" />
 	</ItemGroup>
 	<ItemGroup>
-		<None Remove="Main.xaml" />
-		<None Remove="MakeServerUI.xaml" />
 		<None Remove="RSMConfig.xaml" />
 		<None Remove="RSMDefault.xml" />
 		<None Remove="ServerInfo.xaml" />
 		<None Remove="Styling.xaml" />
+		<None Remove="UI\ServerCreatorUI.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -52,15 +51,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Common" Version="8.0.0" />
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+		<PackageReference Include="CommunityToolkit.Common" Version="8.2.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
+		<PackageReference Include="Docker.DotNet" Version="3.125.14" />
 		<PackageReference Include="LibRarisma" Version="3.0.0" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.1" />
-		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22579-preview" />
-		<PackageReference Include="Mono.Nat" Version="3.0.2" />
-		<PackageReference Include="WinUIEx" Version="1.1.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.3.230331000" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" />
+		<PackageReference Include="Mono.Nat" Version="3.0.4" />
+		<PackageReference Include="WinUIEx" Version="2.1.0" />
 		<Manifest Include="$(ApplicationManifest)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Update="UI\ServerCreatorUI.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -70,15 +76,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Page Update="MakeServerUI.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Page Update="Main.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</Page>
 		<Page Update="ServerInfo.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</Page>
