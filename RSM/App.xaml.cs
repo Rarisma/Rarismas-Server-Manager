@@ -10,9 +10,13 @@ using RSM.Models;
 
 namespace RSM;
 //MY MATRYOSHKA
-public partial class App : Application
+//Oh my fucking lord I was clearly on top shelf boof when writing this shit so I
+//supose it's time to wrap this skeleton in the closet once and for all.
+//Introducing the grand fucking clean up because seeing this code makes me sad.
+public partial class App
 {
     public App() { InitializeComponent(); }
+
     private Global GlobalVM;
     
     /// <summary>
@@ -33,8 +37,8 @@ public partial class App : Application
         GlobalVM.MainWindow.Width = 1500;
         GlobalVM.MainWindow.MinHeight = 920;
         GlobalVM.MainWindow.MinWidth = 1500;
-        GlobalVM.MainWindow.Title = "RSM 4.0";
-        GlobalVM.MainWindow.Content = new Main();
+        GlobalVM.MainWindow.Title = "Rarisma Server Manager 4.0 Experimental";
+        GlobalVM.MainWindow.Content = new UI.Main();
         GlobalVM.MainWindow.Activate();
         GlobalVM.MainWindow.BringToFront();
         GetTotalRAM();

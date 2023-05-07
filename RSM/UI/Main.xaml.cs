@@ -1,14 +1,15 @@
-﻿using Microsoft.UI.Xaml;
+﻿using System;
+using CommunityToolkit.Mvvm.DependencyInjection;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using RSM.Data;
-using System;
-using CommunityToolkit.Mvvm.DependencyInjection;
+using RSM.Docker;
 
-namespace RSM;
+namespace RSM.UI;
 //Traveling around to see a world brand new?
 public sealed partial class Main
 {
-    public Global GlobalVM = Ioc.Default.GetService<Global>();
+    private Global GlobalVM = Ioc.Default.GetRequiredService<Global>();
     public Main() { InitializeComponent(); }
 
     private async void LoadNew(object sender, RoutedEventArgs e)
@@ -38,5 +39,22 @@ public sealed partial class Main
             PrimaryButtonText = "Save",
             SecondaryButtonText = "Cancel",
         }.ShowAsync();
+    }
+
+    private async void OpenDockerUI(object sender, RoutedEventArgs e)
+    {
+       var res = await new ContentDialog
+        {
+            Content = new ServerCreatorUI(),
+            XamlRoot = XamlRoot,
+            Title = "Docker Server Menu",
+            PrimaryButtonText = "Save",
+            SecondaryButtonText = "Cancel",
+        }.ShowAsync();
+
+       if (res == ContentDialogResult.Primary)
+       {
+            DockerProvisioner.CreateContainer(GlobalVM.AvailableDockerServers[0]);
+       }
     }
 }

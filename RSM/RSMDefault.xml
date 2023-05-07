@@ -197,4 +197,8 @@ eula=true
 			</Version>
 		</Variant>
     </ServerGroup>
+	<Docker>
+		<DockerCatagory>Minecraft Java</DockerCatagory>
+		<DockerLink>marctv/minecraft-papermc-server:latest</DockerLink>
+	</Docker>
 </Repository>

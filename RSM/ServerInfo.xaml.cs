@@ -9,7 +9,7 @@ using CommunityToolkit.Mvvm.DependencyInjection;
 
 namespace RSM;
 
-public sealed partial class Info : Page
+public sealed partial class Info
 {
     Server Server;
     private Global GlobalVM = Ioc.Default.GetService<Global>();

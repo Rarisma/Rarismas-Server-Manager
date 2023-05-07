@@ -1,0 +1,25 @@
+﻿<StackPanel
+    x:Class="RSM.UI.ServerCreatorUI"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RSM.UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:RSM.Models"
+    mc:Ignorable="d"
+    Height="300" Width="400">
+
+    <ComboBox ItemsSource="{x:Bind GlobalVM.AvailableDockerServers}"  Width="350" Height="100" HorizontalAlignment="Center" Header="Select a Server:">
+        <ComboBox.ItemTemplate>
+            <DataTemplate x:DataType="models:DockerModel">
+                <ComboBoxItem>
+                    <StackPanel>
+                        <TextBlock Text="{x:Bind Name}"/>
+                        <TextBlock Text="{x:Bind Link}"/>
+                    </StackPanel>
+                </ComboBoxItem>
+            </DataTemplate>
+        </ComboBox.ItemTemplate>
+    </ComboBox>
+
+</StackPanel>
